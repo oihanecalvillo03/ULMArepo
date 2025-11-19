@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="Carrier_Cargado" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">A true indica que está cargado, a false vacío</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="vagon_cargado_SinDestino" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Indica que tiene una carga pero que no se le ha asignado destino para la misma</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="carrier_no_utilizable" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Indica que el vagón está defectuoso y que no se puede utilizar</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="vagon_reservado_carga" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Indica que el vagón va a ser utilizado para cargar desde un punto concreto</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="carrier_multiple" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Indica que el vagón es múltiple</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Reserva_5" Datatype="Bool" />
+    <Member Name="Reserva_6" Datatype="Bool" />
+    <Member Name="Reserva_7" Datatype="Bool" />
+    <Member Name="Reserva_8" Datatype="Bool" />
+    <Member Name="Reserva_9" Datatype="Bool" />
+    <Member Name="Reserva_10" Datatype="Bool" />
+    <Member Name="Reserva_11" Datatype="Bool" />
+    <Member Name="Reserva_12" Datatype="Bool" />
+    <Member Name="Reserva_13" Datatype="Bool" />
+    <Member Name="Reserva_14" Datatype="Bool" />
+    <Member Name="Reserva_15" Datatype="Bool" />
+    <Member Name="numero_vagon" Datatype="UInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Indica el número de vagón del que se trata dentro del sorter</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="punto_entrada_carga" Datatype="UInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Número identificativo de la entrada que ha cargado el vagón</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Destino_principal" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Numero identificativo del destino principal</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Destino_alternativo" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Numero identificativo del destino secundario</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Mesa_descarga" Datatype="Int" />
+    <Member Name="Num_Recirculaciones" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">cantidad de recirculaciones que ha tenido el vagón cargado</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Numero_Vagones_Multiple_Asociados" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Cantidad de carriers que tiene asociados formando el vagón multiple</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="EventoAGenerar" Datatype="UInt" />
+    <Member Name="DatosCarga" Datatype="Struct">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Datos de la Carga</MultiLanguageText>
+      </Comment>
+      <Member Name="Mckey" Datatype="UDInt">
+        <Comment>
+          <MultiLanguageText Lang="es-ES">Mckey </MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="MesaOrigen" Datatype="UInt">
+        <Comment>
+          <MultiLanguageText Lang="es-ES">MesaOrigen</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="MesaDestino" Datatype="UInt">
+        <Comment>
+          <MultiLanguageText Lang="es-ES">MesaDestino</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="EtiquetaRouter" Datatype="UDInt">
+        <Comment>
+          <MultiLanguageText Lang="es-ES">Etiqueta</MultiLanguageText>
+        </Comment>
+      </Member>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>CBS_Carrier</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="9" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="A" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="B" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="C" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="D" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="E" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="F" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="10" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

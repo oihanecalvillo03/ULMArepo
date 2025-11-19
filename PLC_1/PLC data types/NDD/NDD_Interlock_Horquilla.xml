@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="PosHorq_Bloqueo" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">La Horquilla esta en Bloqueo para ir a la Posicion IN (Hacia el Elevador)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="MovHorq_Bloqueada" Datatype="Bool" />
+    <Member Name="OrdenDeSalida" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Orden de la Salida de la Paleta de la Horquilla</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="FinOrdenDeSalida" Datatype="Bool" />
+    <Member Name="DejarCarga_EntradaHorq" Datatype="Bool" />
+    <Member Name="DejadaCarga_EntradaHorq" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Aviso de Dejar la Paleta en la Horquilla</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="RecogerCarga_SalidaHorq" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Aviso de Recoger la Paleta de la Horquilla</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="RecogidaCarga_SalidaHorq" Datatype="Bool" />
+    <Member Name="AVTF_EntradaHorq" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Aviso de Entrada de la Paleta en la Horquilla</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="PTF_EntradaHorq" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Permiso de Entrada de la Paleta en la Horquilla</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="FTF_EntradaHorq" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Fin de la Entrada de la Paleta en la Horquilla</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="AVTF_SalidaHorq" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Aviso de Salida de la Paleta en la Horquilla</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="PTF_SalidaHorq" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Permiso de Salida de la Paleta en la Hoquilla</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="FTF_SalidaHorq" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Fin de la Salida de la Paleta en la Hoprquilla</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Libre_16" Datatype="Bool" />
+    <Member Name="DesHabilitarBarrera_Down" Datatype="Bool" />
+    <Member Name="ConCarga_Horq" Datatype="Bool" />
+    <Member Name="Horq_Out" Datatype="Bool" />
+    <Member Name="Horq_In" Datatype="Bool" />
+    <Member Name="Horq_SeguridadUp" Datatype="Bool" />
+    <Member Name="Horq_SeguridadDown" Datatype="Bool" />
+    <Member Name="Libre_25" Datatype="Bool" />
+    <Member Name="Libre_26" Datatype="Bool" />
+    <Member Name="Horq_EnReset" Datatype="Bool" />
+    <Member Name="Horq_EnCarga" Datatype="Bool" />
+    <Member Name="Horq_EnVacio" Datatype="Bool" />
+    <Member Name="Horq_Entrando" Datatype="Bool" />
+    <Member Name="Horq_Saliendo" Datatype="Bool" />
+    <Member Name="Libre_35" Datatype="Bool" />
+    <Member Name="Libre_36" Datatype="Bool" />
+    <Member Name="Libre_37" Datatype="Bool" />
+  </Section>
+</Sections></Interface>
+      <Name>NDD_Interlock_Horquilla</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="9" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="A" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="B" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="C" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="D" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="E" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="F" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="10" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

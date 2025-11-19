@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="Drop_Request" Datatype="Bool" />
+    <Member Name="Drop_Busy" Datatype="Bool" />
+    <Member Name="Byte0.bit2" Datatype="Bool" />
+    <Member Name="Byte0.bit3" Datatype="Bool" />
+    <Member Name="Byte0.bit4" Datatype="Bool" />
+    <Member Name="Byte0.bit5" Datatype="Bool" />
+    <Member Name="Byte0.bit6" Datatype="Bool" />
+    <Member Name="Drop_Enable" Datatype="Bool" />
+    <Member Name="Pick_Request" Datatype="Bool" />
+    <Member Name="Pick_Busy" Datatype="Bool" />
+    <Member Name="Byte1_bit2" Datatype="Bool" />
+    <Member Name="Byte1_bit3" Datatype="Bool" />
+    <Member Name="Byte1_bit4" Datatype="Bool" />
+    <Member Name="Byte1_bit5" Datatype="Bool" />
+    <Member Name="Byte1_bit6" Datatype="Bool" />
+    <Member Name="Pick_Enable" Datatype="Bool" />
+    <Member Name="Byte2_bit0" Datatype="Bool" />
+    <Member Name="Byte2_bit1" Datatype="Bool" />
+    <Member Name="Byte2_bit2" Datatype="Bool" />
+    <Member Name="Byte2_bit3" Datatype="Bool" />
+    <Member Name="Byte2_bit4" Datatype="Bool" />
+    <Member Name="Byte2_bit5" Datatype="Bool" />
+    <Member Name="Byte2_bit6" Datatype="Bool" />
+    <Member Name="Byte2_bit7" Datatype="Bool" />
+    <Member Name="Byte3_bit0" Datatype="Bool" />
+    <Member Name="Byte3_bit1" Datatype="Bool" />
+    <Member Name="Byte3_bit2" Datatype="Bool" />
+    <Member Name="Byte3_bit3" Datatype="Bool" />
+    <Member Name="Byte3_bit4" Datatype="Bool" />
+    <Member Name="Byte3_bit5" Datatype="Bool" />
+    <Member Name="Byte3_bit6" Datatype="Bool" />
+    <Member Name="Byte3_bit7" Datatype="Bool" />
+  </Section>
+</Sections></Interface>
+      <Name>UDT_Interlock_AMR</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="9" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="A" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="B" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="C" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="D" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="E" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="F" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="10" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>
