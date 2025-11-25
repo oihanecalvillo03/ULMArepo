@@ -61,11 +61,11 @@
           </MultilingualText>
         </ObjectList>
       </SW.Tags.PlcTag>
-      <SW.Tags.PlcUserConstant ID="A" CompositionName="UserConstants">
+      <SW.Tags.PlcTag ID="A" CompositionName="Tags">
         <AttributeList>
-          <DataTypeName>UInt</DataTypeName>
-          <Name>JDT1_FinalBucleMaquinas</Name>
-          <Value>500</Value>
+          <DataTypeName>USInt</DataTypeName>
+          <LogicalAddress>%MB11</LogicalAddress>
+          <Name>Oihane(1)</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="B" CompositionName="Comment">
@@ -85,7 +85,7 @@
               <MultilingualTextItem ID="E" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Ultima Maquina del JDT01</Text>
+                  <Text />
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="F" CompositionName="Items">
@@ -115,11 +115,11 @@
             </ObjectList>
           </MultilingualText>
         </ObjectList>
-      </SW.Tags.PlcUserConstant>
+      </SW.Tags.PlcTag>
       <SW.Tags.PlcUserConstant ID="13" CompositionName="UserConstants">
         <AttributeList>
           <DataTypeName>UInt</DataTypeName>
-          <Name>JDT1_FinalBucleMesas</Name>
+          <Name>JDT1_FinalBucleMaquinas</Name>
           <Value>500</Value>
         </AttributeList>
         <ObjectList>
@@ -140,7 +140,7 @@
               <MultilingualTextItem ID="17" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Ultima Mesa del JDT01</Text>
+                  <Text>Ultima Maquina del JDT01</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="18" CompositionName="Items">
@@ -173,9 +173,9 @@
       </SW.Tags.PlcUserConstant>
       <SW.Tags.PlcUserConstant ID="1C" CompositionName="UserConstants">
         <AttributeList>
-          <DataTypeName>DInt</DataTypeName>
-          <Name>JDT1_IdentEmisor</Name>
-          <Value>'PLC1'</Value>
+          <DataTypeName>UInt</DataTypeName>
+          <Name>JDT1_FinalBucleMesas</Name>
+          <Value>500</Value>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="1D" CompositionName="Comment">
@@ -195,7 +195,7 @@
               <MultilingualTextItem ID="20" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Identificador del Emisor MFS (JdT)</Text>
+                  <Text>Ultima Mesa del JDT01</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="21" CompositionName="Items">
@@ -229,8 +229,8 @@
       <SW.Tags.PlcUserConstant ID="25" CompositionName="UserConstants">
         <AttributeList>
           <DataTypeName>DInt</DataTypeName>
-          <Name>JDT1_IdentReceptor</Name>
-          <Value>'JDT1'</Value>
+          <Name>JDT1_IdentEmisor</Name>
+          <Value>'PLC1'</Value>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="26" CompositionName="Comment">
@@ -250,7 +250,7 @@
               <MultilingualTextItem ID="29" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Identificador del Receptor PLC</Text>
+                  <Text>Identificador del Emisor MFS (JdT)</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="2A" CompositionName="Items">
@@ -283,9 +283,9 @@
       </SW.Tags.PlcUserConstant>
       <SW.Tags.PlcUserConstant ID="2E" CompositionName="UserConstants">
         <AttributeList>
-          <DataTypeName>UInt</DataTypeName>
-          <Name>JDT1_InicioBucleMaquinas</Name>
-          <Value>1</Value>
+          <DataTypeName>DInt</DataTypeName>
+          <Name>JDT1_IdentReceptor</Name>
+          <Value>'JDT1'</Value>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="2F" CompositionName="Comment">
@@ -305,7 +305,7 @@
               <MultilingualTextItem ID="32" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Primera Maquina del JDT01</Text>
+                  <Text>Identificador del Receptor PLC</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="33" CompositionName="Items">
@@ -339,7 +339,7 @@
       <SW.Tags.PlcUserConstant ID="37" CompositionName="UserConstants">
         <AttributeList>
           <DataTypeName>UInt</DataTypeName>
-          <Name>JDT1_InicioBucleMesas</Name>
+          <Name>JDT1_InicioBucleMaquinas</Name>
           <Value>1</Value>
         </AttributeList>
         <ObjectList>
@@ -360,7 +360,7 @@
               <MultilingualTextItem ID="3B" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Primera Mesa del JDT01</Text>
+                  <Text>Primera Maquina del JDT01</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="3C" CompositionName="Items">
@@ -394,8 +394,8 @@
       <SW.Tags.PlcUserConstant ID="40" CompositionName="UserConstants">
         <AttributeList>
           <DataTypeName>UInt</DataTypeName>
-          <Name>JDT1_MaxBytes</Name>
-          <Value>6000</Value>
+          <Name>JDT1_InicioBucleMesas</Name>
+          <Value>1</Value>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="41" CompositionName="Comment">
@@ -415,7 +415,7 @@
               <MultilingualTextItem ID="44" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Maximos numeros de Bytes para enviar o recibir por TCP (8192 Bytes)</Text>
+                  <Text>Primera Mesa del JDT01</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="45" CompositionName="Items">
@@ -449,8 +449,8 @@
       <SW.Tags.PlcUserConstant ID="49" CompositionName="UserConstants">
         <AttributeList>
           <DataTypeName>UInt</DataTypeName>
-          <Name>JDT1_NDB_AKEmi</Name>
-          <Value>806</Value>
+          <Name>JDT1_MaxBytes</Name>
+          <Value>6000</Value>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="4A" CompositionName="Comment">
@@ -470,7 +470,7 @@
               <MultilingualTextItem ID="4D" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Numero de de la Emision AK</Text>
+                  <Text>Maximos numeros de Bytes para enviar o recibir por TCP (8192 Bytes)</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="4E" CompositionName="Items">
@@ -504,8 +504,8 @@
       <SW.Tags.PlcUserConstant ID="52" CompositionName="UserConstants">
         <AttributeList>
           <DataTypeName>UInt</DataTypeName>
-          <Name>JDT1_NDB_EmiMensaje</Name>
-          <Value>803</Value>
+          <Name>JDT1_NDB_AKEmi</Name>
+          <Value>806</Value>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="53" CompositionName="Comment">
@@ -525,7 +525,7 @@
               <MultilingualTextItem ID="56" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Numero de DB de la Emisión del Mensaje hacia el MFS (JdT)</Text>
+                  <Text>Numero de de la Emision AK</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="57" CompositionName="Items">
@@ -559,8 +559,8 @@
       <SW.Tags.PlcUserConstant ID="5B" CompositionName="UserConstants">
         <AttributeList>
           <DataTypeName>UInt</DataTypeName>
-          <Name>JDT1_NDB_EventosEmi</Name>
-          <Value>808</Value>
+          <Name>JDT1_NDB_EmiMensaje</Name>
+          <Value>803</Value>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="5C" CompositionName="Comment">
@@ -580,7 +580,7 @@
               <MultilingualTextItem ID="5F" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Numero de DB de la Lista de Eventos Generados</Text>
+                  <Text>Numero de DB de la Emisión del Mensaje hacia el MFS (JdT)</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="60" CompositionName="Items">
@@ -614,8 +614,8 @@
       <SW.Tags.PlcUserConstant ID="64" CompositionName="UserConstants">
         <AttributeList>
           <DataTypeName>UInt</DataTypeName>
-          <Name>JDT1_NDB_EventosRec</Name>
-          <Value>807</Value>
+          <Name>JDT1_NDB_EventosEmi</Name>
+          <Value>808</Value>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="65" CompositionName="Comment">
@@ -635,7 +635,7 @@
               <MultilingualTextItem ID="68" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Numero de DB de la Lista de Eventos Recibidos</Text>
+                  <Text>Numero de DB de la Lista de Eventos Generados</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="69" CompositionName="Items">
@@ -669,8 +669,8 @@
       <SW.Tags.PlcUserConstant ID="6D" CompositionName="UserConstants">
         <AttributeList>
           <DataTypeName>UInt</DataTypeName>
-          <Name>JDT1_NDB_RecMensaje</Name>
-          <Value>802</Value>
+          <Name>JDT1_NDB_EventosRec</Name>
+          <Value>807</Value>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="6E" CompositionName="Comment">
@@ -690,7 +690,7 @@
               <MultilingualTextItem ID="71" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Numero de DB de la Recepción del Mensaje del MFS (JdT)</Text>
+                  <Text>Numero de DB de la Lista de Eventos Recibidos</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="72" CompositionName="Items">
@@ -724,8 +724,8 @@
       <SW.Tags.PlcUserConstant ID="76" CompositionName="UserConstants">
         <AttributeList>
           <DataTypeName>UInt</DataTypeName>
-          <Name>JDT1_NDB_UltimoEmi</Name>
-          <Value>805</Value>
+          <Name>JDT1_NDB_RecMensaje</Name>
+          <Value>802</Value>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="77" CompositionName="Comment">
@@ -745,7 +745,7 @@
               <MultilingualTextItem ID="7A" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Numero de DB del Ultimo Mensaje Enviado</Text>
+                  <Text>Numero de DB de la Recepción del Mensaje del MFS (JdT)</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="7B" CompositionName="Items">
@@ -779,8 +779,8 @@
       <SW.Tags.PlcUserConstant ID="7F" CompositionName="UserConstants">
         <AttributeList>
           <DataTypeName>UInt</DataTypeName>
-          <Name>JDT1_NDB_UltimoRec</Name>
-          <Value>804</Value>
+          <Name>JDT1_NDB_UltimoEmi</Name>
+          <Value>805</Value>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="80" CompositionName="Comment">
@@ -800,7 +800,7 @@
               <MultilingualTextItem ID="83" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Numero de DB del Ultimo Mensaje Recibido</Text>
+                  <Text>Numero de DB del Ultimo Mensaje Enviado</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="84" CompositionName="Items">
@@ -834,8 +834,8 @@
       <SW.Tags.PlcUserConstant ID="88" CompositionName="UserConstants">
         <AttributeList>
           <DataTypeName>UInt</DataTypeName>
-          <Name>JDT1_TMPEnvioKA</Name>
-          <Value>60</Value>
+          <Name>JDT1_NDB_UltimoRec</Name>
+          <Value>804</Value>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="89" CompositionName="Comment">
@@ -855,7 +855,7 @@
               <MultilingualTextItem ID="8C" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Tiempo de Espera para el Envio del Keep-Alive - 1 Minuto</Text>
+                  <Text>Numero de DB del Ultimo Mensaje Recibido</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="8D" CompositionName="Items">
@@ -889,8 +889,8 @@
       <SW.Tags.PlcUserConstant ID="91" CompositionName="UserConstants">
         <AttributeList>
           <DataTypeName>UInt</DataTypeName>
-          <Name>JDT1_TMPEsperaAK</Name>
-          <Value>10</Value>
+          <Name>JDT1_TMPEnvioKA</Name>
+          <Value>60</Value>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="92" CompositionName="Comment">
@@ -910,7 +910,7 @@
               <MultilingualTextItem ID="95" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Tiempo de Espera para recibir la Confirmacion del Mensaje Enviado - 10 Segundos</Text>
+                  <Text>Tiempo de Espera para el Envio del Keep-Alive - 1 Minuto</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="96" CompositionName="Items">
@@ -944,8 +944,8 @@
       <SW.Tags.PlcUserConstant ID="9A" CompositionName="UserConstants">
         <AttributeList>
           <DataTypeName>UInt</DataTypeName>
-          <Name>JDT1_TMPEsperaKA</Name>
-          <Value>120</Value>
+          <Name>JDT1_TMPEsperaAK</Name>
+          <Value>10</Value>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="9B" CompositionName="Comment">
@@ -965,7 +965,7 @@
               <MultilingualTextItem ID="9E" CompositionName="Items">
                 <AttributeList>
                   <Culture>es-ES</Culture>
-                  <Text>Tiempo Maximo de Espera para recibir el Keep-Alive - 2 Minutos</Text>
+                  <Text>Tiempo de Espera para recibir la Confirmacion del Mensaje Enviado - 10 Segundos</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="9F" CompositionName="Items">
@@ -987,6 +987,61 @@
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="A2" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Tags.PlcUserConstant>
+      <SW.Tags.PlcUserConstant ID="A3" CompositionName="UserConstants">
+        <AttributeList>
+          <DataTypeName>UInt</DataTypeName>
+          <Name>JDT1_TMPEsperaKA</Name>
+          <Value>120</Value>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="A4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A6" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Tiempo Maximo de Espera para recibir el Keep-Alive - 2 Minutos</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A8" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A9" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="AA" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="AB" CompositionName="Items">
                 <AttributeList>
                   <Culture>zh-CN</Culture>
                   <Text />
