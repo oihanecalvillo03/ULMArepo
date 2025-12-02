@@ -1,0 +1,1388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <DocumentInfo>
+    <Created>2025-12-01T14:57:04.1279585Z</Created>
+    <ExportSetting>None</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V20 Update 2</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderAuthor>TRACKING</HeaderAuthor>
+      <HeaderName>20130301</HeaderName>
+      <HeaderVersion>3.0</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Temp">
+    <Member Name="NumeroUT" Datatype="Int" />
+    <Member Name="NumDB" Datatype="Word" />
+    <Member Name="UTVacia" Datatype="Int" />
+  </Section>
+  <Section Name="Constant" />
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" />
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>FC706_JDT02Borrado</Name>
+      <Namespace />
+      <Number>706</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text>- Borrado de todos los DB's
+- Inicializadcion del DB de DatosUT
+</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="9" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="22">
+    <LineComment>
+      <Text> -------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="24">
+    <LineComment>
+      <Text> --- Mirar si hay que resetear</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="26">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="ResetBD" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="28">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="NoResetear" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="30">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="31">
+    <LineComment>
+      <Text> -------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="33">
+    <LineComment>
+      <Text> Borrado de los DB de Recepcion de Eventos</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="35">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="36">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB702_JDT02RecepMensaje" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="40">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB704_JDT02UltimoRecibido" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="44">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB708_JDT02EventosRecibidos" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="48">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="49">
+    <LineComment>
+      <Text> -------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="51">
+    <LineComment>
+      <Text> Borrado de los DB de Emision de Eventos</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="53">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="54">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB703_JDT02EmisionMensaje" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="58">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB705_JDT02UltimoEnviado" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="62">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB706_JDT02EmisionAK" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="66">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB707_JDT02EventosGenerados" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="70">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="71">
+    <LineComment>
+      <Text> -------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="73">
+    <LineComment>
+      <Text> Borrado de los DB de la BD de Mesas</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="75">
+    <LineComment>
+      <Text> El DB de CrucesMesas no se borra, esto es fijo para cada instalación</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="77">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="83">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB810_ColasMesas" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="87">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB811_ColasMckeys" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="91">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="92">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB812_UTs_Control" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="96">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB813_UTs_Ruta" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="178">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="179">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB814_UTs_Etiqueta" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="100">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB815_UTs_Datos" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="79">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB816_UTs_TextoPantalla" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="166">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB820_UTs_DatosQUBIQA" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="183">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB821_UTs_DatosIKPAL" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="104">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="105">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="106">
+    <LineComment>
+      <Text> -------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="108">
+    <LineComment>
+      <Text> Borrado de los DB de la BD de Dispositivos</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="110">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="111">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB830_Dispositivos" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="115">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB831_Mesas" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="119">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB832_Maquinas" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="123">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="127">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="128">
+    <LineComment>
+      <Text> -------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="130">
+    <LineComment>
+      <Text> Borrado de los DB Emision y Recepcion con la instalación</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="132">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="133">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB840_Emision" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="137">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB841_Recepcion" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="141">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB843_RecepcionPantalla" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="171">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="145">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="146">
+    <StlToken Text="R" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="ResetBD" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="172">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="148">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="FinFuncion" />
+      <LineComment>
+        <Text> El siguiente segmento no se realiza</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="151">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="12" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="13" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="15" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Borrado de todos los DB's de Comunicacion</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="17" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="18" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1A" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="49">
+    <LabelDeclaration>
+      <Label Name="NoResetear" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="220">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="223">
+    <StlToken Text="LAR1_ACCU1" />
+  </StlStatement>
+  <StlStatement UId="224">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="225">
+    <LineComment>
+      <Text> -------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="227">
+    <LineComment>
+      <Text> Borrado de los DB de Recepcion de Eventos, si es necesario</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="229">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="230">
+    <StlToken Text="OPEN_DB" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB702_JDT02RecepMensaje" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="232">
+    <StlToken Text="L" />
+    <Access Scope="Address">
+      <Indirect Width="Byte" Area="DB" Register="AR1" BitOffset="0" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="234">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>' '</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="236">
+    <StlToken Text="NE_I" />
+  </StlStatement>
+  <StlStatement UId="237">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="S_31" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="239">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB702_JDT02RecepMensaje" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="243">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="244">
+    <LabelDeclaration>
+      <Label Name="S_31" />
+    </LabelDeclaration>
+    <StlToken Text="OPEN_DB" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB704_JDT02UltimoRecibido" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="247">
+    <StlToken Text="L" />
+    <Access Scope="Address">
+      <Indirect Width="Byte" Area="DB" Register="AR1" BitOffset="0" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="249">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>' '</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="251">
+    <StlToken Text="NE_I" />
+  </StlStatement>
+  <StlStatement UId="252">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="S_32" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="254">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB704_JDT02UltimoRecibido" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="258">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="259">
+    <LabelDeclaration>
+      <Label Name="S_32" />
+    </LabelDeclaration>
+    <StlToken Text="OPEN_DB" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB708_JDT02EventosRecibidos" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="262">
+    <StlToken Text="L" />
+    <Access Scope="Address">
+      <Indirect Width="Byte" Area="DB" Register="AR1" BitOffset="0" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="264">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="265">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>' '</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="267">
+    <StlToken Text="NE_I" />
+  </StlStatement>
+  <StlStatement UId="268">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="S_33" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="270">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB708_JDT02EventosRecibidos" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="274">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="275">
+    <LineComment>
+      <Text> -------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="277">
+    <LineComment>
+      <Text> Borrado de los DB de Emision de Eventos, si es necesario</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="279">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="280">
+    <LabelDeclaration>
+      <Label Name="S_33" />
+    </LabelDeclaration>
+    <StlToken Text="OPEN_DB" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB703_JDT02EmisionMensaje" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="283">
+    <StlToken Text="L" />
+    <Access Scope="Address">
+      <Indirect Width="Byte" Area="DB" Register="AR1" BitOffset="0" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="285">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>' '</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="287">
+    <StlToken Text="NE_I" />
+  </StlStatement>
+  <StlStatement UId="288">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="S_34" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="290">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB703_JDT02EmisionMensaje" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="294">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="295">
+    <LabelDeclaration>
+      <Label Name="S_34" />
+    </LabelDeclaration>
+    <StlToken Text="OPEN_DB" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB705_JDT02UltimoEnviado" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="298">
+    <StlToken Text="L" />
+    <Access Scope="Address">
+      <Indirect Width="Byte" Area="DB" Register="AR1" BitOffset="0" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="300">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>' '</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="302">
+    <StlToken Text="NE_I" />
+  </StlStatement>
+  <StlStatement UId="303">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="S_35" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="305">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB705_JDT02UltimoEnviado" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="309">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="310">
+    <LabelDeclaration>
+      <Label Name="S_35" />
+    </LabelDeclaration>
+    <StlToken Text="OPEN_DB" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB706_JDT02EmisionAK" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="313">
+    <StlToken Text="L" />
+    <Access Scope="Address">
+      <Indirect Width="Byte" Area="DB" Register="AR1" BitOffset="0" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="315">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>' '</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="317">
+    <StlToken Text="NE_I" />
+  </StlStatement>
+  <StlStatement UId="318">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="S_36" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="320">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB706_JDT02EmisionAK" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="324">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="325">
+    <LabelDeclaration>
+      <Label Name="S_36" />
+    </LabelDeclaration>
+    <StlToken Text="OPEN_DB" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB707_JDT02EventosGenerados" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="328">
+    <StlToken Text="L" />
+    <Access Scope="Address">
+      <Indirect Width="Byte" Area="DB" Register="AR1" BitOffset="0" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="330">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>' '</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="332">
+    <StlToken Text="NE_I" />
+  </StlStatement>
+  <StlStatement UId="333">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="S_39" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="335">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB707_JDT02EventosGenerados" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="52">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="51">
+    <LabelDeclaration>
+      <Label Name="S_39" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="342">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="FinFuncion" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="343">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1B" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Se acabo la inicializacion
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="21" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="22" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="23" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="24" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="26" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>----</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="27" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="28" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="29" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="2B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="23">
+    <LabelDeclaration>
+      <Label Name="FinFuncion" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="24">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="21">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="22">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="2C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="2D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="30" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="31" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="32" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="33" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="34" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="35" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="36" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="37" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Final de la funcion</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="38" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="39" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="3C" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="3D" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3E" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3F" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text>"BorrodoTracking" - Borrado de toda la Base de Datos</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="40" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="41" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="42" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="43" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>

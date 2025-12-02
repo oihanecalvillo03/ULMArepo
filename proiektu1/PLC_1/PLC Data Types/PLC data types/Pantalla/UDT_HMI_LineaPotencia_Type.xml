@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <DocumentInfo>
+    <Created>2025-12-01T14:56:17.7317213Z</Created>
+    <ExportSetting>None</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V20 Update 2</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="Proteccion" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Estado de la Proteción Magnetico Termica Diferencial</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Bit_01" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="FeedBackContactor" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Retro-Alimentación de reles y contactores para activación de la linea</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ActivacionContactor" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Estado de la Salida del PLC para activación del rele</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Bit_04" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="PilotoRojo" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Piloto Rojo --&gt; Linea sin Tension</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="PilotoVerde" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Piloto Verde --&gt; Linea en Tension</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ErrorFeedBack" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Error de FeedBack</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Bit_10" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Bit_11" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="EsperaActivacion" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Linea en Espera de Turno de Activación</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="CondicionesActivacion" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Condiciones necesarias para activación de Linea</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Bit_14" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Bit_15" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Bit_16" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Bit_17" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>UDT_HMI_LineaPotencia</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="9" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="A" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="B" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="C" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="D" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="E" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="F" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="10" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

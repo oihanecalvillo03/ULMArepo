@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <DocumentInfo>
+    <Created>2025-12-01T14:56:17.9899951Z</Created>
+    <ExportSetting>None</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V20 Update 2</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="NumMesa_Pedida" Datatype="UInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Numero de Mesa que Pedida por la Pantalla</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="PosUT_Tratada" Datatype="UInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Posición de la UT en la mesa que se Visualiza</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="NumMesa_Tratada" Datatype="UInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Numero de Mesa que se visuliza</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Ordenes_HMI_Mesa" Datatype="&quot;UDT_ProtocoloRecDispositivo&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Ordenes para el Dispositivo Mesa</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="BitsAviso_HMI_Mesa" Datatype="&quot;Avisos_HMI_Mesa&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Bits de Aviso hacia la Mesa</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="NumMesa_CambiarUT" Datatype="UInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Numero de Mesa donde hay que Cambiar la UT</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="BitsAviso_Mesa_HMI" Datatype="&quot;Avisos_Mesa_HMI&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Bits de Aviso hacia la Pantalla</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="TipoMesa" Datatype="&quot;TipoMesaPantalla&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Tipo de Mesa para configurar la pantalla</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="TMP_Inactividad" Datatype="UInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Tiempo sin tocar pantalla con mesa bloqueada</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="TMP_SinCambiarUT" Datatype="UDInt" />
+    <Member Name="Zona_Mesa" Datatype="&quot;EstadoZona&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Estado de la Zona de Mesa</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Zona_Maquina" Datatype="&quot;EstadoZona&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Estado de la Zona de Maquina</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Estado_Mesa" Datatype="&quot;EstadosMesa&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Estado del VI en la Mesa</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Estado_Maquina" Datatype="&quot;EstadoMaquina&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Estado del VI en la Maquina</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="MoviManual_Mesa" Datatype="&quot;MoviManualMesa&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Movimientos Manuales de la Mesa</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="MoviManual_Maquinas" Datatype="&quot;MoviManualMaquina&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Movimientos Manuales de la Maquina</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Datos_UTs" Datatype="Struct">
+      <Member Name="UT_Control" Datatype="&quot;UDT_UTs_Control&quot;">
+        <AttributeList>
+          <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+        </AttributeList>
+      </Member>
+      <Member Name="UT_Ruta" Datatype="&quot;UDT_UTs_Ruta&quot;">
+        <AttributeList>
+          <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+        </AttributeList>
+      </Member>
+      <Member Name="UT_TextoPantalla" Datatype="&quot;UDT_UTs_TextoPantalla&quot;">
+        <AttributeList>
+          <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+        </AttributeList>
+      </Member>
+      <Member Name="UT_Etiqueta" Datatype="&quot;UDT_UTs_Etiqueta&quot;">
+        <AttributeList>
+          <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+        </AttributeList>
+      </Member>
+      <Member Name="UT_Datos" Datatype="&quot;UDT_UTs_Datos&quot;">
+        <AttributeList>
+          <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+        </AttributeList>
+      </Member>
+    </Member>
+    <Member Name="Interlock" Datatype="&quot;UDT_Interlock_generico&quot;" />
+    <Member Name="Interlock_manual" Datatype="&quot;UDT_Interlock_manual&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>UDT_HMI</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="9" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="A" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="B" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="C" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="D" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="E" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="F" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="10" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

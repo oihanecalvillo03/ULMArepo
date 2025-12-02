@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <DocumentInfo>
+    <Created>2025-12-01T14:56:14.178293Z</Created>
+    <ExportSetting>None</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V20 Update 2</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="GaliboAltura" Datatype="USInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Galibo --&gt; Altura</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="GaliboAnchura" Datatype="USInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Galibo --&gt; Anchura</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="GaliboProfundidad" Datatype="USInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Galibo --&gt; Profuncidad</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="GaliboTaco" Datatype="USInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Galibo --&gt; Taco</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="GaliboHueco" Datatype="USInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Galibo --&gt; Hueco</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="GaliboHuecoRemontado" Datatype="USInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Galibo --&gt; Hueco Remontada</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="GaliboColor" Datatype="USInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Galibo --&gt; Color</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="GaliboPatin" Datatype="USInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Galibo --&gt; Patin</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="GaliboTipoCarga" Datatype="USInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Galibo --&gt; Tipo de Carga (Euro,Caja...)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="GaliboRemontada" Datatype="USInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Galibo --&gt; Carga remontada</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="GaliboVacia" Datatype="USInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Galibo --&gt; Carga Vacia</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="CotaAltura" Datatype="UInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Cota de Altura de la UT</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="CotaAnchura" Datatype="UInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Cota de Anchura de la UT</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="CotaProfundidad" Datatype="UInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Cota de Profundidad de la UT</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Peso" Datatype="UDInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Peso de la UT</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Presion" Datatype="USInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Presion para paletizado o despatizado Auto --&gt; Cajas de Plastico</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Amarre" Datatype="UInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Amarre de la Caja de Palastico</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="CodigoEtiquetado" Datatype="USInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Codigo de Etiquetado de la Carga</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="CodigoEnfardado" Datatype="USInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Codigo de Enfardado de la Carga</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="CodigoFlejado" Datatype="USInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Codigo de Flejado de la Carga</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>UDT_UTs_Datos</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="9" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="A" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="B" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="C" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="D" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="E" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="F" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="10" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

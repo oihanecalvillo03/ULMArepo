@@ -1,0 +1,2376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <DocumentInfo>
+    <Created>2025-12-01T14:57:44.7906699Z</Created>
+    <ExportSetting>None</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V20 Update 2</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input">
+    <Member Name="Etiqueta" Datatype="ULInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Etiqueta A Buscar en la Base de Datos</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Numero_SCR" Datatype="UInt" />
+  </Section>
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Temp">
+    <Member Name="Cola" Datatype="UDInt" />
+    <Member Name="EtiquetaTMP" Datatype="ULInt" />
+    <Member Name="Posicion_Etiqueta_TMP" Datatype="UInt" />
+    <Member Name="aux_pos" Datatype="UInt" />
+    <Member Name="Num_Inic" Datatype="UInt" />
+    <Member Name="Tipo_SCR" Datatype="UInt" />
+    <Member Name="primer_bit" Datatype="UInt" />
+    <Member Name="numero_bits" Datatype="UInt" />
+    <Member Name="contador" Datatype="UInt" />
+    <Member Name="CERO" Datatype="Byte" />
+    <Member Name="Retval" Datatype="Int" />
+    <Member Name="orden" Datatype="Byte" />
+    <Member Name="orden_aux" Datatype="Array[0..7] of Bool">
+      <AttributeList>
+        <StringAttribute Name="At" SystemDefined="true">orden</StringAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="cont_aux" Datatype="UInt" />
+    <Member Name="Inic_bits" Datatype="Array[1..8] of Bool" />
+    <Member Name="Reg_Etiq_Temp" Datatype="&quot;ROUT_Reg_Etiqueta&quot;" />
+    <Member Name="Datos_fifo" Datatype="&quot;ROUT_Orden_Fifo_Scanner&quot;" />
+    <Member Name="datos_actuales_fifo" Datatype="&quot;ROUT_Orden_Fifo_Scanner&quot;" />
+  </Section>
+  <Section Name="Constant" />
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" />
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>FC716_Router_BuscarEtiqueta_Lint_y_sacar_orden</Name>
+      <Namespace />
+      <Number>716</Number>
+      <ProgrammingLanguage>SCL</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="9" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v4">
+  <Token Text="REGION" UId="21" />
+  <Blank UId="22" />
+  <Text UId="23">inicilizar</Text>
+  <NewLine UId="24" />
+  <Blank Num="4" UId="25" />
+  <NewLine UId="26" />
+  <Blank Num="4" UId="27" />
+  <Access Scope="LocalVariable" UId="28">
+    <Symbol UId="29">
+      <Component Name="EtiquetaTMP" UId="30" />
+    </Symbol>
+  </Access>
+  <Blank UId="31" />
+  <Token Text=":=" UId="32" />
+  <Blank UId="33" />
+  <Access Scope="LocalVariable" UId="34">
+    <Symbol UId="35">
+      <Component Name="Etiqueta" UId="36" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="37" />
+  <NewLine UId="38" />
+  <Blank Num="4" UId="39" />
+  <Access Scope="LocalVariable" UId="40">
+    <Symbol UId="41">
+      <Component Name="Posicion_Etiqueta_TMP" UId="42" />
+    </Symbol>
+  </Access>
+  <Blank UId="43" />
+  <Token Text=":=" UId="44" />
+  <Blank UId="45" />
+  <Access Scope="LiteralConstant" UId="46">
+    <Constant UId="47">
+      <ConstantValue UId="49">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="50" />
+  <NewLine UId="51" />
+  <Blank Num="4" UId="52" />
+  <Access Scope="LocalVariable" UId="53">
+    <Symbol UId="54">
+      <Component Name="CERO" UId="55" />
+    </Symbol>
+  </Access>
+  <Blank UId="56" />
+  <Token Text=":=" UId="57" />
+  <Blank UId="58" />
+  <Access Scope="LiteralConstant" UId="59">
+    <Constant UId="60">
+      <ConstantValue UId="62">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="63" />
+  <NewLine UId="64" />
+  <Blank Num="4" UId="65" />
+  <Access Scope="LocalVariable" UId="66">
+    <Symbol UId="67">
+      <Component Name="Num_Inic" UId="68" />
+    </Symbol>
+  </Access>
+  <Blank UId="69" />
+  <Token Text=":=" UId="70" />
+  <Blank UId="71" />
+  <Access Scope="GlobalVariable" UId="72">
+    <Symbol UId="73">
+      <Component Name="DB912_Tipo_Scanner_Router" UId="74">
+        <BooleanAttribute Name="HasQuotes" UId="75">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="76" />
+      <Component Name="SCANNER" UId="77">
+        <Token Text="[" UId="78" />
+        <Access Scope="LocalVariable" UId="79">
+          <Symbol UId="80">
+            <Component Name="Numero_SCR" UId="81" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="82" />
+      </Component>
+      <Token Text="." UId="83" />
+      <Component Name="Num_Inicializacion" UId="84" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="85" />
+  <NewLine UId="86" />
+  <Blank Num="4" UId="87" />
+  <Access Scope="LocalVariable" UId="88">
+    <Symbol UId="89">
+      <Component Name="Tipo_SCR" UId="90" />
+    </Symbol>
+  </Access>
+  <Blank UId="91" />
+  <Token Text=":=" UId="92" />
+  <Blank UId="93" />
+  <Access Scope="GlobalVariable" UId="94">
+    <Symbol UId="95">
+      <Component Name="DB912_Tipo_Scanner_Router" UId="96">
+        <BooleanAttribute Name="HasQuotes" UId="97">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="98" />
+      <Component Name="SCANNER" UId="99">
+        <Token Text="[" UId="100" />
+        <Access Scope="LocalVariable" UId="101">
+          <Symbol UId="102">
+            <Component Name="Numero_SCR" UId="103" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="104" />
+      </Component>
+      <Token Text="." UId="105" />
+      <Component Name="Tipo" UId="106" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="107" />
+  <NewLine UId="108" />
+  <Blank Num="4" UId="109" />
+  <Access Scope="LocalVariable" UId="110">
+    <Symbol UId="111">
+      <Component Name="Retval" UId="112" />
+    </Symbol>
+  </Access>
+  <Token Text=":=" UId="113" />
+  <Access Scope="Call" UId="114">
+    <Instruction Name="FILL" UId="115">
+      <Token Text="(" UId="116" />
+      <Parameter Name="BVAL" UId="117">
+        <Blank UId="118" />
+        <Token Text=":=" UId="119" />
+        <Blank UId="120" />
+        <Access Scope="LocalVariable" UId="121">
+          <Symbol UId="122">
+            <Component Name="CERO" UId="123" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="124" />
+      <Blank UId="125" />
+      <Parameter Name="BLK" UId="126">
+        <Blank UId="127" />
+        <Token Text="=&gt;" UId="128" />
+        <Blank UId="129" />
+        <Access Scope="LocalVariable" UId="130">
+          <Symbol UId="131">
+            <Component Name="Datos_fifo" UId="132" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="134" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="135" />
+  <NewLine UId="136" />
+  <Blank Num="4" UId="137" />
+  <Access Scope="Call" UId="138">
+    <Instruction Name="SCATTER" UId="139">
+      <Token Text="(" UId="140" />
+      <Parameter Name="IN" UId="141">
+        <Blank UId="142" />
+        <Token Text=":=" UId="143" />
+        <Blank UId="144" />
+        <Access Scope="GlobalVariable" UId="145">
+          <Symbol UId="146">
+            <Component Name="Estado_inicializacion" UId="147">
+              <BooleanAttribute Name="HasQuotes" UId="148">true</BooleanAttribute>
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="149" />
+      <NewLine UId="150" />
+      <Blank Num="12" UId="151" />
+      <Parameter Name="OUT" UId="152">
+        <Blank UId="153" />
+        <Token Text="=&gt;" UId="154" />
+        <Blank UId="155" />
+        <Access Scope="LocalVariable" UId="156">
+          <Symbol UId="157">
+            <Component Name="Inic_bits" UId="158" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="159" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="160" />
+  <NewLine UId="161" />
+  <Blank Num="4" UId="162" />
+  <NewLine UId="163" />
+  <Blank Num="4" UId="164" />
+  <NewLine UId="165" />
+  <Token Text="END_REGION" UId="166" />
+  <NewLine UId="167" />
+  <Token Text="REGION" UId="168" />
+  <Blank UId="169" />
+  <Text UId="170">comprobar_inicializacion</Text>
+  <NewLine UId="171" />
+  <Blank Num="4" UId="172" />
+  <LineComment UId="173">
+    <Text UId="174"> comprobamos si el scanner que estamos comprobando está en proceso de inicialización</Text>
+  </LineComment>
+  <NewLine UId="175" />
+  <Blank Num="4" UId="176" />
+  <Token Text="IF" UId="177" />
+  <Blank UId="178" />
+  <Token Text="(" UId="179" />
+  <Token Text="(" UId="180" />
+  <Access Scope="LocalVariable" UId="181">
+    <Symbol UId="182">
+      <Component Name="Num_Inic" UId="183" />
+    </Symbol>
+  </Access>
+  <Blank UId="184" />
+  <Token Text="&gt;=" UId="185" />
+  <Blank UId="186" />
+  <Access Scope="LiteralConstant" UId="187">
+    <Constant UId="188">
+      <ConstantValue UId="190">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=")" UId="191" />
+  <Blank UId="192" />
+  <Token Text="AND" UId="193" />
+  <Blank UId="194" />
+  <Token Text="(" UId="195" />
+  <Access Scope="LocalVariable" UId="196">
+    <Symbol UId="197">
+      <Component Name="Num_Inic" UId="198" />
+    </Symbol>
+  </Access>
+  <Blank UId="199" />
+  <Token Text="&lt;=" UId="200" />
+  <Blank UId="201" />
+  <Access Scope="LiteralConstant" UId="202">
+    <Constant UId="203">
+      <ConstantValue UId="205">8</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=")" UId="206" />
+  <Token Text=")" UId="207" />
+  <Blank UId="208" />
+  <Token Text="THEN" UId="209" />
+  <NewLine UId="210" />
+  <Blank Num="8" UId="211" />
+  <LineComment UId="212">
+    <Text UId="213"> si tiene un numero de inicialización configurado, comprobamos si está activo</Text>
+  </LineComment>
+  <NewLine UId="214" />
+  <Blank Num="8" UId="215" />
+  <Token Text="IF" UId="216" />
+  <Blank UId="217" />
+  <Token Text="(" UId="218" />
+  <Access Scope="LocalVariable" UId="219">
+    <Symbol UId="220">
+      <Component Name="Inic_bits" UId="221">
+        <Token Text="[" UId="222" />
+        <Access Scope="LocalVariable" UId="223">
+          <Symbol UId="224">
+            <Component Name="Num_Inic" UId="225" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="226" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="227" />
+  <Token Text="=" UId="228" />
+  <Blank UId="229" />
+  <Access Scope="LiteralConstant" UId="230">
+    <Constant UId="231">
+      <ConstantValue UId="233">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=")" UId="234" />
+  <Blank UId="235" />
+  <Token Text="THEN" UId="236" />
+  <NewLine UId="237" />
+  <Blank Num="12" UId="238" />
+  <Token Text="GOTO" UId="239" />
+  <Blank UId="240" />
+  <Access Scope="Label" UId="241">
+    <Label Name="proceso_INIC" UId="242" />
+  </Access>
+  <Token Text=";" UId="243" />
+  <NewLine UId="244" />
+  <Blank Num="8" UId="245" />
+  <Token Text="END_IF" UId="246" />
+  <Token Text=";" UId="247" />
+  <NewLine UId="248" />
+  <Blank Num="4" UId="249" />
+  <Token Text="END_IF" UId="250" />
+  <Token Text=";" UId="251" />
+  <NewLine UId="252" />
+  <Blank Num="4" UId="253" />
+  <NewLine UId="254" />
+  <Token Text="END_REGION" UId="255" />
+  <NewLine Num="2" UId="256" />
+  <Token Text="REGION" UId="257" />
+  <Blank UId="258" />
+  <Text UId="259">comprobar_etiqueta</Text>
+  <NewLine UId="260" />
+  <Blank Num="3" UId="261" />
+  <NewLine UId="262" />
+  <Blank Num="4" UId="263" />
+  <Token Text="IF" UId="264" />
+  <Blank UId="265" />
+  <Access Scope="LocalVariable" UId="266">
+    <Symbol UId="267">
+      <Component Name="EtiquetaTMP" UId="268" />
+    </Symbol>
+  </Access>
+  <Blank UId="269" />
+  <Token Text="&lt;=" UId="270" />
+  <Blank UId="271" />
+  <Access Scope="LiteralConstant" UId="272">
+    <Constant UId="273">
+      <ConstantValue UId="275">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="276" />
+  <Token Text="THEN" UId="277" />
+  <NewLine UId="278" />
+  <Blank Num="8" UId="279" />
+  <Token Text="GOTO" UId="280" />
+  <Blank UId="281" />
+  <Access Scope="Label" UId="282">
+    <Label Name="error_lectura" UId="283" />
+  </Access>
+  <Token Text=";" UId="284" />
+  <NewLine UId="285" />
+  <Blank Num="4" UId="286" />
+  <Token Text="ELSE" UId="287" />
+  <NewLine UId="288" />
+  <Blank Num="8" UId="289" />
+  <Access Scope="LocalVariable" UId="290">
+    <Symbol UId="291">
+      <Component Name="Cola" UId="292" />
+    </Symbol>
+  </Access>
+  <Blank UId="293" />
+  <Token Text=":=" UId="294" />
+  <Blank UId="295" />
+  <Access Scope="LocalVariable" UId="296">
+    <Symbol UId="297">
+      <Component Name="EtiquetaTMP" UId="298" />
+    </Symbol>
+  </Access>
+  <Blank UId="299" />
+  <Token Text="MOD" UId="300" />
+  <Blank UId="301" />
+  <Access Scope="GlobalConstant" UId="302">
+    <Constant Name="ROUT_N_Colas" UId="303" />
+  </Access>
+  <Token Text=";" UId="306" />
+  <Blank Num="8" UId="307" />
+  <LineComment UId="308">
+    <Text UId="309"> calculamos el numero de cola</Text>
+  </LineComment>
+  <NewLine UId="310" />
+  <Blank Num="4" UId="311" />
+  <Token Text="END_IF" UId="312" />
+  <Token Text=";" UId="313" />
+  <NewLine UId="314" />
+  <Token Text="END_REGION" UId="315" />
+  <NewLine Num="2" UId="316" />
+  <Access Scope="LocalVariable" UId="317">
+    <Symbol UId="318">
+      <Component Name="Posicion_Etiqueta_TMP" UId="319" />
+    </Symbol>
+  </Access>
+  <Blank UId="320" />
+  <Token Text=":=" UId="321" />
+  <Blank UId="322" />
+  <Access Scope="GlobalVariable" UId="323">
+    <Symbol UId="324">
+      <Component Name="DB212_Cola_Activa" UId="325">
+        <BooleanAttribute Name="HasQuotes" UId="326">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="327" />
+      <Component Name="Cola" UId="328">
+        <Token Text="[" UId="329" />
+        <Access Scope="LocalVariable" UId="330">
+          <Symbol UId="331">
+            <Component Name="Cola" UId="332" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="333" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="334" />
+  <NewLine Num="2" UId="335" />
+  <LineComment UId="336">
+    <Text UId="337"> comprobamos si existe alguna etiqueta en esa cola</Text>
+  </LineComment>
+  <NewLine Num="2" UId="338" />
+  <Access Scope="Label" UId="339">
+    <Label Name="elegir_db_busqueda" UId="340">
+      <Token Text=":" UId="341" />
+    </Label>
+  </Access>
+  <NewLine UId="342" />
+  <Blank Num="4" UId="343" />
+  <NewLine UId="344" />
+  <Blank Num="4" UId="345" />
+  <LineComment UId="346">
+    <Text UId="347"> si esa etiqueta no está dada de alta en las colas es que no está activa </Text>
+  </LineComment>
+  <NewLine UId="348" />
+  <Token Text="IF" UId="349" />
+  <Blank UId="350" />
+  <Access Scope="LocalVariable" UId="351">
+    <Symbol UId="352">
+      <Component Name="Posicion_Etiqueta_TMP" UId="353" />
+    </Symbol>
+  </Access>
+  <Blank UId="354" />
+  <Token Text="=" UId="355" />
+  <Blank UId="356" />
+  <Access Scope="LiteralConstant" UId="357">
+    <Constant UId="358">
+      <ConstantValue UId="360">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="361" />
+  <Token Text="THEN" UId="362" />
+  <NewLine UId="363" />
+  <Blank Num="4" UId="364" />
+  <Token Text="GOTO" UId="365" />
+  <Blank UId="366" />
+  <Access Scope="Label" UId="367">
+    <Label Name="lectura_NENC" UId="368" />
+  </Access>
+  <Token Text=";" UId="369" />
+  <NewLine UId="370" />
+  <Token Text="END_IF" UId="371" />
+  <Token Text=";" UId="372" />
+  <NewLine Num="3" UId="373" />
+  <Token Text="REGION" UId="374" />
+  <Blank UId="375" />
+  <Text UId="376">elegir_db_busqueda</Text>
+  <NewLine UId="377" />
+  <Blank Num="4" UId="378" />
+  <Token Text="CASE" UId="379" />
+  <Blank UId="380" />
+  <Access Scope="LocalVariable" UId="381">
+    <Symbol UId="382">
+      <Component Name="Posicion_Etiqueta_TMP" UId="383" />
+    </Symbol>
+  </Access>
+  <Blank UId="384" />
+  <Token Text="OF" UId="385" />
+  <NewLine UId="386" />
+  <Blank Num="8" UId="387" />
+  <Access Scope="LiteralConstant" UId="388">
+    <Constant UId="389">
+      <ConstantValue UId="391">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=".." UId="392" />
+  <Access Scope="LiteralConstant" UId="393">
+    <Constant UId="394">
+      <ConstantValue UId="396">1000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=":" UId="397" />
+  <NewLine UId="398" />
+  <Blank Num="12" UId="399" />
+  <Token Text="GOTO" UId="400" />
+  <Blank UId="401" />
+  <Access Scope="Label" UId="402">
+    <Label Name="busca_1_999" UId="403" />
+  </Access>
+  <Token Text=";" UId="404" />
+  <NewLine UId="405" />
+  <Blank Num="8" UId="406" />
+  <Access Scope="LiteralConstant" UId="407">
+    <Constant UId="408">
+      <ConstantValue UId="410">1001</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=".." UId="411" />
+  <Access Scope="LiteralConstant" UId="412">
+    <Constant UId="413">
+      <ConstantValue UId="415">2000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=":" UId="416" />
+  <NewLine UId="417" />
+  <Blank Num="12" UId="418" />
+  <Token Text="GOTO" UId="419" />
+  <Blank UId="420" />
+  <Access Scope="Label" UId="421">
+    <Label Name="busca_1k" UId="422" />
+  </Access>
+  <Token Text=";" UId="423" />
+  <NewLine UId="424" />
+  <Blank Num="8" UId="425" />
+  <Access Scope="LiteralConstant" UId="426">
+    <Constant UId="427">
+      <ConstantValue UId="429">2001</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=".." UId="430" />
+  <Access Scope="LiteralConstant" UId="431">
+    <Constant UId="432">
+      <ConstantValue UId="434">3000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=":" UId="435" />
+  <NewLine UId="436" />
+  <Blank Num="12" UId="437" />
+  <Token Text="GOTO" UId="438" />
+  <Blank UId="439" />
+  <Access Scope="Label" UId="440">
+    <Label Name="busca_2k" UId="441" />
+  </Access>
+  <Token Text=";" UId="442" />
+  <NewLine UId="443" />
+  <Blank Num="8" UId="444" />
+  <Access Scope="LiteralConstant" UId="445">
+    <Constant UId="446">
+      <ConstantValue UId="448">3001</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=".." UId="449" />
+  <Access Scope="LiteralConstant" UId="450">
+    <Constant UId="451">
+      <ConstantValue UId="453">4000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=":" UId="454" />
+  <NewLine UId="455" />
+  <Blank Num="12" UId="456" />
+  <Token Text="GOTO" UId="457" />
+  <Blank UId="458" />
+  <Access Scope="Label" UId="459">
+    <Label Name="busca_3k" UId="460" />
+  </Access>
+  <Token Text=";" UId="461" />
+  <NewLine UId="462" />
+  <Blank Num="8" UId="463" />
+  <Token Text="ELSE" UId="464" />
+  <NewLine UId="465" />
+  <Blank Num="10" UId="466" />
+  <NewLine UId="467" />
+  <Blank Num="12" UId="468" />
+  <Token Text="GOTO" UId="469" />
+  <Blank UId="470" />
+  <Access Scope="Label" UId="471">
+    <Label Name="lectura_NENC" UId="472" />
+  </Access>
+  <Token Text=";" UId="473" />
+  <NewLine UId="474" />
+  <Blank Num="4" UId="475" />
+  <Token Text="END_CASE" UId="476" />
+  <Token Text=";" UId="477" />
+  <NewLine UId="478" />
+  <Token Text="END_REGION" UId="479" />
+  <NewLine Num="2" UId="480" />
+  <LineComment UId="481">
+    <Text UId="482">//////////////////////////////////////////</Text>
+  </LineComment>
+  <NewLine UId="483" />
+  <Token Text="REGION" UId="484" />
+  <Blank UId="485" />
+  <Text UId="486">busca_1_a_1000</Text>
+  <NewLine UId="487" />
+  <Access Scope="Label" UId="488">
+    <Label Name="busca_1_999" UId="489">
+      <Token Text=":" UId="490" />
+    </Label>
+  </Access>
+  <NewLine UId="491" />
+  <Blank Num="4" UId="492" />
+  <Token Text="IF" UId="493" />
+  <Blank UId="494" />
+  <Access Scope="LocalVariable" UId="495">
+    <Symbol UId="496">
+      <Component Name="EtiquetaTMP" UId="497" />
+    </Symbol>
+  </Access>
+  <Blank UId="498" />
+  <Token Text="=" UId="499" />
+  <Blank UId="500" />
+  <Access Scope="GlobalVariable" UId="501">
+    <Symbol UId="502">
+      <Component Name="DB201_RegEtiquetas_0001_1000" UId="503">
+        <BooleanAttribute Name="HasQuotes" UId="504">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="505" />
+      <Component Name="Reg_Etiqueta" UId="506">
+        <Token Text="[" UId="507" />
+        <Access Scope="LocalVariable" UId="508">
+          <Symbol UId="509">
+            <Component Name="Posicion_Etiqueta_TMP" UId="510" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="511" />
+      </Component>
+      <Token Text="." UId="512" />
+      <Component Name="CDB" UId="513" />
+    </Symbol>
+  </Access>
+  <Blank UId="514" />
+  <Token Text="THEN" UId="515" />
+  <NewLine UId="516" />
+  <Blank Num="8" UId="517" />
+  <Access Scope="LocalVariable" UId="518">
+    <Symbol UId="519">
+      <Component Name="Reg_Etiq_Temp" UId="520" />
+    </Symbol>
+  </Access>
+  <Blank UId="521" />
+  <Token Text=":=" UId="522" />
+  <Blank UId="523" />
+  <Access Scope="GlobalVariable" UId="524">
+    <Symbol UId="525">
+      <Component Name="DB201_RegEtiquetas_0001_1000" UId="526">
+        <BooleanAttribute Name="HasQuotes" UId="527">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="528" />
+      <Component Name="Reg_Etiqueta" UId="529">
+        <Token Text="[" UId="530" />
+        <Access Scope="LocalVariable" UId="531">
+          <Symbol UId="532">
+            <Component Name="Posicion_Etiqueta_TMP" UId="533" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="534" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="535" />
+  <NewLine UId="536" />
+  <Blank Num="8" UId="537" />
+  <Token Text="GOTO" UId="538" />
+  <Blank UId="539" />
+  <Access Scope="Label" UId="540">
+    <Label Name="lectura_encontrada" UId="541" />
+  </Access>
+  <Token Text=";" UId="542" />
+  <NewLine UId="543" />
+  <Blank Num="4" UId="544" />
+  <Token Text="ELSE" UId="545" />
+  <NewLine UId="546" />
+  <Blank Num="8" UId="547" />
+  <Access Scope="LocalVariable" UId="548">
+    <Symbol UId="549">
+      <Component Name="Posicion_Etiqueta_TMP" UId="550" />
+    </Symbol>
+  </Access>
+  <Blank UId="551" />
+  <Token Text=":=" UId="552" />
+  <Blank UId="553" />
+  <Access Scope="GlobalVariable" UId="554">
+    <Symbol UId="555">
+      <Component Name="DB201_RegEtiquetas_0001_1000" UId="556">
+        <BooleanAttribute Name="HasQuotes" UId="557">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="558" />
+      <Component Name="Reg_Etiqueta" UId="559">
+        <Token Text="[" UId="560" />
+        <Access Scope="LocalVariable" UId="561">
+          <Symbol UId="562">
+            <Component Name="Posicion_Etiqueta_TMP" UId="563" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="564" />
+      </Component>
+      <Token Text="." UId="565" />
+      <Component Name="Posterior" UId="566" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="567" />
+  <NewLine UId="568" />
+  <Blank Num="8" UId="569" />
+  <Token Text="GOTO" UId="570" />
+  <Blank UId="571" />
+  <Access Scope="Label" UId="572">
+    <Label Name="elegir_db_busqueda" UId="573" />
+  </Access>
+  <Token Text=";" UId="574" />
+  <NewLine UId="575" />
+  <Blank Num="4" UId="576" />
+  <Token Text="END_IF" UId="577" />
+  <Token Text=";" UId="578" />
+  <NewLine UId="579" />
+  <Token Text="END_REGION" UId="580" />
+  <NewLine Num="2" UId="581" />
+  <LineComment UId="582">
+    <Text UId="583">//////////////////////////////////////////</Text>
+  </LineComment>
+  <NewLine UId="584" />
+  <Token Text="REGION" UId="585" />
+  <Blank UId="586" />
+  <Text UId="587">busca_1001_a_2000</Text>
+  <NewLine UId="588" />
+  <Access Scope="Label" UId="589">
+    <Label Name="busca_1k" UId="590">
+      <Token Text=":" UId="591" />
+    </Label>
+  </Access>
+  <NewLine UId="592" />
+  <Blank Num="4" UId="593" />
+  <Access Scope="LocalVariable" UId="594">
+    <Symbol UId="595">
+      <Component Name="Posicion_Etiqueta_TMP" UId="596" />
+    </Symbol>
+  </Access>
+  <Blank UId="597" />
+  <Token Text=":=" UId="598" />
+  <Blank UId="599" />
+  <Access Scope="LocalVariable" UId="600">
+    <Symbol UId="601">
+      <Component Name="Posicion_Etiqueta_TMP" UId="602" />
+    </Symbol>
+  </Access>
+  <Blank UId="603" />
+  <Token Text="-" UId="604" />
+  <Blank UId="605" />
+  <Access Scope="LiteralConstant" UId="606">
+    <Constant UId="607">
+      <ConstantValue UId="609">1000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="610" />
+  <NewLine UId="611" />
+  <Blank Num="4" UId="612" />
+  <Token Text="IF" UId="613" />
+  <Blank UId="614" />
+  <Access Scope="LocalVariable" UId="615">
+    <Symbol UId="616">
+      <Component Name="EtiquetaTMP" UId="617" />
+    </Symbol>
+  </Access>
+  <Blank UId="618" />
+  <Token Text="=" UId="619" />
+  <Blank UId="620" />
+  <Access Scope="GlobalVariable" UId="621">
+    <Symbol UId="622">
+      <Component Name="DB202_RegEtiquetas_1001_2000" UId="623">
+        <BooleanAttribute Name="HasQuotes" UId="624">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="625" />
+      <Component Name="Reg_Etiqueta" UId="626">
+        <Token Text="[" UId="627" />
+        <Access Scope="LocalVariable" UId="628">
+          <Symbol UId="629">
+            <Component Name="Posicion_Etiqueta_TMP" UId="630" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="631" />
+      </Component>
+      <Token Text="." UId="632" />
+      <Component Name="CDB" UId="633" />
+    </Symbol>
+  </Access>
+  <Blank UId="634" />
+  <Token Text="THEN" UId="635" />
+  <NewLine UId="636" />
+  <Blank Num="8" UId="637" />
+  <Access Scope="LocalVariable" UId="638">
+    <Symbol UId="639">
+      <Component Name="Reg_Etiq_Temp" UId="640" />
+    </Symbol>
+  </Access>
+  <Blank UId="641" />
+  <Token Text=":=" UId="642" />
+  <Blank UId="643" />
+  <Access Scope="GlobalVariable" UId="644">
+    <Symbol UId="645">
+      <Component Name="DB202_RegEtiquetas_1001_2000" UId="646">
+        <BooleanAttribute Name="HasQuotes" UId="647">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="648" />
+      <Component Name="Reg_Etiqueta" UId="649">
+        <Token Text="[" UId="650" />
+        <Access Scope="LocalVariable" UId="651">
+          <Symbol UId="652">
+            <Component Name="Posicion_Etiqueta_TMP" UId="653" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="654" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="655" />
+  <NewLine UId="656" />
+  <Blank Num="8" UId="657" />
+  <Token Text="GOTO" UId="658" />
+  <Blank UId="659" />
+  <Access Scope="Label" UId="660">
+    <Label Name="lectura_encontrada" UId="661" />
+  </Access>
+  <Token Text=";" UId="662" />
+  <NewLine UId="663" />
+  <Blank Num="4" UId="664" />
+  <Token Text="ELSE" UId="665" />
+  <NewLine UId="666" />
+  <Blank Num="8" UId="667" />
+  <Access Scope="LocalVariable" UId="668">
+    <Symbol UId="669">
+      <Component Name="Posicion_Etiqueta_TMP" UId="670" />
+    </Symbol>
+  </Access>
+  <Blank UId="671" />
+  <Token Text=":=" UId="672" />
+  <Blank UId="673" />
+  <Access Scope="GlobalVariable" UId="674">
+    <Symbol UId="675">
+      <Component Name="DB202_RegEtiquetas_1001_2000" UId="676">
+        <BooleanAttribute Name="HasQuotes" UId="677">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="678" />
+      <Component Name="Reg_Etiqueta" UId="679">
+        <Token Text="[" UId="680" />
+        <Access Scope="LocalVariable" UId="681">
+          <Symbol UId="682">
+            <Component Name="Posicion_Etiqueta_TMP" UId="683" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="684" />
+      </Component>
+      <Token Text="." UId="685" />
+      <Component Name="Posterior" UId="686" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="687" />
+  <NewLine UId="688" />
+  <Blank Num="8" UId="689" />
+  <Token Text="GOTO" UId="690" />
+  <Blank UId="691" />
+  <Access Scope="Label" UId="692">
+    <Label Name="elegir_db_busqueda" UId="693" />
+  </Access>
+  <Token Text=";" UId="694" />
+  <NewLine UId="695" />
+  <Blank Num="4" UId="696" />
+  <Token Text="END_IF" UId="697" />
+  <Token Text=";" UId="698" />
+  <NewLine UId="699" />
+  <Token Text="END_REGION" UId="700" />
+  <NewLine Num="2" UId="701" />
+  <LineComment UId="702">
+    <Text UId="703">//////////////////////////////////////////</Text>
+  </LineComment>
+  <NewLine UId="704" />
+  <Token Text="REGION" UId="705" />
+  <Blank UId="706" />
+  <Text UId="707">busca_2001_a_3000</Text>
+  <NewLine UId="708" />
+  <Access Scope="Label" UId="709">
+    <Label Name="busca_2k" UId="710">
+      <Token Text=":" UId="711" />
+    </Label>
+  </Access>
+  <NewLine UId="712" />
+  <Blank Num="4" UId="713" />
+  <Access Scope="LocalVariable" UId="714">
+    <Symbol UId="715">
+      <Component Name="Posicion_Etiqueta_TMP" UId="716" />
+    </Symbol>
+  </Access>
+  <Blank UId="717" />
+  <Token Text=":=" UId="718" />
+  <Blank UId="719" />
+  <Access Scope="LocalVariable" UId="720">
+    <Symbol UId="721">
+      <Component Name="Posicion_Etiqueta_TMP" UId="722" />
+    </Symbol>
+  </Access>
+  <Blank UId="723" />
+  <Token Text="-" UId="724" />
+  <Blank UId="725" />
+  <Access Scope="LiteralConstant" UId="726">
+    <Constant UId="727">
+      <ConstantValue UId="729">2000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="730" />
+  <NewLine UId="731" />
+  <Blank Num="4" UId="732" />
+  <Token Text="IF" UId="733" />
+  <Blank UId="734" />
+  <Access Scope="LocalVariable" UId="735">
+    <Symbol UId="736">
+      <Component Name="EtiquetaTMP" UId="737" />
+    </Symbol>
+  </Access>
+  <Blank UId="738" />
+  <Token Text="=" UId="739" />
+  <Blank UId="740" />
+  <Access Scope="GlobalVariable" UId="741">
+    <Symbol UId="742">
+      <Component Name="DB203_RegEtiquetas_2001_3000" UId="743">
+        <BooleanAttribute Name="HasQuotes" UId="744">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="745" />
+      <Component Name="Reg_Etiqueta" UId="746">
+        <Token Text="[" UId="747" />
+        <Access Scope="LocalVariable" UId="748">
+          <Symbol UId="749">
+            <Component Name="Posicion_Etiqueta_TMP" UId="750" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="751" />
+      </Component>
+      <Token Text="." UId="752" />
+      <Component Name="CDB" UId="753" />
+    </Symbol>
+  </Access>
+  <Blank UId="754" />
+  <Token Text="THEN" UId="755" />
+  <NewLine UId="756" />
+  <Blank Num="8" UId="757" />
+  <Access Scope="LocalVariable" UId="758">
+    <Symbol UId="759">
+      <Component Name="Reg_Etiq_Temp" UId="760" />
+    </Symbol>
+  </Access>
+  <Blank UId="761" />
+  <Token Text=":=" UId="762" />
+  <Blank UId="763" />
+  <Access Scope="GlobalVariable" UId="764">
+    <Symbol UId="765">
+      <Component Name="DB203_RegEtiquetas_2001_3000" UId="766">
+        <BooleanAttribute Name="HasQuotes" UId="767">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="768" />
+      <Component Name="Reg_Etiqueta" UId="769">
+        <Token Text="[" UId="770" />
+        <Access Scope="LocalVariable" UId="771">
+          <Symbol UId="772">
+            <Component Name="Posicion_Etiqueta_TMP" UId="773" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="774" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="775" />
+  <NewLine UId="776" />
+  <Blank Num="8" UId="777" />
+  <Token Text="GOTO" UId="778" />
+  <Blank UId="779" />
+  <Access Scope="Label" UId="780">
+    <Label Name="lectura_encontrada" UId="781" />
+  </Access>
+  <Token Text=";" UId="782" />
+  <NewLine UId="783" />
+  <Blank Num="4" UId="784" />
+  <Token Text="ELSE" UId="785" />
+  <NewLine UId="786" />
+  <Blank Num="8" UId="787" />
+  <Access Scope="LocalVariable" UId="788">
+    <Symbol UId="789">
+      <Component Name="Posicion_Etiqueta_TMP" UId="790" />
+    </Symbol>
+  </Access>
+  <Blank UId="791" />
+  <Token Text=":=" UId="792" />
+  <Blank UId="793" />
+  <Access Scope="GlobalVariable" UId="794">
+    <Symbol UId="795">
+      <Component Name="DB203_RegEtiquetas_2001_3000" UId="796">
+        <BooleanAttribute Name="HasQuotes" UId="797">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="798" />
+      <Component Name="Reg_Etiqueta" UId="799">
+        <Token Text="[" UId="800" />
+        <Access Scope="LocalVariable" UId="801">
+          <Symbol UId="802">
+            <Component Name="Posicion_Etiqueta_TMP" UId="803" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="804" />
+      </Component>
+      <Token Text="." UId="805" />
+      <Component Name="Posterior" UId="806" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="807" />
+  <NewLine UId="808" />
+  <Blank Num="8" UId="809" />
+  <Token Text="GOTO" UId="810" />
+  <Blank UId="811" />
+  <Access Scope="Label" UId="812">
+    <Label Name="elegir_db_busqueda" UId="813" />
+  </Access>
+  <Token Text=";" UId="814" />
+  <NewLine UId="815" />
+  <Blank Num="4" UId="816" />
+  <Token Text="END_IF" UId="817" />
+  <Token Text=";" UId="818" />
+  <NewLine UId="819" />
+  <Blank Num="4" UId="820" />
+  <NewLine UId="821" />
+  <Token Text="END_REGION" UId="822" />
+  <NewLine Num="2" UId="823" />
+  <LineComment UId="824">
+    <Text UId="825">//////////////////////////////////////////</Text>
+  </LineComment>
+  <NewLine UId="826" />
+  <Token Text="REGION" UId="827" />
+  <Blank UId="828" />
+  <Text UId="829">busca_3001_a_4000</Text>
+  <NewLine UId="830" />
+  <Access Scope="Label" UId="831">
+    <Label Name="busca_3k" UId="832">
+      <Token Text=":" UId="833" />
+    </Label>
+  </Access>
+  <NewLine UId="834" />
+  <Blank Num="4" UId="835" />
+  <Access Scope="LocalVariable" UId="836">
+    <Symbol UId="837">
+      <Component Name="Posicion_Etiqueta_TMP" UId="838" />
+    </Symbol>
+  </Access>
+  <Blank UId="839" />
+  <Token Text=":=" UId="840" />
+  <Blank UId="841" />
+  <Access Scope="LocalVariable" UId="842">
+    <Symbol UId="843">
+      <Component Name="Posicion_Etiqueta_TMP" UId="844" />
+    </Symbol>
+  </Access>
+  <Blank UId="845" />
+  <Token Text="-" UId="846" />
+  <Blank UId="847" />
+  <Access Scope="LiteralConstant" UId="848">
+    <Constant UId="849">
+      <ConstantValue UId="851">3000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="852" />
+  <NewLine UId="853" />
+  <Blank Num="4" UId="854" />
+  <Token Text="IF" UId="855" />
+  <Blank UId="856" />
+  <Access Scope="LocalVariable" UId="857">
+    <Symbol UId="858">
+      <Component Name="EtiquetaTMP" UId="859" />
+    </Symbol>
+  </Access>
+  <Blank UId="860" />
+  <Token Text="=" UId="861" />
+  <Blank UId="862" />
+  <Access Scope="GlobalVariable" UId="863">
+    <Symbol UId="864">
+      <Component Name="DB204_RegEtiquetas_3001_4000" UId="865">
+        <BooleanAttribute Name="HasQuotes" UId="866">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="867" />
+      <Component Name="Reg_Etiqueta" UId="868">
+        <Token Text="[" UId="869" />
+        <Access Scope="LocalVariable" UId="870">
+          <Symbol UId="871">
+            <Component Name="Posicion_Etiqueta_TMP" UId="872" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="873" />
+      </Component>
+      <Token Text="." UId="874" />
+      <Component Name="CDB" UId="875" />
+    </Symbol>
+  </Access>
+  <Blank UId="876" />
+  <Token Text="THEN" UId="877" />
+  <NewLine UId="878" />
+  <Blank Num="8" UId="879" />
+  <Access Scope="LocalVariable" UId="880">
+    <Symbol UId="881">
+      <Component Name="Reg_Etiq_Temp" UId="882" />
+    </Symbol>
+  </Access>
+  <Blank UId="883" />
+  <Token Text=":=" UId="884" />
+  <Blank UId="885" />
+  <Access Scope="GlobalVariable" UId="886">
+    <Symbol UId="887">
+      <Component Name="DB204_RegEtiquetas_3001_4000" UId="888">
+        <BooleanAttribute Name="HasQuotes" UId="889">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="890" />
+      <Component Name="Reg_Etiqueta" UId="891">
+        <Token Text="[" UId="892" />
+        <Access Scope="LocalVariable" UId="893">
+          <Symbol UId="894">
+            <Component Name="Posicion_Etiqueta_TMP" UId="895" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="896" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="897" />
+  <NewLine UId="898" />
+  <Blank Num="8" UId="899" />
+  <Token Text="GOTO" UId="900" />
+  <Blank UId="901" />
+  <Access Scope="Label" UId="902">
+    <Label Name="lectura_encontrada" UId="903" />
+  </Access>
+  <Token Text=";" UId="904" />
+  <NewLine UId="905" />
+  <Blank Num="4" UId="906" />
+  <Token Text="ELSE" UId="907" />
+  <NewLine UId="908" />
+  <Blank Num="8" UId="909" />
+  <Access Scope="LocalVariable" UId="910">
+    <Symbol UId="911">
+      <Component Name="Posicion_Etiqueta_TMP" UId="912" />
+    </Symbol>
+  </Access>
+  <Blank UId="913" />
+  <Token Text=":=" UId="914" />
+  <Blank UId="915" />
+  <Access Scope="GlobalVariable" UId="916">
+    <Symbol UId="917">
+      <Component Name="DB204_RegEtiquetas_3001_4000" UId="918">
+        <BooleanAttribute Name="HasQuotes" UId="919">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="920" />
+      <Component Name="Reg_Etiqueta" UId="921">
+        <Token Text="[" UId="922" />
+        <Access Scope="LocalVariable" UId="923">
+          <Symbol UId="924">
+            <Component Name="Posicion_Etiqueta_TMP" UId="925" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="926" />
+      </Component>
+      <Token Text="." UId="927" />
+      <Component Name="Posterior" UId="928" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="929" />
+  <NewLine UId="930" />
+  <Blank Num="8" UId="931" />
+  <Token Text="GOTO" UId="932" />
+  <Blank UId="933" />
+  <Access Scope="Label" UId="934">
+    <Label Name="elegir_db_busqueda" UId="935" />
+  </Access>
+  <Token Text=";" UId="936" />
+  <NewLine UId="937" />
+  <Blank Num="4" UId="938" />
+  <Token Text="END_IF" UId="939" />
+  <NewLine UId="940" />
+  <Blank Num="4" UId="941" />
+  <Token Text=";" UId="942" />
+  <NewLine UId="943" />
+  <Token Text="END_REGION" UId="944" />
+  <NewLine Num="2" UId="945" />
+  <Token Text="REGION" UId="946" />
+  <Blank UId="947" />
+  <Text UId="948">Especial_error_lectura</Text>
+  <NewLine UId="949" />
+  <Access Scope="Label" UId="950">
+    <Label Name="error_lectura" UId="951">
+      <Token Text=":" UId="952" />
+    </Label>
+  </Access>
+  <NewLine UId="953" />
+  <Blank Num="4" UId="954" />
+  <Access Scope="LocalVariable" UId="955">
+    <Symbol UId="956">
+      <Component Name="Reg_Etiq_Temp" UId="957" />
+    </Symbol>
+  </Access>
+  <Blank UId="958" />
+  <Token Text=":=" UId="959" />
+  <Blank UId="960" />
+  <Access Scope="GlobalVariable" UId="961">
+    <Symbol UId="962">
+      <Component Name="DB209_Reg_Etquetas_Esp_Activa" UId="963">
+        <BooleanAttribute Name="HasQuotes" UId="964">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="965" />
+      <Component Name="Reg_Etiqueta" UId="966">
+        <Token Text="[" UId="967" />
+        <Access Scope="LiteralConstant" UId="968">
+          <Constant UId="969">
+            <ConstantValue UId="971">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="972" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="973" />
+  <NewLine UId="974" />
+  <Blank Num="4" UId="975" />
+  <Access Scope="LocalVariable" UId="976">
+    <Symbol UId="977">
+      <Component Name="Datos_fifo" UId="978" />
+      <Token Text="." UId="979" />
+      <Component Name="Orden" UId="980" />
+    </Symbol>
+  </Access>
+  <Blank UId="981" />
+  <Token Text=":=" UId="982" />
+  <Blank UId="983" />
+  <Access Scope="TypedConstant" UId="984">
+    <Constant UId="985">
+      <ConstantValue UId="986">w#16#90</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="987" />
+  <NewLine UId="988" />
+  <Blank Num="4" UId="989" />
+  <Token Text="IF" UId="990" />
+  <Blank UId="991" />
+  <Access Scope="LocalVariable" UId="992">
+    <Symbol UId="993">
+      <Component Name="Tipo_SCR" UId="994" />
+    </Symbol>
+  </Access>
+  <Blank UId="995" />
+  <Token Text="=" UId="996" />
+  <Blank UId="997" />
+  <Access Scope="LiteralConstant" UId="998">
+    <Constant UId="999">
+      <ConstantValue UId="1001">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1002" />
+  <Token Text="THEN" UId="1003" />
+  <Blank UId="1004" />
+  <LineComment UId="1005">
+    <Text UId="1006"> tipo validación</Text>
+  </LineComment>
+  <NewLine UId="1007" />
+  <Blank Num="8" UId="1008" />
+  <Access Scope="LocalVariable" UId="1009">
+    <Symbol UId="1010">
+      <Component Name="Datos_fifo" UId="1011" />
+      <Token Text="." UId="1012" />
+      <Component Name="Identificador" UId="1013" />
+    </Symbol>
+  </Access>
+  <Blank UId="1014" />
+  <Token Text=":=" UId="1015" />
+  <Blank UId="1016" />
+  <Access Scope="LocalVariable" UId="1017">
+    <Symbol UId="1018">
+      <Component Name="Etiqueta" UId="1019" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1020" />
+  <NewLine UId="1021" />
+  <Blank Num="8" UId="1022" />
+  <Token Text="GOTO" UId="1023" />
+  <Blank UId="1024" />
+  <Access Scope="Label" UId="1025">
+    <Label Name="guardar_orden" UId="1026" />
+  </Access>
+  <Token Text=";" UId="1027" />
+  <NewLine UId="1028" />
+  <Blank Num="4" UId="1029" />
+  <Token Text="END_IF" UId="1030" />
+  <Token Text=";" UId="1031" />
+  <NewLine UId="1032" />
+  <Blank Num="4" UId="1033" />
+  <Token Text="GOTO" UId="1034" />
+  <Blank UId="1035" />
+  <Access Scope="Label" UId="1036">
+    <Label Name="extraer_orden" UId="1037" />
+  </Access>
+  <Token Text=";" UId="1038" />
+  <NewLine UId="1039" />
+  <Token Text="END_REGION" UId="1040" />
+  <NewLine UId="1041" />
+  <Token Text="REGION" UId="1042" />
+  <Blank UId="1043" />
+  <Text UId="1044">Especial_NENC</Text>
+  <NewLine UId="1045" />
+  <Access Scope="Label" UId="1046">
+    <Label Name="lectura_NENC" UId="1047">
+      <Token Text=":" UId="1048" />
+    </Label>
+  </Access>
+  <NewLine UId="1049" />
+  <Blank Num="4" UId="1050" />
+  <Access Scope="LocalVariable" UId="1051">
+    <Symbol UId="1052">
+      <Component Name="Datos_fifo" UId="1053" />
+      <Token Text="." UId="1054" />
+      <Component Name="Identificador" UId="1055" />
+    </Symbol>
+  </Access>
+  <Blank UId="1056" />
+  <Token Text=":=" UId="1057" />
+  <Blank UId="1058" />
+  <Access Scope="LocalVariable" UId="1059">
+    <Symbol UId="1060">
+      <Component Name="Etiqueta" UId="1061" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1062" />
+  <NewLine UId="1063" />
+  <Blank Num="4" UId="1064" />
+  <Token Text="IF" UId="1065" />
+  <Blank UId="1066" />
+  <Token Text="(" UId="1067" />
+  <Access Scope="LocalVariable" UId="1068">
+    <Symbol UId="1069">
+      <Component Name="Tipo_SCR" UId="1070" />
+    </Symbol>
+  </Access>
+  <Blank UId="1071" />
+  <Token Text="=" UId="1072" />
+  <Blank UId="1073" />
+  <Access Scope="LiteralConstant" UId="1074">
+    <Constant UId="1075">
+      <ConstantValue UId="1077">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=")" UId="1078" />
+  <Blank UId="1079" />
+  <Token Text="THEN" UId="1080" />
+  <NewLine UId="1081" />
+  <Blank Num="8" UId="1082" />
+  <Access Scope="LocalVariable" UId="1083">
+    <Symbol UId="1084">
+      <Component Name="Datos_fifo" UId="1085" />
+      <Token Text="." UId="1086" />
+      <Component Name="Orden" UId="1087" />
+    </Symbol>
+  </Access>
+  <Blank UId="1088" />
+  <Token Text=":=" UId="1089" />
+  <Blank UId="1090" />
+  <Access Scope="TypedConstant" UId="1091">
+    <Constant UId="1092">
+      <ConstantValue UId="1093">w#16#80</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1094" />
+  <NewLine UId="1095" />
+  <Blank Num="3" UId="1096" />
+  <NewLine UId="1097" />
+  <Blank Num="8" UId="1098" />
+  <Token Text="GOTO" UId="1099" />
+  <Blank UId="1100" />
+  <Access Scope="Label" UId="1101">
+    <Label Name="guardar_orden" UId="1102" />
+  </Access>
+  <Token Text=";" UId="1103" />
+  <NewLine UId="1104" />
+  <Blank Num="4" UId="1105" />
+  <Token Text="END_IF" UId="1106" />
+  <Token Text=";" UId="1107" />
+  <NewLine UId="1108" />
+  <Blank Num="4" UId="1109" />
+  <Access Scope="LocalVariable" UId="1110">
+    <Symbol UId="1111">
+      <Component Name="Reg_Etiq_Temp" UId="1112" />
+    </Symbol>
+  </Access>
+  <Blank UId="1113" />
+  <Token Text=":=" UId="1114" />
+  <Blank UId="1115" />
+  <Access Scope="GlobalVariable" UId="1116">
+    <Symbol UId="1117">
+      <Component Name="DB209_Reg_Etquetas_Esp_Activa" UId="1118">
+        <BooleanAttribute Name="HasQuotes" UId="1119">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="1120" />
+      <Component Name="Reg_Etiqueta" UId="1121">
+        <Token Text="[" UId="1122" />
+        <Access Scope="LiteralConstant" UId="1123">
+          <Constant UId="1124">
+            <ConstantValue UId="1126">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1127" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1128" />
+  <NewLine UId="1129" />
+  <Blank Num="4" UId="1130" />
+  <Access Scope="LocalVariable" UId="1131">
+    <Symbol UId="1132">
+      <Component Name="Datos_fifo" UId="1133" />
+      <Token Text="." UId="1134" />
+      <Component Name="Orden" UId="1135" />
+    </Symbol>
+  </Access>
+  <Blank UId="1136" />
+  <Token Text=":=" UId="1137" />
+  <Blank UId="1138" />
+  <Access Scope="TypedConstant" UId="1139">
+    <Constant UId="1140">
+      <ConstantValue UId="1141">w#16#A0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1142" />
+  <NewLine UId="1143" />
+  <Blank Num="4" UId="1144" />
+  <LineComment UId="1145">
+    <Text UId="1146"> hay dos casos posibles. si el escanner es normal extrae orden normal</Text>
+  </LineComment>
+  <NewLine UId="1147" />
+  <Blank Num="4" UId="1148" />
+  <LineComment UId="1149">
+    <Text UId="1150"> si es de validacion de etiqueta, extrae el predeterminado</Text>
+  </LineComment>
+  <NewLine UId="1151" />
+  <Blank Num="4" UId="1152" />
+  <Token Text="GOTO" UId="1153" />
+  <Blank UId="1154" />
+  <Access Scope="Label" UId="1155">
+    <Label Name="extraer_orden" UId="1156" />
+  </Access>
+  <Token Text=";" UId="1157" />
+  <NewLine UId="1158" />
+  <Token Text="END_REGION" UId="1159" />
+  <NewLine UId="1160" />
+  <Token Text="REGION" UId="1161" />
+  <Blank UId="1162" />
+  <Text UId="1163">Especial_INIC</Text>
+  <NewLine UId="1164" />
+  <Access Scope="Label" UId="1165">
+    <Label Name="proceso_INIC" UId="1166">
+      <Token Text=":" UId="1167" />
+    </Label>
+  </Access>
+  <NewLine UId="1168" />
+  <Blank Num="4" UId="1169" />
+  <Access Scope="LocalVariable" UId="1170">
+    <Symbol UId="1171">
+      <Component Name="Reg_Etiq_Temp" UId="1172" />
+    </Symbol>
+  </Access>
+  <Blank UId="1173" />
+  <Token Text=":=" UId="1174" />
+  <Blank UId="1175" />
+  <Access Scope="GlobalVariable" UId="1176">
+    <Symbol UId="1177">
+      <Component Name="DB209_Reg_Etquetas_Esp_Activa" UId="1178">
+        <BooleanAttribute Name="HasQuotes" UId="1179">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="1180" />
+      <Component Name="Reg_Etiqueta" UId="1181">
+        <Token Text="[" UId="1182" />
+        <Access Scope="LiteralConstant" UId="1183">
+          <Constant UId="1184">
+            <ConstantValue UId="1186">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1187" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1188" />
+  <NewLine UId="1189" />
+  <Blank Num="4" UId="1190" />
+  <Access Scope="LocalVariable" UId="1191">
+    <Symbol UId="1192">
+      <Component Name="Datos_fifo" UId="1193" />
+      <Token Text="." UId="1194" />
+      <Component Name="Orden" UId="1195" />
+    </Symbol>
+  </Access>
+  <Blank UId="1196" />
+  <Token Text=":=" UId="1197" />
+  <Blank UId="1198" />
+  <Access Scope="TypedConstant" UId="1199">
+    <Constant UId="1200">
+      <ConstantValue UId="1201">w#16#C0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1202" />
+  <NewLine UId="1203" />
+  <Blank Num="4" UId="1204" />
+  <Token Text="GOTO" UId="1205" />
+  <Blank UId="1206" />
+  <Access Scope="Label" UId="1207">
+    <Label Name="extraer_orden" UId="1208" />
+  </Access>
+  <Token Text=";" UId="1209" />
+  <NewLine UId="1210" />
+  <Token Text="END_REGION" UId="1211" />
+  <NewLine UId="1212" />
+  <Token Text="REGION" UId="1213" />
+  <Blank UId="1214" />
+  <Text UId="1215">lectura_ok</Text>
+  <NewLine UId="1216" />
+  <Access Scope="Label" UId="1217">
+    <Label Name="lectura_encontrada" UId="1218">
+      <Token Text=":" UId="1219" />
+    </Label>
+  </Access>
+  <NewLine UId="1220" />
+  <Blank Num="4" UId="1221" />
+  <Access Scope="LocalVariable" UId="1222">
+    <Symbol UId="1223">
+      <Component Name="Datos_fifo" UId="1224" />
+      <Token Text="." UId="1225" />
+      <Component Name="Identificador" UId="1226" />
+    </Symbol>
+  </Access>
+  <Blank UId="1227" />
+  <Token Text=":=" UId="1228" />
+  <Blank UId="1229" />
+  <Access Scope="LocalVariable" UId="1230">
+    <Symbol UId="1231">
+      <Component Name="Etiqueta" UId="1232" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1233" />
+  <NewLine UId="1234" />
+  <Blank Num="4" UId="1235" />
+  <Token Text="IF" UId="1236" />
+  <Blank UId="1237" />
+  <Access Scope="LocalVariable" UId="1238">
+    <Symbol UId="1239">
+      <Component Name="Tipo_SCR" UId="1240" />
+    </Symbol>
+  </Access>
+  <Blank UId="1241" />
+  <Token Text="=" UId="1242" />
+  <Blank UId="1243" />
+  <Access Scope="LiteralConstant" UId="1244">
+    <Constant UId="1245">
+      <ConstantValue UId="1247">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1248" />
+  <Token Text="THEN" UId="1249" />
+  <NewLine UId="1250" />
+  <Blank Num="8" UId="1251" />
+  <Access Scope="LocalVariable" UId="1252">
+    <Symbol UId="1253">
+      <Component Name="Datos_fifo" UId="1254" />
+      <Token Text="." UId="1255" />
+      <Component Name="Orden" UId="1256" />
+    </Symbol>
+  </Access>
+  <Blank UId="1257" />
+  <Token Text=":=" UId="1258" />
+  <Blank UId="1259" />
+  <Access Scope="TypedConstant" UId="1260">
+    <Constant UId="1261">
+      <ConstantValue UId="1262">w#16#81</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1263" />
+  <NewLine UId="1264" />
+  <Blank Num="8" UId="1265" />
+  <Token Text="GOTO" UId="1266" />
+  <Blank UId="1267" />
+  <Access Scope="Label" UId="1268">
+    <Label Name="guardar_orden" UId="1269" />
+  </Access>
+  <Token Text=";" UId="1270" />
+  <NewLine UId="1271" />
+  <Blank Num="4" UId="1272" />
+  <Token Text="ELSE" UId="1273" />
+  <NewLine UId="1274" />
+  <Blank Num="8" UId="1275" />
+  <Access Scope="LocalVariable" UId="1276">
+    <Symbol UId="1277">
+      <Component Name="Datos_fifo" UId="1278" />
+      <Token Text="." UId="1279" />
+      <Component Name="Orden" UId="1280" />
+    </Symbol>
+  </Access>
+  <Blank UId="1281" />
+  <Token Text=":=" UId="1282" />
+  <Blank UId="1283" />
+  <Access Scope="TypedConstant" UId="1284">
+    <Constant UId="1285">
+      <ConstantValue UId="1286">w#16#80</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1287" />
+  <NewLine UId="1288" />
+  <Blank Num="8" UId="1289" />
+  <Token Text="GOTO" UId="1290" />
+  <Blank UId="1291" />
+  <Access Scope="Label" UId="1292">
+    <Label Name="extraer_orden" UId="1293" />
+  </Access>
+  <Token Text=";" UId="1294" />
+  <NewLine UId="1295" />
+  <Blank Num="4" UId="1296" />
+  <Token Text="END_IF" UId="1297" />
+  <Token Text=";" UId="1298" />
+  <NewLine Num="2" UId="1299" />
+  <Blank Num="4" UId="1300" />
+  <NewLine UId="1301" />
+  <Token Text="END_REGION" UId="1302" />
+  <NewLine Num="2" UId="1303" />
+  <Token Text="REGION" UId="1304" />
+  <Blank UId="1305" />
+  <Text UId="1306">Extraer orden</Text>
+  <NewLine UId="1307" />
+  <Access Scope="Label" UId="1308">
+    <Label Name="extraer_orden" UId="1309">
+      <Token Text=":" UId="1310" />
+    </Label>
+  </Access>
+  <NewLine UId="1311" />
+  <Blank Num="4" UId="1312" />
+  <Access Scope="LocalVariable" UId="1313">
+    <Symbol UId="1314">
+      <Component Name="Datos_fifo" UId="1315" />
+      <Token Text="." UId="1316" />
+      <Component Name="Identificador" UId="1317" />
+    </Symbol>
+  </Access>
+  <Blank UId="1318" />
+  <Token Text=":=" UId="1319" />
+  <Blank UId="1320" />
+  <Access Scope="LocalVariable" UId="1321">
+    <Symbol UId="1322">
+      <Component Name="Etiqueta" UId="1323" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1324" />
+  <NewLine UId="1325" />
+  <LineComment UId="1326">
+    <Text UId="1327"> proceso extracción de la orden</Text>
+  </LineComment>
+  <NewLine UId="1328" />
+  <LineComment UId="1329">
+    <Text UId="1330"> miramos cual es el primer bit que tenemos que sacar de la orden</Text>
+  </LineComment>
+  <NewLine UId="1331" />
+  <Blank Num="4" UId="1332" />
+  <Access Scope="LocalVariable" UId="1333">
+    <Symbol UId="1334">
+      <Component Name="primer_bit" UId="1335" />
+    </Symbol>
+  </Access>
+  <Blank UId="1336" />
+  <Token Text=":=" UId="1337" />
+  <Blank UId="1338" />
+  <Access Scope="GlobalVariable" UId="1339">
+    <Symbol UId="1340">
+      <Component Name="DB912_Tipo_Scanner_Router" UId="1341">
+        <BooleanAttribute Name="HasQuotes" UId="1342">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="1343" />
+      <Component Name="SCANNER" UId="1344">
+        <Token Text="[" UId="1345" />
+        <Access Scope="LocalVariable" UId="1346">
+          <Symbol UId="1347">
+            <Component Name="Numero_SCR" UId="1348" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1349" />
+      </Component>
+      <Token Text="." UId="1350" />
+      <Component Name="Bit_Ini_Ordenes" UId="1351" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1352" />
+  <NewLine UId="1353" />
+  <Blank Num="4" UId="1354" />
+  <Access Scope="LocalVariable" UId="1355">
+    <Symbol UId="1356">
+      <Component Name="numero_bits" UId="1357" />
+    </Symbol>
+  </Access>
+  <Blank UId="1358" />
+  <Token Text=":=" UId="1359" />
+  <Blank UId="1360" />
+  <Access Scope="GlobalVariable" UId="1361">
+    <Symbol UId="1362">
+      <Component Name="DB912_Tipo_Scanner_Router" UId="1363">
+        <BooleanAttribute Name="HasQuotes" UId="1364">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="1365" />
+      <Component Name="SCANNER" UId="1366">
+        <Token Text="[" UId="1367" />
+        <Access Scope="LocalVariable" UId="1368">
+          <Symbol UId="1369">
+            <Component Name="Numero_SCR" UId="1370" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1371" />
+      </Component>
+      <Token Text="." UId="1372" />
+      <Component Name="N_Bits_Orden" UId="1373" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1374" />
+  <NewLine UId="1375" />
+  <Blank Num="4" UId="1376" />
+  <Access Scope="LocalVariable" UId="1377">
+    <Symbol UId="1378">
+      <Component Name="cont_aux" UId="1379" />
+    </Symbol>
+  </Access>
+  <Blank UId="1380" />
+  <Token Text=":=" UId="1381" />
+  <Blank UId="1382" />
+  <Access Scope="LiteralConstant" UId="1383">
+    <Constant UId="1384">
+      <ConstantValue UId="1386">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1387" />
+  <NewLine UId="1388" />
+  <Blank Num="4" UId="1389" />
+  <Access Scope="LocalVariable" UId="1390">
+    <Symbol UId="1391">
+      <Component Name="orden" UId="1392" />
+    </Symbol>
+  </Access>
+  <Blank UId="1393" />
+  <Token Text=":=" UId="1394" />
+  <Blank UId="1395" />
+  <Access Scope="LocalVariable" UId="1396">
+    <Symbol UId="1397">
+      <Component Name="Datos_fifo" UId="1398" />
+      <Token Text="." UId="1399" />
+      <Component Name="Orden" UId="1400" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1401" />
+  <NewLine UId="1402" />
+  <Blank Num="4" UId="1403" />
+  <Token Text="FOR" UId="1404" />
+  <Blank UId="1405" />
+  <Access Scope="LocalVariable" UId="1406">
+    <Symbol UId="1407">
+      <Component Name="contador" UId="1408" />
+    </Symbol>
+  </Access>
+  <Blank UId="1409" />
+  <Token Text=":=" UId="1410" />
+  <Blank UId="1411" />
+  <Access Scope="LocalVariable" UId="1412">
+    <Symbol UId="1413">
+      <Component Name="primer_bit" UId="1414" />
+    </Symbol>
+  </Access>
+  <Blank UId="1415" />
+  <Token Text="TO" UId="1416" />
+  <Blank UId="1417" />
+  <Token Text="(" UId="1418" />
+  <Access Scope="LocalVariable" UId="1419">
+    <Symbol UId="1420">
+      <Component Name="primer_bit" UId="1421" />
+    </Symbol>
+  </Access>
+  <Blank UId="1422" />
+  <Token Text="+" UId="1423" />
+  <Blank UId="1424" />
+  <Access Scope="LocalVariable" UId="1425">
+    <Symbol UId="1426">
+      <Component Name="numero_bits" UId="1427" />
+    </Symbol>
+  </Access>
+  <Blank UId="1428" />
+  <Token Text="-" UId="1429" />
+  <Blank UId="1430" />
+  <Access Scope="LiteralConstant" UId="1431">
+    <Constant UId="1432">
+      <ConstantValue UId="1434">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=")" UId="1435" />
+  <Blank UId="1436" />
+  <Token Text="DO" UId="1437" />
+  <NewLine UId="1438" />
+  <Blank Num="8" UId="1439" />
+  <Access Scope="LocalVariable" UId="1440">
+    <Symbol UId="1441">
+      <Component Name="orden_aux" UId="1442">
+        <Token Text="[" UId="1443" />
+        <Access Scope="LocalVariable" UId="1444">
+          <Symbol UId="1445">
+            <Component Name="cont_aux" UId="1446" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1447" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="1448" />
+  <Token Text=":=" UId="1449" />
+  <Blank UId="1450" />
+  <Access Scope="LocalVariable" UId="1451">
+    <Symbol UId="1452">
+      <Component Name="Reg_Etiq_Temp" UId="1453" />
+      <Token Text="." UId="1454" />
+      <Component Name="BIT_Orden" UId="1455">
+        <Token Text="[" UId="1456" />
+        <Access Scope="LocalVariable" UId="1457">
+          <Symbol UId="1458">
+            <Component Name="contador" UId="1459" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1460" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1461" />
+  <NewLine UId="1462" />
+  <Blank Num="8" UId="1463" />
+  <Access Scope="LocalVariable" UId="1464">
+    <Symbol UId="1465">
+      <Component Name="cont_aux" UId="1466" />
+    </Symbol>
+  </Access>
+  <Blank UId="1467" />
+  <Token Text="+=" UId="1468" />
+  <Blank UId="1469" />
+  <Access Scope="LiteralConstant" UId="1470">
+    <Constant UId="1471">
+      <ConstantValue UId="1473">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1474" />
+  <NewLine UId="1475" />
+  <Blank Num="4" UId="1476" />
+  <Token Text="END_FOR" UId="1477" />
+  <Token Text=";" UId="1478" />
+  <NewLine UId="1479" />
+  <Blank Num="4" UId="1480" />
+  <Access Scope="LocalVariable" UId="1481">
+    <Symbol UId="1482">
+      <Component Name="Datos_fifo" UId="1483" />
+      <Token Text="." UId="1484" />
+      <Component Name="Orden" UId="1485" />
+    </Symbol>
+  </Access>
+  <Blank UId="1486" />
+  <Token Text=":=" UId="1487" />
+  <Blank UId="1488" />
+  <Access Scope="LocalVariable" UId="1489">
+    <Symbol UId="1490">
+      <Component Name="orden" UId="1491" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1492" />
+  <NewLine UId="1493" />
+  <Blank Num="4" UId="1494" />
+  <Token Text=";" UId="1495" />
+  <NewLine UId="1496" />
+  <Token Text="END_REGION" UId="1497" />
+  <NewLine Num="2" UId="1498" />
+  <Token Text="REGION" UId="1499" />
+  <Blank UId="1500" />
+  <Text UId="1501">Guardar_Orden</Text>
+  <NewLine UId="1502" />
+  <Access Scope="Label" UId="1503">
+    <Label Name="guardar_orden" UId="1504">
+      <Token Text=":" UId="1505" />
+    </Label>
+  </Access>
+  <NewLine UId="1506" />
+  <Blank Num="4" UId="1507" />
+  <LineComment UId="1508">
+    <Text UId="1509"> miramos si ya hay algo en la fifo</Text>
+  </LineComment>
+  <NewLine UId="1510" />
+  <Blank Num="4" UId="1511" />
+  <Access Scope="Call" UId="1512">
+    <CallInfo UId="1513" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="1515">
+        <Component Name="FC571_Leer_Datos_Fifo" UId="1514" />
+      </Instance>
+      <Token Text="(" UId="1516" />
+      <Parameter Name="DB_FIFO_Ordenes" UId="1517">
+        <Token Text=":=" UId="1518" />
+        <Access Scope="GlobalConstant" UId="1519">
+          <Constant Name="ROUT_NDB_FIFO_Odr_SCR" UId="1520" />
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1523" />
+      <NewLine UId="1524" />
+      <Blank Num="28" UId="1525" />
+      <Parameter Name="Num_Scanner" UId="1526">
+        <Token Text=":=" UId="1527" />
+        <Access Scope="LocalVariable" UId="1528">
+          <Symbol UId="1529">
+            <Component Name="Numero_SCR" UId="1530" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1531" />
+      <NewLine UId="1532" />
+      <Blank Num="28" UId="1533" />
+      <Parameter Name="Long_FIFO" UId="1534">
+        <Token Text=":=" UId="1535" />
+        <Access Scope="LiteralConstant" UId="1536">
+          <Constant UId="1537">
+            <ConstantValue UId="1539">1</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1540" />
+      <NewLine UId="1541" />
+      <Blank Num="28" UId="1542" />
+      <Parameter Name="Posicion_FIFO" UId="1543">
+        <Token Text=":=" UId="1544" />
+        <Access Scope="LiteralConstant" UId="1545">
+          <Constant UId="1546">
+            <ConstantValue UId="1548">1</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1549" />
+      <NewLine UId="1550" />
+      <Blank Num="28" UId="1551" />
+      <Parameter Name="Datos_Scanner_Cruce" UId="1552">
+        <Token Text="=&gt;" UId="1553" />
+        <Access Scope="LocalVariable" UId="1554">
+          <Symbol UId="1555">
+            <Component Name="datos_actuales_fifo" UId="1556" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="1557" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="1558" />
+  <NewLine UId="1559" />
+  <Blank Num="4" UId="1560" />
+  <NewLine UId="1561" />
+  <Blank Num="4" UId="1562" />
+  <Token Text="IF" UId="1563" />
+  <Blank UId="1564" />
+  <Access Scope="LocalVariable" UId="1565">
+    <Symbol UId="1566">
+      <Component Name="datos_actuales_fifo" UId="1567" />
+      <Token Text="." UId="1568" />
+      <Component Name="Orden" UId="1569" />
+    </Symbol>
+  </Access>
+  <Blank UId="1570" />
+  <Token Text="&lt;&gt;" UId="1571" />
+  <Blank UId="1572" />
+  <Access Scope="LiteralConstant" UId="1573">
+    <Constant UId="1574">
+      <ConstantValue UId="1576">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1577" />
+  <Token Text="THEN" UId="1578" />
+  <NewLine UId="1579" />
+  <Blank Num="8" UId="1580" />
+  <Access Scope="LocalVariable" UId="1581">
+    <Symbol UId="1582">
+      <Component Name="Datos_fifo" UId="1583" />
+      <Token Text="." UId="1584" />
+      <Component Name="Orden" UId="1585" />
+    </Symbol>
+  </Access>
+  <Blank UId="1586" />
+  <Token Text=":=" UId="1587" />
+  <Blank UId="1588" />
+  <Access Scope="TypedConstant" UId="1589">
+    <Constant UId="1590">
+      <ConstantValue UId="1591">w#16#FF</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1592" />
+  <NewLine UId="1593" />
+  <Blank Num="4" UId="1594" />
+  <Token Text="END_IF" UId="1595" />
+  <Token Text=";" UId="1596" />
+  <NewLine UId="1597" />
+  <Blank Num="4" UId="1598" />
+  <Access Scope="Call" UId="1599">
+    <CallInfo UId="1600" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="1602">
+        <Component Name="FC572_Guardar_Datos_Fifo" UId="1601" />
+      </Instance>
+      <Token Text="(" UId="1603" />
+      <Parameter Name="DB_FIFO_Ordenes" UId="1604">
+        <Token Text=":=" UId="1605" />
+        <Access Scope="GlobalConstant" UId="1606">
+          <Constant Name="ROUT_NDB_FIFO_Odr_SCR" UId="1607" />
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1610" />
+      <NewLine UId="1611" />
+      <Blank Num="31" UId="1612" />
+      <Parameter Name="Num_Scanner" UId="1613">
+        <Token Text=":=" UId="1614" />
+        <Access Scope="LocalVariable" UId="1615">
+          <Symbol UId="1616">
+            <Component Name="Numero_SCR" UId="1617" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1618" />
+      <NewLine UId="1619" />
+      <Blank Num="31" UId="1620" />
+      <Parameter Name="Long_FIFO" UId="1621">
+        <Token Text=":=" UId="1622" />
+        <Access Scope="LiteralConstant" UId="1623">
+          <Constant UId="1624">
+            <ConstantValue UId="1626">1</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1627" />
+      <NewLine UId="1628" />
+      <Blank Num="31" UId="1629" />
+      <Parameter Name="Posicion_FIFO" UId="1630">
+        <Token Text=":=" UId="1631" />
+        <Access Scope="LiteralConstant" UId="1632">
+          <Constant UId="1633">
+            <ConstantValue UId="1635">1</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1636" />
+      <NewLine UId="1637" />
+      <Blank Num="31" UId="1638" />
+      <Parameter Name="Datos_Scanner_Cruce" UId="1639">
+        <Token Text=":=" UId="1640" />
+        <Access Scope="LocalVariable" UId="1641">
+          <Symbol UId="1642">
+            <Component Name="Datos_fifo" UId="1643" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="1644" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="1645" />
+  <NewLine UId="1646" />
+  <Blank Num="4" UId="1647" />
+  <NewLine UId="1648" />
+  <Blank Num="4" UId="1649" />
+  <LineComment UId="1650">
+    <Text UId="1651"> lo ultimo es borrar la N de la nueva lectura en el db211   ;</Text>
+  </LineComment>
+  <NewLine UId="1652" />
+  <Blank Num="4" UId="1653" />
+  <LineComment UId="1654">
+    <Text UId="1655"> </Text>
+  </LineComment>
+  <NewLine UId="1656" />
+  <Blank Num="4" UId="1657" />
+  <Access Scope="GlobalVariable" UId="1658">
+    <Symbol UId="1659">
+      <Component Name="DB211_Lecturas_Scanner" UId="1660">
+        <BooleanAttribute Name="HasQuotes" UId="1661">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="1662" />
+      <Component Name="Lec_Scanner" UId="1663">
+        <Token Text="[" UId="1664" />
+        <Access Scope="LocalVariable" UId="1665">
+          <Symbol UId="1666">
+            <Component Name="Numero_SCR" UId="1667" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1668" />
+      </Component>
+      <Token Text="." UId="1669" />
+      <Component Name="Lectura_SCR" UId="1670">
+        <Token Text="[" UId="1671" />
+        <Access Scope="LiteralConstant" UId="1672">
+          <Constant UId="1673">
+            <ConstantValue UId="1675">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1676" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=":=" UId="1677" />
+  <Blank UId="1678" />
+  <Access Scope="TypedConstant" UId="1679">
+    <Constant UId="1680">
+      <ConstantValue UId="1681">l#0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1682" />
+  <NewLine UId="1683" />
+  <Blank Num="4" UId="1684" />
+  <NewLine UId="1685" />
+  <Blank Num="4" UId="1686" />
+  <NewLine UId="1687" />
+  <Blank Num="4" UId="1688" />
+  <NewLine UId="1689" />
+  <Token Text="END_REGION" UId="1690" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="12" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="13" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="15" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="17" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="18" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="1A" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="1B" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="1C" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="1D" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="1E" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="1F" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="20" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="21" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>

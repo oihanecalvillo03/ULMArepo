@@ -1,0 +1,3223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <DocumentInfo>
+    <Created>2025-12-01T14:57:28.1471594Z</Created>
+    <ExportSetting>None</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V20 Update 2</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderAuthor>Naibes</HeaderAuthor>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input">
+    <Member Name="ID_Quimarox" Datatype="UInt" />
+    <Member Name="Detector_paso_cero" Datatype="Bool" />
+    <Member Name="V_Cnt_Tout_paso_Cero" Datatype="UDInt" />
+    <Member Name="Dato_encoder" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Tiene que ser una entrada del DB de encoders</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Output">
+    <Member Name="numero_vagon_entrada" Datatype="Int" />
+    <Member Name="avance_vagon_entrada" Datatype="Int" />
+    <Member Name="avance_total" Datatype="Int" />
+  </Section>
+  <Section Name="InOut" />
+  <Section Name="Static">
+    <Member Name="maux_fp_detect_cero" Datatype="Bool" />
+    <Member Name="mem_cnt_tout" Datatype="UDInt" />
+    <Member Name="total_registros" Datatype="Int" />
+  </Section>
+  <Section Name="Temp">
+    <Member Name="contador_elementos" Datatype="Int" />
+    <Member Name="pulsos_transcurridos" Datatype="DInt" />
+    <Member Name="avance_vagon_ref" Datatype="DInt" />
+    <Member Name="num_vag_in" Datatype="Int" />
+    <Member Name="Avance_vag_inic" Datatype="Int" />
+    <Member Name="aux_int" Datatype="Int" />
+    <Member Name="Avance_vagon_X" Datatype="Int" />
+    <Member Name="salto" Datatype="Int" />
+    <Member Name="basura" Datatype="Bool" />
+  </Section>
+  <Section Name="Constant" />
+</Sections></Interface>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>FB600_ControlPosicion_Quimarox</Name>
+      <Namespace />
+      <Number>600</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="9" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="22">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="21">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="28">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="12" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="13" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="15" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Variable provisional</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="17" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="18" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1A" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="30">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="31">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC600_ini+ref_dato_encoder_NEW" BlockType="FC">
+        <Parameter Name="Detector_referencia" Section="Input" Type="Bool">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Detector_paso_cero" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="ID_Quimarox" Section="Input" Type="UInt">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="dato_encoder_actual" Section="Input" Type="DInt">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Dato_encoder" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="V_cnt_tout_refresco" Section="Input" Type="UDInt">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="V_Cnt_Tout_paso_Cero" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="m_aux_pf_detect" Section="InOut" Type="Bool">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="maux_fp_detect_cero" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="MEM_CNT_TOUT" Section="InOut" Type="UDInt">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="mem_cnt_tout" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="44">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1B" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Control de posicionamiento y memorias de encoder
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="21" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="22" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="23" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="24" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="26" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="27" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="28" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="29" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="2B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="45">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="46">
+    <StlToken Text="A" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="DatosTrabajo" />
+        <Component Name="Error_Referenciacion" />
+      </Symbol>
+      <LineComment>
+        <Text> #Error_Referenciacion</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="48">
+    <StlToken Text="R" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="DatosTrabajo" />
+        <Component Name="Memoria_Inicializacion" />
+      </Symbol>
+      <LineComment>
+        <Text>#Mem_Inicializacion</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="2C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="2D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="30" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="31" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="32" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="33" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="34" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="35" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="36" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="37" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Variable provisional</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="38" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="39" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="3C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="84">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="86">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="87">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text>Iniciamos Cont. Bytes a Borrar     Cuidado con los temporales, inicializar siempre</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="90">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="contador_elementos" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="92">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="93">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="94">
+    <LabelDeclaration>
+      <Label Name="bucl" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="113">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="115">
+    <LineComment>
+      <Text>limpia los datos antes de calcular los nuevos</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="22">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="40">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="34">
+    <StlToken Text="R" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB602_ElementosQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Elementos" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="contador_elementos" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Hay_Carrier_en_ventana" />
+      </Symbol>
+      <LineComment>
+        <Text>Vagon_en_Ventana</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="35">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="123">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB602_ElementosQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Elementos" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="contador_elementos" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Numero_carrier" />
+      </Symbol>
+      <LineComment>
+        <Text>Vagon_Asociado</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="126">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB602_ElementosQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Elementos" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="contador_elementos" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Avance_carrier" />
+      </Symbol>
+      <LineComment>
+        <Text>Posicion_Vagon</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="45">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="21">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="130">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="contador_elementos" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="132">
+    <StlToken Text="L" />
+    <Access Scope="GlobalConstant">
+      <Constant Name="CTE_MaxNumElementos" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="134">
+    <StlToken Text="GE_I" />
+  </StlStatement>
+  <StlStatement UId="135">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="cont" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="137">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="138">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="140">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="contador_elementos" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="142">
+    <StlToken Text="ADD_I" />
+  </StlStatement>
+  <StlStatement UId="143">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="contador_elementos" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="145">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="146">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="bucl" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="148">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="3D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="3E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="40" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>aqui se borran todas las posiciones asociadas a los elementos para luego 
+posteriormente cargar los datos que correspondan. Esto lo hacemos antes de 
+comprobar si está inicializado o no para que si perdemos la referencia dejemos 
+de tener datos.</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="41" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="42" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="43" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="44" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="45" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="46" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="47" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="48" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Borrado de DB Posiciones asociadas a elementos</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="49" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="4A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="4B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="4C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="4D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="150">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="152">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="21">
+    <LabelDeclaration>
+      <Label Name="cont" />
+    </LabelDeclaration>
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="DatosTrabajo" />
+        <Component Name="Memoria_Inicializacion" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="157">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="fin1" />
+      <LineComment>
+        <Text>el primer vagon y no podemos calcular nada</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="160">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="161">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="4F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="50" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="51" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="52" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="53" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="54" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="55" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="56" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="57" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="58" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="59" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="5E" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="163">
+    <LineComment>
+      <Text>===================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="165">
+    <LineComment>
+      <Text>aqui comprobaremos si ha pasado por el máximo o no y en funcion de eso calcularemos el numero</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="167">
+    <LineComment>
+      <Text>de pulsos que han transcurrido desde la referenciación del primer vagon</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="169">
+    <LineComment>
+      <Text>====================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="171">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="172">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="DatosTrabajo" />
+        <Component Name="Memoria_Dato_Encoder" />
+      </Symbol>
+      <LineComment>
+        <Text>#Mem_Dato_Encoder</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="174">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="Dato_encoder" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="176">
+    <StlToken Text="GT_D" />
+  </StlStatement>
+  <StlStatement UId="177">
+    <StlToken Text="JCN" />
+    <Access Scope="Label">
+      <Label Name="MEN" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="179">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="180">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="maximo_encoder" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="182">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="DatosTrabajo" />
+        <Component Name="Memoria_Dato_Encoder" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="184">
+    <StlToken Text="SUB_D" />
+  </StlStatement>
+  <StlStatement UId="185">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="Dato_encoder" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="187">
+    <StlToken Text="ADD_D" />
+  </StlStatement>
+  <StlStatement UId="188">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="pulsos_transcurridos" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="190">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="CLC" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="192">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="193">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="195">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="196">
+    <LabelDeclaration>
+      <Label Name="MEN" />
+    </LabelDeclaration>
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="Dato_encoder" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="199">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="DatosTrabajo" />
+        <Component Name="Memoria_Dato_Encoder" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="201">
+    <StlToken Text="SUB_D" />
+  </StlStatement>
+  <StlStatement UId="202">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="pulsos_transcurridos" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="204">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="205">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="206">
+    <LineComment>
+      <Text>============================================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="208">
+    <LineComment>
+      <Text> NIEVES: Calculo del avance del vagón de referencia</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="210">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="211">
+    <LabelDeclaration>
+      <Label Name="CLC" />
+    </LabelDeclaration>
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="pulsos_transcurridos" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="214">
+    <StlToken Text="DTR" />
+  </StlStatement>
+  <StlStatement UId="215">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="relacion_mm_pulso" />
+      </Symbol>
+      <LineComment>
+        <Text> #Datos_config.relacion_mm_pulso</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="217">
+    <StlToken Text="MUL_R" />
+  </StlStatement>
+  <StlStatement UId="218">
+    <StlToken Text="RND_P" />
+  </StlStatement>
+  <StlStatement UId="219">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="dist_ini_vag_a_phs_mm" />
+      </Symbol>
+      <LineComment>
+        <Text>distancia del punto de deteccion de referencia al punto de referencia 0</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="222">
+    <StlToken Text="ITD" />
+  </StlStatement>
+  <StlStatement UId="223">
+    <StlToken Text="ADD_D" />
+  </StlStatement>
+  <StlStatement UId="224">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="avance_vagon_ref" />
+      </Symbol>
+      <LineComment>
+        <Text>en mm     </Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="227">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="228">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="230">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="231">
+    <LineComment>
+      <Text>con el dato del avance del vagon de referencia calculamos cual es el vagon que esta en el inicio del sorter</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="233">
+    <LineComment>
+      <Text>y cuando ha avanzado respecto del punto de referencia para con este dato calcular la posicion del resto </Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="235">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="5F" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="60" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="61" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="62" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>
+con el dato del encoder de referencia del primer vagon calculamos el elemento 
+que se encuentra en la entrada del sorter para utilizarlo de vagon de referencia
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="63" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="64" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="65" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="66" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="67" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="68" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="69" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="6F" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="236">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="238">
+    <LineComment>
+      <Text>si no hace bien lo del numero de vagon revisar este punto</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="240">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="avance_vagon_ref" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="242">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="Long_Vagon_mm" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="244">
+    <StlToken Text="ITD" />
+  </StlStatement>
+  <StlStatement UId="245">
+    <StlToken Text="DIV_D" />
+  </StlStatement>
+  <StlStatement UId="246">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="248">
+    <StlToken Text="ADD_D" />
+  </StlStatement>
+  <StlStatement UId="249">
+    <StlToken Text="DTB" />
+  </StlStatement>
+  <StlStatement UId="250">
+    <StlToken Text="BTI" />
+  </StlStatement>
+  <StlStatement UId="251">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="num_vag_in" />
+      </Symbol>
+      <LineComment>
+        <Text>Calcula y guarda Vagon en posición inicial</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="254">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="255">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="num_vag_in" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="257">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="Numero_vagones" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="259">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="260">
+    <StlToken Text="LE_I" />
+  </StlStatement>
+  <StlStatement UId="261">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="p_1" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="263">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="264">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="266">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="267">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="num_vag_in" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="269">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="Numero_vagones" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="271">
+    <StlToken Text="SUB_I" />
+  </StlStatement>
+  <StlStatement UId="272">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="numero_vagon_entrada" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="274">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="p_2" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="276">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="277">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="279">
+    <LabelDeclaration>
+      <Label Name="p_1" />
+    </LabelDeclaration>
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="num_vag_in" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="282">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="numero_vagon_entrada" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="284">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="285">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="287">
+    <LabelDeclaration>
+      <Label Name="p_2" />
+    </LabelDeclaration>
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="avance_vagon_ref" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="290">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="Long_Vagon_mm" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="292">
+    <StlToken Text="MOD_D" />
+  </StlStatement>
+  <StlStatement UId="293">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="avance_vagon_entrada" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="295">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="Avance_vag_inic" />
+      </Symbol>
+      <LineComment>
+        <Text>Calcula y guarda avance Vagon actual en posición inicial</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="298">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="299">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="pulsos_transcurridos" />
+      </Symbol>
+      <LineComment>
+        <Text> Calcula el avance total desde origen</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="302">
+    <StlToken Text="DTR" />
+  </StlStatement>
+  <StlStatement UId="303">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="relacion_mm_pulso" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="305">
+    <StlToken Text="MUL_R" />
+  </StlStatement>
+  <StlStatement UId="306">
+    <StlToken Text="RND_P" />
+  </StlStatement>
+  <StlStatement UId="307">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="avance_total" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="309">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="310">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="70" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="71" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="72" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="73" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>en funcion del avance del primer vagon calculamos cual es el vagon que se 
+encuentra en el inicio del sorter y cuanto ha avanzado desde el punto de 
+referencia</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="74" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="75" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="76" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="77" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="78" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="79" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Calculo de posicón del primer vagón</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="80" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="312">
+    <LineComment>
+      <Text>===================================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="314">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="315">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="317">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="contador_elementos" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="319">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="320">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="322">
+    <LineComment>
+      <Text>aqui el calculo de lo que ha avanzado el vagon para dicho elemento</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="324">
+    <LineComment>
+      <Text>NIEVES</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="326">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="327">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="21">
+    <LabelDeclaration>
+      <Label Name="sige" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="337">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="338">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="340">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="341">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB602_ElementosQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Elementos" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="contador_elementos" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="posicion_real_elemento" />
+      </Symbol>
+      <LineComment>
+        <Text>#datos_elemento_actual.posicion_real_elemento</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="343">
+    <StlToken Text="TRUNC" />
+  </StlStatement>
+  <StlStatement UId="344">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="Long_Vagon_mm" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="346">
+    <StlToken Text="ITD" />
+  </StlStatement>
+  <StlStatement UId="347">
+    <StlToken Text="MOD_D" />
+  </StlStatement>
+  <StlStatement UId="348">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="aux_int" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="350">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="Long_Vagon_mm" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="352">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="aux_int" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="354">
+    <StlToken Text="SUB_I" />
+    <LineComment>
+      <Text>Avance del vagon para el elemento tratado</Text>
+    </LineComment>
+  </StlStatement>
+  <StlStatement UId="356">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="Avance_vag_inic" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="358">
+    <StlToken Text="ADD_I" />
+  </StlStatement>
+  <StlStatement UId="359">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="Long_Vagon_mm" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="361">
+    <StlToken Text="MOD_D" />
+  </StlStatement>
+  <StlStatement UId="362">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="Avance_vagon_X" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="364">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="365">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="81" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="82" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="83" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="84" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>aqui vamos realizando los saltos a cada uno de los elementos, calculamos lo que 
+ha avanzado el vagon y si entra dentro de los limites establecidos para dicho 
+elemento cargamos el numero de vagon correspondiente en la posicion asociada a 
+dicho elemento</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="85" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="86" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="87" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="88" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="89" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="8A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="8B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="8C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>calculo posicon vagon todos elementos</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="8D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="8E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="8F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="90" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="91" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="367">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="369">
+    <StlToken Text="CLR" />
+  </StlStatement>
+  <StlStatement UId="370">
+    <StlToken Text="Assign" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB602_ElementosQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Elementos" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="contador_elementos" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Hay_Carrier_en_ventana" />
+      </Symbol>
+      <LineComment>
+        <Text>Inicio Validación elemento en rango Ventana</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="373">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="374">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="375">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB602_ElementosQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Elementos" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="contador_elementos" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="ventana_minima" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="377">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="Avance_vagon_X" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="379">
+    <StlToken Text="GT_I" />
+  </StlStatement>
+  <StlStatement UId="380">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="vent" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="382">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="383">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="385">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="386">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB602_ElementosQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Elementos" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="contador_elementos" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="ventana_maxima" />
+      </Symbol>
+      <LineComment>
+        <Text>apunta a la posicion maxima</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="389">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="Avance_vagon_X" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="391">
+    <StlToken Text="LT_I" />
+  </StlStatement>
+  <StlStatement UId="392">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="vent" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="394">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="395">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="396">
+    <StlToken Text="Assign" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB602_ElementosQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Elementos" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="contador_elementos" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Hay_Carrier_en_ventana" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="398">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="399">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="401">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="402">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="403">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="92" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="93" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="94" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="95" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>aqui la comparacion primero con el rango inferior y luego con el rango superior</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="96" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="97" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="98" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="99" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="9A" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="9B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="9C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="9D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>comparación de la ventana del elemento segun grado de avance</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="9E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="9F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A0" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A1" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="A2" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="404">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="406">
+    <LineComment>
+      <Text>aqui calculamos el vagon que esta en frente del elemento</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="408">
+    <LineComment>
+      <Text> para poder hacer el redondeo tenemos que hacer todo el cálculo en real</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="410">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="411">
+    <LabelDeclaration>
+      <Label Name="vent" />
+    </LabelDeclaration>
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB602_ElementosQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Elementos" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="contador_elementos" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="posicion_real_elemento" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="414">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="Avance_vag_inic" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="416">
+    <StlToken Text="ITD" />
+  </StlStatement>
+  <StlStatement UId="417">
+    <StlToken Text="DTR" />
+  </StlStatement>
+  <StlStatement UId="418">
+    <StlToken Text="SUB_R" />
+  </StlStatement>
+  <StlStatement UId="419">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="Long_Vagon_mm" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="421">
+    <StlToken Text="ITD" />
+  </StlStatement>
+  <StlStatement UId="422">
+    <StlToken Text="DTR" />
+  </StlStatement>
+  <StlStatement UId="423">
+    <StlToken Text="DIV_R" />
+  </StlStatement>
+  <StlStatement UId="424">
+    <StlToken Text="RND_P" />
+  </StlStatement>
+  <StlStatement UId="425">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="salto" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="427">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="num_vag_in" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="429">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="salto" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="431">
+    <StlToken Text="SUB_I" />
+  </StlStatement>
+  <StlStatement UId="432">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="aux_int" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="434">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="435">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="aux_int" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="437">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="439">
+    <StlToken Text="LT_I" />
+  </StlStatement>
+  <StlStatement UId="440">
+    <StlToken Text="JCN" />
+    <Access Scope="Label">
+      <Label Name="p_3" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="442">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="443">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="444">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="446">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="aux_int" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="448">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="Numero_vagones" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="450">
+    <StlToken Text="ADD_I" />
+  </StlStatement>
+  <StlStatement UId="451">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="aux_int" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="453">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="454">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="455">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="457">
+    <LabelDeclaration>
+      <Label Name="p_3" />
+    </LabelDeclaration>
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="aux_int" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="460">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="Numero_vagones" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="462">
+    <StlToken Text="GT_I" />
+  </StlStatement>
+  <StlStatement UId="463">
+    <StlToken Text="JCN" />
+    <Access Scope="Label">
+      <Label Name="carg" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="465">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="466">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="aux_int" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="468">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB600_ConfigQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="datos_config" />
+        <Component Name="Numero_vagones" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="470">
+    <StlToken Text="SUB_I" />
+  </StlStatement>
+  <StlStatement UId="471">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="aux_int" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="473">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="474">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="476">
+    <LabelDeclaration>
+      <Label Name="carg" />
+    </LabelDeclaration>
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="aux_int" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="479">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB602_ElementosQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Elementos" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="contador_elementos" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Numero_carrier" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="481">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="482">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="Avance_vagon_X" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="484">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB602_ElementosQuimarox" />
+        <Component Name="Quimarox" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ID_Quimarox" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Elementos" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="contador_elementos" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Avance_carrier" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="486">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="499">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="501">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="502">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="contador_elementos" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="504">
+    <StlToken Text="L" />
+    <Access Scope="GlobalConstant">
+      <Constant Name="CTE_MaxNumElementos" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="506">
+    <StlToken Text="EQ_I" />
+  </StlStatement>
+  <StlStatement UId="507">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="fin" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="509">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="510">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="contador_elementos" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="512">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="514">
+    <StlToken Text="ADD_I" />
+  </StlStatement>
+  <StlStatement UId="515">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="contador_elementos" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="517">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="518">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="sige" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="520">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="521">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="A3" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A4" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A6" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>aqui si se cumple que esta entre los dos rangos, calculamos el numero de vagon 
+que corresponde y lo cargamos en la correspondiente posicion asociada
+
+al finalizar comprobar que no estamos en el ultimo elemento, si lo estamos, 
+saltar al final, y si no lo estamos pasa al siguiente elemento y spa sige</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A8" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A9" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="AA" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="AB" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="AC" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="AD" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="AE" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>calcular el número de vagón que corresponde</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="AF" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="B0" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="B1" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="B2" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="B3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="523">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="525">
+    <LabelDeclaration>
+      <Label Name="fin" />
+    </LabelDeclaration>
+    <StlToken Text="BE" />
+  </StlStatement>
+  <StlStatement UId="528">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="529">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="530">
+    <LineComment>
+      <Text>=====================================================================================================================</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="532">
+    <LabelDeclaration>
+      <Label Name="fin1" />
+    </LabelDeclaration>
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="535">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="numero_vagon_entrada" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="537">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="avance_vagon_entrada" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="539">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="540">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="541">
+    <LineComment>
+      <Text>=====================================================================================================================   </Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="B4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="B5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="B6" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="B7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="B8" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="B9" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="BA" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="BB" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="BC" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="BD" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="BE" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="BF" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="C0" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="C1" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="C2" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="C3" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="C4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="C5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="C6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="C7" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="C8" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="C9" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="CA" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="CB" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>

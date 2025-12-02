@@ -1,0 +1,3942 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <DocumentInfo>
+    <Created>2025-12-01T14:57:14.997586Z</Created>
+    <ExportSetting>None</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V20 Update 2</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderVersion>0.0</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input">
+    <Member Name="Dir_GW_ASI_Com" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Direccion de inicio de Command Interface del Gateway ASI de Bihl+Wiedemann</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Num_Line" Datatype="Int" />
+    <Member Name="Num_Slave" Datatype="Int" />
+    <Member Name="Valor_V1" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Porcentaje de velocidad respecto de la maxima en formato REAL</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Valor_V2" Datatype="Real" />
+    <Member Name="Valor_V3" Datatype="Real" />
+    <Member Name="Valor_V4" Datatype="Real" />
+    <Member Name="Valor_V5" Datatype="Real" />
+    <Member Name="Valor_V6" Datatype="Real" />
+    <Member Name="Valor_V7" Datatype="Real" />
+    <Member Name="Valor_Rampa" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Rampa de aceleración en milisegundos</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Escritura" Datatype="Bool" />
+    <Member Name="Solo_Velocidades" Datatype="Bool" />
+    <Member Name="Solo_Rampa" Datatype="Bool" />
+  </Section>
+  <Section Name="Output">
+    <Member Name="Finalizado" Datatype="Bool" />
+    <Member Name="Con_Error" Datatype="Bool" />
+  </Section>
+  <Section Name="InOut" />
+  <Section Name="Static">
+    <Member Name="Lista_ComVel" Datatype="Array[1..33] of Byte" />
+    <Member Name="Lista_ComRampa" Datatype="Array[1..8] of Byte" />
+    <Member Name="Escritura_OLD" Datatype="Bool" />
+    <Member Name="Ciclo_envio" Datatype="Int" />
+  </Section>
+  <Section Name="Temp">
+    <Member Name="Valor_W" Datatype="Int" />
+    <Member Name="Valor_B" Datatype="Struct">
+      <AttributeList>
+        <StringAttribute Name="At" SystemDefined="true">Valor_W</StringAttribute>
+      </AttributeList>
+      <Member Name="high" Datatype="Byte" />
+      <Member Name="low" Datatype="Byte" />
+    </Member>
+    <Member Name="Flanco_Escritura" Datatype="Bool" />
+    <Member Name="i" Datatype="Int" />
+  </Section>
+  <Section Name="Constant" />
+</Sections></Interface>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>FB989_Envio Datos Movimot Asi</Name>
+      <Namespace />
+      <Number>989</Number>
+      <ProgrammingLanguage>SCL</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text> Parámetros del bloque
+</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="9" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v4">
+  <NewLine Num="2" UId="21" />
+  <Blank Num="4" UId="22" />
+  <LineComment UId="23">
+    <Text UId="24"> Área de instrucciones</Text>
+  </LineComment>
+  <NewLine UId="25" />
+  <Blank Num="4" UId="26" />
+  <Access Scope="LocalVariable" UId="27">
+    <Symbol UId="28">
+      <Component Name="Flanco_Escritura" UId="29" />
+    </Symbol>
+  </Access>
+  <Blank UId="30" />
+  <Token Text=":=" UId="31" />
+  <Blank UId="32" />
+  <Access Scope="LocalVariable" UId="33">
+    <Symbol UId="34">
+      <Component Name="Escritura" UId="35" />
+    </Symbol>
+  </Access>
+  <Blank UId="36" />
+  <Token Text="AND" UId="37" />
+  <Blank UId="38" />
+  <Token Text="NOT" UId="39" />
+  <Blank UId="40" />
+  <Access Scope="LocalVariable" UId="41">
+    <Symbol UId="42">
+      <Component Name="Escritura_OLD" UId="43" />
+    </Symbol>
+  </Access>
+  <Blank UId="44" />
+  <Token Text=";" UId="45" />
+  <NewLine UId="46" />
+  <Blank Num="4" UId="47" />
+  <NewLine UId="48" />
+  <Blank Num="4" UId="49" />
+  <NewLine UId="50" />
+  <Blank Num="4" UId="51" />
+  <Token Text="IF" UId="52" />
+  <Blank UId="53" />
+  <Access Scope="LocalVariable" UId="54">
+    <Symbol UId="55">
+      <Component Name="Flanco_Escritura" UId="56" />
+    </Symbol>
+  </Access>
+  <Blank UId="57" />
+  <Token Text="THEN" UId="58" />
+  <NewLine UId="59" />
+  <Blank Num="8" UId="60" />
+  <NewLine UId="61" />
+  <Blank Num="8" UId="62" />
+  <LineComment UId="63">
+    <Text UId="64">cabecera envio Velocidades</Text>
+  </LineComment>
+  <NewLine UId="65" />
+  <Blank Num="8" UId="66" />
+  <Access Scope="LocalVariable" UId="67">
+    <Symbol UId="68">
+      <Component Name="Lista_ComVel" UId="69">
+        <Token Text="[" UId="70" />
+        <Access Scope="LiteralConstant" UId="71">
+          <Constant UId="72">
+            <ConstantValue UId="74">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="75" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="76" />
+  <Token Text=":=" UId="77" />
+  <Blank UId="78" />
+  <Access Scope="LiteralConstant" UId="79">
+    <Constant UId="80">
+      <ConstantValue UId="82">16#7D</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="83" />
+  <Token Text=";" UId="84" />
+  <NewLine UId="85" />
+  <Blank Num="8" UId="86" />
+  <Access Scope="LocalVariable" UId="87">
+    <Symbol UId="88">
+      <Component Name="Lista_ComVel" UId="89">
+        <Token Text="[" UId="90" />
+        <Access Scope="LiteralConstant" UId="91">
+          <Constant UId="92">
+            <ConstantValue UId="94">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="95" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="96" />
+  <Token Text=":=" UId="97" />
+  <Blank UId="98" />
+  <Access Scope="Call" UId="99">
+    <Instruction Name="INT_TO_BYTE" UId="100">
+      <Blank UId="101" />
+      <Token Text="(" UId="102" />
+      <NamelessParameter UId="103">
+        <Access Scope="LocalVariable" UId="104">
+          <Symbol UId="105">
+            <Component Name="Num_Line" UId="106" />
+          </Symbol>
+        </Access>
+        <Blank UId="107" />
+        <Token Text="-" UId="108" />
+        <Blank UId="109" />
+        <Access Scope="LiteralConstant" UId="110">
+          <Constant UId="111">
+            <ConstantValue UId="113">1</ConstantValue>
+          </Constant>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="115" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="116" />
+  <NewLine UId="117" />
+  <Blank Num="8" UId="118" />
+  <Access Scope="LocalVariable" UId="119">
+    <Symbol UId="120">
+      <Component Name="Lista_ComVel" UId="121">
+        <Token Text="[" UId="122" />
+        <Access Scope="LiteralConstant" UId="123">
+          <Constant UId="124">
+            <ConstantValue UId="126">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="127" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="128" />
+  <Token Text=":=" UId="129" />
+  <Blank UId="130" />
+  <Access Scope="LiteralConstant" UId="131">
+    <Constant UId="132">
+      <ConstantValue UId="134">16#0A</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="135" />
+  <Token Text=";" UId="136" />
+  <NewLine UId="137" />
+  <Blank Num="8" UId="138" />
+  <Access Scope="LocalVariable" UId="139">
+    <Symbol UId="140">
+      <Component Name="Lista_ComVel" UId="141">
+        <Token Text="[" UId="142" />
+        <Access Scope="LiteralConstant" UId="143">
+          <Constant UId="144">
+            <ConstantValue UId="146">4</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="147" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="148" />
+  <Token Text=":=" UId="149" />
+  <Blank UId="150" />
+  <Access Scope="Call" UId="151">
+    <Instruction Name="INT_TO_BYTE" UId="152">
+      <Blank UId="153" />
+      <Token Text="(" UId="154" />
+      <NamelessParameter UId="155">
+        <Access Scope="LocalVariable" UId="156">
+          <Symbol UId="157">
+            <Component Name="Num_Slave" UId="158" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="160" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="161" />
+  <Blank Num="2" UId="162" />
+  <LineComment UId="163">
+    <Text UId="164">Num Esclavo ASI</Text>
+  </LineComment>
+  <NewLine UId="165" />
+  <Blank Num="8" UId="166" />
+  <Access Scope="LocalVariable" UId="167">
+    <Symbol UId="168">
+      <Component Name="Lista_ComVel" UId="169">
+        <Token Text="[" UId="170" />
+        <Access Scope="LiteralConstant" UId="171">
+          <Constant UId="172">
+            <ConstantValue UId="174">5</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="175" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="176" />
+  <Token Text=":=" UId="177" />
+  <Blank UId="178" />
+  <Access Scope="LiteralConstant" UId="179">
+    <Constant UId="180">
+      <ConstantValue UId="182">16#0A</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="183" />
+  <Token Text=";" UId="184" />
+  <NewLine UId="185" />
+  <Blank Num="8" UId="186" />
+  <LineComment UId="187">
+    <Text UId="188">velocidades (nos deben meter un porcentaje, y nosotros ajustar para que el 100.0% sea 16#4000, que en decimal es 16384, y /100=163.84)</Text>
+  </LineComment>
+  <NewLine UId="189" />
+  <Blank Num="8" UId="190" />
+  <LineComment Inserted="true" UId="191">
+    <Text UId="192"> classic code: #Valor_W := REAL_TO_INT (#Valor_V1 * 163.84) ;</Text>
+  </LineComment>
+  <NewLine UId="193" />
+  <Blank Num="8" UId="194" />
+  <Access Scope="LocalVariable" UId="195">
+    <Symbol UId="196">
+      <Component Name="Valor_W" UId="197" />
+    </Symbol>
+  </Access>
+  <Blank UId="198" />
+  <Token Text=":=" UId="199" />
+  <Blank UId="200" />
+  <Access Scope="Call" UId="201">
+    <Instruction Name="REAL_TO_INT" UId="202">
+      <Blank UId="203" />
+      <Token Text="(" UId="204" />
+      <NamelessParameter UId="205">
+        <Access Scope="LocalVariable" UId="206">
+          <Symbol UId="207">
+            <Component Name="Valor_V1" UId="208" />
+          </Symbol>
+        </Access>
+        <Blank UId="209" />
+        <Token Text="*" UId="210" />
+        <Blank UId="211" />
+        <Access Scope="TypedConstant" UId="212">
+          <Constant UId="213">
+            <ConstantValue UId="214">REAL#163.84</ConstantValue>
+          </Constant>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="216" />
+    </Instruction>
+  </Access>
+  <Blank UId="217" />
+  <Token Text=";" UId="218" />
+  <NewLine UId="219" />
+  <Blank Num="8" UId="220" />
+  <Access Scope="LocalVariable" UId="221">
+    <Symbol UId="222">
+      <Component Name="Lista_ComVel" UId="223">
+        <Token Text="[" UId="224" />
+        <Access Scope="LiteralConstant" UId="225">
+          <Constant UId="226">
+            <ConstantValue UId="228">6</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="229" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="230" />
+  <Token Text=":=" UId="231" />
+  <Blank UId="232" />
+  <Access Scope="LocalVariable" UId="233">
+    <Symbol UId="234">
+      <Component Name="Valor_B" UId="235" />
+      <Token Text="." UId="236" />
+      <Component Name="high" UId="237" />
+    </Symbol>
+  </Access>
+  <Blank UId="238" />
+  <Token Text=";" UId="239" />
+  <NewLine UId="240" />
+  <Blank Num="8" UId="241" />
+  <Access Scope="LocalVariable" UId="242">
+    <Symbol UId="243">
+      <Component Name="Lista_ComVel" UId="244">
+        <Token Text="[" UId="245" />
+        <Access Scope="LiteralConstant" UId="246">
+          <Constant UId="247">
+            <ConstantValue UId="249">7</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="250" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="251" />
+  <Token Text=":=" UId="252" />
+  <Blank UId="253" />
+  <Access Scope="LocalVariable" UId="254">
+    <Symbol UId="255">
+      <Component Name="Valor_B" UId="256" />
+      <Token Text="." UId="257" />
+      <Component Name="low" UId="258" />
+    </Symbol>
+  </Access>
+  <Blank UId="259" />
+  <Token Text=";" UId="260" />
+  <NewLine UId="261" />
+  <Blank Num="8" UId="262" />
+  <Access Scope="LocalVariable" UId="263">
+    <Symbol UId="264">
+      <Component Name="Valor_W" UId="265" />
+    </Symbol>
+  </Access>
+  <Blank UId="266" />
+  <Token Text=":=" UId="267" />
+  <Blank UId="268" />
+  <Access Scope="LocalVariable" UId="269">
+    <Symbol UId="270">
+      <Component Name="Valor_W" UId="271" />
+    </Symbol>
+  </Access>
+  <Blank UId="272" />
+  <Token Text="*" UId="273" />
+  <Blank UId="274" />
+  <Token Text="(" UId="275" />
+  <Access Scope="LiteralConstant" UId="276">
+    <Constant UId="277">
+      <ConstantValue UId="279">-1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=")" UId="280" />
+  <Token Text=";" UId="281" />
+  <NewLine UId="282" />
+  <Blank Num="8" UId="283" />
+  <Access Scope="LocalVariable" UId="284">
+    <Symbol UId="285">
+      <Component Name="Lista_ComVel" UId="286">
+        <Token Text="[" UId="287" />
+        <Access Scope="LiteralConstant" UId="288">
+          <Constant UId="289">
+            <ConstantValue UId="291">8</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="292" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="293" />
+  <Token Text=":=" UId="294" />
+  <Blank UId="295" />
+  <Access Scope="LocalVariable" UId="296">
+    <Symbol UId="297">
+      <Component Name="Valor_B" UId="298" />
+      <Token Text="." UId="299" />
+      <Component Name="high" UId="300" />
+    </Symbol>
+  </Access>
+  <Blank UId="301" />
+  <Token Text=";" UId="302" />
+  <NewLine UId="303" />
+  <Blank Num="8" UId="304" />
+  <Access Scope="LocalVariable" UId="305">
+    <Symbol UId="306">
+      <Component Name="Lista_ComVel" UId="307">
+        <Token Text="[" UId="308" />
+        <Access Scope="LiteralConstant" UId="309">
+          <Constant UId="310">
+            <ConstantValue UId="312">9</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="313" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="314" />
+  <Token Text=":=" UId="315" />
+  <Blank UId="316" />
+  <Access Scope="LocalVariable" UId="317">
+    <Symbol UId="318">
+      <Component Name="Valor_B" UId="319" />
+      <Token Text="." UId="320" />
+      <Component Name="low" UId="321" />
+    </Symbol>
+  </Access>
+  <Blank UId="322" />
+  <Token Text=";" UId="323" />
+  <NewLine UId="324" />
+  <Blank Num="8" UId="325" />
+  <LineComment Inserted="true" UId="326">
+    <Text UId="327"> classic code: #Valor_W := REAL_TO_INT (#Valor_V2 * 163.84) ;</Text>
+  </LineComment>
+  <NewLine UId="328" />
+  <Blank Num="8" UId="329" />
+  <Access Scope="LocalVariable" UId="330">
+    <Symbol UId="331">
+      <Component Name="Valor_W" UId="332" />
+    </Symbol>
+  </Access>
+  <Blank UId="333" />
+  <Token Text=":=" UId="334" />
+  <Blank UId="335" />
+  <Access Scope="Call" UId="336">
+    <Instruction Name="REAL_TO_INT" UId="337">
+      <Blank UId="338" />
+      <Token Text="(" UId="339" />
+      <NamelessParameter UId="340">
+        <Access Scope="LocalVariable" UId="341">
+          <Symbol UId="342">
+            <Component Name="Valor_V2" UId="343" />
+          </Symbol>
+        </Access>
+        <Blank UId="344" />
+        <Token Text="*" UId="345" />
+        <Blank UId="346" />
+        <Access Scope="TypedConstant" UId="347">
+          <Constant UId="348">
+            <ConstantValue UId="349">REAL#163.84</ConstantValue>
+          </Constant>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="351" />
+    </Instruction>
+  </Access>
+  <Blank UId="352" />
+  <Token Text=";" UId="353" />
+  <NewLine UId="354" />
+  <Blank Num="8" UId="355" />
+  <Access Scope="LocalVariable" UId="356">
+    <Symbol UId="357">
+      <Component Name="Lista_ComVel" UId="358">
+        <Token Text="[" UId="359" />
+        <Access Scope="LiteralConstant" UId="360">
+          <Constant UId="361">
+            <ConstantValue UId="363">10</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="364" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="365" />
+  <Token Text=":=" UId="366" />
+  <Blank UId="367" />
+  <Access Scope="LocalVariable" UId="368">
+    <Symbol UId="369">
+      <Component Name="Valor_B" UId="370" />
+      <Token Text="." UId="371" />
+      <Component Name="high" UId="372" />
+    </Symbol>
+  </Access>
+  <Blank UId="373" />
+  <Token Text=";" UId="374" />
+  <NewLine UId="375" />
+  <Blank Num="8" UId="376" />
+  <Access Scope="LocalVariable" UId="377">
+    <Symbol UId="378">
+      <Component Name="Lista_ComVel" UId="379">
+        <Token Text="[" UId="380" />
+        <Access Scope="LiteralConstant" UId="381">
+          <Constant UId="382">
+            <ConstantValue UId="384">11</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="385" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="386" />
+  <Token Text=":=" UId="387" />
+  <Blank UId="388" />
+  <Access Scope="LocalVariable" UId="389">
+    <Symbol UId="390">
+      <Component Name="Valor_B" UId="391" />
+      <Token Text="." UId="392" />
+      <Component Name="low" UId="393" />
+    </Symbol>
+  </Access>
+  <Blank UId="394" />
+  <Token Text=";" UId="395" />
+  <NewLine UId="396" />
+  <Blank Num="8" UId="397" />
+  <Access Scope="LocalVariable" UId="398">
+    <Symbol UId="399">
+      <Component Name="Valor_W" UId="400" />
+    </Symbol>
+  </Access>
+  <Blank UId="401" />
+  <Token Text=":=" UId="402" />
+  <Blank UId="403" />
+  <Access Scope="LocalVariable" UId="404">
+    <Symbol UId="405">
+      <Component Name="Valor_W" UId="406" />
+    </Symbol>
+  </Access>
+  <Blank UId="407" />
+  <Token Text="*" UId="408" />
+  <Blank UId="409" />
+  <Token Text="(" UId="410" />
+  <Access Scope="LiteralConstant" UId="411">
+    <Constant UId="412">
+      <ConstantValue UId="414">-1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=")" UId="415" />
+  <Token Text=";" UId="416" />
+  <NewLine UId="417" />
+  <Blank Num="8" UId="418" />
+  <Access Scope="LocalVariable" UId="419">
+    <Symbol UId="420">
+      <Component Name="Lista_ComVel" UId="421">
+        <Token Text="[" UId="422" />
+        <Access Scope="LiteralConstant" UId="423">
+          <Constant UId="424">
+            <ConstantValue UId="426">12</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="427" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="428" />
+  <Token Text=":=" UId="429" />
+  <Blank UId="430" />
+  <Access Scope="LocalVariable" UId="431">
+    <Symbol UId="432">
+      <Component Name="Valor_B" UId="433" />
+      <Token Text="." UId="434" />
+      <Component Name="high" UId="435" />
+    </Symbol>
+  </Access>
+  <Blank UId="436" />
+  <Token Text=";" UId="437" />
+  <NewLine UId="438" />
+  <Blank Num="8" UId="439" />
+  <Access Scope="LocalVariable" UId="440">
+    <Symbol UId="441">
+      <Component Name="Lista_ComVel" UId="442">
+        <Token Text="[" UId="443" />
+        <Access Scope="LiteralConstant" UId="444">
+          <Constant UId="445">
+            <ConstantValue UId="447">13</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="448" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="449" />
+  <Token Text=":=" UId="450" />
+  <Blank UId="451" />
+  <Access Scope="LocalVariable" UId="452">
+    <Symbol UId="453">
+      <Component Name="Valor_B" UId="454" />
+      <Token Text="." UId="455" />
+      <Component Name="low" UId="456" />
+    </Symbol>
+  </Access>
+  <Blank UId="457" />
+  <Token Text=";" UId="458" />
+  <NewLine UId="459" />
+  <Blank Num="8" UId="460" />
+  <LineComment Inserted="true" UId="461">
+    <Text UId="462"> classic code: #Valor_W := REAL_TO_INT (#Valor_V3 * 163.84) ;</Text>
+  </LineComment>
+  <NewLine UId="463" />
+  <Blank Num="8" UId="464" />
+  <Access Scope="LocalVariable" UId="465">
+    <Symbol UId="466">
+      <Component Name="Valor_W" UId="467" />
+    </Symbol>
+  </Access>
+  <Blank UId="468" />
+  <Token Text=":=" UId="469" />
+  <Blank UId="470" />
+  <Access Scope="Call" UId="471">
+    <Instruction Name="REAL_TO_INT" UId="472">
+      <Blank UId="473" />
+      <Token Text="(" UId="474" />
+      <NamelessParameter UId="475">
+        <Access Scope="LocalVariable" UId="476">
+          <Symbol UId="477">
+            <Component Name="Valor_V3" UId="478" />
+          </Symbol>
+        </Access>
+        <Blank UId="479" />
+        <Token Text="*" UId="480" />
+        <Blank UId="481" />
+        <Access Scope="TypedConstant" UId="482">
+          <Constant UId="483">
+            <ConstantValue UId="484">REAL#163.84</ConstantValue>
+          </Constant>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="486" />
+    </Instruction>
+  </Access>
+  <Blank UId="487" />
+  <Token Text=";" UId="488" />
+  <NewLine UId="489" />
+  <Blank Num="8" UId="490" />
+  <Access Scope="LocalVariable" UId="491">
+    <Symbol UId="492">
+      <Component Name="Lista_ComVel" UId="493">
+        <Token Text="[" UId="494" />
+        <Access Scope="LiteralConstant" UId="495">
+          <Constant UId="496">
+            <ConstantValue UId="498">14</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="499" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="500" />
+  <Token Text=":=" UId="501" />
+  <Blank UId="502" />
+  <Access Scope="LocalVariable" UId="503">
+    <Symbol UId="504">
+      <Component Name="Valor_B" UId="505" />
+      <Token Text="." UId="506" />
+      <Component Name="high" UId="507" />
+    </Symbol>
+  </Access>
+  <Blank UId="508" />
+  <Token Text=";" UId="509" />
+  <NewLine UId="510" />
+  <Blank Num="8" UId="511" />
+  <Access Scope="LocalVariable" UId="512">
+    <Symbol UId="513">
+      <Component Name="Lista_ComVel" UId="514">
+        <Token Text="[" UId="515" />
+        <Access Scope="LiteralConstant" UId="516">
+          <Constant UId="517">
+            <ConstantValue UId="519">15</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="520" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="521" />
+  <Token Text=":=" UId="522" />
+  <Blank UId="523" />
+  <Access Scope="LocalVariable" UId="524">
+    <Symbol UId="525">
+      <Component Name="Valor_B" UId="526" />
+      <Token Text="." UId="527" />
+      <Component Name="low" UId="528" />
+    </Symbol>
+  </Access>
+  <Blank UId="529" />
+  <Token Text=";" UId="530" />
+  <NewLine UId="531" />
+  <Blank Num="8" UId="532" />
+  <Access Scope="LocalVariable" UId="533">
+    <Symbol UId="534">
+      <Component Name="Valor_W" UId="535" />
+    </Symbol>
+  </Access>
+  <Blank UId="536" />
+  <Token Text=":=" UId="537" />
+  <Blank UId="538" />
+  <Access Scope="LocalVariable" UId="539">
+    <Symbol UId="540">
+      <Component Name="Valor_W" UId="541" />
+    </Symbol>
+  </Access>
+  <Blank UId="542" />
+  <Token Text="*" UId="543" />
+  <Blank UId="544" />
+  <Token Text="(" UId="545" />
+  <Access Scope="LiteralConstant" UId="546">
+    <Constant UId="547">
+      <ConstantValue UId="549">-1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=")" UId="550" />
+  <Token Text=";" UId="551" />
+  <NewLine UId="552" />
+  <Blank Num="8" UId="553" />
+  <Access Scope="LocalVariable" UId="554">
+    <Symbol UId="555">
+      <Component Name="Lista_ComVel" UId="556">
+        <Token Text="[" UId="557" />
+        <Access Scope="LiteralConstant" UId="558">
+          <Constant UId="559">
+            <ConstantValue UId="561">16</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="562" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="563" />
+  <Token Text=":=" UId="564" />
+  <Blank UId="565" />
+  <Access Scope="LocalVariable" UId="566">
+    <Symbol UId="567">
+      <Component Name="Valor_B" UId="568" />
+      <Token Text="." UId="569" />
+      <Component Name="high" UId="570" />
+    </Symbol>
+  </Access>
+  <Blank UId="571" />
+  <Token Text=";" UId="572" />
+  <NewLine UId="573" />
+  <Blank Num="8" UId="574" />
+  <Access Scope="LocalVariable" UId="575">
+    <Symbol UId="576">
+      <Component Name="Lista_ComVel" UId="577">
+        <Token Text="[" UId="578" />
+        <Access Scope="LiteralConstant" UId="579">
+          <Constant UId="580">
+            <ConstantValue UId="582">17</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="583" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="584" />
+  <Token Text=":=" UId="585" />
+  <Blank UId="586" />
+  <Access Scope="LocalVariable" UId="587">
+    <Symbol UId="588">
+      <Component Name="Valor_B" UId="589" />
+      <Token Text="." UId="590" />
+      <Component Name="low" UId="591" />
+    </Symbol>
+  </Access>
+  <Blank UId="592" />
+  <Token Text=";" UId="593" />
+  <NewLine UId="594" />
+  <Blank Num="8" UId="595" />
+  <LineComment Inserted="true" UId="596">
+    <Text UId="597"> classic code: #Valor_W := REAL_TO_INT (#Valor_V4 * 163.84) ;</Text>
+  </LineComment>
+  <NewLine UId="598" />
+  <Blank Num="8" UId="599" />
+  <Access Scope="LocalVariable" UId="600">
+    <Symbol UId="601">
+      <Component Name="Valor_W" UId="602" />
+    </Symbol>
+  </Access>
+  <Blank UId="603" />
+  <Token Text=":=" UId="604" />
+  <Blank UId="605" />
+  <Access Scope="Call" UId="606">
+    <Instruction Name="REAL_TO_INT" UId="607">
+      <Blank UId="608" />
+      <Token Text="(" UId="609" />
+      <NamelessParameter UId="610">
+        <Access Scope="LocalVariable" UId="611">
+          <Symbol UId="612">
+            <Component Name="Valor_V4" UId="613" />
+          </Symbol>
+        </Access>
+        <Blank UId="614" />
+        <Token Text="*" UId="615" />
+        <Blank UId="616" />
+        <Access Scope="TypedConstant" UId="617">
+          <Constant UId="618">
+            <ConstantValue UId="619">REAL#163.84</ConstantValue>
+          </Constant>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="621" />
+    </Instruction>
+  </Access>
+  <Blank UId="622" />
+  <Token Text=";" UId="623" />
+  <NewLine UId="624" />
+  <Blank Num="8" UId="625" />
+  <Access Scope="LocalVariable" UId="626">
+    <Symbol UId="627">
+      <Component Name="Lista_ComVel" UId="628">
+        <Token Text="[" UId="629" />
+        <Access Scope="LiteralConstant" UId="630">
+          <Constant UId="631">
+            <ConstantValue UId="633">18</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="634" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="635" />
+  <Token Text=":=" UId="636" />
+  <Blank UId="637" />
+  <Access Scope="LocalVariable" UId="638">
+    <Symbol UId="639">
+      <Component Name="Valor_B" UId="640" />
+      <Token Text="." UId="641" />
+      <Component Name="high" UId="642" />
+    </Symbol>
+  </Access>
+  <Blank UId="643" />
+  <Token Text=";" UId="644" />
+  <NewLine UId="645" />
+  <Blank Num="8" UId="646" />
+  <Access Scope="LocalVariable" UId="647">
+    <Symbol UId="648">
+      <Component Name="Lista_ComVel" UId="649">
+        <Token Text="[" UId="650" />
+        <Access Scope="LiteralConstant" UId="651">
+          <Constant UId="652">
+            <ConstantValue UId="654">19</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="655" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="656" />
+  <Token Text=":=" UId="657" />
+  <Blank UId="658" />
+  <Access Scope="LocalVariable" UId="659">
+    <Symbol UId="660">
+      <Component Name="Valor_B" UId="661" />
+      <Token Text="." UId="662" />
+      <Component Name="low" UId="663" />
+    </Symbol>
+  </Access>
+  <Blank UId="664" />
+  <Token Text=";" UId="665" />
+  <NewLine UId="666" />
+  <Blank Num="8" UId="667" />
+  <Access Scope="LocalVariable" UId="668">
+    <Symbol UId="669">
+      <Component Name="Valor_W" UId="670" />
+    </Symbol>
+  </Access>
+  <Blank UId="671" />
+  <Token Text=":=" UId="672" />
+  <Blank UId="673" />
+  <Access Scope="LocalVariable" UId="674">
+    <Symbol UId="675">
+      <Component Name="Valor_W" UId="676" />
+    </Symbol>
+  </Access>
+  <Blank UId="677" />
+  <Token Text="*" UId="678" />
+  <Blank UId="679" />
+  <Token Text="(" UId="680" />
+  <Access Scope="LiteralConstant" UId="681">
+    <Constant UId="682">
+      <ConstantValue UId="684">-1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=")" UId="685" />
+  <Token Text=";" UId="686" />
+  <NewLine UId="687" />
+  <Blank Num="8" UId="688" />
+  <Access Scope="LocalVariable" UId="689">
+    <Symbol UId="690">
+      <Component Name="Lista_ComVel" UId="691">
+        <Token Text="[" UId="692" />
+        <Access Scope="LiteralConstant" UId="693">
+          <Constant UId="694">
+            <ConstantValue UId="696">20</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="697" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="698" />
+  <Token Text=":=" UId="699" />
+  <Blank UId="700" />
+  <Access Scope="LocalVariable" UId="701">
+    <Symbol UId="702">
+      <Component Name="Valor_B" UId="703" />
+      <Token Text="." UId="704" />
+      <Component Name="high" UId="705" />
+    </Symbol>
+  </Access>
+  <Blank UId="706" />
+  <Token Text=";" UId="707" />
+  <NewLine UId="708" />
+  <Blank Num="8" UId="709" />
+  <Access Scope="LocalVariable" UId="710">
+    <Symbol UId="711">
+      <Component Name="Lista_ComVel" UId="712">
+        <Token Text="[" UId="713" />
+        <Access Scope="LiteralConstant" UId="714">
+          <Constant UId="715">
+            <ConstantValue UId="717">21</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="718" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="719" />
+  <Token Text=":=" UId="720" />
+  <Blank UId="721" />
+  <Access Scope="LocalVariable" UId="722">
+    <Symbol UId="723">
+      <Component Name="Valor_B" UId="724" />
+      <Token Text="." UId="725" />
+      <Component Name="low" UId="726" />
+    </Symbol>
+  </Access>
+  <Blank UId="727" />
+  <Token Text=";" UId="728" />
+  <NewLine UId="729" />
+  <Blank Num="8" UId="730" />
+  <LineComment Inserted="true" UId="731">
+    <Text UId="732"> classic code: #Valor_W := REAL_TO_INT (#Valor_V5 * 163.84) ;</Text>
+  </LineComment>
+  <NewLine UId="733" />
+  <Blank Num="8" UId="734" />
+  <Access Scope="LocalVariable" UId="735">
+    <Symbol UId="736">
+      <Component Name="Valor_W" UId="737" />
+    </Symbol>
+  </Access>
+  <Blank UId="738" />
+  <Token Text=":=" UId="739" />
+  <Blank UId="740" />
+  <Access Scope="Call" UId="741">
+    <Instruction Name="REAL_TO_INT" UId="742">
+      <Blank UId="743" />
+      <Token Text="(" UId="744" />
+      <NamelessParameter UId="745">
+        <Access Scope="LocalVariable" UId="746">
+          <Symbol UId="747">
+            <Component Name="Valor_V5" UId="748" />
+          </Symbol>
+        </Access>
+        <Blank UId="749" />
+        <Token Text="*" UId="750" />
+        <Blank UId="751" />
+        <Access Scope="TypedConstant" UId="752">
+          <Constant UId="753">
+            <ConstantValue UId="754">REAL#163.84</ConstantValue>
+          </Constant>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="756" />
+    </Instruction>
+  </Access>
+  <Blank UId="757" />
+  <Token Text=";" UId="758" />
+  <NewLine UId="759" />
+  <Blank Num="8" UId="760" />
+  <Access Scope="LocalVariable" UId="761">
+    <Symbol UId="762">
+      <Component Name="Lista_ComVel" UId="763">
+        <Token Text="[" UId="764" />
+        <Access Scope="LiteralConstant" UId="765">
+          <Constant UId="766">
+            <ConstantValue UId="768">22</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="769" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="770" />
+  <Token Text=":=" UId="771" />
+  <Blank UId="772" />
+  <Access Scope="LocalVariable" UId="773">
+    <Symbol UId="774">
+      <Component Name="Valor_B" UId="775" />
+      <Token Text="." UId="776" />
+      <Component Name="high" UId="777" />
+    </Symbol>
+  </Access>
+  <Blank UId="778" />
+  <Token Text=";" UId="779" />
+  <NewLine UId="780" />
+  <Blank Num="8" UId="781" />
+  <Access Scope="LocalVariable" UId="782">
+    <Symbol UId="783">
+      <Component Name="Lista_ComVel" UId="784">
+        <Token Text="[" UId="785" />
+        <Access Scope="LiteralConstant" UId="786">
+          <Constant UId="787">
+            <ConstantValue UId="789">23</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="790" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="791" />
+  <Token Text=":=" UId="792" />
+  <Blank UId="793" />
+  <Access Scope="LocalVariable" UId="794">
+    <Symbol UId="795">
+      <Component Name="Valor_B" UId="796" />
+      <Token Text="." UId="797" />
+      <Component Name="low" UId="798" />
+    </Symbol>
+  </Access>
+  <Blank UId="799" />
+  <Token Text=";" UId="800" />
+  <NewLine UId="801" />
+  <Blank Num="8" UId="802" />
+  <Access Scope="LocalVariable" UId="803">
+    <Symbol UId="804">
+      <Component Name="Valor_W" UId="805" />
+    </Symbol>
+  </Access>
+  <Blank UId="806" />
+  <Token Text=":=" UId="807" />
+  <Blank UId="808" />
+  <Access Scope="LocalVariable" UId="809">
+    <Symbol UId="810">
+      <Component Name="Valor_W" UId="811" />
+    </Symbol>
+  </Access>
+  <Blank UId="812" />
+  <Token Text="*" UId="813" />
+  <Blank UId="814" />
+  <Token Text="(" UId="815" />
+  <Access Scope="LiteralConstant" UId="816">
+    <Constant UId="817">
+      <ConstantValue UId="819">-1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=")" UId="820" />
+  <Token Text=";" UId="821" />
+  <NewLine UId="822" />
+  <Blank Num="8" UId="823" />
+  <Access Scope="LocalVariable" UId="824">
+    <Symbol UId="825">
+      <Component Name="Lista_ComVel" UId="826">
+        <Token Text="[" UId="827" />
+        <Access Scope="LiteralConstant" UId="828">
+          <Constant UId="829">
+            <ConstantValue UId="831">24</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="832" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="833" />
+  <Token Text=":=" UId="834" />
+  <Blank UId="835" />
+  <Access Scope="LocalVariable" UId="836">
+    <Symbol UId="837">
+      <Component Name="Valor_B" UId="838" />
+      <Token Text="." UId="839" />
+      <Component Name="high" UId="840" />
+    </Symbol>
+  </Access>
+  <Blank UId="841" />
+  <Token Text=";" UId="842" />
+  <NewLine UId="843" />
+  <Blank Num="8" UId="844" />
+  <Access Scope="LocalVariable" UId="845">
+    <Symbol UId="846">
+      <Component Name="Lista_ComVel" UId="847">
+        <Token Text="[" UId="848" />
+        <Access Scope="LiteralConstant" UId="849">
+          <Constant UId="850">
+            <ConstantValue UId="852">25</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="853" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="854" />
+  <Token Text=":=" UId="855" />
+  <Blank UId="856" />
+  <Access Scope="LocalVariable" UId="857">
+    <Symbol UId="858">
+      <Component Name="Valor_B" UId="859" />
+      <Token Text="." UId="860" />
+      <Component Name="low" UId="861" />
+    </Symbol>
+  </Access>
+  <Blank UId="862" />
+  <Token Text=";" UId="863" />
+  <NewLine UId="864" />
+  <Blank Num="8" UId="865" />
+  <LineComment Inserted="true" UId="866">
+    <Text UId="867"> classic code: #Valor_W := REAL_TO_INT (#Valor_V6 * 163.84) ;</Text>
+  </LineComment>
+  <NewLine UId="868" />
+  <Blank Num="8" UId="869" />
+  <Access Scope="LocalVariable" UId="870">
+    <Symbol UId="871">
+      <Component Name="Valor_W" UId="872" />
+    </Symbol>
+  </Access>
+  <Blank UId="873" />
+  <Token Text=":=" UId="874" />
+  <Blank UId="875" />
+  <Access Scope="Call" UId="876">
+    <Instruction Name="REAL_TO_INT" UId="877">
+      <Blank UId="878" />
+      <Token Text="(" UId="879" />
+      <NamelessParameter UId="880">
+        <Access Scope="LocalVariable" UId="881">
+          <Symbol UId="882">
+            <Component Name="Valor_V6" UId="883" />
+          </Symbol>
+        </Access>
+        <Blank UId="884" />
+        <Token Text="*" UId="885" />
+        <Blank UId="886" />
+        <Access Scope="TypedConstant" UId="887">
+          <Constant UId="888">
+            <ConstantValue UId="889">REAL#163.84</ConstantValue>
+          </Constant>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="891" />
+    </Instruction>
+  </Access>
+  <Blank UId="892" />
+  <Token Text=";" UId="893" />
+  <NewLine UId="894" />
+  <Blank Num="8" UId="895" />
+  <Access Scope="LocalVariable" UId="896">
+    <Symbol UId="897">
+      <Component Name="Lista_ComVel" UId="898">
+        <Token Text="[" UId="899" />
+        <Access Scope="LiteralConstant" UId="900">
+          <Constant UId="901">
+            <ConstantValue UId="903">26</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="904" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="905" />
+  <Token Text=":=" UId="906" />
+  <Blank UId="907" />
+  <Access Scope="LocalVariable" UId="908">
+    <Symbol UId="909">
+      <Component Name="Valor_B" UId="910" />
+      <Token Text="." UId="911" />
+      <Component Name="high" UId="912" />
+    </Symbol>
+  </Access>
+  <Blank UId="913" />
+  <Token Text=";" UId="914" />
+  <NewLine UId="915" />
+  <Blank Num="8" UId="916" />
+  <Access Scope="LocalVariable" UId="917">
+    <Symbol UId="918">
+      <Component Name="Lista_ComVel" UId="919">
+        <Token Text="[" UId="920" />
+        <Access Scope="LiteralConstant" UId="921">
+          <Constant UId="922">
+            <ConstantValue UId="924">27</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="925" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="926" />
+  <Token Text=":=" UId="927" />
+  <Blank UId="928" />
+  <Access Scope="LocalVariable" UId="929">
+    <Symbol UId="930">
+      <Component Name="Valor_B" UId="931" />
+      <Token Text="." UId="932" />
+      <Component Name="low" UId="933" />
+    </Symbol>
+  </Access>
+  <Blank UId="934" />
+  <Token Text=";" UId="935" />
+  <NewLine UId="936" />
+  <Blank Num="8" UId="937" />
+  <Access Scope="LocalVariable" UId="938">
+    <Symbol UId="939">
+      <Component Name="Valor_W" UId="940" />
+    </Symbol>
+  </Access>
+  <Blank UId="941" />
+  <Token Text=":=" UId="942" />
+  <Blank UId="943" />
+  <Access Scope="LocalVariable" UId="944">
+    <Symbol UId="945">
+      <Component Name="Valor_W" UId="946" />
+    </Symbol>
+  </Access>
+  <Blank UId="947" />
+  <Token Text="*" UId="948" />
+  <Blank UId="949" />
+  <Token Text="(" UId="950" />
+  <Access Scope="LiteralConstant" UId="951">
+    <Constant UId="952">
+      <ConstantValue UId="954">-1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=")" UId="955" />
+  <Token Text=";" UId="956" />
+  <NewLine UId="957" />
+  <Blank Num="8" UId="958" />
+  <Access Scope="LocalVariable" UId="959">
+    <Symbol UId="960">
+      <Component Name="Lista_ComVel" UId="961">
+        <Token Text="[" UId="962" />
+        <Access Scope="LiteralConstant" UId="963">
+          <Constant UId="964">
+            <ConstantValue UId="966">28</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="967" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="968" />
+  <Token Text=":=" UId="969" />
+  <Blank UId="970" />
+  <Access Scope="LocalVariable" UId="971">
+    <Symbol UId="972">
+      <Component Name="Valor_B" UId="973" />
+      <Token Text="." UId="974" />
+      <Component Name="high" UId="975" />
+    </Symbol>
+  </Access>
+  <Blank UId="976" />
+  <Token Text=";" UId="977" />
+  <NewLine UId="978" />
+  <Blank Num="8" UId="979" />
+  <Access Scope="LocalVariable" UId="980">
+    <Symbol UId="981">
+      <Component Name="Lista_ComVel" UId="982">
+        <Token Text="[" UId="983" />
+        <Access Scope="LiteralConstant" UId="984">
+          <Constant UId="985">
+            <ConstantValue UId="987">29</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="988" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="989" />
+  <Token Text=":=" UId="990" />
+  <Blank UId="991" />
+  <Access Scope="LocalVariable" UId="992">
+    <Symbol UId="993">
+      <Component Name="Valor_B" UId="994" />
+      <Token Text="." UId="995" />
+      <Component Name="low" UId="996" />
+    </Symbol>
+  </Access>
+  <Blank UId="997" />
+  <Token Text=";" UId="998" />
+  <NewLine UId="999" />
+  <Blank Num="8" UId="1000" />
+  <LineComment Inserted="true" UId="1001">
+    <Text UId="1002"> classic code: #Valor_W := REAL_TO_INT (#Valor_V7 * 163.84) ;</Text>
+  </LineComment>
+  <NewLine UId="1003" />
+  <Blank Num="8" UId="1004" />
+  <Access Scope="LocalVariable" UId="1005">
+    <Symbol UId="1006">
+      <Component Name="Valor_W" UId="1007" />
+    </Symbol>
+  </Access>
+  <Blank UId="1008" />
+  <Token Text=":=" UId="1009" />
+  <Blank UId="1010" />
+  <Access Scope="Call" UId="1011">
+    <Instruction Name="REAL_TO_INT" UId="1012">
+      <Blank UId="1013" />
+      <Token Text="(" UId="1014" />
+      <NamelessParameter UId="1015">
+        <Access Scope="LocalVariable" UId="1016">
+          <Symbol UId="1017">
+            <Component Name="Valor_V7" UId="1018" />
+          </Symbol>
+        </Access>
+        <Blank UId="1019" />
+        <Token Text="*" UId="1020" />
+        <Blank UId="1021" />
+        <Access Scope="TypedConstant" UId="1022">
+          <Constant UId="1023">
+            <ConstantValue UId="1024">REAL#163.84</ConstantValue>
+          </Constant>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1026" />
+    </Instruction>
+  </Access>
+  <Blank UId="1027" />
+  <Token Text=";" UId="1028" />
+  <NewLine UId="1029" />
+  <Blank Num="8" UId="1030" />
+  <Access Scope="LocalVariable" UId="1031">
+    <Symbol UId="1032">
+      <Component Name="Lista_ComVel" UId="1033">
+        <Token Text="[" UId="1034" />
+        <Access Scope="LiteralConstant" UId="1035">
+          <Constant UId="1036">
+            <ConstantValue UId="1038">30</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1039" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="1040" />
+  <Token Text=":=" UId="1041" />
+  <Blank UId="1042" />
+  <Access Scope="LocalVariable" UId="1043">
+    <Symbol UId="1044">
+      <Component Name="Valor_B" UId="1045" />
+      <Token Text="." UId="1046" />
+      <Component Name="high" UId="1047" />
+    </Symbol>
+  </Access>
+  <Blank UId="1048" />
+  <Token Text=";" UId="1049" />
+  <NewLine UId="1050" />
+  <Blank Num="8" UId="1051" />
+  <Access Scope="LocalVariable" UId="1052">
+    <Symbol UId="1053">
+      <Component Name="Lista_ComVel" UId="1054">
+        <Token Text="[" UId="1055" />
+        <Access Scope="LiteralConstant" UId="1056">
+          <Constant UId="1057">
+            <ConstantValue UId="1059">31</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1060" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="1061" />
+  <Token Text=":=" UId="1062" />
+  <Blank UId="1063" />
+  <Access Scope="LocalVariable" UId="1064">
+    <Symbol UId="1065">
+      <Component Name="Valor_B" UId="1066" />
+      <Token Text="." UId="1067" />
+      <Component Name="low" UId="1068" />
+    </Symbol>
+  </Access>
+  <Blank UId="1069" />
+  <Token Text=";" UId="1070" />
+  <NewLine UId="1071" />
+  <Blank Num="8" UId="1072" />
+  <Access Scope="LocalVariable" UId="1073">
+    <Symbol UId="1074">
+      <Component Name="Valor_W" UId="1075" />
+    </Symbol>
+  </Access>
+  <Blank UId="1076" />
+  <Token Text=":=" UId="1077" />
+  <Blank UId="1078" />
+  <Access Scope="LocalVariable" UId="1079">
+    <Symbol UId="1080">
+      <Component Name="Valor_W" UId="1081" />
+    </Symbol>
+  </Access>
+  <Blank UId="1082" />
+  <Token Text="*" UId="1083" />
+  <Blank UId="1084" />
+  <Token Text="(" UId="1085" />
+  <Access Scope="LiteralConstant" UId="1086">
+    <Constant UId="1087">
+      <ConstantValue UId="1089">-1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=")" UId="1090" />
+  <Token Text=";" UId="1091" />
+  <NewLine UId="1092" />
+  <Blank Num="8" UId="1093" />
+  <Access Scope="LocalVariable" UId="1094">
+    <Symbol UId="1095">
+      <Component Name="Lista_ComVel" UId="1096">
+        <Token Text="[" UId="1097" />
+        <Access Scope="LiteralConstant" UId="1098">
+          <Constant UId="1099">
+            <ConstantValue UId="1101">32</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1102" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="1103" />
+  <Token Text=":=" UId="1104" />
+  <Blank UId="1105" />
+  <Access Scope="LocalVariable" UId="1106">
+    <Symbol UId="1107">
+      <Component Name="Valor_B" UId="1108" />
+      <Token Text="." UId="1109" />
+      <Component Name="high" UId="1110" />
+    </Symbol>
+  </Access>
+  <Blank UId="1111" />
+  <Token Text=";" UId="1112" />
+  <NewLine UId="1113" />
+  <Blank Num="8" UId="1114" />
+  <Access Scope="LocalVariable" UId="1115">
+    <Symbol UId="1116">
+      <Component Name="Lista_ComVel" UId="1117">
+        <Token Text="[" UId="1118" />
+        <Access Scope="LiteralConstant" UId="1119">
+          <Constant UId="1120">
+            <ConstantValue UId="1122">33</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1123" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="1124" />
+  <Token Text=":=" UId="1125" />
+  <Blank UId="1126" />
+  <Access Scope="LocalVariable" UId="1127">
+    <Symbol UId="1128">
+      <Component Name="Valor_B" UId="1129" />
+      <Token Text="." UId="1130" />
+      <Component Name="low" UId="1131" />
+    </Symbol>
+  </Access>
+  <Blank UId="1132" />
+  <Token Text=";" UId="1133" />
+  <NewLine UId="1134" />
+  <Blank Num="8" UId="1135" />
+  <NewLine UId="1136" />
+  <Blank Num="8" UId="1137" />
+  <LineComment UId="1138">
+    <Text UId="1139">cabecera envio Rampa</Text>
+  </LineComment>
+  <NewLine UId="1140" />
+  <Blank Num="8" UId="1141" />
+  <Access Scope="LocalVariable" UId="1142">
+    <Symbol UId="1143">
+      <Component Name="Lista_ComRampa" UId="1144">
+        <Token Text="[" UId="1145" />
+        <Access Scope="LiteralConstant" UId="1146">
+          <Constant UId="1147">
+            <ConstantValue UId="1149">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1150" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="1151" />
+  <Token Text=":=" UId="1152" />
+  <Blank UId="1153" />
+  <Access Scope="LiteralConstant" UId="1154">
+    <Constant UId="1155">
+      <ConstantValue UId="1157">16#7D</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1158" />
+  <Token Text=";" UId="1159" />
+  <NewLine UId="1160" />
+  <Blank Num="8" UId="1161" />
+  <Access Scope="LocalVariable" UId="1162">
+    <Symbol UId="1163">
+      <Component Name="Lista_ComRampa" UId="1164">
+        <Token Text="[" UId="1165" />
+        <Access Scope="LiteralConstant" UId="1166">
+          <Constant UId="1167">
+            <ConstantValue UId="1169">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1170" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="1171" />
+  <Token Text=":=" UId="1172" />
+  <Blank UId="1173" />
+  <Access Scope="Call" UId="1174">
+    <Instruction Name="INT_TO_BYTE" UId="1175">
+      <Blank UId="1176" />
+      <Token Text="(" UId="1177" />
+      <NamelessParameter UId="1178">
+        <Access Scope="LocalVariable" UId="1179">
+          <Symbol UId="1180">
+            <Component Name="Num_Line" UId="1181" />
+          </Symbol>
+        </Access>
+        <Blank UId="1182" />
+        <Token Text="-" UId="1183" />
+        <Blank UId="1184" />
+        <Access Scope="LiteralConstant" UId="1185">
+          <Constant UId="1186">
+            <ConstantValue UId="1188">1</ConstantValue>
+          </Constant>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1190" />
+    </Instruction>
+  </Access>
+  <Blank UId="1191" />
+  <Token Text=";" UId="1192" />
+  <NewLine UId="1193" />
+  <Blank Num="8" UId="1194" />
+  <Access Scope="LocalVariable" UId="1195">
+    <Symbol UId="1196">
+      <Component Name="Lista_ComRampa" UId="1197">
+        <Token Text="[" UId="1198" />
+        <Access Scope="LiteralConstant" UId="1199">
+          <Constant UId="1200">
+            <ConstantValue UId="1202">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1203" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="1204" />
+  <Token Text=":=" UId="1205" />
+  <Blank UId="1206" />
+  <Access Scope="LiteralConstant" UId="1207">
+    <Constant UId="1208">
+      <ConstantValue UId="1210">16#0B</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1211" />
+  <Token Text=";" UId="1212" />
+  <NewLine UId="1213" />
+  <Blank Num="8" UId="1214" />
+  <Access Scope="LocalVariable" UId="1215">
+    <Symbol UId="1216">
+      <Component Name="Lista_ComRampa" UId="1217">
+        <Token Text="[" UId="1218" />
+        <Access Scope="LiteralConstant" UId="1219">
+          <Constant UId="1220">
+            <ConstantValue UId="1222">4</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1223" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="1224" />
+  <Token Text=":=" UId="1225" />
+  <Blank UId="1226" />
+  <Access Scope="Call" UId="1227">
+    <Instruction Name="INT_TO_BYTE" UId="1228">
+      <Blank UId="1229" />
+      <Token Text="(" UId="1230" />
+      <NamelessParameter UId="1231">
+        <Access Scope="LocalVariable" UId="1232">
+          <Symbol UId="1233">
+            <Component Name="Num_Slave" UId="1234" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1236" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="1237" />
+  <Blank Num="2" UId="1238" />
+  <LineComment UId="1239">
+    <Text UId="1240">Num Esclavo ASI</Text>
+  </LineComment>
+  <NewLine UId="1241" />
+  <Blank Num="8" UId="1242" />
+  <Access Scope="LocalVariable" UId="1243">
+    <Symbol UId="1244">
+      <Component Name="Lista_ComRampa" UId="1245">
+        <Token Text="[" UId="1246" />
+        <Access Scope="LiteralConstant" UId="1247">
+          <Constant UId="1248">
+            <ConstantValue UId="1250">5</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1251" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="1252" />
+  <Token Text=":=" UId="1253" />
+  <Blank UId="1254" />
+  <Access Scope="LiteralConstant" UId="1255">
+    <Constant UId="1256">
+      <ConstantValue UId="1258">16#0A</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1259" />
+  <Token Text=";" UId="1260" />
+  <NewLine UId="1261" />
+  <Blank Num="8" UId="1262" />
+  <Access Scope="LocalVariable" UId="1263">
+    <Symbol UId="1264">
+      <Component Name="Lista_ComRampa" UId="1265">
+        <Token Text="[" UId="1266" />
+        <Access Scope="LiteralConstant" UId="1267">
+          <Constant UId="1268">
+            <ConstantValue UId="1270">6</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1271" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="1272" />
+  <Token Text=":=" UId="1273" />
+  <Blank UId="1274" />
+  <Access Scope="LiteralConstant" UId="1275">
+    <Constant UId="1276">
+      <ConstantValue UId="1278">16#0E</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1279" />
+  <Token Text=";" UId="1280" />
+  <NewLine UId="1281" />
+  <Blank Num="8" UId="1282" />
+  <LineComment UId="1283">
+    <Text UId="1284">Rampa (nos deben meter la rampa en milisegundos (tiempo para ir de 0 a 50Hz), solo miramos que no sea negativa)</Text>
+  </LineComment>
+  <NewLine UId="1285" />
+  <Blank Num="8" UId="1286" />
+  <Access Scope="LocalVariable" UId="1287">
+    <Symbol UId="1288">
+      <Component Name="Valor_W" UId="1289" />
+    </Symbol>
+  </Access>
+  <Blank UId="1290" />
+  <Token Text=":=" UId="1291" />
+  <Blank UId="1292" />
+  <Access Scope="Call" UId="1293">
+    <Instruction Name="ABS" UId="1294">
+      <Blank UId="1295" />
+      <Token Text="(" UId="1296" />
+      <NamelessParameter UId="1297">
+        <Access Scope="LocalVariable" UId="1298">
+          <Symbol UId="1299">
+            <Component Name="Valor_Rampa" UId="1300" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1302" />
+    </Instruction>
+  </Access>
+  <Blank UId="1303" />
+  <Token Text=";" UId="1304" />
+  <NewLine UId="1305" />
+  <Blank Num="8" UId="1306" />
+  <Access Scope="LocalVariable" UId="1307">
+    <Symbol UId="1308">
+      <Component Name="Lista_ComRampa" UId="1309">
+        <Token Text="[" UId="1310" />
+        <Access Scope="LiteralConstant" UId="1311">
+          <Constant UId="1312">
+            <ConstantValue UId="1314">7</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1315" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="1316" />
+  <Token Text=":=" UId="1317" />
+  <Blank UId="1318" />
+  <Access Scope="LocalVariable" UId="1319">
+    <Symbol UId="1320">
+      <Component Name="Valor_B" UId="1321" />
+      <Token Text="." UId="1322" />
+      <Component Name="high" UId="1323" />
+    </Symbol>
+  </Access>
+  <Blank UId="1324" />
+  <Token Text=";" UId="1325" />
+  <NewLine UId="1326" />
+  <Blank Num="8" UId="1327" />
+  <Access Scope="LocalVariable" UId="1328">
+    <Symbol UId="1329">
+      <Component Name="Lista_ComRampa" UId="1330">
+        <Token Text="[" UId="1331" />
+        <Access Scope="LiteralConstant" UId="1332">
+          <Constant UId="1333">
+            <ConstantValue UId="1335">8</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1336" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="1337" />
+  <Token Text=":=" UId="1338" />
+  <Blank UId="1339" />
+  <Access Scope="LocalVariable" UId="1340">
+    <Symbol UId="1341">
+      <Component Name="Valor_B" UId="1342" />
+      <Token Text="." UId="1343" />
+      <Component Name="low" UId="1344" />
+    </Symbol>
+  </Access>
+  <Blank UId="1345" />
+  <Token Text=";" UId="1346" />
+  <NewLine UId="1347" />
+  <Blank Num="8" UId="1348" />
+  <NewLine UId="1349" />
+  <Blank Num="8" UId="1350" />
+  <Token Text="IF" UId="1351" />
+  <Blank UId="1352" />
+  <Access Scope="LocalVariable" UId="1353">
+    <Symbol UId="1354">
+      <Component Name="Solo_Rampa" UId="1355" />
+    </Symbol>
+  </Access>
+  <Blank UId="1356" />
+  <Token Text="THEN" UId="1357" />
+  <NewLine UId="1358" />
+  <Blank Num="12" UId="1359" />
+  <Access Scope="LocalVariable" UId="1360">
+    <Symbol UId="1361">
+      <Component Name="Ciclo_envio" UId="1362" />
+    </Symbol>
+  </Access>
+  <Blank UId="1363" />
+  <Token Text=":=" UId="1364" />
+  <Blank UId="1365" />
+  <Access Scope="LiteralConstant" UId="1366">
+    <Constant UId="1367">
+      <ConstantValue UId="1369">4</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1370" />
+  <Token Text=";" UId="1371" />
+  <NewLine UId="1372" />
+  <Blank Num="8" UId="1373" />
+  <Token Text="ELSE" UId="1374" />
+  <Blank UId="1375" />
+  <NewLine UId="1376" />
+  <Blank Num="12" UId="1377" />
+  <Access Scope="LocalVariable" UId="1378">
+    <Symbol UId="1379">
+      <Component Name="Ciclo_envio" UId="1380" />
+    </Symbol>
+  </Access>
+  <Blank UId="1381" />
+  <Token Text=":=" UId="1382" />
+  <Blank UId="1383" />
+  <Access Scope="LiteralConstant" UId="1384">
+    <Constant UId="1385">
+      <ConstantValue UId="1387">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1388" />
+  <Token Text=";" UId="1389" />
+  <NewLine UId="1390" />
+  <Blank Num="8" UId="1391" />
+  <Token Text="END_IF" UId="1392" />
+  <Token Text=";" UId="1393" />
+  <NewLine Num="2" UId="1394" />
+  <Blank Num="8" UId="1395" />
+  <Access Scope="LocalVariable" UId="1396">
+    <Symbol UId="1397">
+      <Component Name="Con_Error" UId="1398" />
+    </Symbol>
+  </Access>
+  <Blank UId="1399" />
+  <Token Text=":=" UId="1400" />
+  <Blank UId="1401" />
+  <Access Scope="LiteralConstant" UId="1402">
+    <Constant UId="1403">
+      <ConstantValue UId="1405">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1406" />
+  <Token Text=";" UId="1407" />
+  <NewLine UId="1408" />
+  <Blank Num="8" UId="1409" />
+  <NewLine UId="1410" />
+  <Blank Num="4" UId="1411" />
+  <Token Text="END_IF" UId="1412" />
+  <Token Text=";" UId="1413" />
+  <NewLine UId="1414" />
+  <Blank Num="4" UId="1415" />
+  <NewLine UId="1416" />
+  <Blank Num="4" UId="1417" />
+  <Token Text="IF" UId="1418" />
+  <Blank UId="1419" />
+  <Token Text="NOT" UId="1420" />
+  <Blank UId="1421" />
+  <Access Scope="LocalVariable" UId="1422">
+    <Symbol UId="1423">
+      <Component Name="Escritura" UId="1424" />
+    </Symbol>
+  </Access>
+  <Blank UId="1425" />
+  <Token Text="THEN" UId="1426" />
+  <NewLine UId="1427" />
+  <Blank Num="8" UId="1428" />
+  <Access Scope="LocalVariable" UId="1429">
+    <Symbol UId="1430">
+      <Component Name="Ciclo_envio" UId="1431" />
+    </Symbol>
+  </Access>
+  <Blank UId="1432" />
+  <Token Text=":=" UId="1433" />
+  <Blank UId="1434" />
+  <Access Scope="LiteralConstant" UId="1435">
+    <Constant UId="1436">
+      <ConstantValue UId="1438">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1439" />
+  <Token Text=";" UId="1440" />
+  <NewLine UId="1441" />
+  <Blank Num="4" UId="1442" />
+  <Token Text="END_IF" UId="1443" />
+  <Token Text=";" UId="1444" />
+  <NewLine UId="1445" />
+  <Blank Num="3" UId="1446" />
+  <NewLine UId="1447" />
+  <Blank Num="4" UId="1448" />
+  <Token Text="CASE" UId="1449" />
+  <Blank UId="1450" />
+  <Access Scope="LocalVariable" UId="1451">
+    <Symbol UId="1452">
+      <Component Name="Ciclo_envio" UId="1453" />
+    </Symbol>
+  </Access>
+  <Blank UId="1454" />
+  <Token Text="OF" UId="1455" />
+  <NewLine UId="1456" />
+  <Blank Num="8" UId="1457" />
+  <Access Scope="LiteralConstant" UId="1458">
+    <Constant UId="1459">
+      <ConstantValue UId="1461">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1462" />
+  <Token Text=":" UId="1463" />
+  <NewLine UId="1464" />
+  <Blank Num="12" UId="1465" />
+  <LineComment UId="1466">
+    <Text UId="1467"> ESCRITURA COMANDO DE VELOCIDADES</Text>
+  </LineComment>
+  <NewLine UId="1468" />
+  <Blank Num="12" UId="1469" />
+  <LineComment Inserted="true" UId="1470">
+    <Text UId="1471"> classic code: %AB (#Dir_GW_ASI_Com):P := #Lista_ComVel[1];</Text>
+  </LineComment>
+  <NewLine UId="1472" />
+  <Blank Num="12" UId="1473" />
+  <Access Scope="Call" UId="1474">
+    <Instruction Name="POKE" UId="1475">
+      <Token Text="(" UId="1476" />
+      <Parameter Name="area" UId="1477">
+        <Token Text=":=" UId="1478" />
+        <Access Scope="LiteralConstant" UId="1479">
+          <Constant UId="1480">
+            <ConstantValue UId="1482">16#02</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1483" />
+      <Parameter Name="dbNumber" UId="1484">
+        <Token Text=":=" UId="1485" />
+        <Access Scope="LiteralConstant" UId="1486">
+          <Constant UId="1487">
+            <ConstantValue UId="1489">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1490" />
+      <Parameter Name="byteOffset" UId="1491">
+        <Token Text=":=" UId="1492" />
+        <Access Scope="LocalVariable" UId="1493">
+          <Symbol UId="1494">
+            <Component Name="Dir_GW_ASI_Com" UId="1495" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1496" />
+      <Parameter Name="value" UId="1497">
+        <Token Text=":=" UId="1498" />
+        <Access Scope="LocalVariable" UId="1499">
+          <Symbol UId="1500">
+            <Component Name="Lista_ComVel" UId="1501">
+              <Token Text="[" UId="1502" />
+              <Access Scope="LiteralConstant" UId="1503">
+                <Constant UId="1504">
+                  <ConstantValue UId="1506">1</ConstantValue>
+                </Constant>
+              </Access>
+              <Token Text="]" UId="1507" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="1508" />
+    </Instruction>
+  </Access>
+  <Blank Num="2" UId="1509" />
+  <Token Text=";" UId="1510" />
+  <NewLine UId="1511" />
+  <Blank Num="12" UId="1512" />
+  <Token Text="FOR" UId="1513" />
+  <Blank UId="1514" />
+  <Access Scope="LocalVariable" UId="1515">
+    <Symbol UId="1516">
+      <Component Name="i" UId="1517" />
+    </Symbol>
+  </Access>
+  <Blank UId="1518" />
+  <Token Text=":=" UId="1519" />
+  <Blank UId="1520" />
+  <Access Scope="LiteralConstant" UId="1521">
+    <Constant UId="1522">
+      <ConstantValue UId="1524">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1525" />
+  <Token Text="TO" UId="1526" />
+  <Blank UId="1527" />
+  <Access Scope="LiteralConstant" UId="1528">
+    <Constant UId="1529">
+      <ConstantValue UId="1531">32</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1532" />
+  <Token Text="BY" UId="1533" />
+  <Blank UId="1534" />
+  <Access Scope="LiteralConstant" UId="1535">
+    <Constant UId="1536">
+      <ConstantValue UId="1538">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1539" />
+  <Token Text="DO" UId="1540" />
+  <Blank Num="4" UId="1541" />
+  <LineComment UId="1542">
+    <Text UId="1543">copiamos todo</Text>
+  </LineComment>
+  <NewLine UId="1544" />
+  <Blank Num="16" UId="1545" />
+  <LineComment Inserted="true" UId="1546">
+    <Text UId="1547"> classic code: %AB (#Dir_GW_ASI_Com + #i):P := #Lista_ComVel[#i + 1];</Text>
+  </LineComment>
+  <NewLine UId="1548" />
+  <Blank Num="16" UId="1549" />
+  <Access Scope="Call" UId="1550">
+    <Instruction Name="POKE" UId="1551">
+      <Token Text="(" UId="1552" />
+      <Parameter Name="area" UId="1553">
+        <Token Text=":=" UId="1554" />
+        <Access Scope="LiteralConstant" UId="1555">
+          <Constant UId="1556">
+            <ConstantValue UId="1558">16#02</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1559" />
+      <Parameter Name="dbNumber" UId="1560">
+        <Token Text=":=" UId="1561" />
+        <Access Scope="LiteralConstant" UId="1562">
+          <Constant UId="1563">
+            <ConstantValue UId="1565">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1566" />
+      <Parameter Name="byteOffset" UId="1567">
+        <Token Text=":=" UId="1568" />
+        <Access Scope="LocalVariable" UId="1569">
+          <Symbol UId="1570">
+            <Component Name="Dir_GW_ASI_Com" UId="1571" />
+          </Symbol>
+        </Access>
+        <Blank UId="1572" />
+        <Token Text="+" UId="1573" />
+        <Blank UId="1574" />
+        <Access Scope="LocalVariable" UId="1575">
+          <Symbol UId="1576">
+            <Component Name="i" UId="1577" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1578" />
+      <Parameter Name="value" UId="1579">
+        <Token Text=":=" UId="1580" />
+        <Access Scope="LocalVariable" UId="1581">
+          <Symbol UId="1582">
+            <Component Name="Lista_ComVel" UId="1583">
+              <Token Text="[" UId="1584" />
+              <Access Scope="LocalVariable" UId="1585">
+                <Symbol UId="1586">
+                  <Component Name="i" UId="1587" />
+                </Symbol>
+              </Access>
+              <Blank UId="1588" />
+              <Token Text="+" UId="1589" />
+              <Blank UId="1590" />
+              <Access Scope="LiteralConstant" UId="1591">
+                <Constant UId="1592">
+                  <ConstantValue UId="1594">1</ConstantValue>
+                </Constant>
+              </Access>
+              <Token Text="]" UId="1595" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="1596" />
+    </Instruction>
+  </Access>
+  <Blank Num="2" UId="1597" />
+  <Token Text=";" UId="1598" />
+  <NewLine UId="1599" />
+  <Blank Num="12" UId="1600" />
+  <Token Text="END_FOR" UId="1601" />
+  <Token Text=";" UId="1602" />
+  <NewLine Num="2" UId="1603" />
+  <Blank Num="12" UId="1604" />
+  <Access Scope="LocalVariable" UId="1605">
+    <Symbol UId="1606">
+      <Component Name="Ciclo_envio" UId="1607" />
+    </Symbol>
+  </Access>
+  <Blank UId="1608" />
+  <Token Text=":=" UId="1609" />
+  <Blank UId="1610" />
+  <Access Scope="LiteralConstant" UId="1611">
+    <Constant UId="1612">
+      <ConstantValue UId="1614">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1615" />
+  <Token Text=";" UId="1616" />
+  <NewLine UId="1617" />
+  <Blank Num="12" UId="1618" />
+  <NewLine UId="1619" />
+  <Blank Num="8" UId="1620" />
+  <Access Scope="LiteralConstant" UId="1621">
+    <Constant UId="1622">
+      <ConstantValue UId="1624">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1625" />
+  <Token Text=":" UId="1626" />
+  <NewLine UId="1627" />
+  <Blank Num="12" UId="1628" />
+  <LineComment UId="1629">
+    <Text UId="1630"> ENVIO COMANDO DE VELOCIDADES</Text>
+  </LineComment>
+  <NewLine UId="1631" />
+  <Blank Num="12" UId="1632" />
+  <LineComment Inserted="true" UId="1633">
+    <Text UId="1634"> classic code: #Lista_ComVel[2] := #Lista_ComVel[2] OR (%EB (#Dir_GW_ASI_Com + 1):P AND 16#80 ) XOR 16#80;</Text>
+  </LineComment>
+  <NewLine UId="1635" />
+  <Blank Num="12" UId="1636" />
+  <Access Scope="LocalVariable" UId="1637">
+    <Symbol UId="1638">
+      <Component Name="Lista_ComVel" UId="1639">
+        <Token Text="[" UId="1640" />
+        <Access Scope="LiteralConstant" UId="1641">
+          <Constant UId="1642">
+            <ConstantValue UId="1644">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1645" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="1646" />
+  <Token Text=":=" UId="1647" />
+  <Blank UId="1648" />
+  <Access Scope="LocalVariable" UId="1649">
+    <Symbol UId="1650">
+      <Component Name="Lista_ComVel" UId="1651">
+        <Token Text="[" UId="1652" />
+        <Access Scope="LiteralConstant" UId="1653">
+          <Constant UId="1654">
+            <ConstantValue UId="1656">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1657" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="1658" />
+  <Token Text="OR" UId="1659" />
+  <Blank UId="1660" />
+  <Token Text="(" UId="1661" />
+  <Access Scope="Call" UId="1662">
+    <Instruction Name="PEEK" UId="1663">
+      <TemplateValue Name="value_type" Type="Type" UId="1664">Byte</TemplateValue>
+      <Token Text="(" UId="1665" />
+      <Parameter Name="area" UId="1666">
+        <Token Text=":=" UId="1667" />
+        <Access Scope="LiteralConstant" UId="1668">
+          <Constant UId="1669">
+            <ConstantValue UId="1671">16#01</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1672" />
+      <Parameter Name="dbNumber" UId="1673">
+        <Token Text=":=" UId="1674" />
+        <Access Scope="LiteralConstant" UId="1675">
+          <Constant UId="1676">
+            <ConstantValue UId="1678">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1679" />
+      <Parameter Name="byteOffset" UId="1680">
+        <Token Text=":=" UId="1681" />
+        <Access Scope="LocalVariable" UId="1682">
+          <Symbol UId="1683">
+            <Component Name="Dir_GW_ASI_Com" UId="1684" />
+          </Symbol>
+        </Access>
+        <Blank UId="1685" />
+        <Token Text="+" UId="1686" />
+        <Blank UId="1687" />
+        <Access Scope="LiteralConstant" UId="1688">
+          <Constant UId="1689">
+            <ConstantValue UId="1691">1</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="1693" />
+    </Instruction>
+  </Access>
+  <Blank UId="1694" />
+  <Token Text="AND" UId="1695" />
+  <Blank UId="1696" />
+  <Access Scope="LiteralConstant" UId="1697">
+    <Constant UId="1698">
+      <ConstantValue UId="1700">16#80</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1701" />
+  <Token Text=")" UId="1702" />
+  <Blank UId="1703" />
+  <Token Text="XOR" UId="1704" />
+  <Blank UId="1705" />
+  <Access Scope="LiteralConstant" UId="1706">
+    <Constant UId="1707">
+      <ConstantValue UId="1709">16#80</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1710" />
+  <Blank Num="2" UId="1711" />
+  <LineComment UId="1712">
+    <Text UId="1713">Con el AND miro el bit de toogle en entradas, y lo invierto con el XOR, para despues añadirlo con el OR al comando ya calculado </Text>
+  </LineComment>
+  <NewLine UId="1714" />
+  <Blank Num="12" UId="1715" />
+  <LineComment Inserted="true" UId="1716">
+    <Text UId="1717"> classic code: %AB (#Dir_GW_ASI_Com + 1):P := #Lista_ComVel[2];</Text>
+  </LineComment>
+  <NewLine UId="1718" />
+  <Blank Num="12" UId="1719" />
+  <Access Scope="Call" UId="1720">
+    <Instruction Name="POKE" UId="1721">
+      <Token Text="(" UId="1722" />
+      <Parameter Name="area" UId="1723">
+        <Token Text=":=" UId="1724" />
+        <Access Scope="LiteralConstant" UId="1725">
+          <Constant UId="1726">
+            <ConstantValue UId="1728">16#02</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1729" />
+      <Parameter Name="dbNumber" UId="1730">
+        <Token Text=":=" UId="1731" />
+        <Access Scope="LiteralConstant" UId="1732">
+          <Constant UId="1733">
+            <ConstantValue UId="1735">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1736" />
+      <Parameter Name="byteOffset" UId="1737">
+        <Token Text=":=" UId="1738" />
+        <Access Scope="LocalVariable" UId="1739">
+          <Symbol UId="1740">
+            <Component Name="Dir_GW_ASI_Com" UId="1741" />
+          </Symbol>
+        </Access>
+        <Blank UId="1742" />
+        <Token Text="+" UId="1743" />
+        <Blank UId="1744" />
+        <Access Scope="LiteralConstant" UId="1745">
+          <Constant UId="1746">
+            <ConstantValue UId="1748">1</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1749" />
+      <Parameter Name="value" UId="1750">
+        <Token Text=":=" UId="1751" />
+        <Access Scope="LocalVariable" UId="1752">
+          <Symbol UId="1753">
+            <Component Name="Lista_ComVel" UId="1754">
+              <Token Text="[" UId="1755" />
+              <Access Scope="LiteralConstant" UId="1756">
+                <Constant UId="1757">
+                  <ConstantValue UId="1759">2</ConstantValue>
+                </Constant>
+              </Access>
+              <Token Text="]" UId="1760" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="1761" />
+    </Instruction>
+  </Access>
+  <Blank Num="2" UId="1762" />
+  <Token Text=";" UId="1763" />
+  <Blank Num="4" UId="1764" />
+  <LineComment UId="1765">
+    <Text UId="1766">Me guardo el comando completo para saber luego que valor hemos enviado en Toogle</Text>
+  </LineComment>
+  <NewLine UId="1767" />
+  <Blank Num="12" UId="1768" />
+  <NewLine UId="1769" />
+  <Blank Num="12" UId="1770" />
+  <Access Scope="LocalVariable" UId="1771">
+    <Symbol UId="1772">
+      <Component Name="Ciclo_envio" UId="1773" />
+    </Symbol>
+  </Access>
+  <Blank UId="1774" />
+  <Token Text=":=" UId="1775" />
+  <Blank UId="1776" />
+  <Access Scope="LiteralConstant" UId="1777">
+    <Constant UId="1778">
+      <ConstantValue UId="1780">3</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1781" />
+  <Token Text=";" UId="1782" />
+  <NewLine UId="1783" />
+  <Blank Num="12" UId="1784" />
+  <NewLine UId="1785" />
+  <Blank Num="8" UId="1786" />
+  <Access Scope="LiteralConstant" UId="1787">
+    <Constant UId="1788">
+      <ConstantValue UId="1790">3</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1791" />
+  <Token Text=":" UId="1792" />
+  <NewLine UId="1793" />
+  <Blank Num="12" UId="1794" />
+  <LineComment UId="1795">
+    <Text UId="1796"> COMPROBAR RESPUESTA A COMANDO DE VELOCIDADES</Text>
+  </LineComment>
+  <NewLine UId="1797" />
+  <Blank Num="12" UId="1798" />
+  <LineComment Inserted="true" UId="1799">
+    <Text UId="1800"> classic code: IF (%EB (#Dir_GW_ASI_Com + 1):P AND 16#80) = (#Lista_ComVel[2] AND 16#80) THEN</Text>
+  </LineComment>
+  <NewLine UId="1801" />
+  <Blank Num="12" UId="1802" />
+  <Token Text="IF" UId="1803" />
+  <Blank UId="1804" />
+  <Token Text="(" UId="1805" />
+  <Access Scope="Call" UId="1806">
+    <Instruction Name="PEEK" UId="1807">
+      <TemplateValue Name="value_type" Type="Type" UId="1808">Byte</TemplateValue>
+      <Token Text="(" UId="1809" />
+      <Parameter Name="area" UId="1810">
+        <Token Text=":=" UId="1811" />
+        <Access Scope="LiteralConstant" UId="1812">
+          <Constant UId="1813">
+            <ConstantValue UId="1815">16#01</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1816" />
+      <Parameter Name="dbNumber" UId="1817">
+        <Token Text=":=" UId="1818" />
+        <Access Scope="LiteralConstant" UId="1819">
+          <Constant UId="1820">
+            <ConstantValue UId="1822">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1823" />
+      <Parameter Name="byteOffset" UId="1824">
+        <Token Text=":=" UId="1825" />
+        <Access Scope="LocalVariable" UId="1826">
+          <Symbol UId="1827">
+            <Component Name="Dir_GW_ASI_Com" UId="1828" />
+          </Symbol>
+        </Access>
+        <Blank UId="1829" />
+        <Token Text="+" UId="1830" />
+        <Blank UId="1831" />
+        <Access Scope="LiteralConstant" UId="1832">
+          <Constant UId="1833">
+            <ConstantValue UId="1835">1</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="1837" />
+    </Instruction>
+  </Access>
+  <Blank UId="1838" />
+  <Token Text="AND" UId="1839" />
+  <Blank UId="1840" />
+  <Access Scope="LiteralConstant" UId="1841">
+    <Constant UId="1842">
+      <ConstantValue UId="1844">16#80</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=")" UId="1845" />
+  <Blank UId="1846" />
+  <Token Text="=" UId="1847" />
+  <Blank UId="1848" />
+  <Token Text="(" UId="1849" />
+  <Access Scope="LocalVariable" UId="1850">
+    <Symbol UId="1851">
+      <Component Name="Lista_ComVel" UId="1852">
+        <Token Text="[" UId="1853" />
+        <Access Scope="LiteralConstant" UId="1854">
+          <Constant UId="1855">
+            <ConstantValue UId="1857">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1858" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="1859" />
+  <Token Text="AND" UId="1860" />
+  <Blank UId="1861" />
+  <Access Scope="LiteralConstant" UId="1862">
+    <Constant UId="1863">
+      <ConstantValue UId="1865">16#80</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=")" UId="1866" />
+  <Blank UId="1867" />
+  <Token Text="THEN" UId="1868" />
+  <Blank Num="4" UId="1869" />
+  <LineComment UId="1870">
+    <Text UId="1871">Miro si ha cambiado el Toogle</Text>
+  </LineComment>
+  <NewLine UId="1872" />
+  <Blank Num="16" UId="1873" />
+  <LineComment Inserted="true" UId="1874">
+    <Text UId="1875"> classic code: IF (%EB (#Dir_GW_ASI_Com):P = #Lista_ComVel[1]) AND (%EB (#Dir_GW_ASI_Com + 2):P = #Lista_ComVel[3]) THEN</Text>
+  </LineComment>
+  <NewLine UId="1876" />
+  <Blank Num="16" UId="1877" />
+  <Token Text="IF" UId="1878" />
+  <Blank UId="1879" />
+  <Token Text="(" UId="1880" />
+  <Access Scope="Call" UId="1881">
+    <Instruction Name="PEEK" UId="1882">
+      <TemplateValue Name="value_type" Type="Type" UId="1883">Byte</TemplateValue>
+      <Token Text="(" UId="1884" />
+      <Parameter Name="area" UId="1885">
+        <Token Text=":=" UId="1886" />
+        <Access Scope="LiteralConstant" UId="1887">
+          <Constant UId="1888">
+            <ConstantValue UId="1890">16#01</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1891" />
+      <Parameter Name="dbNumber" UId="1892">
+        <Token Text=":=" UId="1893" />
+        <Access Scope="LiteralConstant" UId="1894">
+          <Constant UId="1895">
+            <ConstantValue UId="1897">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1898" />
+      <Parameter Name="byteOffset" UId="1899">
+        <Token Text=":=" UId="1900" />
+        <Access Scope="LocalVariable" UId="1901">
+          <Symbol UId="1902">
+            <Component Name="Dir_GW_ASI_Com" UId="1903" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="1905" />
+    </Instruction>
+  </Access>
+  <Blank UId="1906" />
+  <Token Text="=" UId="1907" />
+  <Blank UId="1908" />
+  <Access Scope="LocalVariable" UId="1909">
+    <Symbol UId="1910">
+      <Component Name="Lista_ComVel" UId="1911">
+        <Token Text="[" UId="1912" />
+        <Access Scope="LiteralConstant" UId="1913">
+          <Constant UId="1914">
+            <ConstantValue UId="1916">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1917" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="1918" />
+  <Blank UId="1919" />
+  <Token Text="AND" UId="1920" />
+  <Blank UId="1921" />
+  <Token Text="(" UId="1922" />
+  <Access Scope="Call" UId="1923">
+    <Instruction Name="PEEK" UId="1924">
+      <TemplateValue Name="value_type" Type="Type" UId="1925">Byte</TemplateValue>
+      <Token Text="(" UId="1926" />
+      <Parameter Name="area" UId="1927">
+        <Token Text=":=" UId="1928" />
+        <Access Scope="LiteralConstant" UId="1929">
+          <Constant UId="1930">
+            <ConstantValue UId="1932">16#01</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1933" />
+      <Parameter Name="dbNumber" UId="1934">
+        <Token Text=":=" UId="1935" />
+        <Access Scope="LiteralConstant" UId="1936">
+          <Constant UId="1937">
+            <ConstantValue UId="1939">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1940" />
+      <Parameter Name="byteOffset" UId="1941">
+        <Token Text=":=" UId="1942" />
+        <Access Scope="LocalVariable" UId="1943">
+          <Symbol UId="1944">
+            <Component Name="Dir_GW_ASI_Com" UId="1945" />
+          </Symbol>
+        </Access>
+        <Blank UId="1946" />
+        <Token Text="+" UId="1947" />
+        <Blank UId="1948" />
+        <Access Scope="LiteralConstant" UId="1949">
+          <Constant UId="1950">
+            <ConstantValue UId="1952">2</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="1954" />
+    </Instruction>
+  </Access>
+  <Blank UId="1955" />
+  <Token Text="=" UId="1956" />
+  <Blank UId="1957" />
+  <Access Scope="LocalVariable" UId="1958">
+    <Symbol UId="1959">
+      <Component Name="Lista_ComVel" UId="1960">
+        <Token Text="[" UId="1961" />
+        <Access Scope="LiteralConstant" UId="1962">
+          <Constant UId="1963">
+            <ConstantValue UId="1965">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1966" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="1967" />
+  <Blank UId="1968" />
+  <Token Text="THEN" UId="1969" />
+  <Blank Num="3" UId="1970" />
+  <LineComment UId="1971">
+    <Text UId="1972">Miro si el comando de vuelta es igual</Text>
+  </LineComment>
+  <NewLine UId="1973" />
+  <Blank Num="20" UId="1974" />
+  <Token Text="IF" UId="1975" />
+  <Blank UId="1976" />
+  <Access Scope="LocalVariable" UId="1977">
+    <Symbol UId="1978">
+      <Component Name="Solo_Velocidades" UId="1979" />
+    </Symbol>
+  </Access>
+  <Blank UId="1980" />
+  <Token Text="THEN" UId="1981" />
+  <NewLine UId="1982" />
+  <Blank Num="24" UId="1983" />
+  <Access Scope="LocalVariable" UId="1984">
+    <Symbol UId="1985">
+      <Component Name="Ciclo_envio" UId="1986" />
+    </Symbol>
+  </Access>
+  <Blank UId="1987" />
+  <Token Text=":=" UId="1988" />
+  <Blank UId="1989" />
+  <Access Scope="LiteralConstant" UId="1990">
+    <Constant UId="1991">
+      <ConstantValue UId="1993">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="1994" />
+  <Token Text=";" UId="1995" />
+  <Blank Num="2" UId="1996" />
+  <LineComment UId="1997">
+    <Text UId="1998">se ha ejecutado el envio correctamente y no hay que enviar rampa</Text>
+  </LineComment>
+  <NewLine UId="1999" />
+  <Blank Num="20" UId="2000" />
+  <Token Text="ELSE" UId="2001" />
+  <NewLine UId="2002" />
+  <Blank Num="24" UId="2003" />
+  <Access Scope="LocalVariable" UId="2004">
+    <Symbol UId="2005">
+      <Component Name="Ciclo_envio" UId="2006" />
+    </Symbol>
+  </Access>
+  <Blank UId="2007" />
+  <Token Text=":=" UId="2008" />
+  <Blank UId="2009" />
+  <Access Scope="LiteralConstant" UId="2010">
+    <Constant UId="2011">
+      <ConstantValue UId="2013">4</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2014" />
+  <Token Text=";" UId="2015" />
+  <Blank Num="2" UId="2016" />
+  <LineComment UId="2017">
+    <Text UId="2018">se ha ejecutado el envio correctamente y pasamos a enviar rampa </Text>
+  </LineComment>
+  <NewLine UId="2019" />
+  <Blank Num="20" UId="2020" />
+  <Token Text="END_IF" UId="2021" />
+  <Token Text=";" UId="2022" />
+  <Blank UId="2023" />
+  <NewLine UId="2024" />
+  <Blank Num="20" UId="2025" />
+  <Access Scope="LocalVariable" UId="2026">
+    <Symbol UId="2027">
+      <Component Name="Con_Error" UId="2028" />
+    </Symbol>
+  </Access>
+  <Blank UId="2029" />
+  <Token Text=":=" UId="2030" />
+  <Blank UId="2031" />
+  <Access Scope="LiteralConstant" UId="2032">
+    <Constant UId="2033">
+      <ConstantValue UId="2035">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2036" />
+  <Token Text=";" UId="2037" />
+  <NewLine UId="2038" />
+  <Blank Num="16" UId="2039" />
+  <Token Text="ELSE" UId="2040" />
+  <NewLine UId="2041" />
+  <Blank Num="20" UId="2042" />
+  <Access Scope="LocalVariable" UId="2043">
+    <Symbol UId="2044">
+      <Component Name="Ciclo_envio" UId="2045" />
+    </Symbol>
+  </Access>
+  <Blank UId="2046" />
+  <Token Text=":=" UId="2047" />
+  <Blank UId="2048" />
+  <Access Scope="LiteralConstant" UId="2049">
+    <Constant UId="2050">
+      <ConstantValue UId="2052">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2053" />
+  <Token Text=";" UId="2054" />
+  <Blank Num="2" UId="2055" />
+  <LineComment UId="2056">
+    <Text UId="2057">NO se ha ejecutado el envio correctamente</Text>
+  </LineComment>
+  <NewLine UId="2058" />
+  <Blank Num="20" UId="2059" />
+  <Access Scope="LocalVariable" UId="2060">
+    <Symbol UId="2061">
+      <Component Name="Con_Error" UId="2062" />
+    </Symbol>
+  </Access>
+  <Blank UId="2063" />
+  <Token Text=":=" UId="2064" />
+  <Blank UId="2065" />
+  <Access Scope="LiteralConstant" UId="2066">
+    <Constant UId="2067">
+      <ConstantValue UId="2069">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2070" />
+  <Token Text=";" UId="2071" />
+  <NewLine UId="2072" />
+  <Blank Num="16" UId="2073" />
+  <Token Text="END_IF" UId="2074" />
+  <Token Text=";" UId="2075" />
+  <NewLine UId="2076" />
+  <Blank Num="12" UId="2077" />
+  <Token Text="END_IF" UId="2078" />
+  <Token Text=";" UId="2079" />
+  <NewLine UId="2080" />
+  <Blank Num="12" UId="2081" />
+  <NewLine UId="2082" />
+  <Blank Num="8" UId="2083" />
+  <Access Scope="LiteralConstant" UId="2084">
+    <Constant UId="2085">
+      <ConstantValue UId="2087">4</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2088" />
+  <Token Text=":" UId="2089" />
+  <NewLine UId="2090" />
+  <Blank Num="12" UId="2091" />
+  <LineComment UId="2092">
+    <Text UId="2093"> ESCRITURA COMANDO DE RAMPA</Text>
+  </LineComment>
+  <NewLine UId="2094" />
+  <Blank Num="12" UId="2095" />
+  <NewLine UId="2096" />
+  <Blank Num="12" UId="2097" />
+  <LineComment Inserted="true" UId="2098">
+    <Text UId="2099"> classic code: %AB (#Dir_GW_ASI_Com):P := #Lista_ComRampa[1];</Text>
+  </LineComment>
+  <NewLine UId="2100" />
+  <Blank Num="12" UId="2101" />
+  <Access Scope="Call" UId="2102">
+    <Instruction Name="POKE" UId="2103">
+      <Token Text="(" UId="2104" />
+      <Parameter Name="area" UId="2105">
+        <Token Text=":=" UId="2106" />
+        <Access Scope="LiteralConstant" UId="2107">
+          <Constant UId="2108">
+            <ConstantValue UId="2110">16#02</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2111" />
+      <Parameter Name="dbNumber" UId="2112">
+        <Token Text=":=" UId="2113" />
+        <Access Scope="LiteralConstant" UId="2114">
+          <Constant UId="2115">
+            <ConstantValue UId="2117">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2118" />
+      <Parameter Name="byteOffset" UId="2119">
+        <Token Text=":=" UId="2120" />
+        <Access Scope="LocalVariable" UId="2121">
+          <Symbol UId="2122">
+            <Component Name="Dir_GW_ASI_Com" UId="2123" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2124" />
+      <Parameter Name="value" UId="2125">
+        <Token Text=":=" UId="2126" />
+        <Access Scope="LocalVariable" UId="2127">
+          <Symbol UId="2128">
+            <Component Name="Lista_ComRampa" UId="2129">
+              <Token Text="[" UId="2130" />
+              <Access Scope="LiteralConstant" UId="2131">
+                <Constant UId="2132">
+                  <ConstantValue UId="2134">1</ConstantValue>
+                </Constant>
+              </Access>
+              <Token Text="]" UId="2135" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="2136" />
+    </Instruction>
+  </Access>
+  <Blank Num="2" UId="2137" />
+  <Token Text=";" UId="2138" />
+  <NewLine UId="2139" />
+  <Blank Num="12" UId="2140" />
+  <Token Text="FOR" UId="2141" />
+  <Blank UId="2142" />
+  <Access Scope="LocalVariable" UId="2143">
+    <Symbol UId="2144">
+      <Component Name="i" UId="2145" />
+    </Symbol>
+  </Access>
+  <Blank UId="2146" />
+  <Token Text=":=" UId="2147" />
+  <Blank UId="2148" />
+  <Access Scope="LiteralConstant" UId="2149">
+    <Constant UId="2150">
+      <ConstantValue UId="2152">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2153" />
+  <Token Text="TO" UId="2154" />
+  <Blank UId="2155" />
+  <Access Scope="LiteralConstant" UId="2156">
+    <Constant UId="2157">
+      <ConstantValue UId="2159">7</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2160" />
+  <Token Text="BY" UId="2161" />
+  <Blank UId="2162" />
+  <Access Scope="LiteralConstant" UId="2163">
+    <Constant UId="2164">
+      <ConstantValue UId="2166">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2167" />
+  <Token Text="DO" UId="2168" />
+  <Blank Num="4" UId="2169" />
+  <LineComment UId="2170">
+    <Text UId="2171">copiamos todo</Text>
+  </LineComment>
+  <NewLine UId="2172" />
+  <Blank Num="16" UId="2173" />
+  <LineComment Inserted="true" UId="2174">
+    <Text UId="2175"> classic code: %AB (#Dir_GW_ASI_Com + #i):P := #Lista_ComRampa[#i + 1];</Text>
+  </LineComment>
+  <NewLine UId="2176" />
+  <Blank Num="16" UId="2177" />
+  <Access Scope="Call" UId="2178">
+    <Instruction Name="POKE" UId="2179">
+      <Token Text="(" UId="2180" />
+      <Parameter Name="area" UId="2181">
+        <Token Text=":=" UId="2182" />
+        <Access Scope="LiteralConstant" UId="2183">
+          <Constant UId="2184">
+            <ConstantValue UId="2186">16#02</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2187" />
+      <Parameter Name="dbNumber" UId="2188">
+        <Token Text=":=" UId="2189" />
+        <Access Scope="LiteralConstant" UId="2190">
+          <Constant UId="2191">
+            <ConstantValue UId="2193">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2194" />
+      <Parameter Name="byteOffset" UId="2195">
+        <Token Text=":=" UId="2196" />
+        <Access Scope="LocalVariable" UId="2197">
+          <Symbol UId="2198">
+            <Component Name="Dir_GW_ASI_Com" UId="2199" />
+          </Symbol>
+        </Access>
+        <Blank UId="2200" />
+        <Token Text="+" UId="2201" />
+        <Blank UId="2202" />
+        <Access Scope="LocalVariable" UId="2203">
+          <Symbol UId="2204">
+            <Component Name="i" UId="2205" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2206" />
+      <Parameter Name="value" UId="2207">
+        <Token Text=":=" UId="2208" />
+        <Access Scope="LocalVariable" UId="2209">
+          <Symbol UId="2210">
+            <Component Name="Lista_ComRampa" UId="2211">
+              <Token Text="[" UId="2212" />
+              <Access Scope="LocalVariable" UId="2213">
+                <Symbol UId="2214">
+                  <Component Name="i" UId="2215" />
+                </Symbol>
+              </Access>
+              <Blank UId="2216" />
+              <Token Text="+" UId="2217" />
+              <Blank UId="2218" />
+              <Access Scope="LiteralConstant" UId="2219">
+                <Constant UId="2220">
+                  <ConstantValue UId="2222">1</ConstantValue>
+                </Constant>
+              </Access>
+              <Token Text="]" UId="2223" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="2224" />
+    </Instruction>
+  </Access>
+  <Blank Num="2" UId="2225" />
+  <Token Text=";" UId="2226" />
+  <NewLine UId="2227" />
+  <Blank Num="12" UId="2228" />
+  <Token Text="END_FOR" UId="2229" />
+  <Token Text=";" UId="2230" />
+  <NewLine UId="2231" />
+  <Blank Num="12" UId="2232" />
+  <NewLine UId="2233" />
+  <Blank Num="12" UId="2234" />
+  <Access Scope="LocalVariable" UId="2235">
+    <Symbol UId="2236">
+      <Component Name="Ciclo_envio" UId="2237" />
+    </Symbol>
+  </Access>
+  <Blank UId="2238" />
+  <Token Text=":=" UId="2239" />
+  <Blank UId="2240" />
+  <Access Scope="LiteralConstant" UId="2241">
+    <Constant UId="2242">
+      <ConstantValue UId="2244">5</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2245" />
+  <Token Text=";" UId="2246" />
+  <NewLine UId="2247" />
+  <Blank Num="8" UId="2248" />
+  <NewLine UId="2249" />
+  <Blank Num="8" UId="2250" />
+  <Access Scope="LiteralConstant" UId="2251">
+    <Constant UId="2252">
+      <ConstantValue UId="2254">5</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2255" />
+  <Token Text=":" UId="2256" />
+  <NewLine UId="2257" />
+  <Blank Num="12" UId="2258" />
+  <LineComment UId="2259">
+    <Text UId="2260"> ENVIO COMANDO DE RAMPA</Text>
+  </LineComment>
+  <NewLine UId="2261" />
+  <Blank Num="12" UId="2262" />
+  <LineComment Inserted="true" UId="2263">
+    <Text UId="2264"> classic code: #Lista_ComRampa[2] := #Lista_ComRampa[2] OR (%EB (#Dir_GW_ASI_Com + 1):P AND 16#80 ) XOR 16#80;</Text>
+  </LineComment>
+  <NewLine UId="2265" />
+  <Blank Num="12" UId="2266" />
+  <Access Scope="LocalVariable" UId="2267">
+    <Symbol UId="2268">
+      <Component Name="Lista_ComRampa" UId="2269">
+        <Token Text="[" UId="2270" />
+        <Access Scope="LiteralConstant" UId="2271">
+          <Constant UId="2272">
+            <ConstantValue UId="2274">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2275" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="2276" />
+  <Token Text=":=" UId="2277" />
+  <Blank UId="2278" />
+  <Access Scope="LocalVariable" UId="2279">
+    <Symbol UId="2280">
+      <Component Name="Lista_ComRampa" UId="2281">
+        <Token Text="[" UId="2282" />
+        <Access Scope="LiteralConstant" UId="2283">
+          <Constant UId="2284">
+            <ConstantValue UId="2286">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2287" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="2288" />
+  <Token Text="OR" UId="2289" />
+  <Blank UId="2290" />
+  <Token Text="(" UId="2291" />
+  <Access Scope="Call" UId="2292">
+    <Instruction Name="PEEK" UId="2293">
+      <TemplateValue Name="value_type" Type="Type" UId="2294">Byte</TemplateValue>
+      <Token Text="(" UId="2295" />
+      <Parameter Name="area" UId="2296">
+        <Token Text=":=" UId="2297" />
+        <Access Scope="LiteralConstant" UId="2298">
+          <Constant UId="2299">
+            <ConstantValue UId="2301">16#01</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2302" />
+      <Parameter Name="dbNumber" UId="2303">
+        <Token Text=":=" UId="2304" />
+        <Access Scope="LiteralConstant" UId="2305">
+          <Constant UId="2306">
+            <ConstantValue UId="2308">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2309" />
+      <Parameter Name="byteOffset" UId="2310">
+        <Token Text=":=" UId="2311" />
+        <Access Scope="LocalVariable" UId="2312">
+          <Symbol UId="2313">
+            <Component Name="Dir_GW_ASI_Com" UId="2314" />
+          </Symbol>
+        </Access>
+        <Blank UId="2315" />
+        <Token Text="+" UId="2316" />
+        <Blank UId="2317" />
+        <Access Scope="LiteralConstant" UId="2318">
+          <Constant UId="2319">
+            <ConstantValue UId="2321">1</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="2323" />
+    </Instruction>
+  </Access>
+  <Blank UId="2324" />
+  <Token Text="AND" UId="2325" />
+  <Blank UId="2326" />
+  <Access Scope="LiteralConstant" UId="2327">
+    <Constant UId="2328">
+      <ConstantValue UId="2330">16#80</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2331" />
+  <Token Text=")" UId="2332" />
+  <Blank UId="2333" />
+  <Token Text="XOR" UId="2334" />
+  <Blank UId="2335" />
+  <Access Scope="LiteralConstant" UId="2336">
+    <Constant UId="2337">
+      <ConstantValue UId="2339">16#80</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="2340" />
+  <Blank Num="2" UId="2341" />
+  <LineComment UId="2342">
+    <Text UId="2343">Con el AND miro el bit de toogle en entradas, y lo invierto con el XOR, para despues añadirlo con el OR al comando ya calculado </Text>
+  </LineComment>
+  <NewLine UId="2344" />
+  <Blank Num="12" UId="2345" />
+  <LineComment Inserted="true" UId="2346">
+    <Text UId="2347"> classic code: %AB (#Dir_GW_ASI_Com + 1):P := #Lista_ComRampa[2];</Text>
+  </LineComment>
+  <NewLine UId="2348" />
+  <Blank Num="12" UId="2349" />
+  <Access Scope="Call" UId="2350">
+    <Instruction Name="POKE" UId="2351">
+      <Token Text="(" UId="2352" />
+      <Parameter Name="area" UId="2353">
+        <Token Text=":=" UId="2354" />
+        <Access Scope="LiteralConstant" UId="2355">
+          <Constant UId="2356">
+            <ConstantValue UId="2358">16#02</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2359" />
+      <Parameter Name="dbNumber" UId="2360">
+        <Token Text=":=" UId="2361" />
+        <Access Scope="LiteralConstant" UId="2362">
+          <Constant UId="2363">
+            <ConstantValue UId="2365">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2366" />
+      <Parameter Name="byteOffset" UId="2367">
+        <Token Text=":=" UId="2368" />
+        <Access Scope="LocalVariable" UId="2369">
+          <Symbol UId="2370">
+            <Component Name="Dir_GW_ASI_Com" UId="2371" />
+          </Symbol>
+        </Access>
+        <Blank UId="2372" />
+        <Token Text="+" UId="2373" />
+        <Blank UId="2374" />
+        <Access Scope="LiteralConstant" UId="2375">
+          <Constant UId="2376">
+            <ConstantValue UId="2378">1</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2379" />
+      <Parameter Name="value" UId="2380">
+        <Token Text=":=" UId="2381" />
+        <Access Scope="LocalVariable" UId="2382">
+          <Symbol UId="2383">
+            <Component Name="Lista_ComRampa" UId="2384">
+              <Token Text="[" UId="2385" />
+              <Access Scope="LiteralConstant" UId="2386">
+                <Constant UId="2387">
+                  <ConstantValue UId="2389">2</ConstantValue>
+                </Constant>
+              </Access>
+              <Token Text="]" UId="2390" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="2391" />
+    </Instruction>
+  </Access>
+  <Blank Num="2" UId="2392" />
+  <Token Text=";" UId="2393" />
+  <Blank Num="4" UId="2394" />
+  <LineComment UId="2395">
+    <Text UId="2396">Me guardo el comando completo para saber luego que valor hemos enviado en Toogle</Text>
+  </LineComment>
+  <NewLine Num="2" UId="2397" />
+  <Blank Num="12" UId="2398" />
+  <Access Scope="LocalVariable" UId="2399">
+    <Symbol UId="2400">
+      <Component Name="Ciclo_envio" UId="2401" />
+    </Symbol>
+  </Access>
+  <Blank UId="2402" />
+  <Token Text=":=" UId="2403" />
+  <Blank UId="2404" />
+  <Access Scope="LiteralConstant" UId="2405">
+    <Constant UId="2406">
+      <ConstantValue UId="2408">6</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2409" />
+  <Token Text=";" UId="2410" />
+  <NewLine UId="2411" />
+  <Blank Num="12" UId="2412" />
+  <NewLine UId="2413" />
+  <Blank Num="8" UId="2414" />
+  <Access Scope="LiteralConstant" UId="2415">
+    <Constant UId="2416">
+      <ConstantValue UId="2418">6</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2419" />
+  <Token Text=":" UId="2420" />
+  <NewLine UId="2421" />
+  <Blank Num="12" UId="2422" />
+  <LineComment UId="2423">
+    <Text UId="2424"> COMPROBAR RESPUESTA A COMANDO DE RAMPA</Text>
+  </LineComment>
+  <NewLine UId="2425" />
+  <Blank Num="12" UId="2426" />
+  <LineComment Inserted="true" UId="2427">
+    <Text UId="2428"> classic code: IF (%EB (#Dir_GW_ASI_Com + 1):P AND 16#80) = (#Lista_ComRampa[2] AND 16#80) THEN</Text>
+  </LineComment>
+  <NewLine UId="2429" />
+  <Blank Num="12" UId="2430" />
+  <Token Text="IF" UId="2431" />
+  <Blank UId="2432" />
+  <Token Text="(" UId="2433" />
+  <Access Scope="Call" UId="2434">
+    <Instruction Name="PEEK" UId="2435">
+      <TemplateValue Name="value_type" Type="Type" UId="2436">Byte</TemplateValue>
+      <Token Text="(" UId="2437" />
+      <Parameter Name="area" UId="2438">
+        <Token Text=":=" UId="2439" />
+        <Access Scope="LiteralConstant" UId="2440">
+          <Constant UId="2441">
+            <ConstantValue UId="2443">16#01</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2444" />
+      <Parameter Name="dbNumber" UId="2445">
+        <Token Text=":=" UId="2446" />
+        <Access Scope="LiteralConstant" UId="2447">
+          <Constant UId="2448">
+            <ConstantValue UId="2450">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2451" />
+      <Parameter Name="byteOffset" UId="2452">
+        <Token Text=":=" UId="2453" />
+        <Access Scope="LocalVariable" UId="2454">
+          <Symbol UId="2455">
+            <Component Name="Dir_GW_ASI_Com" UId="2456" />
+          </Symbol>
+        </Access>
+        <Blank UId="2457" />
+        <Token Text="+" UId="2458" />
+        <Blank UId="2459" />
+        <Access Scope="LiteralConstant" UId="2460">
+          <Constant UId="2461">
+            <ConstantValue UId="2463">1</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="2465" />
+    </Instruction>
+  </Access>
+  <Blank UId="2466" />
+  <Token Text="AND" UId="2467" />
+  <Blank UId="2468" />
+  <Access Scope="LiteralConstant" UId="2469">
+    <Constant UId="2470">
+      <ConstantValue UId="2472">16#80</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=")" UId="2473" />
+  <Blank UId="2474" />
+  <Token Text="=" UId="2475" />
+  <Blank UId="2476" />
+  <Token Text="(" UId="2477" />
+  <Access Scope="LocalVariable" UId="2478">
+    <Symbol UId="2479">
+      <Component Name="Lista_ComRampa" UId="2480">
+        <Token Text="[" UId="2481" />
+        <Access Scope="LiteralConstant" UId="2482">
+          <Constant UId="2483">
+            <ConstantValue UId="2485">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2486" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="2487" />
+  <Token Text="AND" UId="2488" />
+  <Blank UId="2489" />
+  <Access Scope="LiteralConstant" UId="2490">
+    <Constant UId="2491">
+      <ConstantValue UId="2493">16#80</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=")" UId="2494" />
+  <Blank UId="2495" />
+  <Token Text="THEN" UId="2496" />
+  <Blank Num="4" UId="2497" />
+  <LineComment UId="2498">
+    <Text UId="2499">Miro si ha cambiado el Toogle</Text>
+  </LineComment>
+  <NewLine UId="2500" />
+  <Blank Num="16" UId="2501" />
+  <LineComment Inserted="true" UId="2502">
+    <Text UId="2503"> classic code: IF (%EB (#Dir_GW_ASI_Com):P = #Lista_ComRampa[1]) AND (%EB (#Dir_GW_ASI_Com + 2):P = #Lista_ComRampa[3]) THEN</Text>
+  </LineComment>
+  <NewLine UId="2504" />
+  <Blank Num="16" UId="2505" />
+  <Token Text="IF" UId="2506" />
+  <Blank UId="2507" />
+  <Token Text="(" UId="2508" />
+  <Access Scope="Call" UId="2509">
+    <Instruction Name="PEEK" UId="2510">
+      <TemplateValue Name="value_type" Type="Type" UId="2511">Byte</TemplateValue>
+      <Token Text="(" UId="2512" />
+      <Parameter Name="area" UId="2513">
+        <Token Text=":=" UId="2514" />
+        <Access Scope="LiteralConstant" UId="2515">
+          <Constant UId="2516">
+            <ConstantValue UId="2518">16#01</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2519" />
+      <Parameter Name="dbNumber" UId="2520">
+        <Token Text=":=" UId="2521" />
+        <Access Scope="LiteralConstant" UId="2522">
+          <Constant UId="2523">
+            <ConstantValue UId="2525">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2526" />
+      <Parameter Name="byteOffset" UId="2527">
+        <Token Text=":=" UId="2528" />
+        <Access Scope="LocalVariable" UId="2529">
+          <Symbol UId="2530">
+            <Component Name="Dir_GW_ASI_Com" UId="2531" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="2533" />
+    </Instruction>
+  </Access>
+  <Blank UId="2534" />
+  <Token Text="=" UId="2535" />
+  <Blank UId="2536" />
+  <Access Scope="LocalVariable" UId="2537">
+    <Symbol UId="2538">
+      <Component Name="Lista_ComRampa" UId="2539">
+        <Token Text="[" UId="2540" />
+        <Access Scope="LiteralConstant" UId="2541">
+          <Constant UId="2542">
+            <ConstantValue UId="2544">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2545" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="2546" />
+  <Blank UId="2547" />
+  <Token Text="AND" UId="2548" />
+  <Blank UId="2549" />
+  <Token Text="(" UId="2550" />
+  <Access Scope="Call" UId="2551">
+    <Instruction Name="PEEK" UId="2552">
+      <TemplateValue Name="value_type" Type="Type" UId="2553">Byte</TemplateValue>
+      <Token Text="(" UId="2554" />
+      <Parameter Name="area" UId="2555">
+        <Token Text=":=" UId="2556" />
+        <Access Scope="LiteralConstant" UId="2557">
+          <Constant UId="2558">
+            <ConstantValue UId="2560">16#01</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2561" />
+      <Parameter Name="dbNumber" UId="2562">
+        <Token Text=":=" UId="2563" />
+        <Access Scope="LiteralConstant" UId="2564">
+          <Constant UId="2565">
+            <ConstantValue UId="2567">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2568" />
+      <Parameter Name="byteOffset" UId="2569">
+        <Token Text=":=" UId="2570" />
+        <Access Scope="LocalVariable" UId="2571">
+          <Symbol UId="2572">
+            <Component Name="Dir_GW_ASI_Com" UId="2573" />
+          </Symbol>
+        </Access>
+        <Blank UId="2574" />
+        <Token Text="+" UId="2575" />
+        <Blank UId="2576" />
+        <Access Scope="LiteralConstant" UId="2577">
+          <Constant UId="2578">
+            <ConstantValue UId="2580">2</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="2582" />
+    </Instruction>
+  </Access>
+  <Blank UId="2583" />
+  <Token Text="=" UId="2584" />
+  <Blank UId="2585" />
+  <Access Scope="LocalVariable" UId="2586">
+    <Symbol UId="2587">
+      <Component Name="Lista_ComRampa" UId="2588">
+        <Token Text="[" UId="2589" />
+        <Access Scope="LiteralConstant" UId="2590">
+          <Constant UId="2591">
+            <ConstantValue UId="2593">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2594" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="2595" />
+  <Blank UId="2596" />
+  <Token Text="THEN" UId="2597" />
+  <Blank Num="3" UId="2598" />
+  <LineComment UId="2599">
+    <Text UId="2600">Miro si el comando de vuelta es igual</Text>
+  </LineComment>
+  <NewLine UId="2601" />
+  <Blank Num="20" UId="2602" />
+  <Access Scope="LocalVariable" UId="2603">
+    <Symbol UId="2604">
+      <Component Name="Con_Error" UId="2605" />
+    </Symbol>
+  </Access>
+  <Blank UId="2606" />
+  <Token Text=":=" UId="2607" />
+  <Blank UId="2608" />
+  <Access Scope="LiteralConstant" UId="2609">
+    <Constant UId="2610">
+      <ConstantValue UId="2612">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2613" />
+  <Token Text=";" UId="2614" />
+  <NewLine UId="2615" />
+  <Blank Num="16" UId="2616" />
+  <Token Text="ELSE" UId="2617" />
+  <Blank UId="2618" />
+  <NewLine UId="2619" />
+  <Blank Num="20" UId="2620" />
+  <Access Scope="LocalVariable" UId="2621">
+    <Symbol UId="2622">
+      <Component Name="Con_Error" UId="2623" />
+    </Symbol>
+  </Access>
+  <Blank UId="2624" />
+  <Token Text=":=" UId="2625" />
+  <Blank UId="2626" />
+  <Access Scope="LiteralConstant" UId="2627">
+    <Constant UId="2628">
+      <ConstantValue UId="2630">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2631" />
+  <Token Text=";" UId="2632" />
+  <Blank Num="2" UId="2633" />
+  <LineComment UId="2634">
+    <Text UId="2635">NO se ha ejecutado el envio correctamente</Text>
+  </LineComment>
+  <NewLine UId="2636" />
+  <Blank Num="16" UId="2637" />
+  <Token Text="END_IF" UId="2638" />
+  <Token Text=";" UId="2639" />
+  <NewLine UId="2640" />
+  <Blank Num="12" UId="2641" />
+  <Access Scope="LocalVariable" UId="2642">
+    <Symbol UId="2643">
+      <Component Name="Ciclo_envio" UId="2644" />
+    </Symbol>
+  </Access>
+  <Blank UId="2645" />
+  <Token Text=":=" UId="2646" />
+  <Blank UId="2647" />
+  <Access Scope="LiteralConstant" UId="2648">
+    <Constant UId="2649">
+      <ConstantValue UId="2651">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2652" />
+  <Token Text=";" UId="2653" />
+  <NewLine UId="2654" />
+  <Blank Num="12" UId="2655" />
+  <Token Text="END_IF" UId="2656" />
+  <Token Text=";" UId="2657" />
+  <NewLine UId="2658" />
+  <Blank Num="12" UId="2659" />
+  <NewLine UId="2660" />
+  <Blank Num="4" UId="2661" />
+  <Token Text="ELSE" UId="2662" />
+  <Token Text=":" UId="2663" />
+  <NewLine UId="2664" />
+  <Blank Num="8" UId="2665" />
+  <LineComment UId="2666">
+    <Text UId="2667"> REPOSO, normalmente Ciclo_envio = 0, pero para cualquier otro caso no contemplado hacemos lo mismo</Text>
+  </LineComment>
+  <NewLine UId="2668" />
+  <Blank Num="8" UId="2669" />
+  <Access Scope="LocalVariable" UId="2670">
+    <Symbol UId="2671">
+      <Component Name="Ciclo_envio" UId="2672" />
+    </Symbol>
+  </Access>
+  <Blank UId="2673" />
+  <Token Text=":=" UId="2674" />
+  <Blank UId="2675" />
+  <Access Scope="LiteralConstant" UId="2676">
+    <Constant UId="2677">
+      <ConstantValue UId="2679">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="2680" />
+  <Token Text=";" UId="2681" />
+  <NewLine UId="2682" />
+  <Blank Num="8" UId="2683" />
+  <Access Scope="LocalVariable" UId="2684">
+    <Symbol UId="2685">
+      <Component Name="Finalizado" UId="2686" />
+    </Symbol>
+  </Access>
+  <Blank UId="2687" />
+  <Token Text=":=" UId="2688" />
+  <Blank UId="2689" />
+  <Access Scope="LocalVariable" UId="2690">
+    <Symbol UId="2691">
+      <Component Name="Escritura" UId="2692" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="2693" />
+  <NewLine UId="2694" />
+  <Blank Num="4" UId="2695" />
+  <Token Text="END_CASE" UId="2696" />
+  <Token Text=";" UId="2697" />
+  <NewLine Num="2" UId="2698" />
+  <Blank Num="4" UId="2699" />
+  <Token Text="IF" UId="2700" />
+  <Blank UId="2701" />
+  <Token Text="NOT" UId="2702" />
+  <Blank UId="2703" />
+  <Access Scope="LocalVariable" UId="2704">
+    <Symbol UId="2705">
+      <Component Name="Escritura" UId="2706" />
+    </Symbol>
+  </Access>
+  <Blank UId="2707" />
+  <Token Text="THEN" UId="2708" />
+  <Blank UId="2709" />
+  <NewLine UId="2710" />
+  <Blank Num="16" UId="2711" />
+  <LineComment Inserted="true" UId="2712">
+    <Text UId="2713"> classic code: %AB (#Dir_GW_ASI_Com):P := 16#00 ;</Text>
+  </LineComment>
+  <NewLine UId="2714" />
+  <Blank Num="16" UId="2715" />
+  <Access Scope="Call" UId="2716">
+    <Instruction Name="POKE" UId="2717">
+      <Token Text="(" UId="2718" />
+      <Parameter Name="area" UId="2719">
+        <Token Text=":=" UId="2720" />
+        <Access Scope="LiteralConstant" UId="2721">
+          <Constant UId="2722">
+            <ConstantValue UId="2724">16#02</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2725" />
+      <Parameter Name="dbNumber" UId="2726">
+        <Token Text=":=" UId="2727" />
+        <Access Scope="LiteralConstant" UId="2728">
+          <Constant UId="2729">
+            <ConstantValue UId="2731">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2732" />
+      <Parameter Name="byteOffset" UId="2733">
+        <Token Text=":=" UId="2734" />
+        <Access Scope="LocalVariable" UId="2735">
+          <Symbol UId="2736">
+            <Component Name="Dir_GW_ASI_Com" UId="2737" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2738" />
+      <Parameter Name="value" UId="2739">
+        <Token Text=":=" UId="2740" />
+        <Access Scope="Call" UId="2741">
+          <Instruction Name="DINT_TO_BYTE" UId="2742">
+            <Token Text="(" UId="2743" />
+            <NamelessParameter UId="2744">
+              <Access Scope="LiteralConstant" UId="2745">
+                <Constant UId="2746">
+                  <ConstantValue UId="2748">16#00</ConstantValue>
+                </Constant>
+              </Access>
+            </NamelessParameter>
+            <Token Text=")" UId="2750" />
+          </Instruction>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="2751" />
+    </Instruction>
+  </Access>
+  <Blank Num="3" UId="2752" />
+  <Token Text=";" UId="2753" />
+  <NewLine UId="2754" />
+  <Blank Num="16" UId="2755" />
+  <LineComment Inserted="true" UId="2756">
+    <Text UId="2757"> classic code: %AB (#Dir_GW_ASI_Com + 2):P := 16#00 ;</Text>
+  </LineComment>
+  <NewLine UId="2758" />
+  <Blank Num="16" UId="2759" />
+  <Access Scope="Call" UId="2760">
+    <Instruction Name="POKE" UId="2761">
+      <Token Text="(" UId="2762" />
+      <Parameter Name="area" UId="2763">
+        <Token Text=":=" UId="2764" />
+        <Access Scope="LiteralConstant" UId="2765">
+          <Constant UId="2766">
+            <ConstantValue UId="2768">16#02</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2769" />
+      <Parameter Name="dbNumber" UId="2770">
+        <Token Text=":=" UId="2771" />
+        <Access Scope="LiteralConstant" UId="2772">
+          <Constant UId="2773">
+            <ConstantValue UId="2775">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2776" />
+      <Parameter Name="byteOffset" UId="2777">
+        <Token Text=":=" UId="2778" />
+        <Access Scope="LocalVariable" UId="2779">
+          <Symbol UId="2780">
+            <Component Name="Dir_GW_ASI_Com" UId="2781" />
+          </Symbol>
+        </Access>
+        <Blank UId="2782" />
+        <Token Text="+" UId="2783" />
+        <Blank UId="2784" />
+        <Access Scope="LiteralConstant" UId="2785">
+          <Constant UId="2786">
+            <ConstantValue UId="2788">2</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2789" />
+      <Parameter Name="value" UId="2790">
+        <Token Text=":=" UId="2791" />
+        <Access Scope="Call" UId="2792">
+          <Instruction Name="DINT_TO_BYTE" UId="2793">
+            <Token Text="(" UId="2794" />
+            <NamelessParameter UId="2795">
+              <Access Scope="LiteralConstant" UId="2796">
+                <Constant UId="2797">
+                  <ConstantValue UId="2799">16#00</ConstantValue>
+                </Constant>
+              </Access>
+            </NamelessParameter>
+            <Token Text=")" UId="2801" />
+          </Instruction>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="2802" />
+    </Instruction>
+  </Access>
+  <Blank Num="3" UId="2803" />
+  <Token Text=";" UId="2804" />
+  <NewLine UId="2805" />
+  <Blank Num="16" UId="2806" />
+  <LineComment Inserted="true" UId="2807">
+    <Text UId="2808"> classic code: %AB (#Dir_GW_ASI_Com + 1):P := %EB (#Dir_GW_ASI_Com + 1):P ;</Text>
+  </LineComment>
+  <NewLine UId="2809" />
+  <Blank Num="16" UId="2810" />
+  <Access Scope="Call" UId="2811">
+    <Instruction Name="POKE" UId="2812">
+      <Token Text="(" UId="2813" />
+      <Parameter Name="area" UId="2814">
+        <Token Text=":=" UId="2815" />
+        <Access Scope="LiteralConstant" UId="2816">
+          <Constant UId="2817">
+            <ConstantValue UId="2819">16#02</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2820" />
+      <Parameter Name="dbNumber" UId="2821">
+        <Token Text=":=" UId="2822" />
+        <Access Scope="LiteralConstant" UId="2823">
+          <Constant UId="2824">
+            <ConstantValue UId="2826">0</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2827" />
+      <Parameter Name="byteOffset" UId="2828">
+        <Token Text=":=" UId="2829" />
+        <Access Scope="LocalVariable" UId="2830">
+          <Symbol UId="2831">
+            <Component Name="Dir_GW_ASI_Com" UId="2832" />
+          </Symbol>
+        </Access>
+        <Blank UId="2833" />
+        <Token Text="+" UId="2834" />
+        <Blank UId="2835" />
+        <Access Scope="LiteralConstant" UId="2836">
+          <Constant UId="2837">
+            <ConstantValue UId="2839">1</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2840" />
+      <Parameter Name="value" UId="2841">
+        <Token Text=":=" UId="2842" />
+        <Access Scope="Call" UId="2843">
+          <Instruction Name="PEEK" UId="2844">
+            <TemplateValue Name="value_type" Type="Type" UId="2845">Byte</TemplateValue>
+            <Token Text="(" UId="2846" />
+            <Parameter Name="area" UId="2847">
+              <Token Text=":=" UId="2848" />
+              <Access Scope="LiteralConstant" UId="2849">
+                <Constant UId="2850">
+                  <ConstantValue UId="2852">16#01</ConstantValue>
+                </Constant>
+              </Access>
+            </Parameter>
+            <Token Text="," UId="2853" />
+            <Parameter Name="dbNumber" UId="2854">
+              <Token Text=":=" UId="2855" />
+              <Access Scope="LiteralConstant" UId="2856">
+                <Constant UId="2857">
+                  <ConstantValue UId="2859">0</ConstantValue>
+                </Constant>
+              </Access>
+            </Parameter>
+            <Token Text="," UId="2860" />
+            <Parameter Name="byteOffset" UId="2861">
+              <Token Text=":=" UId="2862" />
+              <Access Scope="LocalVariable" UId="2863">
+                <Symbol UId="2864">
+                  <Component Name="Dir_GW_ASI_Com" UId="2865" />
+                </Symbol>
+              </Access>
+              <Blank UId="2866" />
+              <Token Text="+" UId="2867" />
+              <Blank UId="2868" />
+              <Access Scope="LiteralConstant" UId="2869">
+                <Constant UId="2870">
+                  <ConstantValue UId="2872">1</ConstantValue>
+                </Constant>
+              </Access>
+            </Parameter>
+            <Token Text=")" UId="2874" />
+          </Instruction>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="2875" />
+    </Instruction>
+  </Access>
+  <Blank Num="3" UId="2876" />
+  <Token Text=";" UId="2877" />
+  <NewLine UId="2878" />
+  <Blank Num="4" UId="2879" />
+  <Token Text="END_IF" UId="2880" />
+  <Blank UId="2881" />
+  <Token Text=";" UId="2882" />
+  <NewLine Num="2" UId="2883" />
+  <Blank UId="2884" />
+  <LineComment UId="2885">
+    <Text UId="2886">   FOR i := 1 TO 255 BY 1 DO    //para rellenar el DB1000 todo como el Movimot[0]</Text>
+  </LineComment>
+  <NewLine UId="2887" />
+  <Blank UId="2888" />
+  <LineComment UId="2889">
+    <Text UId="2890">       "Conf_Movimot".Movimot[i]:="Conf_Movimot".Movimot[0];</Text>
+  </LineComment>
+  <NewLine UId="2891" />
+  <Blank UId="2892" />
+  <LineComment UId="2893">
+    <Text UId="2894">   END_FOR;</Text>
+  </LineComment>
+  <NewLine Num="2" UId="2895" />
+  <Blank Num="4" UId="2896" />
+  <Access Scope="LocalVariable" UId="2897">
+    <Symbol UId="2898">
+      <Component Name="Escritura_OLD" UId="2899" />
+    </Symbol>
+  </Access>
+  <Blank UId="2900" />
+  <Token Text=":=" UId="2901" />
+  <Blank UId="2902" />
+  <Access Scope="LocalVariable" UId="2903">
+    <Symbol UId="2904">
+      <Component Name="Escritura" UId="2905" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="2906" />
+  <NewLine Num="2" UId="2907" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="12" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="13" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="15" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="17" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="18" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="1A" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="1B" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="1C" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="1D" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="1E" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="1F" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="20" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="21" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>

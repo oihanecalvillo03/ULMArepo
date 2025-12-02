@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <DocumentInfo>
+    <Created>2025-12-01T14:56:19.2434616Z</Created>
+    <ExportSetting>None</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V20 Update 2</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="Control Signal Bit 0" Datatype="Bool" />
+    <Member Name="Control Signal Bit 1" Datatype="Bool" />
+    <Member Name="Activate Quickstop Application" Datatype="Bool" />
+    <Member Name="Enable Operation" Datatype="Bool" />
+    <Member Name="Control Signal Bit 4" Datatype="Bool" />
+    <Member Name="Jog Positive" Datatype="Bool" />
+    <Member Name="Jog Negative" Datatype="Bool" />
+    <Member Name="Fault Reset" Datatype="Bool" />
+    <Member Name="Halt" Datatype="Bool" />
+    <Member Name="Execute Homing" Datatype="Bool" />
+    <Member Name="Home Position Reset" Datatype="Bool" />
+    <Member Name="Abort" Datatype="Bool" />
+    <Member Name="Control Signal Bit 12" Datatype="Bool" />
+    <Member Name="Activate Vel Override" Datatype="Bool" />
+    <Member Name="Release Brake Manual" Datatype="Bool" />
+    <Member Name="Control Signal Bit 15" Datatype="Bool" />
+    <Member Name="Release_Brake" Datatype="Bool" />
+    <Member Name="Profile No 01" Datatype="Bool" />
+    <Member Name="Profile No 02" Datatype="Bool" />
+    <Member Name="Profile No 04" Datatype="Bool" />
+    <Member Name="Profile No 08" Datatype="Bool" />
+    <Member Name="Execute Positioning" Datatype="Bool" />
+    <Member Name="Control Signal Bit 21" Datatype="Bool" />
+    <Member Name="Finish Positioning" Datatype="Bool" />
+    <Member Name="Disable Toucj Probe" Datatype="Bool" />
+    <Member Name="Control Signal Bit 24" Datatype="Bool" />
+    <Member Name="Control Signal Bit 25" Datatype="Bool" />
+    <Member Name="Control Signal Bit 26" Datatype="Bool" />
+    <Member Name="Control Signal Bit 27" Datatype="Bool" />
+    <Member Name="Activate Ext. Position" Datatype="Bool" />
+    <Member Name="Activate Ext. Velocity" Datatype="Bool" />
+    <Member Name="Activate Ext. Acc Dec Jerk" Datatype="Bool" />
+    <Member Name="Activate Ext. Torque Limit" Datatype="Bool" />
+  </Section>
+</Sections></Interface>
+      <Name>i950 Palabra de Control</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="9" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="A" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="B" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="C" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="D" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="E" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="F" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="10" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

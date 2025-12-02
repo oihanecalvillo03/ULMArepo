@@ -1,0 +1,1709 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <DocumentInfo>
+    <Created>2025-12-01T14:57:17.3804296Z</Created>
+    <ExportSetting>None</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V20 Update 2</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.GlobalDB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Static">
+    <Member Name="Danfoss" Datatype="Array[0..255] of Struct" Remanence="Retain">
+      <Member Name="STW_Danfoss" Datatype="&quot;Danfoss_STW_PN&quot;">
+        <AttributeList>
+          <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+        </AttributeList>
+      </Member>
+      <Member Name="Actual_Speed" Datatype="Int" />
+      <Member Name="Dig_Input" Datatype="&quot;Danfoss_Dig_Input_PN&quot;">
+        <AttributeList>
+          <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+        </AttributeList>
+      </Member>
+      <Member Name="ACC" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="es-ES"> 50-&gt;0,5sg; 100-&gt;1sg; 500-&gt;5sg; 1000-&gt;10sg</MultiLanguageText>
+        </Comment>
+        <Subelement Path="0">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="1">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="2">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="3">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="4">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="5">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="6">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="7">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="8">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="9">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="10">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="11">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="12">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="13">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="14">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="15">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="16">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="17">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="18">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="19">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="20">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="21">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="22">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="23">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="24">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="25">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="26">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="27">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="28">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="29">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="30">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="31">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="32">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="33">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="34">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="35">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="36">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="37">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="38">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="39">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="40">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="41">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="42">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="43">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="44">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="45">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="46">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="47">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="48">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="49">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="50">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="51">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="52">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="53">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="54">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="55">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="56">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="57">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="58">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="59">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="60">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="61">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="62">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="63">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="64">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="65">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="66">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="67">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="68">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="69">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="70">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="71">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="72">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="73">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="74">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="75">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="76">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="77">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="78">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="79">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="80">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="81">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="82">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="83">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="84">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="85">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="86">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="87">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="88">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="89">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="90">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="91">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="92">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="93">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="94">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="95">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="96">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="97">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="98">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="99">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="100">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="101">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="102">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="103">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="104">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="105">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="106">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="107">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="108">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="109">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="110">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="111">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="112">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="113">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="114">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="115">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="116">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="117">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="118">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="119">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="120">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="121">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="122">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="123">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="124">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="125">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="126">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="127">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="128">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="129">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="130">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="131">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="132">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="133">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="134">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="135">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="136">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="137">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="138">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="139">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="140">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="141">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="142">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="143">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="144">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="145">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="146">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="147">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="148">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="149">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="150">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="151">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="152">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="153">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="154">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="155">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="156">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="157">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="158">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="159">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="160">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="161">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="162">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="163">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="164">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="165">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="166">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="167">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="168">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="169">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="170">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="171">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="172">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="173">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="174">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="175">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="176">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="177">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="178">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="179">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="180">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="181">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="182">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="183">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="184">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="185">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="186">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="187">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="188">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="189">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="190">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="191">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="192">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="193">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="194">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="195">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="196">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="197">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="198">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="199">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="200">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="201">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="202">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="203">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="204">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="205">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="206">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="207">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="208">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="209">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="210">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="211">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="212">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="213">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="214">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="215">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="216">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="217">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="218">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="219">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="220">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="221">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="222">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="223">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="224">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="225">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="226">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="227">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="228">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="229">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="230">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="231">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="232">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="233">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="234">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="235">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="236">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="237">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="238">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="239">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="240">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="241">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="242">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="243">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="244">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="245">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="246">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="247">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="248">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="249">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="250">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="251">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="252">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="253">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="254">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="255">
+          <StartValue>50</StartValue>
+        </Subelement>
+      </Member>
+      <Member Name="DCC" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="es-ES"> 50-&gt;0,5sg; 100-&gt;1sg; 500-&gt;5sg; 1000-&gt;10sg</MultiLanguageText>
+        </Comment>
+        <Subelement Path="0">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="1">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="2">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="3">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="4">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="5">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="6">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="7">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="8">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="9">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="10">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="11">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="12">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="13">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="14">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="15">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="16">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="17">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="18">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="19">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="20">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="21">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="22">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="23">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="24">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="25">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="26">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="27">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="28">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="29">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="30">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="31">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="32">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="33">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="34">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="35">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="36">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="37">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="38">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="39">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="40">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="41">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="42">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="43">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="44">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="45">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="46">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="47">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="48">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="49">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="50">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="51">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="52">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="53">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="54">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="55">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="56">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="57">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="58">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="59">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="60">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="61">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="62">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="63">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="64">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="65">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="66">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="67">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="68">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="69">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="70">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="71">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="72">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="73">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="74">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="75">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="76">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="77">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="78">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="79">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="80">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="81">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="82">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="83">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="84">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="85">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="86">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="87">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="88">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="89">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="90">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="91">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="92">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="93">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="94">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="95">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="96">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="97">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="98">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="99">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="100">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="101">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="102">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="103">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="104">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="105">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="106">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="107">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="108">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="109">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="110">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="111">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="112">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="113">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="114">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="115">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="116">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="117">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="118">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="119">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="120">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="121">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="122">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="123">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="124">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="125">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="126">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="127">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="128">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="129">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="130">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="131">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="132">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="133">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="134">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="135">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="136">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="137">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="138">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="139">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="140">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="141">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="142">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="143">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="144">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="145">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="146">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="147">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="148">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="149">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="150">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="151">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="152">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="153">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="154">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="155">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="156">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="157">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="158">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="159">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="160">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="161">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="162">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="163">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="164">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="165">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="166">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="167">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="168">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="169">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="170">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="171">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="172">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="173">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="174">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="175">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="176">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="177">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="178">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="179">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="180">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="181">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="182">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="183">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="184">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="185">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="186">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="187">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="188">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="189">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="190">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="191">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="192">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="193">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="194">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="195">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="196">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="197">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="198">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="199">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="200">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="201">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="202">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="203">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="204">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="205">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="206">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="207">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="208">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="209">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="210">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="211">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="212">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="213">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="214">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="215">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="216">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="217">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="218">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="219">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="220">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="221">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="222">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="223">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="224">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="225">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="226">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="227">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="228">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="229">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="230">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="231">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="232">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="233">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="234">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="235">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="236">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="237">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="238">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="239">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="240">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="241">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="242">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="243">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="244">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="245">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="246">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="247">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="248">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="249">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="250">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="251">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="252">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="253">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="254">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="255">
+          <StartValue>50</StartValue>
+        </Subelement>
+      </Member>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>DB936_Datos_VAR_DANFOSS_PN</Name>
+      <Namespace />
+      <Number>936</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="9" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="A" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="B" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="C" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="D" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="E" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="F" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="10" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.GlobalDB>
+</Document>

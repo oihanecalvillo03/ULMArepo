@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <DocumentInfo>
+    <Created>2025-12-01T14:57:21.7314449Z</Created>
+    <ExportSetting>None</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V20 Update 2</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.GlobalDB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Static">
+    <Member Name="Bypass_SF_xxxx_EM" Datatype="Bool" />
+    <Member Name="Bypass_SF_xxxx_EM_1" Datatype="Bool" />
+    <Member Name="Bypass_SF_xxxx_EM_2" Datatype="Bool" />
+    <Member Name="Bypass_SF_xxxx_EM_3" Datatype="Bool" />
+    <Member Name="Bypass_SF_xxxx_EM_4" Datatype="Bool" />
+    <Member Name="Bypass_SF_xxxx_EM_5" Datatype="Bool" />
+    <Member Name="Bypass_SF_xxxx_EM_6" Datatype="Bool" />
+    <Member Name="Bypass_SF_xxxx_EM_7" Datatype="Bool" />
+    <Member Name="Bypass_SF_xxxx_EM_8" Datatype="Bool" />
+    <Member Name="Bypass_SF_xxxx_EM_9" Datatype="Bool" />
+    <Member Name="Bypass_SF_xxxx_EM_10" Datatype="Bool" />
+    <Member Name="Bypass_BF_xxBARxx" Datatype="Bool" />
+    <Member Name="Bypass_BF_xxBARxx_1" Datatype="Bool" />
+    <Member Name="Bypass_BF_xxBARxx_2" Datatype="Bool" />
+    <Member Name="Bypass_BF_xxBARxx_3" Datatype="Bool" />
+    <Member Name="Bypass_BF_xxBARxx_4" Datatype="Bool" />
+    <Member Name="Bypass_BF_xxBARxx_5" Datatype="Bool" />
+    <Member Name="Bypass_BF_xxBARxx_6" Datatype="Bool" />
+    <Member Name="Bypass_SP_xxxxxx" Datatype="Bool" />
+    <Member Name="Bypass_SP_xxxxxx_1" Datatype="Bool" />
+    <Member Name="Bypass_SP_xxxxxx_2" Datatype="Bool" />
+    <Member Name="Bypass_SP_xxxxxx_3" Datatype="Bool" />
+    <Member Name="Bypass_SP_xxxxxx_4" Datatype="Bool" />
+    <Member Name="Bypass_SP_xxxxxx_5" Datatype="Bool" />
+    <Member Name="Bypass_SP_xxxxxx_6" Datatype="Bool" />
+    <Member Name="Bypass_SP_xxxxxx_7" Datatype="Bool" />
+    <Member Name="Bypass_SP_xxxxxx_8" Datatype="Bool" />
+    <Member Name="Bypass_SP_xxxxxx_9" Datatype="Bool" />
+    <Member Name="Bypass_SP_xxxxxx_10" Datatype="Bool" />
+    <Member Name="Bypass_SP_xxxxxx_11" Datatype="Bool" />
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>DB3000_BYPASS_SAFETY</Name>
+      <Namespace />
+      <Number>3000</Number>
+      <ProgrammingLanguage>F_DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="9" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="A" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="B" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="C" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="D" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="E" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="F" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="10" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.GlobalDB>
+</Document>
