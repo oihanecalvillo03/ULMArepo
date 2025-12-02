@@ -1,0 +1,3496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <DocumentInfo>
+    <Created>2025-12-01T14:57:10.3744011Z</Created>
+    <ExportSetting>None</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V20 Update 2</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderAuthor>TRACKING</HeaderAuthor>
+      <HeaderName>20160407</HeaderName>
+      <HeaderVersion>4.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Temp">
+    <Member Name="EmiProtocoloDispositivoMesa" Datatype="&quot;UDT_ProtocoloEmiDispositivo&quot;" />
+    <Member Name="P_EmiProtocolo" Datatype="DWord" />
+    <Member Name="NumeroMesa" Datatype="UInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Numero de Mesa Dispositivo</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="MesaDeJDT02" Datatype="Bool" />
+    <Member Name="DispoDeJDT02" Datatype="Bool" />
+  </Section>
+  <Section Name="Constant" />
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" />
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>FC820_EstadosDispositivos</Name>
+      <Namespace />
+      <Number>820</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text>- Inicializar
+
+- Bucle de Dispositivos CCPIF y CBOX
+  - Cierre del protocolo
+  - Calculo de los eventos de las presencias
+  - Calculo de los eventos generales
+
+- Bucle de Disporisitivos Mesas
+  - Cierre del protocolo
+  - Calculo de los eventos de las presencias
+  - Calculo de los eventos generales
+
+- Bucle de Disporisitivos Maquinas
+  - Cierre del protocolo
+  - Calculo de los eventos de las presencias
+  - Calculo de los eventos generales
+</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="9" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="23">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="24">
+    <LineComment>
+      <Text> Inicializaciones de las variables de los DB's</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="52">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="51">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Inicializacion de las variables de los DB's</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="12" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="13" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="15" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Inicializar</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="17" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="18" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1A" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="182">
+    <LabelDeclaration>
+      <Label Name="Bucle_DispositivoMesa" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="268">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="188">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="632">
+    <LineComment>
+      <Text>                        Recorrer todos las Mesas</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="190">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="636">
+    <LineComment>
+      <Text> --- Inicializacion de los Punteros</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="638">
+    <LineComment>
+      <Text> --- Recoger el WORD de Emision del Dispositivo </Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="640">
+    <LineComment>
+      <Text> --- Mirar si se ha cerrado el Protocolo del Dispositivo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="642">
+    <LineComment>
+      <Text> --- Recoger los datos del Dispositivo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="644">
+    <LineComment>
+      <Text> --- Mirar si hay algun Evento Pendiente por tratar (No debe haber ninguno)</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="646">
+    <LineComment>
+      <Text> --- Mirar si se ha Activado alguna Presencia</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="648">
+    <LineComment>
+      <Text> --- Mirar si hay alguna peticion pendiente (General)</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="650">
+    <LineComment>
+      <Text> --- Si hay cambio de Estado el dispositivo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="652">
+    <LineComment>
+      <Text>  </Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="654">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="655">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="658">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="NumeroMesa" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="40">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="192">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="663">
+    <LineComment>
+      <Text> --- Inicializacin de los Punteros</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="70">
+    <LabelDeclaration>
+      <Label Name="InicioBucle_DispositivoMesa" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="119">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="227">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="159">
+    <LineComment>
+      <Text>/ Mirar Si hay Mesa Configurada (2019 / 01 /18)</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="160">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="164">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB850_DefinicionMesas" />
+        <Component Name="Mesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="ConfigMesa" />
+        <Component Name="MesaPaso" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="163">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB850_DefinicionMesas" />
+        <Component Name="Mesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="ConfigMesa" />
+        <Component Name="MesaCruce" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="168">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB850_DefinicionMesas" />
+        <Component Name="Mesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="ConfigMesa" />
+        <Component Name="MesaMultiplesDestinos" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="171">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB850_DefinicionMesas" />
+        <Component Name="Mesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="ConfigMesa" />
+        <Component Name="MesaTL" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="166">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="FinBucle_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="229">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="113">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="27">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="31">
+    <LineComment>
+      <Text> --- Recoger Datos del Dispositivo (Protocolo)</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="36">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <Instruction Name="MOVE">
+        <TemplateValue Name="value_type" Type="Type">Variant</TemplateValue>
+        <Parameter Name="IN">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB840_Emision" />
+              <Component Name="DispoMesa" AccessModifier="Array">
+                <Access Scope="LocalVariable">
+                  <Symbol>
+                    <Component Name="NumeroMesa" />
+                  </Symbol>
+                </Access>
+              </Component>
+              <Component Name="Protocolo" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="OUT">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="EmiProtocoloDispositivoMesa" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </Instruction>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="155">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="157">
+    <StlToken Text="L" />
+    <Access Scope="AddressConstant">
+      <Constant Name="EmiProtocoloDispositivoMesa" Scope="local" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="186">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="P_EmiProtocolo" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="196">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="77">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="68">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="114">
+    <LineComment>
+      <Text> --- Recoger el Estado del Armari del Emision del Dispositivo </Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="121">
+    <LineComment>
+      <Text> --- Guardarlo en Real en la Base de Datos</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="53">
+    <LineComment>
+      <Text>     Codigo de Error = ErrorReal</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="61">
+    <LineComment>
+      <Text>     Bits de Estado</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="204">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="81">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB840_Emision" />
+        <Component Name="DispoMesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Error" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="42">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="ErrorReal" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="108">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="109">
+    <StlToken Text="L" />
+    <Access Scope="Address">
+      <Indirect Width="Word" Area="Local">
+        <Access Scope="LocalVariable">
+          <Symbol>
+            <Component Name="P_EmiProtocolo" />
+          </Symbol>
+        </Access>
+      </Indirect>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="158">
+    <StlToken Text="L" />
+    <Access Scope="TypedConstant">
+      <Constant>
+        <ConstantValue>W#16#7700</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> Solo la Parte Baja</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="231">
+    <StlToken Text="AW" />
+  </StlStatement>
+  <StlStatement UId="232">
+    <StlToken Text="SRD" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>8</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="234">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="StatusReal" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="236">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="137">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="124">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="718">
+    <LineComment>
+      <Text> --- Mirar si se ha cerrado el protocolo dl Dispositivo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="720">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="730">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoPresenciaDispo" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="732">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="734">
+    <StlToken Text="NE_I" />
+  </StlStatement>
+  <StlStatement UId="735">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="CerrarProtocolo_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="127">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="737">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="128">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="775">
+    <LineComment>
+      <Text> --- Mirar si hay algun Evento Pendiente por tratar (No debe haber ninguno)</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="777">
+    <LineComment>
+      <Text>     * StatusRecepcion = 0</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="779">
+    <LineComment>
+      <Text>     * StatusEmision = 0</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="781">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="782">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoRecepcionEvento" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="785">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> No hay nada, Eventos Recibidos</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="788">
+    <StlToken Text="NE_I" />
+  </StlStatement>
+  <StlStatement UId="789">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="FinBucle_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="138">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="792">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="793">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoEmisionEvento" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="796">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> No hay nada, Eventos a Emitir</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="799">
+    <StlToken Text="NE_I" />
+  </StlStatement>
+  <StlStatement UId="800">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="FinBucle_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="146">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="803">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="139">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="806">
+    <LineComment>
+      <Text> --- Mirar si se ha Activado alguna Presencia</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="808">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="809">
+    <StlToken Text="L" />
+    <Access Scope="Address">
+      <Indirect Width="Word" Area="Local">
+        <Access Scope="LocalVariable">
+          <Symbol>
+            <Component Name="P_EmiProtocolo" />
+          </Symbol>
+        </Access>
+      </Indirect>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="811">
+    <StlToken Text="L" />
+    <Access Scope="TypedConstant">
+      <Constant>
+        <ConstantValue>W#16#7F</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> Solo la Parte Alta</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="814">
+    <StlToken Text="AW" />
+  </StlStatement>
+  <StlStatement UId="815">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> Mirar si se altivado algo ?</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="818">
+    <StlToken Text="NE_I" />
+  </StlStatement>
+  <StlStatement UId="819">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="TratarPresencias_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="143">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="821">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="144">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="824">
+    <LineComment>
+      <Text> --- Mirar si hay alguna peticion pendiente</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="826">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="827">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoGeneralEvento" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="830">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> No hay nada, Peticion Pendiente</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="833">
+    <StlToken Text="NE_I" />
+  </StlStatement>
+  <StlStatement UId="834">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="TratarEstadoGeneral_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="151">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="836">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="152">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="839">
+    <LineComment>
+      <Text> --- Si hay cambio de Estado el dispositivo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="167">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="169">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="StatusReal" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="176">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="178">
+    <StlToken Text="EQ_I" />
+  </StlStatement>
+  <StlStatement UId="179">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="FinBucle_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="154">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="841">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="842">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="StatusReal" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="845">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="StatusActual" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="848">
+    <StlToken Text="EQ_I" />
+    <LineComment>
+      <Text> Real = Actual (Guardado)</Text>
+    </LineComment>
+  </StlStatement>
+  <StlStatement UId="849">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="FinBucle_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="21">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="24">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="33">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="29">
+    <LineComment>
+      <Text> --- Sin conexion no se genera el CAMBIO DE ESTADO (2019 01 18)</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="34">
+    <LineComment>
+      <Text>/    Mirar Si pertenece al JDT</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="37">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="38">
+    <StlToken Text="A" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB850_DefinicionMesas" />
+        <Component Name="Mesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="ConfigMesa" />
+        <Component Name="MesaDeJDT02" />
+      </Symbol>
+      <LineComment>
+        <Text> JDT01 ?</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="43">
+    <StlToken Text="Assign" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="MesaDeJDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="161">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="45">
+    <StlToken Text="SET" />
+    <LineComment>
+      <Text> Esta Conectado ?</Text>
+    </LineComment>
+  </StlStatement>
+  <StlStatement UId="46">
+    <StlToken Text="AN" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="MesaDeJDT02" />
+      </Symbol>
+      <LineComment>
+        <Text> Mirar Si esta el EnlaceCP Activo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="48">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB801_JDT01StatusCOM" />
+        <Component Name="EnlaceCP_OK" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="51">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="FinBucle_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="180">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="181">
+    <StlToken Text="SET" />
+    <LineComment>
+      <Text> Esta Conectado ?</Text>
+    </LineComment>
+  </StlStatement>
+  <StlStatement UId="55">
+    <StlToken Text="A" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="MesaDeJDT02" />
+      </Symbol>
+      <LineComment>
+        <Text> Mirar Si esta el EnlaceCP Activo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="57">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="EnlaceCP_OK" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="60">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="FinBucle_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="63">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="23">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="94">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="863">
+    <LineComment>
+      <Text> --- Guardo el nuevo estado y genero el evento</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="246">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="StatusReal" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="248">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="StatusActual" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="250">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="ErrorReal" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="252">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="ErrorActual" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="254">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="255">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>160</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> 160 - Refresco de datos del Dispositivo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="258">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoEmisionEvento" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="260">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="95">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="96">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="99">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="92">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="896">
+    <LineComment>
+      <Text> --- Voy al siguiente Dispositivo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="79">
+    <LabelDeclaration>
+      <Label Name="FinBucle_DispositivoMesa" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="899">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="NumeroMesa" />
+      </Symbol>
+      <LineComment>
+        <Text> Incremento en 1 el Numero de Mesa</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="903">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="905">
+    <StlToken Text="ADD_I" />
+  </StlStatement>
+  <StlStatement UId="906">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="NumeroMesa" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="908">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="909">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="NumeroMesa" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="911">
+    <StlToken Text="L" />
+    <Access Scope="GlobalConstant">
+      <Constant Name="CTE_MaxMesas" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="913">
+    <StlToken Text="GT_I" />
+    <LineComment>
+      <Text> Bucle de Maquinas</Text>
+    </LineComment>
+  </StlStatement>
+  <StlStatement UId="914">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="FinalFuncion" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="86">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="87">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="90">
+    <LineComment>
+      <Text> Finalizar, Siguiente Mesa</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="917">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="InicioBucle_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="91">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="920">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1B" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>- Recorrer todos los dispositivos
+  - Mirar si ha cerrado el protocolo
+  - Mirar si hay algun evento de presencia
+  - Mirar si hay algun evento general
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="21" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="22" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="23" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="24" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="26" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Bucle de los Dispositivos Mesas</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="27" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="28" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="29" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="2B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="21">
+    <LabelDeclaration>
+      <Label Name="CerrarProtocolo_DispositivoMesa" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="23">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="24">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="26">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="28">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="923">
+    <LineComment>
+      <Text> --- Cierre del protocolo del Dispositivo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="925">
+    <LineComment>
+      <Text>     * Esta en Fase 1 - Esperando que se desactive Emision del Dispositivo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="929">
+    <StlToken Text="L" />
+    <Access Scope="Address">
+      <Indirect Width="Word" Area="Local">
+        <Access Scope="LocalVariable">
+          <Symbol>
+            <Component Name="P_EmiProtocolo" />
+          </Symbol>
+        </Access>
+      </Indirect>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="932">
+    <StlToken Text="L" />
+    <Access Scope="TypedConstant">
+      <Constant>
+        <ConstantValue>W#16#7F</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> Solo la Parte Alta</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="935">
+    <StlToken Text="AW" />
+  </StlStatement>
+  <StlStatement UId="936">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> Mirar si se altivado algo ?</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="939">
+    <StlToken Text="NE_I" />
+  </StlStatement>
+  <StlStatement UId="940">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="FinCerrarProtocolo_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="48">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="49">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="50">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="47">
+    <LineComment>
+      <Text> - Terminar Protocolo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="52">
+    <StlToken Text="SET" />
+    <LineComment>
+      <Text> DesActivar - EmiOK del dispositivo</Text>
+    </LineComment>
+  </StlStatement>
+  <StlStatement UId="65">
+    <StlToken Text="R" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB841_Recepcion" />
+        <Component Name="DispoMesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Protocolo" />
+        <Component Name="EmiOK" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="56">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="57">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> Pasar a Fase 0, Acabado el Protocolo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="60">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoPresenciaDispo" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="62">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="942">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="FinCerrarProtocolo_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="67">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="68">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="104">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="106">
+    <LineComment>
+      <Text> - ReEscribir Protocolo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="90">
+    <LabelDeclaration>
+      <Label Name="ReEscribirProtocolo_DispositivoMesa" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="82">
+    <StlToken Text="SET" />
+    <LineComment>
+      <Text> Activar - EmiOK del dispositivo</Text>
+    </LineComment>
+  </StlStatement>
+  <StlStatement UId="86">
+    <StlToken Text="S" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB841_Recepcion" />
+        <Component Name="DispoMesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Protocolo" />
+        <Component Name="EmiOK" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="77">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="100">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="FinCerrarProtocolo_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="92">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="960">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="30">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="33">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="35">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="963">
+    <LineComment>
+      <Text> --- Final del Cierre del Protocolo del Dispositivo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="32">
+    <LabelDeclaration>
+      <Label Name="FinCerrarProtocolo_DispositivoMesa" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="43">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="41">
+    <LineComment>
+      <Text> Finalizar, Siguiente Mesa</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="966">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="FinBucle_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="42">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="970">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="2C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="2D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>- Cierre de Protocolo del Dispositivo
+  * Fase 1 - Esperando que se desactive Emision del Dispositivo
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="30" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="31" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="32" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="33" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="34" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="35" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="36" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="37" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Cierre de Protocolo (Dispositivos) Mesas</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="38" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="39" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="3C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="21">
+    <LabelDeclaration>
+      <Label Name="TratarPresencias_DispositivoMesa" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="23">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="24">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="26">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="28">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="30">
+    <LineComment>
+      <Text> --- Distribucion por las Presencias (Generar Evento correspondiente)</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="32">
+    <StlToken Text="SET" />
+    <LineComment>
+      <Text> Evento de Reset OK</Text>
+    </LineComment>
+  </StlStatement>
+  <StlStatement UId="34">
+    <StlToken Text="A" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="EmiProtocoloDispositivoMesa" />
+        <Component Name="ResetOK" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="36">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="GenerarEventoResetOK_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="38">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="39">
+    <StlToken Text="SET" />
+    <LineComment>
+      <Text> Evento de Reset NOK</Text>
+    </LineComment>
+  </StlStatement>
+  <StlStatement UId="41">
+    <StlToken Text="A" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="EmiProtocoloDispositivoMesa" />
+        <Component Name="ResetNOK" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="43">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="GenerarEventoResetNOK_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="45">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="46">
+    <StlToken Text="SET" />
+    <LineComment>
+      <Text> Evento de ParoBlando OK</Text>
+    </LineComment>
+  </StlStatement>
+  <StlStatement UId="48">
+    <StlToken Text="A" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="EmiProtocoloDispositivoMesa" />
+        <Component Name="ParoBlandoOK" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="50">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="GenerarEventoParoBlandoOK_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="52">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="53">
+    <StlToken Text="SET" />
+    <LineComment>
+      <Text> Evento de Paro Blando NOK</Text>
+    </LineComment>
+  </StlStatement>
+  <StlStatement UId="55">
+    <StlToken Text="A" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="EmiProtocoloDispositivoMesa" />
+        <Component Name="ParoBlandoNOK" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="57">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="GenerarEventoParoBlandoNOK_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="59">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="60">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="61">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="63">
+    <LineComment>
+      <Text> --- No hay mas tipos de presencias programadas - cerrar el protocolo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="65">
+    <LineComment>
+      <Text>     Por defecto</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="67">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="DefectoTratarPresencias_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="69">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="70">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="71">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="72">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="73">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="75">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="77">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="79">
+    <LineComment>
+      <Text> --- Generar Evento de Reset OK</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="81">
+    <LineComment>
+      <Text> --- Empezar el cierre del Protocolo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="83">
+    <LabelDeclaration>
+      <Label Name="GenerarEventoResetOK_DispositivoMesa" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="85">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>151</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> 151 - Reset OK del Dispositivo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="88">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoEmisionEvento" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="90">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="91">
+    <StlToken Text="SET" />
+    <LineComment>
+      <Text> Activar - EmiOK del dispositivo</Text>
+    </LineComment>
+  </StlStatement>
+  <StlStatement UId="93">
+    <StlToken Text="S" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB841_Recepcion" />
+        <Component Name="DispoMesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Protocolo" />
+        <Component Name="EmiOK" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="95">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="96">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> Pasar a Fase 1, Empieza el Protocolo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="99">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoPresenciaDispo" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="110">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="118">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="120">
+    <LineComment>
+      <Text> Finalizar, Siguiente Dispositivo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="122">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="FinBucle_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="124">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="125">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="126">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="128">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="130">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="132">
+    <LineComment>
+      <Text> --- Generar Evento de Reset NOK</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="134">
+    <LineComment>
+      <Text> --- Empezar el cierre del Protocolo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="136">
+    <LabelDeclaration>
+      <Label Name="GenerarEventoResetNOK_DispositivoMesa" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="138">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>152</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> 152 - Reset NOK del Dispositivo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="141">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoEmisionEvento" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="143">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="144">
+    <StlToken Text="SET" />
+    <LineComment>
+      <Text> Activar - EmiOK del dispositivo</Text>
+    </LineComment>
+  </StlStatement>
+  <StlStatement UId="146">
+    <StlToken Text="S" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB841_Recepcion" />
+        <Component Name="DispoMesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Protocolo" />
+        <Component Name="EmiOK" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="148">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="149">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> Pasar a Fase 1, Empieza el Protocolo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="152">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoPresenciaDispo" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="162">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="171">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="173">
+    <LineComment>
+      <Text> Finalizar, Siguiente Dispositivo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="175">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="FinBucle_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="177">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="178">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="179">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="181">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="183">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="185">
+    <LineComment>
+      <Text> --- Generar Evento de Paro Blando OK</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="187">
+    <LineComment>
+      <Text> --- Empezar el cierre del Protocolo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="189">
+    <LabelDeclaration>
+      <Label Name="GenerarEventoParoBlandoOK_DispositivoMesa" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="191">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>153</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> 153 - Paro Blando OK del Dispositivo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="194">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoEmisionEvento" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="196">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="197">
+    <StlToken Text="SET" />
+    <LineComment>
+      <Text> Activar - EmiOK del dispositivo</Text>
+    </LineComment>
+  </StlStatement>
+  <StlStatement UId="199">
+    <StlToken Text="S" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB841_Recepcion" />
+        <Component Name="DispoMesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Protocolo" />
+        <Component Name="EmiOK" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="201">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="202">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> Pasar a Fase 1, Empieza el Protocolo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="205">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoPresenciaDispo" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="216">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="224">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="226">
+    <LineComment>
+      <Text> Finalizar, Siguiente Dispositivo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="228">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="FinBucle_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="230">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="231">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="232">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="234">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="236">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="238">
+    <LineComment>
+      <Text> --- Generar Evento de Paro Blando NOK</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="240">
+    <LineComment>
+      <Text> --- Empezar el cierre del Protocolo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="242">
+    <LabelDeclaration>
+      <Label Name="GenerarEventoParoBlandoNOK_DispositivoMesa" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="244">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>154</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> 154 - Paro Blando NOK del Dispositivo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="247">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoEmisionEvento" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="249">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="250">
+    <StlToken Text="SET" />
+    <LineComment>
+      <Text> Activar - EmiOK del dispositivo</Text>
+    </LineComment>
+  </StlStatement>
+  <StlStatement UId="252">
+    <StlToken Text="S" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB841_Recepcion" />
+        <Component Name="DispoMesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Protocolo" />
+        <Component Name="EmiOK" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="254">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="255">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> Pasar a Fase 1, Empieza el Protocolo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="258">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoPresenciaDispo" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="276">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="277">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="279">
+    <LineComment>
+      <Text> Finalizar, Siguiente Dispositivo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="281">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="FinBucle_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="283">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="284">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="285">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="287">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="289">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="291">
+    <LineComment>
+      <Text> --- Empezar el cierre del Protocolo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="293">
+    <LabelDeclaration>
+      <Label Name="DefectoTratarPresencias_DispositivoMesa" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="295">
+    <StlToken Text="SET" />
+    <LineComment>
+      <Text> Activar - EmiOK del dispositivo</Text>
+    </LineComment>
+  </StlStatement>
+  <StlStatement UId="297">
+    <StlToken Text="S" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB841_Recepcion" />
+        <Component Name="DispoMesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Protocolo" />
+        <Component Name="EmiOK" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="299">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="300">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> Pasar a Fase 1, Empieza el Protocolo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="303">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoPresenciaDispo" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="321">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="322">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="324">
+    <LineComment>
+      <Text> Finalizar, Siguiente Dispositivo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="326">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="FinBucle_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="328">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="1103">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="3D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="3E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="40" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>- Distribucion dependiendo del la presencia (Evento a Generar
+  * Evento de Reset OK
+  * Evento de Reset NOK
+  * Evento de Paro Blando OK
+  * Evento de Paro Blando NOK
+
+- Empezar el cierre del protocolo
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="41" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="42" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="43" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="44" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="45" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="46" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="47" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="48" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Calculo de Eventos de las Presencias (Dispositivos) Mesas</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="49" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="4A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="4B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="4C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="4D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="21">
+    <LabelDeclaration>
+      <Label Name="TratarEstadoGeneral_DispositivoMesa" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="23">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="24">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="26">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="28">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="1106">
+    <LineComment>
+      <Text> --- Distribucion del evento general</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="30">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoGeneralEvento" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="32">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>25</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> Peticion de Refescom de Datos</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="35">
+    <StlToken Text="EQ_I" />
+  </StlStatement>
+  <StlStatement UId="36">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="RefrescoDatos_EstadoGeneral_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="38">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="39">
+    <LineComment>
+      <Text> --- No hay más programados</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="41">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="FinTratarEstadoGeneral_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="43">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="44">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="45">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="47">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="49">
+    <LineComment>
+      <Text> --- Generar Evento de Refesco de Datos del Dispositivo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="51">
+    <LabelDeclaration>
+      <Label Name="RefrescoDatos_EstadoGeneral_DispositivoMesa" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="104">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="StatusReal" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="106">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="StatusActual" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="108">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="ErrorReal" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="110">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="ErrorActual" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="102">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="53">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="54">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="StatusActual" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="56">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="58">
+    <StlToken Text="EQ_I" />
+  </StlStatement>
+  <StlStatement UId="59">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="NoExisteRefrescoDatos_EstadoGeneral_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="61">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="62">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>160</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> 160 - Refresco de datos del Dispositivo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="65">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoEmisionEvento" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="67">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="68">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="69">
+    <LabelDeclaration>
+      <Label Name="NoExisteRefrescoDatos_EstadoGeneral_DispositivoMesa" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="71">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> EstadoGeneral - Dar por Tratado</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="74">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB831_Mesas" />
+        <Component Name="Mesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="EstadoGeneralEvento" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="76">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="85">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="FinTratarEstadoGeneral_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="87">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="88">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="89">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="91">
+    <LineComment>
+      <Text>///////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="93">
+    <LineComment>
+      <Text> --- Fin  de Eventos Generales</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="95">
+    <LineComment>
+      <Text> Finalizar, Siguiente Dispositivo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="97">
+    <LabelDeclaration>
+      <Label Name="FinTratarEstadoGeneral_DispositivoMesa" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="99">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="FinBucle_DispositivoMesa" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="101">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="1168">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="4F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="50" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="51" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>- Distribucion de los eventos generales
+  * Refresco de datos del dispositivo
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="52" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="53" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="54" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="55" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="56" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="57" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="58" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="59" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Calculo del Evento General (Dispositivos) Mesa</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="5E" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="1789">
+    <LabelDeclaration>
+      <Label Name="FinalFuncion" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="1791">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="5F" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="60" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="61" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="62" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Se Acabo</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="63" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="64" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="65" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="66" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="67" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="68" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="69" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Finalizar</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="6F" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="70" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="71" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="72" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text>"EstadosDispositivos" - Calcular los Eventos de los Dispositivos</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="73" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="74" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="75" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="76" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>

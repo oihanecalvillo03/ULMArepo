@@ -1,0 +1,1618 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <DocumentInfo>
+    <Created>2025-12-01T14:57:30.7717214Z</Created>
+    <ExportSetting>None</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V20 Update 2</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.GlobalDB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Static">
+    <Member Name="Num_de_posicion_en_la_linea" Datatype="Byte">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Las tarjetas dentro de las lineas que tengan este numero, podran moverse</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Mesa" Datatype="Array[1..500] of &quot;Fuentes_Lineas&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="Fuente" Datatype="String[5]">
+            <Subelement Path="1">
+              <StartValue>'2020'</StartValue>
+            </Subelement>
+            <Subelement Path="2">
+              <StartValue>'2020'</StartValue>
+            </Subelement>
+            <Subelement Path="3">
+              <StartValue>'2020'</StartValue>
+            </Subelement>
+            <Subelement Path="4">
+              <StartValue>'2020'</StartValue>
+            </Subelement>
+            <Subelement Path="5">
+              <StartValue>'2020'</StartValue>
+            </Subelement>
+            <Subelement Path="6">
+              <StartValue>'2020'</StartValue>
+            </Subelement>
+            <Subelement Path="7">
+              <StartValue>'2020'</StartValue>
+            </Subelement>
+            <Subelement Path="8">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="9">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="10">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="11">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="12">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="13">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="14">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="15">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="16">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="17">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="18">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="19">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="20">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="21">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="22">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="23">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="24">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="25">
+              <StartValue>'2017'</StartValue>
+            </Subelement>
+            <Subelement Path="26">
+              <StartValue>'2020'</StartValue>
+            </Subelement>
+            <Subelement Path="27">
+              <StartValue>'2020'</StartValue>
+            </Subelement>
+            <Subelement Path="28">
+              <StartValue>'2020'</StartValue>
+            </Subelement>
+            <Subelement Path="29">
+              <StartValue>'2020'</StartValue>
+            </Subelement>
+            <Subelement Path="30">
+              <StartValue>'2020'</StartValue>
+            </Subelement>
+            <Subelement Path="31">
+              <StartValue>'2020'</StartValue>
+            </Subelement>
+            <Subelement Path="32">
+              <StartValue>'2020'</StartValue>
+            </Subelement>
+            <Subelement Path="33">
+              <StartValue>'2020'</StartValue>
+            </Subelement>
+            <Subelement Path="34">
+              <StartValue>'2046'</StartValue>
+            </Subelement>
+            <Subelement Path="35">
+              <StartValue>'2046'</StartValue>
+            </Subelement>
+            <Subelement Path="37">
+              <StartValue>'2046'</StartValue>
+            </Subelement>
+            <Subelement Path="38">
+              <StartValue>'2046'</StartValue>
+            </Subelement>
+            <Subelement Path="39">
+              <StartValue>'2046'</StartValue>
+            </Subelement>
+            <Subelement Path="40">
+              <StartValue>'2046'</StartValue>
+            </Subelement>
+            <Subelement Path="41">
+              <StartValue>'2046'</StartValue>
+            </Subelement>
+            <Subelement Path="42">
+              <StartValue>'2046'</StartValue>
+            </Subelement>
+            <Subelement Path="43">
+              <StartValue>'2046'</StartValue>
+            </Subelement>
+            <Subelement Path="44">
+              <StartValue>'2046'</StartValue>
+            </Subelement>
+            <Subelement Path="45">
+              <StartValue>'2046'</StartValue>
+            </Subelement>
+            <Subelement Path="50">
+              <StartValue>'2044'</StartValue>
+            </Subelement>
+            <Subelement Path="51">
+              <StartValue>'3004'</StartValue>
+            </Subelement>
+            <Subelement Path="52">
+              <StartValue>'3004'</StartValue>
+            </Subelement>
+            <Subelement Path="53">
+              <StartValue>'3004'</StartValue>
+            </Subelement>
+            <Subelement Path="54">
+              <StartValue>'3004'</StartValue>
+            </Subelement>
+            <Subelement Path="55">
+              <StartValue>'3004'</StartValue>
+            </Subelement>
+            <Subelement Path="56">
+              <StartValue>'3004'</StartValue>
+            </Subelement>
+            <Subelement Path="57">
+              <StartValue>'3004'</StartValue>
+            </Subelement>
+            <Subelement Path="58">
+              <StartValue>'3004'</StartValue>
+            </Subelement>
+            <Subelement Path="59">
+              <StartValue>'3004'</StartValue>
+            </Subelement>
+            <Subelement Path="60">
+              <StartValue>'3004'</StartValue>
+            </Subelement>
+            <Subelement Path="61">
+              <StartValue>'3004'</StartValue>
+            </Subelement>
+            <Subelement Path="62">
+              <StartValue>'3004'</StartValue>
+            </Subelement>
+            <Subelement Path="63">
+              <StartValue>'3004'</StartValue>
+            </Subelement>
+            <Subelement Path="64">
+              <StartValue>'3004'</StartValue>
+            </Subelement>
+            <Subelement Path="65">
+              <StartValue>'3004'</StartValue>
+            </Subelement>
+            <Subelement Path="66">
+              <StartValue>'3006'</StartValue>
+            </Subelement>
+            <Subelement Path="67">
+              <StartValue>'3006'</StartValue>
+            </Subelement>
+            <Subelement Path="68">
+              <StartValue>'3006'</StartValue>
+            </Subelement>
+            <Subelement Path="69">
+              <StartValue>'3006'</StartValue>
+            </Subelement>
+            <Subelement Path="70">
+              <StartValue>'3006'</StartValue>
+            </Subelement>
+            <Subelement Path="71">
+              <StartValue>'3006'</StartValue>
+            </Subelement>
+            <Subelement Path="73">
+              <StartValue>'3006'</StartValue>
+            </Subelement>
+            <Subelement Path="74">
+              <StartValue>'3006'</StartValue>
+            </Subelement>
+            <Subelement Path="75">
+              <StartValue>'3006'</StartValue>
+            </Subelement>
+            <Subelement Path="76">
+              <StartValue>'3006'</StartValue>
+            </Subelement>
+            <Subelement Path="77">
+              <StartValue>'3006'</StartValue>
+            </Subelement>
+            <Subelement Path="78">
+              <StartValue>'3006'</StartValue>
+            </Subelement>
+            <Subelement Path="79">
+              <StartValue>'3006'</StartValue>
+            </Subelement>
+            <Subelement Path="80">
+              <StartValue>'3006'</StartValue>
+            </Subelement>
+            <Subelement Path="81">
+              <StartValue>'3006'</StartValue>
+            </Subelement>
+            <Subelement Path="82">
+              <StartValue>'3006'</StartValue>
+            </Subelement>
+            <Subelement Path="90">
+              <StartValue>'7019'</StartValue>
+            </Subelement>
+            <Subelement Path="91">
+              <StartValue>'7019'</StartValue>
+            </Subelement>
+            <Subelement Path="92">
+              <StartValue>'7019'</StartValue>
+            </Subelement>
+            <Subelement Path="93">
+              <StartValue>'7019'</StartValue>
+            </Subelement>
+            <Subelement Path="94">
+              <StartValue>'7019'</StartValue>
+            </Subelement>
+            <Subelement Path="95">
+              <StartValue>'7019'</StartValue>
+            </Subelement>
+            <Subelement Path="96">
+              <StartValue>'7003'</StartValue>
+            </Subelement>
+            <Subelement Path="97">
+              <StartValue>'7003'</StartValue>
+            </Subelement>
+            <Subelement Path="98">
+              <StartValue>'7003'</StartValue>
+            </Subelement>
+            <Subelement Path="99">
+              <StartValue>'7003'</StartValue>
+            </Subelement>
+            <Subelement Path="100">
+              <StartValue>'7003'</StartValue>
+            </Subelement>
+            <Subelement Path="101">
+              <StartValue>'7003'</StartValue>
+            </Subelement>
+            <Subelement Path="102">
+              <StartValue>'7003'</StartValue>
+            </Subelement>
+            <Subelement Path="103">
+              <StartValue>'7003'</StartValue>
+            </Subelement>
+            <Subelement Path="104">
+              <StartValue>'7003'</StartValue>
+            </Subelement>
+            <Subelement Path="105">
+              <StartValue>'7003'</StartValue>
+            </Subelement>
+            <Subelement Path="106">
+              <StartValue>'7016'</StartValue>
+            </Subelement>
+            <Subelement Path="107">
+              <StartValue>'7016'</StartValue>
+            </Subelement>
+            <Subelement Path="108">
+              <StartValue>'7016'</StartValue>
+            </Subelement>
+            <Subelement Path="109">
+              <StartValue>'7016'</StartValue>
+            </Subelement>
+            <Subelement Path="110">
+              <StartValue>'7016'</StartValue>
+            </Subelement>
+            <Subelement Path="111">
+              <StartValue>'7016'</StartValue>
+            </Subelement>
+            <Subelement Path="112">
+              <StartValue>'7016'</StartValue>
+            </Subelement>
+            <Subelement Path="113">
+              <StartValue>'7016'</StartValue>
+            </Subelement>
+            <Subelement Path="114">
+              <StartValue>'7016'</StartValue>
+            </Subelement>
+            <Subelement Path="115">
+              <StartValue>'7016'</StartValue>
+            </Subelement>
+            <Subelement Path="116">
+              <StartValue>'7016'</StartValue>
+            </Subelement>
+            <Subelement Path="117">
+              <StartValue>'7016'</StartValue>
+            </Subelement>
+            <Subelement Path="118">
+              <StartValue>'7016'</StartValue>
+            </Subelement>
+            <Subelement Path="119">
+              <StartValue>'7016'</StartValue>
+            </Subelement>
+            <Subelement Path="120">
+              <StartValue>'7019'</StartValue>
+            </Subelement>
+            <Subelement Path="121">
+              <StartValue>'7019'</StartValue>
+            </Subelement>
+            <Subelement Path="122">
+              <StartValue>'7019'</StartValue>
+            </Subelement>
+            <Subelement Path="123">
+              <StartValue>'7019'</StartValue>
+            </Subelement>
+            <Subelement Path="124">
+              <StartValue>'7019'</StartValue>
+            </Subelement>
+            <Subelement Path="125">
+              <StartValue>'7019'</StartValue>
+            </Subelement>
+            <Subelement Path="300">
+              <StartValue>'2008A'</StartValue>
+            </Subelement>
+            <Subelement Path="301">
+              <StartValue>'2008A'</StartValue>
+            </Subelement>
+            <Subelement Path="302">
+              <StartValue>'2008A'</StartValue>
+            </Subelement>
+            <Subelement Path="303">
+              <StartValue>'2008A'</StartValue>
+            </Subelement>
+            <Subelement Path="304">
+              <StartValue>'2008A'</StartValue>
+            </Subelement>
+            <Subelement Path="305">
+              <StartValue>'2008A'</StartValue>
+            </Subelement>
+            <Subelement Path="310">
+              <StartValue>'2008B'</StartValue>
+            </Subelement>
+            <Subelement Path="311">
+              <StartValue>'2008B'</StartValue>
+            </Subelement>
+            <Subelement Path="312">
+              <StartValue>'2008B'</StartValue>
+            </Subelement>
+            <Subelement Path="313">
+              <StartValue>'2008B'</StartValue>
+            </Subelement>
+            <Subelement Path="314">
+              <StartValue>'2008B'</StartValue>
+            </Subelement>
+            <Subelement Path="315">
+              <StartValue>'2008B'</StartValue>
+            </Subelement>
+            <Subelement Path="320">
+              <StartValue>'2008C'</StartValue>
+            </Subelement>
+            <Subelement Path="321">
+              <StartValue>'2008C'</StartValue>
+            </Subelement>
+            <Subelement Path="322">
+              <StartValue>'2008C'</StartValue>
+            </Subelement>
+            <Subelement Path="323">
+              <StartValue>'2008C'</StartValue>
+            </Subelement>
+            <Subelement Path="324">
+              <StartValue>'2008C'</StartValue>
+            </Subelement>
+            <Subelement Path="325">
+              <StartValue>'2008C'</StartValue>
+            </Subelement>
+            <Subelement Path="330">
+              <StartValue>'2008D'</StartValue>
+            </Subelement>
+            <Subelement Path="331">
+              <StartValue>'2008D'</StartValue>
+            </Subelement>
+            <Subelement Path="332">
+              <StartValue>'2008D'</StartValue>
+            </Subelement>
+            <Subelement Path="333">
+              <StartValue>'2008D'</StartValue>
+            </Subelement>
+            <Subelement Path="334">
+              <StartValue>'2008D'</StartValue>
+            </Subelement>
+            <Subelement Path="335">
+              <StartValue>'2008D'</StartValue>
+            </Subelement>
+            <Subelement Path="400">
+              <StartValue>'7005A'</StartValue>
+            </Subelement>
+            <Subelement Path="401">
+              <StartValue>'7005A'</StartValue>
+            </Subelement>
+            <Subelement Path="402">
+              <StartValue>'7005A'</StartValue>
+            </Subelement>
+            <Subelement Path="403">
+              <StartValue>'7005A'</StartValue>
+            </Subelement>
+            <Subelement Path="404">
+              <StartValue>'7005A'</StartValue>
+            </Subelement>
+            <Subelement Path="405">
+              <StartValue>'7005A'</StartValue>
+            </Subelement>
+            <Subelement Path="410">
+              <StartValue>'7005B'</StartValue>
+            </Subelement>
+            <Subelement Path="411">
+              <StartValue>'7005B'</StartValue>
+            </Subelement>
+            <Subelement Path="412">
+              <StartValue>'7005B'</StartValue>
+            </Subelement>
+            <Subelement Path="413">
+              <StartValue>'7005B'</StartValue>
+            </Subelement>
+            <Subelement Path="414">
+              <StartValue>'7005B'</StartValue>
+            </Subelement>
+            <Subelement Path="415">
+              <StartValue>'7005B'</StartValue>
+            </Subelement>
+            <Subelement Path="420">
+              <StartValue>'7005C'</StartValue>
+            </Subelement>
+            <Subelement Path="421">
+              <StartValue>'7005C'</StartValue>
+            </Subelement>
+            <Subelement Path="422">
+              <StartValue>'7005C'</StartValue>
+            </Subelement>
+            <Subelement Path="423">
+              <StartValue>'7005C'</StartValue>
+            </Subelement>
+            <Subelement Path="424">
+              <StartValue>'7005C'</StartValue>
+            </Subelement>
+            <Subelement Path="425">
+              <StartValue>'7005C'</StartValue>
+            </Subelement>
+            <Subelement Path="430">
+              <StartValue>'7005D'</StartValue>
+            </Subelement>
+            <Subelement Path="431">
+              <StartValue>'7005D'</StartValue>
+            </Subelement>
+            <Subelement Path="432">
+              <StartValue>'7005D'</StartValue>
+            </Subelement>
+            <Subelement Path="433">
+              <StartValue>'7005D'</StartValue>
+            </Subelement>
+            <Subelement Path="434">
+              <StartValue>'7005D'</StartValue>
+            </Subelement>
+            <Subelement Path="435">
+              <StartValue>'7005D'</StartValue>
+            </Subelement>
+          </Member>
+          <Member Name="Linea" Datatype="Byte">
+            <Subelement Path="1">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="2">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="3">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="4">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="5">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="6">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="7">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="8">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="9">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="10">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="11">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="12">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="13">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="14">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="15">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="16">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="17">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="18">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="19">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="20">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="21">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="22">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="23">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="24">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="25">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="26">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="27">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="28">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="29">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="30">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="31">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="32">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="33">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="34">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="35">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="37">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="38">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="39">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="40">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="41">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="42">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="43">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="44">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="45">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="50">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="51">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="52">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="53">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="54">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="55">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="56">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="57">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="58">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="59">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="60">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="61">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="62">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="63">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="64">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="65">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="66">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="67">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="68">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="69">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="70">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="71">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="73">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="74">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="75">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="76">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="77">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="78">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="79">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="80">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="81">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="82">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="90">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="91">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="92">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="93">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="94">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="95">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="96">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="97">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="98">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="99">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="100">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="101">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="102">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="103">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="104">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="105">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="106">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="107">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="108">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="109">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="110">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="111">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="112">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="113">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="114">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="115">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="116">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="117">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="118">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="119">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="120">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="121">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="122">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="123">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="124">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="125">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="300">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="301">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="302">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="303">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="304">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="305">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="310">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="311">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="312">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="313">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="314">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="315">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="320">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="321">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="322">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="323">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="324">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="325">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="330">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="331">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="332">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="333">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="334">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="335">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="400">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="401">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="402">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="403">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="404">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="405">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="410">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="411">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="412">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="413">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="414">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="415">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="420">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="421">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="422">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="423">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="424">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="425">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="430">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="431">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="432">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="433">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="434">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="435">
+              <StartValue>3</StartValue>
+            </Subelement>
+          </Member>
+          <Member Name="Posicion" Datatype="Byte">
+            <Subelement Path="1">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="2">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="3">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="4">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="5">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="6">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="7">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="8">
+              <StartValue>5</StartValue>
+            </Subelement>
+            <Subelement Path="9">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="10">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="11">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="12">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="13">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="14">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="15">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="16">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="17">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="18">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="19">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="20">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="21">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="22">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="23">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="24">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="25">
+              <StartValue>5</StartValue>
+            </Subelement>
+            <Subelement Path="26">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="27">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="28">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="29">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="30">
+              <StartValue>5</StartValue>
+            </Subelement>
+            <Subelement Path="31">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="32">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="33">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="34">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="35">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="37">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="38">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="39">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="40">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="41">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="42">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="43">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="44">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="45">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="50">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="51">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="52">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="53">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="54">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="55">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="56">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="57">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="58">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="59">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="60">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="61">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="62">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="63">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="64">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="65">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="66">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="67">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="68">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="69">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="70">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="71">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="73">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="74">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="75">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="76">
+              <StartValue>5</StartValue>
+            </Subelement>
+            <Subelement Path="77">
+              <StartValue>5</StartValue>
+            </Subelement>
+            <Subelement Path="78">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="79">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="80">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="81">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="82">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="83">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="84">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="90">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="91">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="92">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="93">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="94">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="95">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="96">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="97">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="98">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="99">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="100">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="101">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="102">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="103">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="104">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="105">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="106">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="107">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="108">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="109">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="110">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="111">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="112">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="113">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="114">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="115">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="116">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="117">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="118">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="119">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="120">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="121">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="122">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="123">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="124">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="125">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="300">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="301">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="302">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="303">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="304">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="305">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="310">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="311">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="312">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="313">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="314">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="315">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="320">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="321">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="322">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="323">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="324">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="325">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="330">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="331">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="332">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="333">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="334">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="335">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="400">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="401">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="402">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="403">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="404">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="405">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="410">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="411">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="412">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="413">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="414">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="415">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="420">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="421">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="422">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="423">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="424">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="425">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="430">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="431">
+              <StartValue>2</StartValue>
+            </Subelement>
+            <Subelement Path="432">
+              <StartValue>3</StartValue>
+            </Subelement>
+            <Subelement Path="433">
+              <StartValue>4</StartValue>
+            </Subelement>
+            <Subelement Path="434">
+              <StartValue>1</StartValue>
+            </Subelement>
+            <Subelement Path="435">
+              <StartValue>1</StartValue>
+            </Subelement>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>DB1700_Mesas_Fuentes</Name>
+      <Namespace />
+      <Number>1700</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="9" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="A" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="B" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="C" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="D" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="E" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="F" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="10" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.GlobalDB>
+</Document>

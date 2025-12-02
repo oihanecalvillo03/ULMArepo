@@ -1,0 +1,3366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <DocumentInfo>
+    <Created>2025-12-01T14:57:44.4127247Z</Created>
+    <ExportSetting>None</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V20 Update 2</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input">
+    <Member Name="NumeroMesa" Datatype="UInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Numero de Mesa</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Phs_1" Datatype="Bool" />
+    <Member Name="Phs_2" Datatype="Bool" />
+    <Member Name="Phs_3" Datatype="Bool" />
+    <Member Name="Phs_4" Datatype="Bool" />
+    <Member Name="Tiempo_Ocupado" Datatype="UDInt" />
+    <Member Name="ATRIBUTO_NIVEL_1" Datatype="String">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">0</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ATRIBUTO_NIVEL_2" Datatype="String">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">25</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ATRIBUTO_NIVEL_3" Datatype="String">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">50</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ATRIBUTO_NIVEL_4" Datatype="String">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">75</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ATRIBUTO_NIVEL_5" Datatype="String">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">100</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Output" />
+  <Section Name="InOut">
+    <Member Name="DB_Eventos" Datatype="Array[*] of Char" />
+    <Member Name="MemEstadoOcupa" Datatype="Byte">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Memoria del ultimo estado emitido</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Memorias_ocupacion" Datatype="Int" />
+  </Section>
+  <Section Name="Temp">
+    <Member Name="Emitir" Datatype="Bool" />
+    <Member Name="Nuevo_estado" Datatype="Byte" />
+    <Member Name="VarEvento" Datatype="Struct">
+      <Member Name="InicioEventos" Datatype="UInt" />
+      <Member Name="FinalEventos" Datatype="UInt" />
+      <Member Name="Indice" Datatype="UInt" />
+      <Member Name="Posicion_Inicial" Datatype="UInt" />
+      <Member Name="CNT_Chars" Datatype="UInt" />
+      <Member Name="Motivo" Datatype="UInt" />
+      <Member Name="Mesa_String" Datatype="String" />
+      <Member Name="Evento" Datatype="String" />
+      <Member Name="Encontrado" Datatype="Bool" />
+      <Member Name="Motivo_string" Datatype="String" />
+    </Member>
+  </Section>
+  <Section Name="Constant" />
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" />
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>FC534_Estados_ocupacion_V2</Name>
+      <Namespace />
+      <Number>534</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="9" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="DB902_Estado_ZonaMesa" />
+        <Component Name="EstadoMesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Marcha_CBx" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="DB902_Estado_ZonaMesa" />
+        <Component Name="EstadoMesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="PerReset_CBx" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>Byte</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="MemEstadoOcupa" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="25">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="26" />
+    <Part Name="O" UId="27">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="28" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="25" Name="in" />
+      <NameCon UId="26" Name="in" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="21" />
+      <NameCon UId="25" Name="operand" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="25" Name="out" />
+      <NameCon UId="27" Name="in1" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="22" />
+      <NameCon UId="26" Name="operand" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="27" Name="in2" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="27" Name="out" />
+      <NameCon UId="28" Name="en" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="23" />
+      <NameCon UId="28" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <NameCon UId="28" Name="out1" />
+      <IdentCon UId="24" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="12" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="13" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="15" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>si el sistema no está en marcha o hacemos un reset, borramos la memoria del estado para que se vuelva a emitir</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="17" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="18" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1A" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x2" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="Phs_1" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="Phs_1" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="Tiempo_Ocupado" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>UDInt</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="26">
+      <Symbol>
+        <Component Name="DB230_CONTADORES" />
+        <Component Name="Mesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="CNT_Acumulacion" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x1" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="Phs_1" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x1" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="Phs_1" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="Tiempo_Ocupado" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="32">
+      <Constant>
+        <ConstantType>UDInt</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="33">
+      <Symbol>
+        <Component Name="DB230_CONTADORES" />
+        <Component Name="Mesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="CNT_Atasco" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x2" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="35" />
+    <Part Name="Contact" UId="36">
+      <Negated Name="operand" />
+    </Part>
+    <Call UId="37">
+      <CallInfo Name="FC912_CNT_Tiempo_Mem_UHS" BlockType="FC">
+        <Parameter Name="Temporizar" Section="Input" Type="Bool" />
+        <Parameter Name="Reset" Section="Input" Type="Bool" />
+        <Parameter Name="Valor_Tiempo" Section="Input" Type="UDInt" />
+        <Parameter Name="Base_tiempo_ms" Section="Input" Type="UDInt" />
+        <Parameter Name="Tiempo_OK" Section="Output" Type="Bool" />
+        <Parameter Name="Valor_Actual" Section="InOut" Type="UDInt" />
+      </CallInfo>
+    </Call>
+    <Part Name="Contact" UId="38">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="39" />
+    <Part Name="Contact" UId="40" />
+    <Call UId="41">
+      <CallInfo Name="FC912_CNT_Tiempo_Mem_UHS" BlockType="FC">
+        <Parameter Name="Temporizar" Section="Input" Type="Bool" />
+        <Parameter Name="Reset" Section="Input" Type="Bool" />
+        <Parameter Name="Valor_Tiempo" Section="Input" Type="UDInt" />
+        <Parameter Name="Base_tiempo_ms" Section="Input" Type="UDInt" />
+        <Parameter Name="Tiempo_OK" Section="Output" Type="Bool" />
+        <Parameter Name="Valor_Actual" Section="InOut" Type="UDInt" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="42">
+      <Powerrail />
+      <NameCon UId="37" Name="en" />
+      <NameCon UId="35" Name="in" />
+      <NameCon UId="41" Name="en" />
+      <NameCon UId="38" Name="in" />
+      <NameCon UId="39" Name="in" />
+    </Wire>
+    <Wire UId="43">
+      <IdentCon UId="21" />
+      <NameCon UId="35" Name="operand" />
+    </Wire>
+    <Wire UId="44">
+      <NameCon UId="35" Name="out" />
+      <NameCon UId="36" Name="in" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="22" />
+      <NameCon UId="36" Name="operand" />
+    </Wire>
+    <Wire UId="46">
+      <NameCon UId="36" Name="out" />
+      <NameCon UId="37" Name="Reset" />
+    </Wire>
+    <Wire UId="47">
+      <IdentCon UId="23" />
+      <NameCon UId="37" Name="Temporizar" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="24" />
+      <NameCon UId="37" Name="Valor_Tiempo" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="25" />
+      <NameCon UId="37" Name="Base_tiempo_ms" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="26" />
+      <NameCon UId="37" Name="Valor_Actual" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="37" Name="Tiempo_OK" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="28" />
+      <NameCon UId="38" Name="operand" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="38" Name="out" />
+      <NameCon UId="41" Name="Temporizar" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="29" />
+      <NameCon UId="39" Name="operand" />
+    </Wire>
+    <Wire UId="55">
+      <NameCon UId="39" Name="out" />
+      <NameCon UId="40" Name="in" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="30" />
+      <NameCon UId="40" Name="operand" />
+    </Wire>
+    <Wire UId="57">
+      <NameCon UId="40" Name="out" />
+      <NameCon UId="41" Name="Reset" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="31" />
+      <NameCon UId="41" Name="Valor_Tiempo" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="32" />
+      <NameCon UId="41" Name="Base_tiempo_ms" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="33" />
+      <NameCon UId="41" Name="Valor_Actual" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="41" Name="Tiempo_OK" />
+      <IdentCon UId="34" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1B" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="21" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="22" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="23" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="24" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="26" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>MIRAR OCUPACION PHS1</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="27" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="28" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="29" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="2B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x4" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="Phs_2" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="Phs_2" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="Tiempo_Ocupado" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>UDInt</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="26">
+      <Symbol>
+        <Component Name="DB230_CONTADORES" />
+        <Component Name="Mesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="CNT_AUSENCIA_ENTRADA" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x3" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="Phs_2" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x3" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="Phs_2" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="Tiempo_Ocupado" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="32">
+      <Constant>
+        <ConstantType>UDInt</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="33">
+      <Symbol>
+        <Component Name="DB230_CONTADORES" />
+        <Component Name="Mesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="CNT_AUSENCIA_SALIDA" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x4" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="35" />
+    <Part Name="Contact" UId="36">
+      <Negated Name="operand" />
+    </Part>
+    <Call UId="37">
+      <CallInfo Name="FC912_CNT_Tiempo_Mem_UHS" BlockType="FC">
+        <Parameter Name="Temporizar" Section="Input" Type="Bool" />
+        <Parameter Name="Reset" Section="Input" Type="Bool" />
+        <Parameter Name="Valor_Tiempo" Section="Input" Type="UDInt" />
+        <Parameter Name="Base_tiempo_ms" Section="Input" Type="UDInt" />
+        <Parameter Name="Tiempo_OK" Section="Output" Type="Bool" />
+        <Parameter Name="Valor_Actual" Section="InOut" Type="UDInt" />
+      </CallInfo>
+    </Call>
+    <Part Name="Contact" UId="38">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="39" />
+    <Part Name="Contact" UId="40" />
+    <Call UId="41">
+      <CallInfo Name="FC912_CNT_Tiempo_Mem_UHS" BlockType="FC">
+        <Parameter Name="Temporizar" Section="Input" Type="Bool" />
+        <Parameter Name="Reset" Section="Input" Type="Bool" />
+        <Parameter Name="Valor_Tiempo" Section="Input" Type="UDInt" />
+        <Parameter Name="Base_tiempo_ms" Section="Input" Type="UDInt" />
+        <Parameter Name="Tiempo_OK" Section="Output" Type="Bool" />
+        <Parameter Name="Valor_Actual" Section="InOut" Type="UDInt" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="42">
+      <Powerrail />
+      <NameCon UId="37" Name="en" />
+      <NameCon UId="35" Name="in" />
+      <NameCon UId="41" Name="en" />
+      <NameCon UId="38" Name="in" />
+      <NameCon UId="39" Name="in" />
+    </Wire>
+    <Wire UId="43">
+      <IdentCon UId="21" />
+      <NameCon UId="35" Name="operand" />
+    </Wire>
+    <Wire UId="44">
+      <NameCon UId="35" Name="out" />
+      <NameCon UId="36" Name="in" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="22" />
+      <NameCon UId="36" Name="operand" />
+    </Wire>
+    <Wire UId="46">
+      <NameCon UId="36" Name="out" />
+      <NameCon UId="37" Name="Reset" />
+    </Wire>
+    <Wire UId="47">
+      <IdentCon UId="23" />
+      <NameCon UId="37" Name="Temporizar" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="24" />
+      <NameCon UId="37" Name="Valor_Tiempo" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="25" />
+      <NameCon UId="37" Name="Base_tiempo_ms" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="26" />
+      <NameCon UId="37" Name="Valor_Actual" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="37" Name="Tiempo_OK" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="28" />
+      <NameCon UId="38" Name="operand" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="38" Name="out" />
+      <NameCon UId="41" Name="Temporizar" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="29" />
+      <NameCon UId="39" Name="operand" />
+    </Wire>
+    <Wire UId="55">
+      <NameCon UId="39" Name="out" />
+      <NameCon UId="40" Name="in" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="30" />
+      <NameCon UId="40" Name="operand" />
+    </Wire>
+    <Wire UId="57">
+      <NameCon UId="40" Name="out" />
+      <NameCon UId="41" Name="Reset" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="31" />
+      <NameCon UId="41" Name="Valor_Tiempo" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="32" />
+      <NameCon UId="41" Name="Base_tiempo_ms" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="33" />
+      <NameCon UId="41" Name="Valor_Actual" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="41" Name="Tiempo_OK" />
+      <IdentCon UId="34" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="2C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="2D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="30" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="31" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="32" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="33" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="34" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="35" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="36" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="37" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>MIRAR OCUPACION PHS2</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="38" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="39" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="3C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x6" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="Phs_3" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="Phs_3" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="Tiempo_Ocupado" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>UDInt</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="26">
+      <Symbol>
+        <Component Name="DB230_CONTADORES" />
+        <Component Name="Mesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="CNT_Bloqueo_Movimiento" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x5" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="Phs_3" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x5" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="Phs_3" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="Tiempo_Ocupado" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="32">
+      <Constant>
+        <ConstantType>UDInt</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="33">
+      <Symbol>
+        <Component Name="DB230_CONTADORES" />
+        <Component Name="Mesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="CNT_CaraDelantera" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x6" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="35" />
+    <Part Name="Contact" UId="36">
+      <Negated Name="operand" />
+    </Part>
+    <Call UId="37">
+      <CallInfo Name="FC912_CNT_Tiempo_Mem_UHS" BlockType="FC">
+        <Parameter Name="Temporizar" Section="Input" Type="Bool" />
+        <Parameter Name="Reset" Section="Input" Type="Bool" />
+        <Parameter Name="Valor_Tiempo" Section="Input" Type="UDInt" />
+        <Parameter Name="Base_tiempo_ms" Section="Input" Type="UDInt" />
+        <Parameter Name="Tiempo_OK" Section="Output" Type="Bool" />
+        <Parameter Name="Valor_Actual" Section="InOut" Type="UDInt" />
+      </CallInfo>
+    </Call>
+    <Part Name="Contact" UId="38">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="39" />
+    <Part Name="Contact" UId="40" />
+    <Call UId="41">
+      <CallInfo Name="FC912_CNT_Tiempo_Mem_UHS" BlockType="FC">
+        <Parameter Name="Temporizar" Section="Input" Type="Bool" />
+        <Parameter Name="Reset" Section="Input" Type="Bool" />
+        <Parameter Name="Valor_Tiempo" Section="Input" Type="UDInt" />
+        <Parameter Name="Base_tiempo_ms" Section="Input" Type="UDInt" />
+        <Parameter Name="Tiempo_OK" Section="Output" Type="Bool" />
+        <Parameter Name="Valor_Actual" Section="InOut" Type="UDInt" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="42">
+      <Powerrail />
+      <NameCon UId="37" Name="en" />
+      <NameCon UId="35" Name="in" />
+      <NameCon UId="41" Name="en" />
+      <NameCon UId="38" Name="in" />
+      <NameCon UId="39" Name="in" />
+    </Wire>
+    <Wire UId="43">
+      <IdentCon UId="21" />
+      <NameCon UId="35" Name="operand" />
+    </Wire>
+    <Wire UId="44">
+      <NameCon UId="35" Name="out" />
+      <NameCon UId="36" Name="in" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="22" />
+      <NameCon UId="36" Name="operand" />
+    </Wire>
+    <Wire UId="46">
+      <NameCon UId="36" Name="out" />
+      <NameCon UId="37" Name="Reset" />
+    </Wire>
+    <Wire UId="47">
+      <IdentCon UId="23" />
+      <NameCon UId="37" Name="Temporizar" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="24" />
+      <NameCon UId="37" Name="Valor_Tiempo" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="25" />
+      <NameCon UId="37" Name="Base_tiempo_ms" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="26" />
+      <NameCon UId="37" Name="Valor_Actual" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="37" Name="Tiempo_OK" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="28" />
+      <NameCon UId="38" Name="operand" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="38" Name="out" />
+      <NameCon UId="41" Name="Temporizar" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="29" />
+      <NameCon UId="39" Name="operand" />
+    </Wire>
+    <Wire UId="55">
+      <NameCon UId="39" Name="out" />
+      <NameCon UId="40" Name="in" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="30" />
+      <NameCon UId="40" Name="operand" />
+    </Wire>
+    <Wire UId="57">
+      <NameCon UId="40" Name="out" />
+      <NameCon UId="41" Name="Reset" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="31" />
+      <NameCon UId="41" Name="Valor_Tiempo" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="32" />
+      <NameCon UId="41" Name="Base_tiempo_ms" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="33" />
+      <NameCon UId="41" Name="Valor_Actual" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="41" Name="Tiempo_OK" />
+      <IdentCon UId="34" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="3D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="3E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="40" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="41" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="42" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="43" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="44" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="45" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="46" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="47" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="48" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>MIRAR OCUPACION PHS3</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="49" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="4A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="4B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="4C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="4D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x8" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="Phs_4" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="Phs_4" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="Tiempo_Ocupado" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>UDInt</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="26">
+      <Symbol>
+        <Component Name="DB230_CONTADORES" />
+        <Component Name="Mesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="CNT_Detector_Fuera" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x7" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="Phs_4" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x7" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="Phs_4" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="Tiempo_Ocupado" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="32">
+      <Constant>
+        <ConstantType>UDInt</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="33">
+      <Symbol>
+        <Component Name="DB230_CONTADORES" />
+        <Component Name="Mesa" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="CNT_Gap" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x8" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="35" />
+    <Part Name="Contact" UId="36">
+      <Negated Name="operand" />
+    </Part>
+    <Call UId="37">
+      <CallInfo Name="FC912_CNT_Tiempo_Mem_UHS" BlockType="FC">
+        <Parameter Name="Temporizar" Section="Input" Type="Bool" />
+        <Parameter Name="Reset" Section="Input" Type="Bool" />
+        <Parameter Name="Valor_Tiempo" Section="Input" Type="UDInt" />
+        <Parameter Name="Base_tiempo_ms" Section="Input" Type="UDInt" />
+        <Parameter Name="Tiempo_OK" Section="Output" Type="Bool" />
+        <Parameter Name="Valor_Actual" Section="InOut" Type="UDInt" />
+      </CallInfo>
+    </Call>
+    <Part Name="Contact" UId="38">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="39" />
+    <Part Name="Contact" UId="40" />
+    <Call UId="41">
+      <CallInfo Name="FC912_CNT_Tiempo_Mem_UHS" BlockType="FC">
+        <Parameter Name="Temporizar" Section="Input" Type="Bool" />
+        <Parameter Name="Reset" Section="Input" Type="Bool" />
+        <Parameter Name="Valor_Tiempo" Section="Input" Type="UDInt" />
+        <Parameter Name="Base_tiempo_ms" Section="Input" Type="UDInt" />
+        <Parameter Name="Tiempo_OK" Section="Output" Type="Bool" />
+        <Parameter Name="Valor_Actual" Section="InOut" Type="UDInt" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="42">
+      <Powerrail />
+      <NameCon UId="37" Name="en" />
+      <NameCon UId="35" Name="in" />
+      <NameCon UId="41" Name="en" />
+      <NameCon UId="38" Name="in" />
+      <NameCon UId="39" Name="in" />
+    </Wire>
+    <Wire UId="43">
+      <IdentCon UId="21" />
+      <NameCon UId="35" Name="operand" />
+    </Wire>
+    <Wire UId="44">
+      <NameCon UId="35" Name="out" />
+      <NameCon UId="36" Name="in" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="22" />
+      <NameCon UId="36" Name="operand" />
+    </Wire>
+    <Wire UId="46">
+      <NameCon UId="36" Name="out" />
+      <NameCon UId="37" Name="Reset" />
+    </Wire>
+    <Wire UId="47">
+      <IdentCon UId="23" />
+      <NameCon UId="37" Name="Temporizar" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="24" />
+      <NameCon UId="37" Name="Valor_Tiempo" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="25" />
+      <NameCon UId="37" Name="Base_tiempo_ms" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="26" />
+      <NameCon UId="37" Name="Valor_Actual" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="37" Name="Tiempo_OK" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="28" />
+      <NameCon UId="38" Name="operand" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="38" Name="out" />
+      <NameCon UId="41" Name="Temporizar" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="29" />
+      <NameCon UId="39" Name="operand" />
+    </Wire>
+    <Wire UId="55">
+      <NameCon UId="39" Name="out" />
+      <NameCon UId="40" Name="in" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="30" />
+      <NameCon UId="40" Name="operand" />
+    </Wire>
+    <Wire UId="57">
+      <NameCon UId="40" Name="out" />
+      <NameCon UId="41" Name="Reset" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="31" />
+      <NameCon UId="41" Name="Valor_Tiempo" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="32" />
+      <NameCon UId="41" Name="Base_tiempo_ms" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="33" />
+      <NameCon UId="41" Name="Valor_Actual" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="41" Name="Tiempo_OK" />
+      <IdentCon UId="34" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="4F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="50" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="51" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="52" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="53" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="54" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="55" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="56" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="57" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="58" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="59" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>MIRAR OCUPACION PHS4</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="5E" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="ON" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x1" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x3" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x5" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x7" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>Byte</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="Nuevo_estado" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x1" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x3" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x5" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x7" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="32">
+      <Constant>
+        <ConstantType>Byte</ConstantType>
+        <ConstantValue>2</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="Nuevo_estado" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x3" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x5" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x7" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="37">
+      <Constant>
+        <ConstantType>Byte</ConstantType>
+        <ConstantValue>3</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="38">
+      <Symbol>
+        <Component Name="Nuevo_estado" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="39">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x5" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="40">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x7" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="41">
+      <Constant>
+        <ConstantType>Byte</ConstantType>
+        <ConstantValue>4</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="42">
+      <Symbol>
+        <Component Name="Nuevo_estado" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="43">
+      <Symbol>
+        <Component Name="Memorias_ocupacion" SliceAccessModifier="x7" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="44">
+      <Constant>
+        <ConstantType>Byte</ConstantType>
+        <ConstantValue>5</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="45">
+      <Symbol>
+        <Component Name="Nuevo_estado" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="46" />
+    <Part Name="Contact" UId="47">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="48">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="49">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="50">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Move" UId="51" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="52" />
+    <Part Name="Contact" UId="53">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="54">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="55">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Move" UId="56" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="57" />
+    <Part Name="Contact" UId="58">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="59">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Move" UId="60" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="61" />
+    <Part Name="Contact" UId="62">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Move" UId="63" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="64" />
+    <Part Name="Move" UId="65" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="66">
+      <Powerrail />
+      <NameCon UId="46" Name="in" />
+    </Wire>
+    <Wire UId="67">
+      <IdentCon UId="21" />
+      <NameCon UId="46" Name="operand" />
+    </Wire>
+    <Wire UId="68">
+      <NameCon UId="46" Name="out" />
+      <NameCon UId="47" Name="in" />
+      <NameCon UId="52" Name="in" />
+      <NameCon UId="57" Name="in" />
+      <NameCon UId="61" Name="in" />
+      <NameCon UId="64" Name="in" />
+    </Wire>
+    <Wire UId="69">
+      <IdentCon UId="22" />
+      <NameCon UId="47" Name="operand" />
+    </Wire>
+    <Wire UId="70">
+      <NameCon UId="47" Name="out" />
+      <NameCon UId="48" Name="in" />
+    </Wire>
+    <Wire UId="71">
+      <IdentCon UId="23" />
+      <NameCon UId="48" Name="operand" />
+    </Wire>
+    <Wire UId="72">
+      <NameCon UId="48" Name="out" />
+      <NameCon UId="49" Name="in" />
+    </Wire>
+    <Wire UId="73">
+      <IdentCon UId="24" />
+      <NameCon UId="49" Name="operand" />
+    </Wire>
+    <Wire UId="74">
+      <NameCon UId="49" Name="out" />
+      <NameCon UId="50" Name="in" />
+    </Wire>
+    <Wire UId="75">
+      <IdentCon UId="25" />
+      <NameCon UId="50" Name="operand" />
+    </Wire>
+    <Wire UId="76">
+      <NameCon UId="50" Name="out" />
+      <NameCon UId="51" Name="en" />
+    </Wire>
+    <Wire UId="77">
+      <IdentCon UId="26" />
+      <NameCon UId="51" Name="in" />
+    </Wire>
+    <Wire UId="78">
+      <NameCon UId="51" Name="out1" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="79">
+      <IdentCon UId="28" />
+      <NameCon UId="52" Name="operand" />
+    </Wire>
+    <Wire UId="80">
+      <NameCon UId="52" Name="out" />
+      <NameCon UId="53" Name="in" />
+    </Wire>
+    <Wire UId="81">
+      <IdentCon UId="29" />
+      <NameCon UId="53" Name="operand" />
+    </Wire>
+    <Wire UId="82">
+      <NameCon UId="53" Name="out" />
+      <NameCon UId="54" Name="in" />
+    </Wire>
+    <Wire UId="83">
+      <IdentCon UId="30" />
+      <NameCon UId="54" Name="operand" />
+    </Wire>
+    <Wire UId="84">
+      <NameCon UId="54" Name="out" />
+      <NameCon UId="55" Name="in" />
+    </Wire>
+    <Wire UId="85">
+      <IdentCon UId="31" />
+      <NameCon UId="55" Name="operand" />
+    </Wire>
+    <Wire UId="86">
+      <NameCon UId="55" Name="out" />
+      <NameCon UId="56" Name="en" />
+    </Wire>
+    <Wire UId="87">
+      <IdentCon UId="32" />
+      <NameCon UId="56" Name="in" />
+    </Wire>
+    <Wire UId="88">
+      <NameCon UId="56" Name="out1" />
+      <IdentCon UId="33" />
+    </Wire>
+    <Wire UId="89">
+      <IdentCon UId="34" />
+      <NameCon UId="57" Name="operand" />
+    </Wire>
+    <Wire UId="90">
+      <NameCon UId="57" Name="out" />
+      <NameCon UId="58" Name="in" />
+    </Wire>
+    <Wire UId="91">
+      <IdentCon UId="35" />
+      <NameCon UId="58" Name="operand" />
+    </Wire>
+    <Wire UId="92">
+      <NameCon UId="58" Name="out" />
+      <NameCon UId="59" Name="in" />
+    </Wire>
+    <Wire UId="93">
+      <IdentCon UId="36" />
+      <NameCon UId="59" Name="operand" />
+    </Wire>
+    <Wire UId="94">
+      <NameCon UId="59" Name="out" />
+      <NameCon UId="60" Name="en" />
+    </Wire>
+    <Wire UId="95">
+      <IdentCon UId="37" />
+      <NameCon UId="60" Name="in" />
+    </Wire>
+    <Wire UId="96">
+      <NameCon UId="60" Name="out1" />
+      <IdentCon UId="38" />
+    </Wire>
+    <Wire UId="97">
+      <IdentCon UId="39" />
+      <NameCon UId="61" Name="operand" />
+    </Wire>
+    <Wire UId="98">
+      <NameCon UId="61" Name="out" />
+      <NameCon UId="62" Name="in" />
+    </Wire>
+    <Wire UId="99">
+      <IdentCon UId="40" />
+      <NameCon UId="62" Name="operand" />
+    </Wire>
+    <Wire UId="100">
+      <NameCon UId="62" Name="out" />
+      <NameCon UId="63" Name="en" />
+    </Wire>
+    <Wire UId="101">
+      <IdentCon UId="41" />
+      <NameCon UId="63" Name="in" />
+    </Wire>
+    <Wire UId="102">
+      <NameCon UId="63" Name="out1" />
+      <IdentCon UId="42" />
+    </Wire>
+    <Wire UId="103">
+      <IdentCon UId="43" />
+      <NameCon UId="64" Name="operand" />
+    </Wire>
+    <Wire UId="104">
+      <NameCon UId="64" Name="out" />
+      <NameCon UId="65" Name="en" />
+    </Wire>
+    <Wire UId="105">
+      <IdentCon UId="44" />
+      <NameCon UId="65" Name="in" />
+    </Wire>
+    <Wire UId="106">
+      <NameCon UId="65" Name="out1" />
+      <IdentCon UId="45" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="5F" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="60" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="61" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="62" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="63" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="64" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="65" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="66" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="67" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="68" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="69" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>generar el nuevo estado a emitir</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="6F" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="DB902_Estado_ZonaMesa" />
+        <Component Name="EstadoMesas" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="NumeroMesa" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Marcha_CBx" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="Nuevo_estado" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="MemEstadoOcupa" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="Emitir" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="25" />
+    <Part Name="Ne" UId="26">
+      <TemplateValue Name="SrcType" Type="Type">Byte</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="27" />
+  </Parts>
+  <Wires>
+    <Wire UId="28">
+      <Powerrail />
+      <NameCon UId="25" Name="in" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="21" />
+      <NameCon UId="25" Name="operand" />
+    </Wire>
+    <Wire UId="30">
+      <NameCon UId="25" Name="out" />
+      <NameCon UId="26" Name="pre" />
+    </Wire>
+    <Wire UId="31">
+      <IdentCon UId="22" />
+      <NameCon UId="26" Name="in1" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="in2" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="27" Name="in" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="24" />
+      <NameCon UId="27" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="70" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="71" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="72" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="73" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="74" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="75" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="76" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="77" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="78" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="79" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>mirar si tenemos que emitir el estado</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="80" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v4">
+  <NewLine UId="21" />
+  <Token Text="REGION" UId="22" />
+  <Blank UId="23" />
+  <Text UId="24">EnvioEvento_PRES</Text>
+  <NewLine UId="25" />
+  <Blank Num="4" UId="26" />
+  <LineComment UId="27">
+    <Text UId="28">////////////////////////////////////////////////////////////////////////////</Text>
+  </LineComment>
+  <NewLine UId="29" />
+  <Blank Num="4" UId="30" />
+  <LineComment UId="31">
+    <Text UId="32"> Envio de Evento</Text>
+  </LineComment>
+  <NewLine UId="33" />
+  <Blank Num="4" UId="34" />
+  <Token Text="IF" UId="35" />
+  <Blank UId="36" />
+  <Access Scope="LocalVariable" UId="37">
+    <Symbol UId="38">
+      <Component Name="Emitir" UId="39" />
+    </Symbol>
+  </Access>
+  <Blank UId="40" />
+  <Token Text="=" UId="41" />
+  <Blank UId="42" />
+  <Access Scope="LiteralConstant" UId="43">
+    <Constant UId="44">
+      <ConstantValue UId="46">TRUE</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="47" />
+  <Token Text="THEN" UId="48" />
+  <NewLine UId="49" />
+  <Blank Num="8" UId="50" />
+  <LineComment UId="51">
+    <Text UId="52">Inicializacion de Variables de Emision. Busca el limite inferior y superior del array</Text>
+  </LineComment>
+  <NewLine UId="53" />
+  <Blank Num="8" UId="54" />
+  <Access Scope="LocalVariable" UId="55">
+    <Symbol UId="56">
+      <Component Name="VarEvento" UId="57" />
+      <Token Text="." UId="58" />
+      <Component Name="InicioEventos" UId="59" />
+    </Symbol>
+  </Access>
+  <Blank UId="60" />
+  <Token Text=":=" UId="61" />
+  <Blank UId="62" />
+  <Access Scope="Call" UId="63">
+    <Instruction Name="DINT_TO_UINT" UId="64">
+      <Token Text="(" UId="65" />
+      <NamelessParameter UId="66">
+        <Access Scope="Call" UId="67">
+          <Instruction Name="LOWER_BOUND" UId="68">
+            <Token Text="(" UId="69" />
+            <Parameter Name="ARR" UId="70">
+              <Blank UId="71" />
+              <Token Text=":=" UId="72" />
+              <Blank UId="73" />
+              <Access Scope="LocalVariable" UId="74">
+                <Symbol UId="75">
+                  <Component Name="DB_Eventos" UId="76" />
+                </Symbol>
+              </Access>
+            </Parameter>
+            <Token Text="," UId="77" />
+            <Blank UId="78" />
+            <Parameter Name="DIM" UId="79">
+              <Blank UId="80" />
+              <Token Text=":=" UId="81" />
+              <Blank UId="82" />
+              <Access Scope="LiteralConstant" UId="83">
+                <Constant UId="84">
+                  <ConstantValue UId="86">1</ConstantValue>
+                </Constant>
+              </Access>
+            </Parameter>
+            <Token Text=")" UId="88" />
+          </Instruction>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="90" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="91" />
+  <NewLine UId="92" />
+  <Blank Num="8" UId="93" />
+  <Access Scope="LocalVariable" UId="94">
+    <Symbol UId="95">
+      <Component Name="VarEvento" UId="96" />
+      <Token Text="." UId="97" />
+      <Component Name="FinalEventos" UId="98" />
+    </Symbol>
+  </Access>
+  <Blank UId="99" />
+  <Token Text=":=" UId="100" />
+  <Blank UId="101" />
+  <Access Scope="Call" UId="102">
+    <Instruction Name="DINT_TO_UINT" UId="103">
+      <Token Text="(" UId="104" />
+      <NamelessParameter UId="105">
+        <Access Scope="Call" UId="106">
+          <Instruction Name="UPPER_BOUND" UId="107">
+            <Token Text="(" UId="108" />
+            <Parameter Name="ARR" UId="109">
+              <Blank UId="110" />
+              <Token Text=":=" UId="111" />
+              <Blank UId="112" />
+              <Access Scope="LocalVariable" UId="113">
+                <Symbol UId="114">
+                  <Component Name="DB_Eventos" UId="115" />
+                </Symbol>
+              </Access>
+            </Parameter>
+            <Token Text="," UId="116" />
+            <Blank UId="117" />
+            <Parameter Name="DIM" UId="118">
+              <Blank UId="119" />
+              <Token Text=":=" UId="120" />
+              <Blank UId="121" />
+              <Access Scope="LiteralConstant" UId="122">
+                <Constant UId="123">
+                  <ConstantValue UId="125">1</ConstantValue>
+                </Constant>
+              </Access>
+            </Parameter>
+            <Token Text=")" UId="127" />
+          </Instruction>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="129" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="130" />
+  <NewLine UId="131" />
+  <Blank Num="8" UId="132" />
+  <NewLine UId="133" />
+  <Blank Num="8" UId="134" />
+  <Access Scope="LocalVariable" UId="135">
+    <Symbol UId="136">
+      <Component Name="VarEvento" UId="137" />
+      <Token Text="." UId="138" />
+      <Component Name="Encontrado" UId="139" />
+    </Symbol>
+  </Access>
+  <Blank UId="140" />
+  <Token Text=":=" UId="141" />
+  <Blank UId="142" />
+  <Access Scope="LiteralConstant" UId="143">
+    <Constant UId="144">
+      <ConstantValue UId="146">FALSE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="147" />
+  <NewLine UId="148" />
+  <Blank Num="8" UId="149" />
+  <Access Scope="LocalVariable" UId="150">
+    <Symbol UId="151">
+      <Component Name="VarEvento" UId="152" />
+      <Token Text="." UId="153" />
+      <Component Name="Posicion_Inicial" UId="154" />
+    </Symbol>
+  </Access>
+  <Blank UId="155" />
+  <Token Text=":=" UId="156" />
+  <Blank UId="157" />
+  <Access Scope="LiteralConstant" UId="158">
+    <Constant UId="159">
+      <ConstantValue UId="161">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="162" />
+  <NewLine UId="163" />
+  <Blank Num="8" UId="164" />
+  <Access Scope="LocalVariable" UId="165">
+    <Symbol UId="166">
+      <Component Name="VarEvento" UId="167" />
+      <Token Text="." UId="168" />
+      <Component Name="Evento" UId="169" />
+    </Symbol>
+  </Access>
+  <Blank UId="170" />
+  <Token Text=":=" UId="171" />
+  <Blank UId="172" />
+  <Access Scope="Call" UId="173">
+    <Instruction Name="DELETE" UId="174">
+      <Token Text="(" UId="175" />
+      <Parameter Name="IN" UId="176">
+        <Blank UId="177" />
+        <Token Text=":=" UId="178" />
+        <Blank UId="179" />
+        <Access Scope="LocalVariable" UId="180">
+          <Symbol UId="181">
+            <Component Name="VarEvento" UId="182" />
+            <Token Text="." UId="183" />
+            <Component Name="Evento" UId="184" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="185" />
+      <Blank UId="186" />
+      <Parameter Name="L" UId="187">
+        <Blank UId="188" />
+        <Token Text=":=" UId="189" />
+        <Blank UId="190" />
+        <Access Scope="LiteralConstant" UId="191">
+          <Constant UId="192">
+            <ConstantValue UId="194">255</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="195" />
+      <Blank UId="196" />
+      <Parameter Name="P" UId="197">
+        <Blank UId="198" />
+        <Token Text=":=" UId="199" />
+        <Blank UId="200" />
+        <Access Scope="LiteralConstant" UId="201">
+          <Constant UId="202">
+            <ConstantValue UId="204">1</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="206" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="207" />
+  <NewLine UId="208" />
+  <Blank Num="8" UId="209" />
+  <NewLine UId="210" />
+  <Blank Num="8" UId="211" />
+  <LineComment UId="212">
+    <Text UId="213"> Conversion de numero de mesa</Text>
+  </LineComment>
+  <NewLine UId="214" />
+  <Blank Num="8" UId="215" />
+  <Access Scope="LocalVariable" UId="216">
+    <Symbol UId="217">
+      <Component Name="VarEvento" UId="218" />
+      <Token Text="." UId="219" />
+      <Component Name="Mesa_String" UId="220" />
+    </Symbol>
+  </Access>
+  <Blank UId="221" />
+  <Token Text=":=" UId="222" />
+  <Blank UId="223" />
+  <Access Scope="Call" UId="224">
+    <Instruction Name="UINT_TO_STRING" UId="225">
+      <Token Text="(" UId="226" />
+      <NamelessParameter UId="227">
+        <Access Scope="LocalVariable" UId="228">
+          <Symbol UId="229">
+            <Component Name="NumeroMesa" UId="230" />
+          </Symbol>
+        </Access>
+        <Blank UId="231" />
+        <Token Text="+" UId="232" />
+        <Blank UId="233" />
+        <Access Scope="GlobalConstant" UId="234">
+          <Constant Name="CTE_OffsetMesa" UId="235" />
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="239" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="240" />
+  <NewLine UId="241" />
+  <Blank Num="8" UId="242" />
+  <Access Scope="LocalVariable" UId="243">
+    <Symbol UId="244">
+      <Component Name="VarEvento" UId="245" />
+      <Token Text="." UId="246" />
+      <Component Name="Mesa_String" UId="247" />
+    </Symbol>
+  </Access>
+  <Blank UId="248" />
+  <Token Text=":=" UId="249" />
+  <Blank UId="250" />
+  <Access Scope="Call" UId="251">
+    <Instruction Name="DELETE" UId="252">
+      <Token Text="(" UId="253" />
+      <Parameter Name="IN" UId="254">
+        <Blank UId="255" />
+        <Token Text=":=" UId="256" />
+        <Blank UId="257" />
+        <Access Scope="LocalVariable" UId="258">
+          <Symbol UId="259">
+            <Component Name="VarEvento" UId="260" />
+            <Token Text="." UId="261" />
+            <Component Name="Mesa_String" UId="262" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="263" />
+      <Blank UId="264" />
+      <Parameter Name="L" UId="265">
+        <Blank UId="266" />
+        <Token Text=":=" UId="267" />
+        <Blank UId="268" />
+        <Access Scope="LiteralConstant" UId="269">
+          <Constant UId="270">
+            <ConstantValue UId="272">1</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="273" />
+      <Blank UId="274" />
+      <Parameter Name="P" UId="275">
+        <Blank UId="276" />
+        <Token Text=":=" UId="277" />
+        <Blank UId="278" />
+        <Access Scope="LiteralConstant" UId="279">
+          <Constant UId="280">
+            <ConstantValue UId="282">1</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="284" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="285" />
+  <Blank UId="286" />
+  <LineComment UId="287">
+    <Text UId="288">Se elimnia el caracter '+' que genera la conversion</Text>
+  </LineComment>
+  <NewLine UId="289" />
+  <Blank Num="8" UId="290" />
+  <NewLine UId="291" />
+  <Blank Num="8" UId="292" />
+  <NewLine UId="293" />
+  <Blank Num="8" UId="294" />
+  <LineComment UId="295">
+    <Text UId="296"> Busqueda del ultimo caracter de emision "0x00" en el DB de emision</Text>
+  </LineComment>
+  <NewLine UId="297" />
+  <Blank Num="8" UId="298" />
+  <Token Text="FOR" UId="299" />
+  <Blank UId="300" />
+  <Access Scope="LocalVariable" UId="301">
+    <Symbol UId="302">
+      <Component Name="VarEvento" UId="303" />
+      <Token Text="." UId="304" />
+      <Component Name="Indice" UId="305" />
+    </Symbol>
+  </Access>
+  <Blank UId="306" />
+  <Token Text=":=" UId="307" />
+  <Blank UId="308" />
+  <Access Scope="LocalVariable" UId="309">
+    <Symbol UId="310">
+      <Component Name="VarEvento" UId="311" />
+      <Token Text="." UId="312" />
+      <Component Name="InicioEventos" UId="313" />
+    </Symbol>
+  </Access>
+  <Blank UId="314" />
+  <Token Text="TO" UId="315" />
+  <Blank UId="316" />
+  <Access Scope="LocalVariable" UId="317">
+    <Symbol UId="318">
+      <Component Name="VarEvento" UId="319" />
+      <Token Text="." UId="320" />
+      <Component Name="FinalEventos" UId="321" />
+    </Symbol>
+  </Access>
+  <Blank UId="322" />
+  <Token Text="DO" UId="323" />
+  <NewLine UId="324" />
+  <Blank Num="12" UId="325" />
+  <Token Text="IF" UId="326" />
+  <Blank UId="327" />
+  <Access Scope="LocalVariable" UId="328">
+    <Symbol UId="329">
+      <Component Name="DB_Eventos" UId="330">
+        <Token Text="[" UId="331" />
+        <Access Scope="LocalVariable" UId="332">
+          <Symbol UId="333">
+            <Component Name="VarEvento" UId="334" />
+            <Token Text="." UId="335" />
+            <Component Name="Indice" UId="336" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="337" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="338" />
+  <Token Text="=" UId="339" />
+  <Blank UId="340" />
+  <Access Scope="TypedConstant" UId="341">
+    <Constant UId="342">
+      <ConstantValue UId="343">BYTE#0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="344" />
+  <Token Text="THEN" UId="345" />
+  <NewLine UId="346" />
+  <Blank Num="16" UId="347" />
+  <Access Scope="LocalVariable" UId="348">
+    <Symbol UId="349">
+      <Component Name="VarEvento" UId="350" />
+      <Token Text="." UId="351" />
+      <Component Name="Posicion_Inicial" UId="352" />
+    </Symbol>
+  </Access>
+  <Blank UId="353" />
+  <Token Text=":=" UId="354" />
+  <Blank UId="355" />
+  <Access Scope="LocalVariable" UId="356">
+    <Symbol UId="357">
+      <Component Name="VarEvento" UId="358" />
+      <Token Text="." UId="359" />
+      <Component Name="Indice" UId="360" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="361" />
+  <NewLine UId="362" />
+  <Blank Num="16" UId="363" />
+  <Access Scope="LocalVariable" UId="364">
+    <Symbol UId="365">
+      <Component Name="VarEvento" UId="366" />
+      <Token Text="." UId="367" />
+      <Component Name="Encontrado" UId="368" />
+    </Symbol>
+  </Access>
+  <Blank UId="369" />
+  <Token Text=":=" UId="370" />
+  <Blank UId="371" />
+  <Access Scope="LiteralConstant" UId="372">
+    <Constant UId="373">
+      <ConstantValue UId="375">TRUE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="376" />
+  <NewLine UId="377" />
+  <Blank Num="16" UId="378" />
+  <Token Text="EXIT" UId="379" />
+  <Token Text=";" UId="380" />
+  <NewLine UId="381" />
+  <Blank Num="12" UId="382" />
+  <Token Text="END_IF" UId="383" />
+  <Token Text=";" UId="384" />
+  <NewLine UId="385" />
+  <Blank Num="8" UId="386" />
+  <Token Text="END_FOR" UId="387" />
+  <Token Text=";" UId="388" />
+  <NewLine UId="389" />
+  <Blank Num="8" UId="390" />
+  <NewLine UId="391" />
+  <Blank Num="8" UId="392" />
+  <NewLine UId="393" />
+  <Blank Num="8" UId="394" />
+  <LineComment UId="395">
+    <Text UId="396">NIEVES, MIRAR AQUI COMO FORMATEAR LA COMA SI NO ES EL PRIMER EVENTO</Text>
+  </LineComment>
+  <NewLine UId="397" />
+  <Blank Num="8" UId="398" />
+  <LineComment UId="399">
+    <Text UId="400" />
+  </LineComment>
+  <NewLine UId="401" />
+  <Blank Num="8" UId="402" />
+  <NewLine UId="403" />
+  <Blank Num="8" UId="404" />
+  <Access Scope="LocalVariable" UId="405">
+    <Symbol UId="406">
+      <Component Name="VarEvento" UId="407" />
+      <Token Text="." UId="408" />
+      <Component Name="Motivo" UId="409" />
+    </Symbol>
+  </Access>
+  <Blank UId="410" />
+  <Token Text=":=" UId="411" />
+  <Blank UId="412" />
+  <Access Scope="LocalVariable" UId="413">
+    <Symbol UId="414">
+      <Component Name="Nuevo_estado" UId="415" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="416" />
+  <NewLine UId="417" />
+  <Blank Num="8" UId="418" />
+  <NewLine UId="419" />
+  <Blank Num="6" UId="420" />
+  <NewLine UId="421" />
+  <Blank Num="12" UId="422" />
+  <Token Text="CASE" UId="423" />
+  <Blank Num="2" UId="424" />
+  <Access Scope="LocalVariable" UId="425">
+    <Symbol UId="426">
+      <Component Name="VarEvento" UId="427" />
+      <Token Text="." UId="428" />
+      <Component Name="Motivo" UId="429" />
+    </Symbol>
+  </Access>
+  <Blank UId="430" />
+  <Token Text="OF" UId="431" />
+  <NewLine UId="432" />
+  <Blank Num="16" UId="433" />
+  <Access Scope="LiteralConstant" UId="434">
+    <Constant UId="435">
+      <ConstantValue UId="437">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=":" UId="438" />
+  <Blank Num="2" UId="439" />
+  <LineComment UId="440">
+    <Text UId="441"> motivo normal</Text>
+  </LineComment>
+  <NewLine UId="442" />
+  <Blank Num="20" UId="443" />
+  <Access Scope="LocalVariable" UId="444">
+    <Symbol UId="445">
+      <Component Name="VarEvento" UId="446" />
+      <Token Text="." UId="447" />
+      <Component Name="Motivo_string" UId="448" />
+    </Symbol>
+  </Access>
+  <Blank UId="449" />
+  <Token Text=":=" UId="450" />
+  <Blank UId="451" />
+  <Access Scope="LocalVariable" UId="452">
+    <Symbol UId="453">
+      <Component Name="ATRIBUTO_NIVEL_1" UId="454" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="455" />
+  <NewLine UId="456" />
+  <Blank Num="16" UId="457" />
+  <Access Scope="LiteralConstant" UId="458">
+    <Constant UId="459">
+      <ConstantValue UId="461">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=":" UId="462" />
+  <Blank Num="2" UId="463" />
+  <LineComment UId="464">
+    <Text UId="465"> motivo reset</Text>
+  </LineComment>
+  <NewLine UId="466" />
+  <Blank Num="20" UId="467" />
+  <Access Scope="LocalVariable" UId="468">
+    <Symbol UId="469">
+      <Component Name="VarEvento" UId="470" />
+      <Token Text="." UId="471" />
+      <Component Name="Motivo_string" UId="472" />
+    </Symbol>
+  </Access>
+  <Blank UId="473" />
+  <Token Text=":=" UId="474" />
+  <Blank UId="475" />
+  <Access Scope="LocalVariable" UId="476">
+    <Symbol UId="477">
+      <Component Name="ATRIBUTO_NIVEL_2" UId="478" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="479" />
+  <NewLine UId="480" />
+  <Blank Num="20" UId="481" />
+  <Token Text=";" UId="482" />
+  <NewLine UId="483" />
+  <Blank Num="16" UId="484" />
+  <Access Scope="LiteralConstant" UId="485">
+    <Constant UId="486">
+      <ConstantValue UId="488">3</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=":" UId="489" />
+  <Blank Num="2" UId="490" />
+  <LineComment UId="491">
+    <Text UId="492"> motivo normal</Text>
+  </LineComment>
+  <NewLine UId="493" />
+  <Blank Num="20" UId="494" />
+  <Access Scope="LocalVariable" UId="495">
+    <Symbol UId="496">
+      <Component Name="VarEvento" UId="497" />
+      <Token Text="." UId="498" />
+      <Component Name="Motivo_string" UId="499" />
+    </Symbol>
+  </Access>
+  <Blank UId="500" />
+  <Token Text=":=" UId="501" />
+  <Blank UId="502" />
+  <Access Scope="LocalVariable" UId="503">
+    <Symbol UId="504">
+      <Component Name="ATRIBUTO_NIVEL_3" UId="505" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="506" />
+  <NewLine UId="507" />
+  <Blank Num="16" UId="508" />
+  <Access Scope="LiteralConstant" UId="509">
+    <Constant UId="510">
+      <ConstantValue UId="512">4</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=":" UId="513" />
+  <Blank Num="2" UId="514" />
+  <LineComment UId="515">
+    <Text UId="516"> motivo reset</Text>
+  </LineComment>
+  <NewLine UId="517" />
+  <Blank Num="20" UId="518" />
+  <Access Scope="LocalVariable" UId="519">
+    <Symbol UId="520">
+      <Component Name="VarEvento" UId="521" />
+      <Token Text="." UId="522" />
+      <Component Name="Motivo_string" UId="523" />
+    </Symbol>
+  </Access>
+  <Blank UId="524" />
+  <Token Text=":=" UId="525" />
+  <Blank UId="526" />
+  <Access Scope="LocalVariable" UId="527">
+    <Symbol UId="528">
+      <Component Name="ATRIBUTO_NIVEL_4" UId="529" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="530" />
+  <NewLine UId="531" />
+  <Blank Num="16" UId="532" />
+  <Access Scope="LiteralConstant" UId="533">
+    <Constant UId="534">
+      <ConstantValue UId="536">5</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=":" UId="537" />
+  <Blank Num="2" UId="538" />
+  <LineComment UId="539">
+    <Text UId="540"> motivo reset</Text>
+  </LineComment>
+  <NewLine UId="541" />
+  <Blank Num="20" UId="542" />
+  <Access Scope="LocalVariable" UId="543">
+    <Symbol UId="544">
+      <Component Name="VarEvento" UId="545" />
+      <Token Text="." UId="546" />
+      <Component Name="Motivo_string" UId="547" />
+    </Symbol>
+  </Access>
+  <Blank UId="548" />
+  <Token Text=":=" UId="549" />
+  <Blank UId="550" />
+  <Access Scope="LocalVariable" UId="551">
+    <Symbol UId="552">
+      <Component Name="ATRIBUTO_NIVEL_5" UId="553" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="554" />
+  <NewLine UId="555" />
+  <Blank Num="20" UId="556" />
+  <Token Text=";" UId="557" />
+  <NewLine UId="558" />
+  <Blank Num="16" UId="559" />
+  <Token Text="ELSE" UId="560" />
+  <Blank Num="2" UId="561" />
+  <LineComment UId="562">
+    <Text UId="563"> Statement section ELSE</Text>
+  </LineComment>
+  <NewLine UId="564" />
+  <Blank Num="20" UId="565" />
+  <Access Scope="LocalVariable" UId="566">
+    <Symbol UId="567">
+      <Component Name="VarEvento" UId="568" />
+      <Token Text="." UId="569" />
+      <Component Name="Motivo_string" UId="570" />
+    </Symbol>
+  </Access>
+  <Blank UId="571" />
+  <Token Text=":=" UId="572" />
+  <Blank UId="573" />
+  <Access Scope="LiteralConstant" UId="574">
+    <Constant UId="575">
+      <ConstantValue UId="577">''</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="578" />
+  <NewLine UId="579" />
+  <Blank Num="12" UId="580" />
+  <Token Text="END_CASE" UId="581" />
+  <Token Text=";" UId="582" />
+  <NewLine UId="583" />
+  <Blank Num="12" UId="584" />
+  <NewLine UId="585" />
+  <LineComment UId="586">
+    <Text UId="587">------------------------------------------------------------------------------------------------</Text>
+  </LineComment>
+  <NewLine UId="588" />
+  <Blank Num="8" UId="589" />
+  <NewLine UId="590" />
+  <Blank Num="8" UId="591" />
+  <LineComment UId="592">
+    <Text UId="593"> Enviar el Evento</Text>
+  </LineComment>
+  <NewLine UId="594" />
+  <Blank Num="12" UId="595" />
+  <Token Text="IF" UId="596" />
+  <Blank UId="597" />
+  <Access Scope="LocalVariable" UId="598">
+    <Symbol UId="599">
+      <Component Name="VarEvento" UId="600" />
+      <Token Text="." UId="601" />
+      <Component Name="Encontrado" UId="602" />
+    </Symbol>
+  </Access>
+  <Blank UId="603" />
+  <Token Text="=" UId="604" />
+  <Blank UId="605" />
+  <Access Scope="LiteralConstant" UId="606">
+    <Constant UId="607">
+      <ConstantValue UId="609">TRUE</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="610" />
+  <Token Text="AND" UId="611" />
+  <Blank UId="612" />
+  <Access Scope="LocalVariable" UId="613">
+    <Symbol UId="614">
+      <Component Name="VarEvento" UId="615" />
+      <Token Text="." UId="616" />
+      <Component Name="Posicion_Inicial" UId="617" />
+    </Symbol>
+  </Access>
+  <Blank UId="618" />
+  <Token Text="&lt;=" UId="619" />
+  <Blank UId="620" />
+  <Access Scope="GlobalConstant" UId="621">
+    <Constant Name="JDT1_MaxBytes" UId="622" />
+  </Access>
+  <Blank UId="625" />
+  <Token Text="THEN" UId="626" />
+  <NewLine UId="627" />
+  <Blank Num="16" UId="628" />
+  <NewLine UId="629" />
+  <Blank Num="16" UId="630" />
+  <Token Text="IF" UId="631" />
+  <Blank UId="632" />
+  <Access Scope="LocalVariable" UId="633">
+    <Symbol UId="634">
+      <Component Name="VarEvento" UId="635" />
+      <Token Text="." UId="636" />
+      <Component Name="Indice" UId="637" />
+    </Symbol>
+  </Access>
+  <Blank UId="638" />
+  <Token Text="&lt;&gt;" UId="639" />
+  <Blank UId="640" />
+  <Access Scope="LiteralConstant" UId="641">
+    <Constant UId="642">
+      <ConstantValue UId="644">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="645" />
+  <Token Text="THEN" UId="646" />
+  <NewLine UId="647" />
+  <Blank Num="20" UId="648" />
+  <Access Scope="LocalVariable" UId="649">
+    <Symbol UId="650">
+      <Component Name="DB_Eventos" UId="651">
+        <Token Text="[" UId="652" />
+        <Access Scope="LocalVariable" UId="653">
+          <Symbol UId="654">
+            <Component Name="VarEvento" UId="655" />
+            <Token Text="." UId="656" />
+            <Component Name="Posicion_Inicial" UId="657" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="658" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="659" />
+  <Token Text=":=" UId="660" />
+  <Blank UId="661" />
+  <Access Scope="LiteralConstant" UId="662">
+    <Constant UId="663">
+      <ConstantValue UId="665">','</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="666" />
+  <NewLine UId="667" />
+  <Blank Num="20" UId="668" />
+  <Access Scope="LocalVariable" UId="669">
+    <Symbol UId="670">
+      <Component Name="VarEvento" UId="671" />
+      <Token Text="." UId="672" />
+      <Component Name="Posicion_Inicial" UId="673" />
+    </Symbol>
+  </Access>
+  <Blank UId="674" />
+  <Token Text=":=" UId="675" />
+  <Blank UId="676" />
+  <Access Scope="LocalVariable" UId="677">
+    <Symbol UId="678">
+      <Component Name="VarEvento" UId="679" />
+      <Token Text="." UId="680" />
+      <Component Name="Posicion_Inicial" UId="681" />
+    </Symbol>
+  </Access>
+  <Blank UId="682" />
+  <Token Text="+" UId="683" />
+  <Blank UId="684" />
+  <Access Scope="LiteralConstant" UId="685">
+    <Constant UId="686">
+      <ConstantValue UId="688">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="689" />
+  <NewLine UId="690" />
+  <Blank Num="16" UId="691" />
+  <Token Text="END_IF" UId="692" />
+  <Token Text=";" UId="693" />
+  <NewLine UId="694" />
+  <Blank Num="16" UId="695" />
+  <NewLine UId="696" />
+  <Blank Num="12" UId="697" />
+  <LineComment UId="698">
+    <Text UId="699">Creacion de la cadena a enviar</Text>
+  </LineComment>
+  <NewLine UId="700" />
+  <Blank Num="12" UId="701" />
+  <Access Scope="LocalVariable" UId="702">
+    <Symbol UId="703">
+      <Component Name="VarEvento" UId="704" />
+      <Token Text="." UId="705" />
+      <Component Name="Evento" UId="706" />
+    </Symbol>
+  </Access>
+  <Blank UId="707" />
+  <Token Text=":=" UId="708" />
+  <Blank UId="709" />
+  <Access Scope="Call" UId="710">
+    <Instruction Name="CONCAT" UId="711">
+      <Token Text="(" UId="712" />
+      <Parameter Name="IN1" UId="713">
+        <Blank UId="714" />
+        <Token Text=":=" UId="715" />
+        <Blank UId="716" />
+        <Access Scope="LiteralConstant" UId="717">
+          <Constant UId="718">
+            <ConstantValue UId="720">'{DIDA'</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="721" />
+      <NewLine UId="722" />
+      <Blank Num="40" UId="723" />
+      <Parameter Name="IN2" UId="724">
+        <Blank UId="725" />
+        <Token Text=":=" UId="726" />
+        <Blank UId="727" />
+        <Access Scope="LiteralConstant" UId="728">
+          <Constant UId="729">
+            <ConstantValue UId="731">'[TIPO]MESA[NUME]'</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="732" />
+      <Blank UId="733" />
+      <Parameter Name="IN3" UId="734">
+        <Blank UId="735" />
+        <Token Text=":=" UId="736" />
+        <Blank Num="2" UId="737" />
+        <Access Scope="LocalVariable" UId="738">
+          <Symbol UId="739">
+            <Component Name="VarEvento" UId="740" />
+            <Token Text="." UId="741" />
+            <Component Name="Mesa_String" UId="742" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="743" />
+      <NewLine UId="744" />
+      <Blank Num="40" UId="745" />
+      <Parameter Name="IN4" UId="746">
+        <Blank UId="747" />
+        <Token Text=":=" UId="748" />
+        <Blank UId="749" />
+        <Access Scope="LiteralConstant" UId="750">
+          <Constant UId="751">
+            <ConstantValue UId="753">'[FULL]'</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="754" />
+      <Blank UId="755" />
+      <Parameter Name="IN5" UId="756">
+        <Blank UId="757" />
+        <Token Text=":=" UId="758" />
+        <Blank Num="2" UId="759" />
+        <Access Scope="LocalVariable" UId="760">
+          <Symbol UId="761">
+            <Component Name="VarEvento" UId="762" />
+            <Token Text="." UId="763" />
+            <Component Name="Motivo_string" UId="764" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="765" />
+      <NewLine UId="766" />
+      <Blank Num="40" UId="767" />
+      <Parameter Name="IN6" UId="768">
+        <Blank UId="769" />
+        <Token Text=":=" UId="770" />
+        <Blank UId="771" />
+        <Access Scope="LiteralConstant" UId="772">
+          <Constant UId="773">
+            <ConstantValue UId="775">'}'</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="777" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="778" />
+  <NewLine UId="779" />
+  <Blank Num="12" UId="780" />
+  <NewLine UId="781" />
+  <Blank Num="12" UId="782" />
+  <LineComment UId="783">
+    <Text UId="784">Conversion a char y envio</Text>
+  </LineComment>
+  <NewLine UId="785" />
+  <Blank Num="12" UId="786" />
+  <Access Scope="Call" UId="787">
+    <Instruction Name="Strg_TO_Chars" UId="788">
+      <Token Text="(" UId="789" />
+      <Parameter Name="Strg" UId="790">
+        <Blank UId="791" />
+        <Token Text=":=" UId="792" />
+        <Blank UId="793" />
+        <Access Scope="LocalVariable" UId="794">
+          <Symbol UId="795">
+            <Component Name="VarEvento" UId="796" />
+            <Token Text="." UId="797" />
+            <Component Name="Evento" UId="798" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="799" />
+      <NewLine UId="800" />
+      <Blank Num="26" UId="801" />
+      <Parameter Name="pChars" UId="802">
+        <Blank UId="803" />
+        <Token Text=":=" UId="804" />
+        <Blank UId="805" />
+        <Access Scope="LocalVariable" UId="806">
+          <Symbol UId="807">
+            <Component Name="VarEvento" UId="808" />
+            <Token Text="." UId="809" />
+            <Component Name="Posicion_Inicial" UId="810" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="811" />
+      <NewLine UId="812" />
+      <Blank Num="26" UId="813" />
+      <Parameter Name="Cnt" UId="814">
+        <Blank UId="815" />
+        <Token Text="=&gt;" UId="816" />
+        <Blank UId="817" />
+        <Access Scope="LocalVariable" UId="818">
+          <Symbol UId="819">
+            <Component Name="VarEvento" UId="820" />
+            <Token Text="." UId="821" />
+            <Component Name="CNT_Chars" UId="822" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="823" />
+      <NewLine UId="824" />
+      <Blank Num="26" UId="825" />
+      <Parameter Name="Chars" UId="826">
+        <Blank UId="827" />
+        <Token Text=":=" UId="828" />
+        <Blank UId="829" />
+        <Access Scope="LocalVariable" UId="830">
+          <Symbol UId="831">
+            <Component Name="DB_Eventos" UId="832" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="833" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="834" />
+  <NewLine UId="835" />
+  <Blank Num="12" UId="836" />
+  <Access Scope="LocalVariable" UId="837">
+    <Symbol UId="838">
+      <Component Name="MemEstadoOcupa" UId="839" />
+    </Symbol>
+  </Access>
+  <Blank UId="840" />
+  <Token Text=":=" UId="841" />
+  <Blank UId="842" />
+  <Access Scope="LocalVariable" UId="843">
+    <Symbol UId="844">
+      <Component Name="Nuevo_estado" UId="845" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="846" />
+  <NewLine UId="847" />
+  <Blank Num="12" UId="848" />
+  <NewLine UId="849" />
+  <Blank Num="12" UId="850" />
+  <NewLine UId="851" />
+  <Blank Num="8" UId="852" />
+  <Token Text="END_IF" UId="853" />
+  <Token Text=";" UId="854" />
+  <NewLine UId="855" />
+  <Blank Num="4" UId="856" />
+  <Token Text="END_IF" UId="857" />
+  <Token Text=";" UId="858" />
+  <NewLine UId="859" />
+  <Blank Num="4" UId="860" />
+  <NewLine UId="861" />
+  <Token Text="END_REGION" UId="862" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="81" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="82" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="83" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="84" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="85" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="86" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="87" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="88" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="89" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="8A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="8B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="8C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>EMISION DEL EVENTO PRES CON LOS ATRIBUTOS DEL GALIBO DEFINIDOS</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="8D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="8E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="8F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="90" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="91" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="92" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="93" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="94" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="95" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="96" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="97" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="98" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>

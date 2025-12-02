@@ -1,0 +1,1035 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <DocumentInfo>
+    <Created>2025-12-01T14:57:20.3173297Z</Created>
+    <ExportSetting>None</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V20 Update 2</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.GlobalDB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Static">
+    <Member Name="Etiqueta_A_Valor" Datatype="Array[1..&quot;CTE_MaxArrayConversion&quot;] of Struct">
+      <Member Name="Etiqueta" Datatype="DWord">
+        <Subelement Path="1">
+          <StartValue>'MARC'</StartValue>
+        </Subelement>
+        <Subelement Path="2">
+          <StartValue>'PARO'</StartValue>
+        </Subelement>
+        <Subelement Path="3">
+          <StartValue>'REAR'</StartValue>
+        </Subelement>
+        <Subelement Path="4">
+          <StartValue>'RESE'</StartValue>
+        </Subelement>
+        <Subelement Path="5">
+          <StartValue>'BLAN'</StartValue>
+        </Subelement>
+        <Subelement Path="6">
+          <StartValue>'AUTO'</StartValue>
+        </Subelement>
+        <Subelement Path="7">
+          <StartValue>'MANU'</StartValue>
+        </Subelement>
+        <Subelement Path="8">
+          <StartValue>'ERRO'</StartValue>
+        </Subelement>
+        <Subelement Path="9">
+          <StartValue>'CCPI'</StartValue>
+        </Subelement>
+        <Subelement Path="10">
+          <StartValue>'CBOX'</StartValue>
+        </Subelement>
+        <Subelement Path="11">
+          <StartValue>'MESA'</StartValue>
+        </Subelement>
+        <Subelement Path="12">
+          <StartValue>'MAQU'</StartValue>
+        </Subelement>
+        <Subelement Path="13">
+          <StartValue>'EURO'</StartValue>
+        </Subelement>
+        <Subelement Path="14">
+          <StartValue>'MEDI'</StartValue>
+        </Subelement>
+        <Subelement Path="15">
+          <StartValue>'CUAR'</StartValue>
+        </Subelement>
+        <Subelement Path="16">
+          <StartValue>'CHEE'</StartValue>
+        </Subelement>
+        <Subelement Path="17">
+          <StartValue>'PARM'</StartValue>
+        </Subelement>
+        <Subelement Path="18">
+          <StartValue>'2CUA'</StartValue>
+        </Subelement>
+        <Subelement Path="19">
+          <StartValue>'AMER'</StartValue>
+        </Subelement>
+        <Subelement Path="20">
+          <StartValue>'LPR_'</StartValue>
+        </Subelement>
+        <Subelement Path="21">
+          <StartValue>'CA_1'</StartValue>
+        </Subelement>
+        <Subelement Path="22">
+          <StartValue>'CA_2'</StartValue>
+        </Subelement>
+        <Subelement Path="23">
+          <StartValue>'_SI_'</StartValue>
+        </Subelement>
+        <Subelement Path="24">
+          <StartValue>'_NO_'</StartValue>
+        </Subelement>
+        <Subelement Path="25">
+          <StartValue>'BALI'</StartValue>
+        </Subelement>
+        <Subelement Path="26">
+          <StartValue>'LLAV'</StartValue>
+        </Subelement>
+        <Subelement Path="27">
+          <StartValue>'SETA'</StartValue>
+        </Subelement>
+        <Subelement Path="28">
+          <StartValue>'BARR'</StartValue>
+        </Subelement>
+        <Subelement Path="29">
+          <StartValue>'PUER'</StartValue>
+        </Subelement>
+        <Subelement Path="30">
+          <StartValue>'LINP'</StartValue>
+        </Subelement>
+        <Subelement Path="31">
+          <StartValue>'MADE'</StartValue>
+        </Subelement>
+        <Subelement Path="32">
+          <StartValue>'ROJO'</StartValue>
+        </Subelement>
+        <Subelement Path="33">
+          <StartValue>'AZUL'</StartValue>
+        </Subelement>
+        <Subelement Path="34">
+          <StartValue>'VERD'</StartValue>
+        </Subelement>
+        <Subelement Path="35">
+          <StartValue>'ERRR'</StartValue>
+        </Subelement>
+        <Subelement Path="36">
+          <StartValue>'NENC'</StartValue>
+        </Subelement>
+        <Subelement Path="37">
+          <StartValue>'INIC'</StartValue>
+        </Subelement>
+        <Subelement Path="38">
+          <StartValue>'STAT'</StartValue>
+        </Subelement>
+        <Subelement Path="39">
+          <StartValue>'POSI'</StartValue>
+        </Subelement>
+        <Subelement Path="40">
+          <StartValue>'VTDC'</StartValue>
+        </Subelement>
+        <Subelement Path="41">
+          <StartValue>'ELEV'</StartValue>
+        </Subelement>
+        <Subelement Path="42">
+          <StartValue>'ELEV'</StartValue>
+        </Subelement>
+        <Subelement Path="43">
+          <StartValue>'REMO'</StartValue>
+        </Subelement>
+        <Subelement Path="44">
+          <StartValue>'APIL'</StartValue>
+        </Subelement>
+        <Subelement Path="45">
+          <StartValue>'VTDC'</StartValue>
+        </Subelement>
+        <Subelement Path="46">
+          <StartValue>'ENFA'</StartValue>
+        </Subelement>
+        <Subelement Path="47">
+          <StartValue>'ETIQ'</StartValue>
+        </Subelement>
+        <Subelement Path="48">
+          <StartValue>'FLEJ'</StartValue>
+        </Subelement>
+      </Member>
+      <Member Name="Valor" Datatype="Int">
+        <Subelement Path="1">
+          <StartValue>6</StartValue>
+        </Subelement>
+        <Subelement Path="2">
+          <StartValue>5</StartValue>
+        </Subelement>
+        <Subelement Path="3">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="4">
+          <StartValue>4</StartValue>
+        </Subelement>
+        <Subelement Path="5">
+          <StartValue>3</StartValue>
+        </Subelement>
+        <Subelement Path="6">
+          <StartValue>8</StartValue>
+        </Subelement>
+        <Subelement Path="7">
+          <StartValue>9</StartValue>
+        </Subelement>
+        <Subelement Path="8">
+          <StartValue>1</StartValue>
+        </Subelement>
+        <Subelement Path="9">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="10">
+          <StartValue>40</StartValue>
+        </Subelement>
+        <Subelement Path="11">
+          <StartValue>60</StartValue>
+        </Subelement>
+        <Subelement Path="12">
+          <StartValue>70</StartValue>
+        </Subelement>
+        <Subelement Path="13">
+          <StartValue>1</StartValue>
+        </Subelement>
+        <Subelement Path="14">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="15">
+          <StartValue>3</StartValue>
+        </Subelement>
+        <Subelement Path="16">
+          <StartValue>4</StartValue>
+        </Subelement>
+        <Subelement Path="17">
+          <StartValue>5</StartValue>
+        </Subelement>
+        <Subelement Path="18">
+          <StartValue>6</StartValue>
+        </Subelement>
+        <Subelement Path="19">
+          <StartValue>7</StartValue>
+        </Subelement>
+        <Subelement Path="20">
+          <StartValue>8</StartValue>
+        </Subelement>
+        <Subelement Path="21">
+          <StartValue>100</StartValue>
+        </Subelement>
+        <Subelement Path="22">
+          <StartValue>110</StartValue>
+        </Subelement>
+        <Subelement Path="23">
+          <StartValue>2001</StartValue>
+        </Subelement>
+        <Subelement Path="24">
+          <StartValue>2002</StartValue>
+        </Subelement>
+        <Subelement Path="25">
+          <StartValue>1000</StartValue>
+        </Subelement>
+        <Subelement Path="26">
+          <StartValue>1001</StartValue>
+        </Subelement>
+        <Subelement Path="27">
+          <StartValue>1002</StartValue>
+        </Subelement>
+        <Subelement Path="28">
+          <StartValue>1003</StartValue>
+        </Subelement>
+        <Subelement Path="29">
+          <StartValue>1004</StartValue>
+        </Subelement>
+        <Subelement Path="30">
+          <StartValue>1005</StartValue>
+        </Subelement>
+        <Subelement Path="31">
+          <StartValue>1</StartValue>
+        </Subelement>
+        <Subelement Path="32">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="33">
+          <StartValue>3</StartValue>
+        </Subelement>
+        <Subelement Path="34">
+          <StartValue>4</StartValue>
+        </Subelement>
+        <Subelement Path="35">
+          <StartValue>7000</StartValue>
+        </Subelement>
+        <Subelement Path="36">
+          <StartValue>7001</StartValue>
+        </Subelement>
+        <Subelement Path="37">
+          <StartValue>7002</StartValue>
+        </Subelement>
+        <Subelement Path="38">
+          <StartValue>5000</StartValue>
+        </Subelement>
+        <Subelement Path="39">
+          <StartValue>5001</StartValue>
+        </Subelement>
+        <Subelement Path="40">
+          <StartValue>74</StartValue>
+        </Subelement>
+        <Subelement Path="41">
+          <StartValue>71</StartValue>
+        </Subelement>
+        <Subelement Path="42">
+          <StartValue>71</StartValue>
+        </Subelement>
+        <Subelement Path="43">
+          <StartValue>72</StartValue>
+        </Subelement>
+        <Subelement Path="44">
+          <StartValue>73</StartValue>
+        </Subelement>
+        <Subelement Path="45">
+          <StartValue>74</StartValue>
+        </Subelement>
+        <Subelement Path="46">
+          <StartValue>75</StartValue>
+        </Subelement>
+        <Subelement Path="47">
+          <StartValue>76</StartValue>
+        </Subelement>
+        <Subelement Path="48">
+          <StartValue>77</StartValue>
+        </Subelement>
+      </Member>
+    </Member>
+    <Member Name="Valor_A_Etiqueta" Datatype="Array[1..&quot;CTE_MaxArrayConversion&quot;] of Struct">
+      <Member Name="Valor" Datatype="Int">
+        <Subelement Path="1">
+          <StartValue>1</StartValue>
+        </Subelement>
+        <Subelement Path="2">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="3">
+          <StartValue>4</StartValue>
+        </Subelement>
+        <Subelement Path="4">
+          <StartValue>5</StartValue>
+        </Subelement>
+        <Subelement Path="5">
+          <StartValue>6</StartValue>
+        </Subelement>
+        <Subelement Path="6">
+          <StartValue>11</StartValue>
+        </Subelement>
+        <Subelement Path="7">
+          <StartValue>12</StartValue>
+        </Subelement>
+        <Subelement Path="8">
+          <StartValue>14</StartValue>
+        </Subelement>
+        <Subelement Path="9">
+          <StartValue>50</StartValue>
+        </Subelement>
+        <Subelement Path="10">
+          <StartValue>40</StartValue>
+        </Subelement>
+        <Subelement Path="11">
+          <StartValue>60</StartValue>
+        </Subelement>
+        <Subelement Path="12">
+          <StartValue>70</StartValue>
+        </Subelement>
+        <Subelement Path="13">
+          <StartValue>21</StartValue>
+        </Subelement>
+        <Subelement Path="14">
+          <StartValue>22</StartValue>
+        </Subelement>
+        <Subelement Path="15">
+          <StartValue>121</StartValue>
+        </Subelement>
+        <Subelement Path="16">
+          <StartValue>122</StartValue>
+        </Subelement>
+        <Subelement Path="17">
+          <StartValue>123</StartValue>
+        </Subelement>
+        <Subelement Path="18">
+          <StartValue>124</StartValue>
+        </Subelement>
+        <Subelement Path="19">
+          <StartValue>125</StartValue>
+        </Subelement>
+        <Subelement Path="20">
+          <StartValue>1000</StartValue>
+        </Subelement>
+        <Subelement Path="21">
+          <StartValue>1001</StartValue>
+        </Subelement>
+        <Subelement Path="22">
+          <StartValue>1002</StartValue>
+        </Subelement>
+        <Subelement Path="23">
+          <StartValue>1011</StartValue>
+        </Subelement>
+        <Subelement Path="24">
+          <StartValue>1012</StartValue>
+        </Subelement>
+        <Subelement Path="25">
+          <StartValue>1013</StartValue>
+        </Subelement>
+        <Subelement Path="26">
+          <StartValue>2001</StartValue>
+        </Subelement>
+        <Subelement Path="27">
+          <StartValue>2002</StartValue>
+        </Subelement>
+        <Subelement Path="28">
+          <StartValue>3001</StartValue>
+        </Subelement>
+        <Subelement Path="29">
+          <StartValue>3002</StartValue>
+        </Subelement>
+        <Subelement Path="30">
+          <StartValue>3003</StartValue>
+        </Subelement>
+        <Subelement Path="31">
+          <StartValue>3004</StartValue>
+        </Subelement>
+        <Subelement Path="32">
+          <StartValue>3005</StartValue>
+        </Subelement>
+        <Subelement Path="33">
+          <StartValue>3006</StartValue>
+        </Subelement>
+        <Subelement Path="34">
+          <StartValue>3007</StartValue>
+        </Subelement>
+        <Subelement Path="35">
+          <StartValue>3008</StartValue>
+        </Subelement>
+        <Subelement Path="36">
+          <StartValue>3010</StartValue>
+        </Subelement>
+        <Subelement Path="37">
+          <StartValue>3011</StartValue>
+        </Subelement>
+        <Subelement Path="38">
+          <StartValue>3101</StartValue>
+        </Subelement>
+        <Subelement Path="39">
+          <StartValue>3102</StartValue>
+        </Subelement>
+        <Subelement Path="40">
+          <StartValue>3103</StartValue>
+        </Subelement>
+        <Subelement Path="41">
+          <StartValue>3104</StartValue>
+        </Subelement>
+        <Subelement Path="42">
+          <StartValue>71</StartValue>
+        </Subelement>
+        <Subelement Path="43">
+          <StartValue>72</StartValue>
+        </Subelement>
+        <Subelement Path="44">
+          <StartValue>73</StartValue>
+        </Subelement>
+        <Subelement Path="45">
+          <StartValue>74</StartValue>
+        </Subelement>
+        <Subelement Path="46">
+          <StartValue>75</StartValue>
+        </Subelement>
+        <Subelement Path="47">
+          <StartValue>76</StartValue>
+        </Subelement>
+        <Subelement Path="48">
+          <StartValue>77</StartValue>
+        </Subelement>
+        <Subelement Path="49">
+          <StartValue>126</StartValue>
+        </Subelement>
+      </Member>
+      <Member Name="Etiqueta" Datatype="DWord">
+        <Subelement Path="1">
+          <StartValue>'MARC'</StartValue>
+        </Subelement>
+        <Subelement Path="2">
+          <StartValue>'PARO'</StartValue>
+        </Subelement>
+        <Subelement Path="3">
+          <StartValue>'ERRO'</StartValue>
+        </Subelement>
+        <Subelement Path="4">
+          <StartValue>'ERRO'</StartValue>
+        </Subelement>
+        <Subelement Path="5">
+          <StartValue>'ERRO'</StartValue>
+        </Subelement>
+        <Subelement Path="6">
+          <StartValue>'AUTO'</StartValue>
+        </Subelement>
+        <Subelement Path="7">
+          <StartValue>'MANT'</StartValue>
+        </Subelement>
+        <Subelement Path="8">
+          <StartValue>'MANU'</StartValue>
+        </Subelement>
+        <Subelement Path="9">
+          <StartValue>'CCPI'</StartValue>
+        </Subelement>
+        <Subelement Path="10">
+          <StartValue>'CBOX'</StartValue>
+        </Subelement>
+        <Subelement Path="11">
+          <StartValue>'MESA'</StartValue>
+        </Subelement>
+        <Subelement Path="12">
+          <StartValue>'MAQU'</StartValue>
+        </Subelement>
+        <Subelement Path="13">
+          <StartValue>'RESE'</StartValue>
+        </Subelement>
+        <Subelement Path="14">
+          <StartValue>'BLAN'</StartValue>
+        </Subelement>
+        <Subelement Path="15">
+          <StartValue>'RESE'</StartValue>
+        </Subelement>
+        <Subelement Path="16">
+          <StartValue>'BLOQ'</StartValue>
+        </Subelement>
+        <Subelement Path="17">
+          <StartValue>'RUTA'</StartValue>
+        </Subelement>
+        <Subelement Path="18">
+          <StartValue>'NDES'</StartValue>
+        </Subelement>
+        <Subelement Path="19">
+          <StartValue>'FUER'</StartValue>
+        </Subelement>
+        <Subelement Path="20">
+          <StartValue>'VACI'</StartValue>
+        </Subelement>
+        <Subelement Path="21">
+          <StartValue>'SEMI'</StartValue>
+        </Subelement>
+        <Subelement Path="22">
+          <StartValue>'LLEN'</StartValue>
+        </Subelement>
+        <Subelement Path="23">
+          <StartValue>'_INI'</StartValue>
+        </Subelement>
+        <Subelement Path="24">
+          <StartValue>'_FIN'</StartValue>
+        </Subelement>
+        <Subelement Path="25">
+          <StartValue>'ERRO'</StartValue>
+        </Subelement>
+        <Subelement Path="26">
+          <StartValue>'__SI'</StartValue>
+        </Subelement>
+        <Subelement Path="27">
+          <StartValue>'__NO'</StartValue>
+        </Subelement>
+        <Subelement Path="28">
+          <StartValue>'EURO'</StartValue>
+        </Subelement>
+        <Subelement Path="29">
+          <StartValue>'MEDI'</StartValue>
+        </Subelement>
+        <Subelement Path="30">
+          <StartValue>'CUAR'</StartValue>
+        </Subelement>
+        <Subelement Path="31">
+          <StartValue>'CHEE'</StartValue>
+        </Subelement>
+        <Subelement Path="32">
+          <StartValue>'PARM'</StartValue>
+        </Subelement>
+        <Subelement Path="33">
+          <StartValue>'2CUA'</StartValue>
+        </Subelement>
+        <Subelement Path="34">
+          <StartValue>'AMER'</StartValue>
+        </Subelement>
+        <Subelement Path="35">
+          <StartValue>'LPR_'</StartValue>
+        </Subelement>
+        <Subelement Path="36">
+          <StartValue>'CA_1'</StartValue>
+        </Subelement>
+        <Subelement Path="37">
+          <StartValue>'CA_2'</StartValue>
+        </Subelement>
+        <Subelement Path="38">
+          <StartValue>'MADE'</StartValue>
+        </Subelement>
+        <Subelement Path="39">
+          <StartValue>'ROJO'</StartValue>
+        </Subelement>
+        <Subelement Path="40">
+          <StartValue>'AZUL'</StartValue>
+        </Subelement>
+        <Subelement Path="41">
+          <StartValue>'VERD'</StartValue>
+        </Subelement>
+        <Subelement Path="42">
+          <StartValue>'ELEV'</StartValue>
+        </Subelement>
+        <Subelement Path="43">
+          <StartValue>'REMO'</StartValue>
+        </Subelement>
+        <Subelement Path="44">
+          <StartValue>'APIL'</StartValue>
+        </Subelement>
+        <Subelement Path="45">
+          <StartValue>'VTDC'</StartValue>
+        </Subelement>
+        <Subelement Path="46">
+          <StartValue>'ENFA'</StartValue>
+        </Subelement>
+        <Subelement Path="47">
+          <StartValue>'ETIQ'</StartValue>
+        </Subelement>
+        <Subelement Path="48">
+          <StartValue>'FLEJ'</StartValue>
+        </Subelement>
+        <Subelement Path="49">
+          <StartValue>'ROBO'</StartValue>
+        </Subelement>
+      </Member>
+    </Member>
+    <Member Name="EventosRecibidos" Datatype="Array[1..&quot;CTE_MaxArrayConversion&quot;] of DWord">
+      <Subelement Path="1">
+        <StartValue>'CREA'</StartValue>
+      </Subelement>
+      <Subelement Path="2">
+        <StartValue>'RUTA'</StartValue>
+      </Subelement>
+      <Subelement Path="3">
+        <StartValue>'DRUT'</StartValue>
+      </Subelement>
+      <Subelement Path="4">
+        <StartValue>'RETI'</StartValue>
+      </Subelement>
+      <Subelement Path="5">
+        <StartValue>'BORR'</StartValue>
+      </Subelement>
+      <Subelement Path="6">
+        <StartValue>'DATA'</StartValue>
+      </Subelement>
+      <Subelement Path="7">
+        <StartValue>'?UT?'</StartValue>
+      </Subelement>
+      <Subelement Path="8">
+        <StartValue>'MOVE'</StartValue>
+      </Subelement>
+      <Subelement Path="9">
+        <StartValue>'DEMB'</StartValue>
+      </Subelement>
+      <Subelement Path="10">
+        <StartValue>'CSTA'</StartValue>
+      </Subelement>
+      <Subelement Path="11">
+        <StartValue>'DIDO'</StartValue>
+      </Subelement>
+      <Subelement Path="12">
+        <StartValue>'ORDE'</StartValue>
+      </Subelement>
+      <Subelement Path="13">
+        <StartValue>'BOET'</StartValue>
+      </Subelement>
+      <Subelement Path="14">
+        <StartValue>'BOBD'</StartValue>
+      </Subelement>
+      <Subelement Path="15">
+        <StartValue>'RUET'</StartValue>
+      </Subelement>
+      <Subelement Path="16">
+        <StartValue>'RUES'</StartValue>
+      </Subelement>
+      <Subelement Path="17">
+        <StartValue>'INIR'</StartValue>
+      </Subelement>
+      <Subelement Path="18">
+        <StartValue>'?ST?'</StartValue>
+      </Subelement>
+      <Subelement Path="19">
+        <StartValue>'QCRE'</StartValue>
+      </Subelement>
+      <Subelement Path="20">
+        <StartValue>'QPR?'</StartValue>
+      </Subelement>
+      <Subelement Path="21">
+        <StartValue>'CHEQ'</StartValue>
+      </Subelement>
+    </Member>
+    <Member Name="AtributosRecibidosDeUTs" Datatype="Array[1..&quot;CTE_MaxArrayConversion&quot;] of DWord">
+      <Subelement Path="1">
+        <StartValue>'MCKY'</StartValue>
+      </Subelement>
+      <Subelement Path="2">
+        <StartValue>'MESA'</StartValue>
+      </Subelement>
+      <Subelement Path="3">
+        <StartValue>'RUTA'</StartValue>
+      </Subelement>
+      <Subelement Path="4">
+        <StartValue>'SALI'</StartValue>
+      </Subelement>
+      <Subelement Path="5">
+        <StartValue>'SSCC'</StartValue>
+      </Subelement>
+      <Subelement Path="6">
+        <StartValue>'GRUP'</StartValue>
+      </Subelement>
+      <Subelement Path="7">
+        <StartValue>'GCNT'</StartValue>
+      </Subelement>
+      <Subelement Path="8">
+        <StartValue>'GORD'</StartValue>
+      </Subelement>
+      <Subelement Path="9">
+        <StartValue>'FLEJ'</StartValue>
+      </Subelement>
+      <Subelement Path="10">
+        <StartValue>'ENFA'</StartValue>
+      </Subelement>
+      <Subelement Path="11">
+        <StartValue>'ETIQ'</StartValue>
+      </Subelement>
+      <Subelement Path="12">
+        <StartValue>'AMAR'</StartValue>
+      </Subelement>
+      <Subelement Path="13">
+        <StartValue>'PRES'</StartValue>
+      </Subelement>
+      <Subelement Path="14">
+        <StartValue>'NBUL'</StartValue>
+      </Subelement>
+      <Subelement Path="15">
+        <StartValue>'NTBU'</StartValue>
+      </Subelement>
+      <Subelement Path="16">
+        <StartValue>'PID_'</StartValue>
+      </Subelement>
+      <Subelement Path="17">
+        <StartValue>'TIPO'</StartValue>
+      </Subelement>
+      <Subelement Path="18">
+        <StartValue>'REMO'</StartValue>
+      </Subelement>
+      <Subelement Path="19">
+        <StartValue>'PILA'</StartValue>
+      </Subelement>
+      <Subelement Path="20">
+        <StartValue>'VACI'</StartValue>
+      </Subelement>
+      <Subelement Path="21">
+        <StartValue>'COTA'</StartValue>
+      </Subelement>
+      <Subelement Path="22">
+        <StartValue>'COTW'</StartValue>
+      </Subelement>
+      <Subelement Path="23">
+        <StartValue>'COTL'</StartValue>
+      </Subelement>
+      <Subelement Path="24">
+        <StartValue>'PESO'</StartValue>
+      </Subelement>
+      <Subelement Path="25">
+        <StartValue>'ALTO'</StartValue>
+      </Subelement>
+      <Subelement Path="26">
+        <StartValue>'ANCH'</StartValue>
+      </Subelement>
+      <Subelement Path="27">
+        <StartValue>'PROF'</StartValue>
+      </Subelement>
+      <Subelement Path="28">
+        <StartValue>'TACO'</StartValue>
+      </Subelement>
+      <Subelement Path="29">
+        <StartValue>'HUEC'</StartValue>
+      </Subelement>
+      <Subelement Path="30">
+        <StartValue>'HUER'</StartValue>
+      </Subelement>
+      <Subelement Path="31">
+        <StartValue>'COLO'</StartValue>
+      </Subelement>
+      <Subelement Path="32">
+        <StartValue>'PATI'</StartValue>
+      </Subelement>
+      <Subelement Path="33">
+        <StartValue>'LETI'</StartValue>
+      </Subelement>
+      <Subelement Path="34">
+        <StartValue>'SGAP'</StartValue>
+      </Subelement>
+      <Subelement Path="35">
+        <StartValue>'SGAE'</StartValue>
+      </Subelement>
+      <Subelement Path="36">
+        <StartValue>'SGAD'</StartValue>
+      </Subelement>
+      <Subelement Path="37">
+        <StartValue>'SGA_'</StartValue>
+      </Subelement>
+      <Subelement Path="38">
+        <StartValue>'RSLT'</StartValue>
+      </Subelement>
+      <Subelement Path="39">
+        <StartValue>'PDST'</StartValue>
+      </Subelement>
+      <Subelement Path="40">
+        <StartValue>'DEST'</StartValue>
+      </Subelement>
+      <Subelement Path="41">
+        <StartValue>'PALE'</StartValue>
+      </Subelement>
+    </Member>
+    <Member Name="AtributosRecibidosDeDispositivos" Datatype="Array[1..&quot;CTE_MaxArrayConversion&quot;] of DWord">
+      <Subelement Path="1">
+        <StartValue>'TIPO'</StartValue>
+      </Subelement>
+      <Subelement Path="2">
+        <StartValue>'NUME'</StartValue>
+      </Subelement>
+      <Subelement Path="3">
+        <StartValue>'NUES'</StartValue>
+      </Subelement>
+      <Subelement Path="4">
+        <StartValue>'HABI'</StartValue>
+      </Subelement>
+      <Subelement Path="5">
+        <StartValue>'PRIO'</StartValue>
+      </Subelement>
+      <Subelement Path="6">
+        <StartValue>'SONO'</StartValue>
+      </Subelement>
+      <Subelement Path="7">
+        <StartValue>'VERD'</StartValue>
+      </Subelement>
+      <Subelement Path="8">
+        <StartValue>'ROJO'</StartValue>
+      </Subelement>
+      <Subelement Path="9">
+        <StartValue>'AMAR'</StartValue>
+      </Subelement>
+      <Subelement Path="10">
+        <StartValue>'AZUL'</StartValue>
+      </Subelement>
+      <Subelement Path="11">
+        <StartValue>'MOTI'</StartValue>
+      </Subelement>
+      <Subelement Path="12">
+        <StartValue>'OPER'</StartValue>
+      </Subelement>
+      <Subelement Path="13">
+        <StartValue>'TEXT'</StartValue>
+      </Subelement>
+      <Subelement Path="14">
+        <StartValue>'HORQ'</StartValue>
+      </Subelement>
+      <Subelement Path="15">
+        <StartValue>'POSI'</StartValue>
+      </Subelement>
+    </Member>
+    <Member Name="AtributosRecibidosDeRouter" Datatype="Array[1..&quot;CTE_MaxArrayConversion&quot;] of DWord">
+      <Subelement Path="1">
+        <StartValue>'MESA'</StartValue>
+      </Subelement>
+      <Subelement Path="2">
+        <StartValue>'SSCC'</StartValue>
+      </Subelement>
+      <Subelement Path="3">
+        <StartValue>'SALI'</StartValue>
+      </Subelement>
+      <Subelement Path="4">
+        <StartValue>'DEST'</StartValue>
+      </Subelement>
+      <Subelement Path="5">
+        <StartValue>'NUME'</StartValue>
+      </Subelement>
+      <Subelement Path="6">
+        <StartValue>'HABI'</StartValue>
+      </Subelement>
+      <Subelement Path="7">
+        <StartValue>'ETES'</StartValue>
+      </Subelement>
+    </Member>
+    <Member Name="AtributosRecibidosDeQuimarox" Datatype="Array[1..&quot;CTE_MaxArrayConversion&quot;] of DWord">
+      <Subelement Path="1">
+        <StartValue>'MESA'</StartValue>
+      </Subelement>
+      <Subelement Path="2">
+        <StartValue>'PEIN'</StartValue>
+      </Subelement>
+      <Subelement Path="3">
+        <StartValue>'MCKY'</StartValue>
+      </Subelement>
+      <Subelement Path="4">
+        <StartValue>'ORIG'</StartValue>
+      </Subelement>
+      <Subelement Path="5">
+        <StartValue>'DEST'</StartValue>
+      </Subelement>
+      <Subelement Path="6">
+        <StartValue>'SSCC'</StartValue>
+      </Subelement>
+    </Member>
+    <Member Name="AtributosRecibidosDeReset" Datatype="Array[1..&quot;CTE_MaxArrayConversion&quot;] of DWord">
+      <Subelement Path="1">
+        <StartValue>'TIPO'</StartValue>
+      </Subelement>
+      <Subelement Path="2">
+        <StartValue>'NUME'</StartValue>
+      </Subelement>
+      <Subelement Path="3">
+        <StartValue>'OPER'</StartValue>
+      </Subelement>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>DB870_ConversorEventos</Name>
+      <Namespace />
+      <Number>870</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="9" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="A" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="B" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="C" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="D" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="E" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="F" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="10" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.GlobalDB>
+</Document>

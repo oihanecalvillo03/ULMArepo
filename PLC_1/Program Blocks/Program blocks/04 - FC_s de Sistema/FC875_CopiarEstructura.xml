@@ -1,0 +1,821 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <DocumentInfo>
+    <Created>2025-12-01T14:57:05.4435622Z</Created>
+    <ExportSetting>None</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V20 Update 2</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderAuthor>TRACKING</HeaderAuthor>
+      <HeaderName>20130301</HeaderName>
+      <HeaderVersion>3.0</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input">
+    <Member Name="NumDB_Origen" Datatype="Word">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Numero del DB Origen</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="POffset_Origen" Datatype="DWord">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Puntero del Offset dento del DB Origen</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="NumDB_Destino" Datatype="Word">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Numero del DB Destino</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="POffset_Destino" Datatype="DWord">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Puntero del Offset dento del DB Destino</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="NumBytes" Datatype="UInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Numero de Bytes que hay que Copiar</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Temp">
+    <Member Name="Guardar_AR1" Datatype="DWord" />
+    <Member Name="Guardar_AR2" Datatype="DWord" />
+    <Member Name="PAny_DB_Origen" Datatype="Any" />
+    <Member Name="PAny_DB_Destino" Datatype="Any" />
+    <Member Name="ReturnValor" Datatype="Int" />
+  </Section>
+  <Section Name="Constant" />
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" />
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>FC875_CopiarEstructura</Name>
+      <Namespace />
+      <Number>875</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text>Borra un numero de bytes de un DB desde Offset que se indique</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="9" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="32">
+    <LineComment>
+      <Text>////////////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="34">
+    <LineComment>
+      <Text>////////////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="36">
+    <LineComment>
+      <Text>/ Tareas Iniciales</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="31">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="46">
+    <StlToken Text="TAR1" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="Guardar_AR1" />
+      </Symbol>
+      <LineComment>
+        <Text> Guardar AR1 y AR2</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="49">
+    <StlToken Text="TAR2" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="Guardar_AR2" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="61">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="30">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="23">
+    <LineComment>
+      <Text>////////////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="25">
+    <LineComment>
+      <Text>////////////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="27">
+    <LineComment>
+      <Text>/ Puntero Any Origen</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="45">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="69">
+    <StlToken Text="LAR2" />
+    <Access Scope="AddressConstant">
+      <Constant Name="PAny_DB_Origen" Scope="local" />
+      <LineComment>
+        <Text> - Any - DB de Origen</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="72">
+    <StlToken Text="L" />
+    <Access Scope="TypedConstant">
+      <Constant>
+        <ConstantValue>B#16#10</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text>   10H para S7</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="75">
+    <StlToken Text="T" />
+    <Access Scope="Address">
+      <Indirect Width="Byte" Area="Local" Register="AR2" BitOffset="0" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="77">
+    <StlToken Text="L" />
+    <Access Scope="TypedConstant">
+      <Constant>
+        <ConstantValue>B#16#2</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text>   Tipo de Datos (BYTE)</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="80">
+    <StlToken Text="T" />
+    <Access Scope="Address">
+      <Indirect Width="Byte" Area="Local" Register="AR2" BitOffset="8" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="82">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="NumBytes" />
+      </Symbol>
+      <LineComment>
+        <Text>   Cantidad de datos</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="85">
+    <StlToken Text="T" />
+    <Access Scope="Address">
+      <Indirect Width="Word" Area="Local" Register="AR2" BitOffset="16" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="87">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="NumDB_Origen" />
+      </Symbol>
+      <LineComment>
+        <Text>   Numero de DB</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="90">
+    <StlToken Text="T" />
+    <Access Scope="Address">
+      <Indirect Width="Word" Area="Local" Register="AR2" BitOffset="32" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="92">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="POffset_Origen" />
+      </Symbol>
+      <LineComment>
+        <Text>   Direccion de Inicio</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="95">
+    <StlToken Text="T" />
+    <Access Scope="Address">
+      <Indirect Width="Double" Area="Local" Register="AR2" BitOffset="48" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="97">
+    <StlToken Text="L" />
+    <Access Scope="TypedConstant">
+      <Constant>
+        <ConstantValue>B#16#84</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text>   El Area de Memoria = DB (Nota: No 84)</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="100">
+    <StlToken Text="T" />
+    <Access Scope="Address">
+      <Indirect Width="Byte" Area="Local" Register="AR2" BitOffset="48" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="60">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="51">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="52">
+    <LineComment>
+      <Text>////////////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="54">
+    <LineComment>
+      <Text>////////////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="56">
+    <LineComment>
+      <Text>/ Puntero Any Destino</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="58">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="102">
+    <StlToken Text="LAR2" />
+    <Access Scope="AddressConstant">
+      <Constant Name="PAny_DB_Destino" Scope="local" />
+      <LineComment>
+        <Text> - Any - DB de Destino</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="105">
+    <StlToken Text="L" />
+    <Access Scope="TypedConstant">
+      <Constant>
+        <ConstantValue>B#16#10</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text>   10H para S7</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="108">
+    <StlToken Text="T" />
+    <Access Scope="Address">
+      <Indirect Width="Byte" Area="Local" Register="AR2" BitOffset="0" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="110">
+    <StlToken Text="L" />
+    <Access Scope="TypedConstant">
+      <Constant>
+        <ConstantValue>B#16#2</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text>   Tipo de Datos (BYTE)</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="113">
+    <StlToken Text="T" />
+    <Access Scope="Address">
+      <Indirect Width="Byte" Area="Local" Register="AR2" BitOffset="8" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="115">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="NumBytes" />
+      </Symbol>
+      <LineComment>
+        <Text>   Cantidad de datos</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="118">
+    <StlToken Text="T" />
+    <Access Scope="Address">
+      <Indirect Width="Word" Area="Local" Register="AR2" BitOffset="16" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="120">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="NumDB_Destino" />
+      </Symbol>
+      <LineComment>
+        <Text>   Numero de DB</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="123">
+    <StlToken Text="T" />
+    <Access Scope="Address">
+      <Indirect Width="Word" Area="Local" Register="AR2" BitOffset="32" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="125">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="POffset_Destino" />
+      </Symbol>
+      <LineComment>
+        <Text>   Direccion de Inicio</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="128">
+    <StlToken Text="T" />
+    <Access Scope="Address">
+      <Indirect Width="Double" Area="Local" Register="AR2" BitOffset="48" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="130">
+    <StlToken Text="L" />
+    <Access Scope="TypedConstant">
+      <Constant>
+        <ConstantValue>B#16#84</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text>   El Area de Memoria = DB (Nota: No 84)</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="133">
+    <StlToken Text="T" />
+    <Access Scope="Address">
+      <Indirect Width="Byte" Area="Local" Register="AR2" BitOffset="48" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="59">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="29">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="38">
+    <LineComment>
+      <Text>////////////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="40">
+    <LineComment>
+      <Text>////////////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="42">
+    <LineComment>
+      <Text>/ Tareas Finales</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="62">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="63">
+    <StlToken Text="LAR1" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="Guardar_AR1" />
+      </Symbol>
+      <LineComment>
+        <Text> Recuperar AR1 y AR2</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="66">
+    <StlToken Text="LAR2" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="Guardar_AR2" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="21">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="22">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="12" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="13" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="15" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Inicializar Punteros Any</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="17" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="18" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1A" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="23">
+    <LineComment>
+      <Text>////////////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="25">
+    <LineComment>
+      <Text>////////////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="27">
+    <LineComment>
+      <Text>/ Copia de los Datos</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="21">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="31">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <Instruction Name="BLKMOV" Version="1.1">
+        <TemplateValue Name="blk_type" Type="Type">Variant</TemplateValue>
+        <Parameter Name="SRCBLK">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="PAny_DB_Origen" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="RET_VAL">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ReturnValor" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="DSTBLK">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="PAny_DB_Destino" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </Instruction>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="29">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="30">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="22">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1B" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="21" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="22" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="23" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="24" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="26" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Copiado</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="27" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="28" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="29" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="2B" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="2C" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="2D" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="2E" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text>CopiarEstructura</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="2F" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="30" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="31" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="32" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>

@@ -1,0 +1,2507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <DocumentInfo>
+    <Created>2025-12-01T14:57:03.8292158Z</Created>
+    <ExportSetting>None</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V20 Update 2</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V20 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderAuthor>TRACKING</HeaderAuthor>
+      <HeaderName>20141014</HeaderName>
+      <HeaderVersion>4.0</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Temp">
+    <Member Name="DBRecJdt" Datatype="Word">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">DB de Recpcion de Mensaje</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="DBUltimoRec" Datatype="Word">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">DB del Ultimo Mensaje Recibido</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Longitud" Datatype="UDInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Longitud del cuerpo</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="CantidadBytes" Datatype="UDInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Cantidad de Bytes de los Eventos</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="RecJdT_Longitud" Datatype="UDInt">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Longitud de Bytes que recibe en AG_RECV</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ReturnValor" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Temporal</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="POrigen" Datatype="Any">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Puntero ANY del Origen</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="PDestino" Datatype="Any">
+      <Comment>
+        <MultiLanguageText Lang="es-ES">Puntero ANY del Destino</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Constant" />
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" />
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>FC702_JDT02RecJdTMensaje</Name>
+      <Namespace />
+      <Number>702</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text>Pasos a seguir, por orden
+
+- Recoger cabecera
+- Recoger cuerpo
+- Transferir Mensaje recibido por TCP/IP
+</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="7" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="8" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="9" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="57">
+    <LineComment>
+      <Text> -------------------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="59">
+    <LineComment>
+      <Text> Si trabaja sin Agencia  2018 01 24</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="61">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="62">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="Activar_JDT02" />
+      </Symbol>
+      <LineComment>
+        <Text> Mirar si se trabaja con agencia</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="65">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="Final" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="56">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="22">
+    <LineComment>
+      <Text> ------------------------------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="24">
+    <LineComment>
+      <Text> Inicializamos las variables de los DB</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="26">
+    <StlToken Text="L" />
+    <Access Scope="GlobalConstant">
+      <Constant Name="JDT2_NDB_RecMensaje" />
+      <LineComment>
+        <Text> Cogemos el Numero del DB de RecepMensaje</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="29">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="DBRecJdt" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="31">
+    <StlToken Text="L" />
+    <Access Scope="GlobalConstant">
+      <Constant Name="JDT2_NDB_UltimoRec" />
+      <LineComment>
+        <Text> Cogemos el Numero del DB de UltimoRecibido</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="34">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="DBUltimoRec" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="36">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="37">
+    <LineComment>
+      <Text> ------------------------------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="39">
+    <LineComment>
+      <Text> Comprobamos el EnlaceCP</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="41">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="EnlaceCP_OK" />
+      </Symbol>
+      <LineComment>
+        <Text> Mirar Si esta el EnlaceCP Activo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="44">
+    <StlToken Text="JCN" />
+    <Access Scope="Label">
+      <Label Name="Inicio" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="46">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="47">
+    <StlToken Text="R" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="RecJdT_Cabecera" />
+      </Symbol>
+      <LineComment>
+        <Text> Resetear Variables</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="50">
+    <StlToken Text="R" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="RecJdT_Cuerpo" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="72">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="52">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB702_JDT02RecepMensaje" />
+            </Symbol>
+          </Access>
+          <LineComment>
+            <Text> ¿Hay que borrarlo?</Text>
+          </LineComment>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="66">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="67">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="Final" />
+      <LineComment>
+        <Text> Finalizar</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="70">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="12" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="13" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="15" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Inicializaciones</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="17" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="18" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1A" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="22">
+    <LabelDeclaration>
+      <Label Name="Inicio" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="28">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="21">
+    <StlToken Text="A" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="RecJdT_Cuerpo" />
+      </Symbol>
+      <LineComment>
+        <Text> Esta recogido el Cuerpo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="76">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="TranferirMensaje" />
+      <LineComment>
+        <Text> Ir a Transferir el Mensaje</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="79">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="80">
+    <StlToken Text="A" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="RecJdT_Cabecera" />
+      </Symbol>
+      <LineComment>
+        <Text> Esta recogido la Cabecera</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="83">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="RecogerCuerpo" />
+      <LineComment>
+        <Text> Ir a Recoger el Cuerpo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="86">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="87">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="RecogerCabeza" />
+      <LineComment>
+        <Text> Ir a Recoger la Cabecera</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="90">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="91">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1B" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Orden a mirar para distribucion del trabajo
+- Esta el Cuerpo recogida - Transferir
+- Esta la cabecera recogida - Recoger el Cuerpo
+- Recoger la Cabecera</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="21" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="22" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="23" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="24" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="26" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Distribucion</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="27" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="28" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="29" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="2B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="92">
+    <LineComment>
+      <Text> -----------------------------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="94">
+    <LineComment>
+      <Text> 1º Paso - Generar el Puntero para recoger la Cabecera</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="96">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="97">
+    <LabelDeclaration>
+      <Label Name="RecogerCabeza" />
+    </LabelDeclaration>
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC897_Generar_PointerAny" BlockType="FC">
+        <Parameter Name="TYP" Section="Input" Type="Byte">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>Byte</ConstantType>
+              <ConstantValue>16#10</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="DataTyp" Section="Input" Type="Byte">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>Byte</ConstantType>
+              <ConstantValue>16#02</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="repeatcounter" Section="Input" Type="UDInt">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>UDInt</ConstantType>
+              <ConstantValue>22</ConstantValue>
+            </Constant>
+          </Access>
+          <LineComment>
+            <Text> Tamaño de la cabecera</Text>
+          </LineComment>
+        </Parameter>
+        <Parameter Name="DB_Number" Section="Input" Type="UInt">
+          <Access Scope="GlobalConstant">
+            <Constant Name="JDT2_NDB_RecMensaje" />
+          </Access>
+          <LineComment>
+            <Text> DB donde guardar la cabecera</Text>
+          </LineComment>
+        </Parameter>
+        <Parameter Name="storearea" Section="Input" Type="Byte">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>Byte</ConstantType>
+              <ConstantValue>16#84</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="storeaddresse" Section="Input" Type="DWord">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DWord</ConstantType>
+              <ConstantValue>16#0000_0000</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="Any_Pointer" Section="Output" Type="Any">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="POrigen" />
+            </Symbol>
+          </Access>
+          <LineComment>
+            <Text> Puntero de la cabecera</Text>
+          </LineComment>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="111">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="112">
+    <LineComment>
+      <Text> -----------------------------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="114">
+    <LineComment>
+      <Text> 2º Paso - Mirar si la llegado la cabecera</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="62">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="89">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Req_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="91">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Busy_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="106">
+    <StlToken Text="S" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Req_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="118">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="119">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <Instruction Name="TRCV" Version="4.0">
+        <TemplateValue Name="ptr_type" Type="Type">Variant</TemplateValue>
+        <TemplateValue Name="value_type" Type="Type">UDInt</TemplateValue>
+        <TemplateValue Name="id_type" Type="Type">CONN_OUC</TemplateValue>
+        <TemplateValue Name="card" Type="Cardinality">1</TemplateValue>
+        <Instance Scope="GlobalVariable">
+          <Component Name="DB899_TRCV_JdT_PLC_JDT02" />
+        </Instance>
+        <Parameter Name="EN_R">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB891_VariablesTCP" />
+              <Component Name="TRCV_JdT_PLC_Req_JDT02" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="ID">
+          <Access Scope="TypedConstant">
+            <Constant>
+              <ConstantValue>W#16#3</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="LEN">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>UDInt</ConstantType>
+              <ConstantValue>22</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="ADHOC" />
+        <Parameter Name="NDR">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB891_VariablesTCP" />
+              <Component Name="TRCV_JdT_PLC_Done_JDT02" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="BUSY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB891_VariablesTCP" />
+              <Component Name="TRCV_JdT_PLC_Busy_JDT02" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="ERROR">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB891_VariablesTCP" />
+              <Component Name="TRCV_JdT_PLC_Error_JDT02" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="STATUS">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB891_VariablesTCP" />
+              <Component Name="TRCV_JdT_PLC_Status_JDT02" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="RCVD_LEN">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="RecJdT_Longitud" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="DATA">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="POrigen" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </Instruction>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="88">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="87">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="116">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="138">
+    <LineComment>
+      <Text> -----------------------------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="140">
+    <LineComment>
+      <Text> 3º Paso - Comprobación del mensaje recibido</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="146">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="149">
+    <StlToken Text="A" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Req_JDT02" />
+      </Symbol>
+      <LineComment>
+        <Text> Si llega el Inicio de Mensaje 0x02</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="152">
+    <StlToken Text="A" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Done_JDT02" />
+      </Symbol>
+      <LineComment>
+        <Text> Cabecera ya recogida</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="155">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Error_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="157">
+    <StlToken Text="A_BRACK" />
+  </StlStatement>
+  <StlStatement UId="158">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB702_JDT02RecepMensaje" />
+        <Component Name="Mensaje" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>0</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="160">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>2</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="168">
+    <StlToken Text="EQ_I" />
+  </StlStatement>
+  <StlStatement UId="169">
+    <StlToken Text="BRACKET" />
+  </StlStatement>
+  <StlStatement UId="171">
+    <StlToken Text="S" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="RecJdT_Cabecera" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="191">
+    <StlToken Text="R" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Req_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="148">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="147">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="162">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="163">
+    <LineComment>
+      <Text> -----------------------------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="165">
+    <LineComment>
+      <Text> 4º Paso - Hay que resetear el Enlace</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="86">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="176">
+    <StlToken Text="A" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Req_JDT02" />
+      </Symbol>
+      <LineComment>
+        <Text> Sino llega el Inicio de Mensaje 0x02</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="179">
+    <StlToken Text="A" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Done_JDT02" />
+      </Symbol>
+      <LineComment>
+        <Text> Resetear</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="182">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Error_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="184">
+    <StlToken Text="A_BRACK" />
+  </StlStatement>
+  <StlStatement UId="185">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB702_JDT02RecepMensaje" />
+        <Component Name="Mensaje" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>0</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="187">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>2</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="189">
+    <StlToken Text="NE_I" />
+  </StlStatement>
+  <StlStatement UId="190">
+    <StlToken Text="BRACKET" />
+  </StlStatement>
+  <StlStatement UId="192">
+    <StlToken Text="S" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="RecJdT_Reset" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="194">
+    <StlToken Text="R" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Req_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="196">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="197">
+    <StlToken Text="A" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Req_JDT02" />
+      </Symbol>
+      <LineComment>
+        <Text>Si llega Error en la Recepcio</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="206">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Done_JDT02" />
+      </Symbol>
+      <LineComment>
+        <Text> Resetear</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="209">
+    <StlToken Text="A" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Error_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="211">
+    <StlToken Text="S" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="RecJdT_Reset" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="213">
+    <StlToken Text="R" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Req_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="29">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="32">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="34">
+    <LineComment>
+      <Text>////////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="38">
+    <LineComment>
+      <Text>/ Final (Alonso) 2019 09 19</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="43">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="45">
+    <StlToken Text="A" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="RecJdT_Cabecera" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="49">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="RecogerCuerpo" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="200">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="201">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="Final" />
+      <LineComment>
+        <Text> Finalizar</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="55">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="205">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="2C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="2D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Pasos a seguir:
+- Generar el Punterp para recoger la Cabecera
+- Mirar si ha llegado la cabecera
+- Comprobación del mensaje recibido es correcto
+- Mirar si hay que resetear el Enlace</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="30" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="31" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="32" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="33" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="34" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="35" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="36" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="37" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Recepcion de la Cabeza del Mensaje</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="38" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="39" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="3C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="206">
+    <LineComment>
+      <Text> -----------------------------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="208">
+    <LineComment>
+      <Text> 1º Paso - Conseguir la longitud del cuerpo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="210">
+    <LabelDeclaration>
+      <Label Name="RecogerCuerpo" />
+    </LabelDeclaration>
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC890_EtiqChar_EtiqDInt" BlockType="FC">
+        <Token Text="," />
+        <LineComment>
+          <Text> Conseguir del Mensaje su longitud</Text>
+        </LineComment>
+        <Parameter Name="DB_String" Section="Input" Type="UInt">
+          <Access Scope="GlobalConstant">
+            <Constant Name="JDT2_NDB_RecMensaje" />
+          </Access>
+        </Parameter>
+        <Parameter Name="Long_String" Section="Input" Type="UInt">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>UInt</ConstantType>
+              <ConstantValue>5</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="Offset_Ini" Section="Input" Type="UInt">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>UInt</ConstantType>
+              <ConstantValue>20</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="Valor" Section="Output" Type="UDInt">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Longitud" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="219">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="220">
+    <StlToken Text="L" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="Longitud" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="222">
+    <StlToken Text="T" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="RecJdT_LongitudCuerpo" />
+      </Symbol>
+      <LineComment>
+        <Text> Guardo la longitud del Mensaje</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="225">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="226">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="RecJdT_LongitudCuerpo" />
+      </Symbol>
+      <LineComment>
+        <Text> Calculo la longitud del Cuerpo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="229">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>22</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="231">
+    <StlToken Text="SUB_I" />
+  </StlStatement>
+  <StlStatement UId="232">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="CantidadBytes" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="58">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="234">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="235">
+    <LineComment>
+      <Text> -----------------------------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="237">
+    <LineComment>
+      <Text> 2º Paso - Generar el Puntero para recoger la Cuerpo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="239">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC897_Generar_PointerAny" BlockType="FC">
+        <Parameter Name="TYP" Section="Input" Type="Byte">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>Byte</ConstantType>
+              <ConstantValue>16#10</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="DataTyp" Section="Input" Type="Byte">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>Byte</ConstantType>
+              <ConstantValue>16#02</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="repeatcounter" Section="Input" Type="UDInt">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="CantidadBytes" />
+            </Symbol>
+          </Access>
+          <LineComment>
+            <Text> Tamaño del cuerpo</Text>
+          </LineComment>
+        </Parameter>
+        <Parameter Name="DB_Number" Section="Input" Type="UInt">
+          <Access Scope="GlobalConstant">
+            <Constant Name="JDT2_NDB_RecMensaje" />
+          </Access>
+          <LineComment>
+            <Text> DB donde guardar el cuerpo</Text>
+          </LineComment>
+        </Parameter>
+        <Parameter Name="storearea" Section="Input" Type="Byte">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>Byte</ConstantType>
+              <ConstantValue>16#84</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="storeaddresse" Section="Input" Type="DWord">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DWord</ConstantType>
+              <ConstantValue>16#0000_00B0</ConstantValue>
+            </Constant>
+          </Access>
+          <LineComment>
+            <Text> Adress Byte 22 Bit 0 -&gt; Hex:B0</Text>
+          </LineComment>
+        </Parameter>
+        <Parameter Name="Any_Pointer" Section="Output" Type="Any">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="POrigen" />
+            </Symbol>
+          </Access>
+          <LineComment>
+            <Text> Puntero del cuerpo</Text>
+          </LineComment>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="253">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="254">
+    <LineComment>
+      <Text> -----------------------------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="256">
+    <LineComment>
+      <Text> 2º Paso - Mirar si la llegado el cuerpo</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="258">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="33">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="74">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="69">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Req_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="77">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Busy_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="79">
+    <StlToken Text="S" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Req_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="81">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="82">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <Instruction Name="TRCV" Version="4.0">
+        <TemplateValue Name="ptr_type" Type="Type">Variant</TemplateValue>
+        <TemplateValue Name="value_type" Type="Type">UDInt</TemplateValue>
+        <TemplateValue Name="id_type" Type="Type">CONN_OUC</TemplateValue>
+        <TemplateValue Name="card" Type="Cardinality">1</TemplateValue>
+        <Instance Scope="GlobalVariable">
+          <Component Name="DB899_TRCV_JdT_PLC_JDT02" />
+        </Instance>
+        <Parameter Name="EN_R">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB891_VariablesTCP" />
+              <Component Name="TRCV_JdT_PLC_Req_JDT02" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="ID">
+          <Access Scope="TypedConstant">
+            <Constant>
+              <ConstantValue>W#16#3</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="LEN">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="CantidadBytes" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="ADHOC" />
+        <Parameter Name="NDR">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB891_VariablesTCP" />
+              <Component Name="TRCV_JdT_PLC_Done_JDT02" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="BUSY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB891_VariablesTCP" />
+              <Component Name="TRCV_JdT_PLC_Busy_JDT02" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="ERROR">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB891_VariablesTCP" />
+              <Component Name="TRCV_JdT_PLC_Error_JDT02" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="STATUS">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB891_VariablesTCP" />
+              <Component Name="TRCV_JdT_PLC_Status_JDT02" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="RCVD_LEN">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="RecJdT_Longitud" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="DATA">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="POrigen" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </Instruction>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="67">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="75">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="32">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="279">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="280">
+    <LineComment>
+      <Text> -----------------------------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="282">
+    <LineComment>
+      <Text> 3º Paso - Comprobación del mensaje recibido</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="50">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="101">
+    <StlToken Text="A" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Req_JDT02" />
+      </Symbol>
+      <LineComment>
+        <Text> Comprobar si ha llegado el cuerpo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="104">
+    <StlToken Text="A" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Done_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="106">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Error_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="108">
+    <StlToken Text="S" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="RecJdT_Cuerpo" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="110">
+    <StlToken Text="R" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Req_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="100">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="99">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="296">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="297">
+    <LineComment>
+      <Text> -----------------------------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="299">
+    <LineComment>
+      <Text> 4º Paso - Hay que resetear el Enlace</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="57">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="66">
+    <StlToken Text="A" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Req_JDT02" />
+      </Symbol>
+      <LineComment>
+        <Text>Si llega Error en la Recepcion</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="114">
+    <StlToken Text="AN" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Done_JDT02" />
+      </Symbol>
+      <LineComment>
+        <Text> Resetear</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="117">
+    <StlToken Text="A" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Error_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="119">
+    <StlToken Text="S" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="RecJdT_Reset" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="122">
+    <StlToken Text="R" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB891_VariablesTCP" />
+        <Component Name="TRCV_JdT_PLC_Req_JDT02" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="83">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="38">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="42">
+    <LineComment>
+      <Text>////////////////////////////////////////////////////////////////////////</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="55">
+    <LineComment>
+      <Text>/ Final (Alonso) 2019 09 19</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="65">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="68">
+    <StlToken Text="A" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="RecJdT_Cuerpo" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="78">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="TranferirMensaje" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="315">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="316">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="Final" />
+      <LineComment>
+        <Text> Finalizar</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="319">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="3D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="3E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="40" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Pasos a seguir
+- Conseguir la longitud del cuerpo
+- Generar el puntero para recoger el cuerpo
+- Mirar si ha llegado el cuerpo
+- Comprobación del mensaje recibido es correcto
+- Mirar si hay que resetear el Enlace</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="41" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="42" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="43" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="44" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="45" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="46" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="47" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="48" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Recepcion del Cuerpo del Mensaje</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="49" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="4A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="4B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="4C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="4D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="320">
+    <LabelDeclaration>
+      <Label Name="TranferirMensaje" />
+    </LabelDeclaration>
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+      <LineComment>
+        <Text> Mirar si se puede transferir ya</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="324">
+    <StlToken Text="LAR1_ACCU1" />
+  </StlStatement>
+  <StlStatement UId="325">
+    <StlToken Text="OPEN_DB" />
+    <Access Scope="Address">
+      <Indirect Width="Block" Area="DB">
+        <Access Scope="LocalVariable">
+          <Symbol>
+            <Component Name="DBUltimoRec" />
+          </Symbol>
+        </Access>
+      </Indirect>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="328">
+    <StlToken Text="L" />
+    <Access Scope="Address">
+      <Indirect Width="Byte" Area="DB" Register="AR1" BitOffset="0" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="330">
+    <StlToken Text="L" />
+    <Access Scope="LiteralConstant">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="332">
+    <StlToken Text="NE_I" />
+  </StlStatement>
+  <StlStatement UId="333">
+    <StlToken Text="JC" />
+    <Access Scope="Label">
+      <Label Name="Final" />
+    </Access>
+  </StlStatement>
+  <StlStatement UId="335">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="336">
+    <LineComment>
+      <Text> -----------------------------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="338">
+    <LineComment>
+      <Text> 1º Paso - Calcular los Puntero Origen y Destino</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="340">
+    <StlToken Text="L" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="RecJdT_LongitudCuerpo" />
+      </Symbol>
+      <LineComment>
+        <Text> Calculo la longitud del Cuerpo</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="343">
+    <StlToken Text="T" />
+    <Access Scope="LocalVariable">
+      <Symbol>
+        <Component Name="CantidadBytes" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="345">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="346">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC897_Generar_PointerAny" BlockType="FC">
+        <Parameter Name="TYP" Section="Input" Type="Byte">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>Byte</ConstantType>
+              <ConstantValue>16#10</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="DataTyp" Section="Input" Type="Byte">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>Byte</ConstantType>
+              <ConstantValue>16#02</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="repeatcounter" Section="Input" Type="UDInt">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="CantidadBytes" />
+            </Symbol>
+          </Access>
+          <LineComment>
+            <Text> Tamaño del mensaje</Text>
+          </LineComment>
+        </Parameter>
+        <Parameter Name="DB_Number" Section="Input" Type="UInt">
+          <Access Scope="GlobalConstant">
+            <Constant Name="JDT2_NDB_RecMensaje" />
+          </Access>
+          <LineComment>
+            <Text> DB fuente</Text>
+          </LineComment>
+        </Parameter>
+        <Parameter Name="storearea" Section="Input" Type="Byte">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>Byte</ConstantType>
+              <ConstantValue>16#84</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="storeaddresse" Section="Input" Type="DWord">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DWord</ConstantType>
+              <ConstantValue>16#0000_0000</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="Any_Pointer" Section="Output" Type="Any">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="POrigen" />
+            </Symbol>
+          </Access>
+          <LineComment>
+            <Text> Puntero del UltimoRecibido</Text>
+          </LineComment>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="359">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="360">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC897_Generar_PointerAny" BlockType="FC">
+        <Parameter Name="TYP" Section="Input" Type="Byte">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>Byte</ConstantType>
+              <ConstantValue>16#10</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="DataTyp" Section="Input" Type="Byte">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>Byte</ConstantType>
+              <ConstantValue>16#02</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="repeatcounter" Section="Input" Type="UDInt">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="CantidadBytes" />
+            </Symbol>
+          </Access>
+          <LineComment>
+            <Text> Tamaño del mensaje</Text>
+          </LineComment>
+        </Parameter>
+        <Parameter Name="DB_Number" Section="Input" Type="UInt">
+          <Access Scope="GlobalConstant">
+            <Constant Name="JDT2_NDB_UltimoRec" />
+          </Access>
+          <LineComment>
+            <Text> DB donde guardar el UltimoRecibido</Text>
+          </LineComment>
+        </Parameter>
+        <Parameter Name="storearea" Section="Input" Type="Byte">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>Byte</ConstantType>
+              <ConstantValue>16#84</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="storeaddresse" Section="Input" Type="DWord">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DWord</ConstantType>
+              <ConstantValue>16#0000_0000</ConstantValue>
+            </Constant>
+          </Access>
+        </Parameter>
+        <Parameter Name="Any_Pointer" Section="Output" Type="Any">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="PDestino" />
+            </Symbol>
+          </Access>
+          <LineComment>
+            <Text> Puntero del UltimoRecibido</Text>
+          </LineComment>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="373">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="374">
+    <LineComment>
+      <Text> -----------------------------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="376">
+    <LineComment>
+      <Text> 2º Paso - Transferir</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="378">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <Instruction Name="BLKMOV" Version="1.1">
+        <TemplateValue Name="blk_type" Type="Type">Variant</TemplateValue>
+        <Parameter Name="SRCBLK">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="POrigen" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="RET_VAL">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="ReturnValor" />
+            </Symbol>
+          </Access>
+        </Parameter>
+        <Parameter Name="DSTBLK">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="PDestino" />
+            </Symbol>
+          </Access>
+        </Parameter>
+      </Instruction>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="384">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="385">
+    <LineComment>
+      <Text> -----------------------------------------------------------------------------------------------------</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="387">
+    <LineComment>
+      <Text> 3º Paso - Resetear variables internas</Text>
+    </LineComment>
+    <StlToken Text="COMMENT" />
+  </StlStatement>
+  <StlStatement UId="49">
+    <StlToken Text="SET" />
+  </StlStatement>
+  <StlStatement UId="389">
+    <StlToken Text="R" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="RecJdT_Cabecera" />
+      </Symbol>
+      <LineComment>
+        <Text> Resetear Variables</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="392">
+    <StlToken Text="R" />
+    <Access Scope="GlobalVariable">
+      <Symbol>
+        <Component Name="DB701_JDT02StatusCOM" />
+        <Component Name="RecJdT_Cuerpo" />
+      </Symbol>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="394">
+    <StlToken Text="CALL" />
+    <Access Scope="Call">
+      <CallInfo Name="FC898_BorrarMensaje" BlockType="FC">
+        <Parameter Name="DB_A_RESET" Section="Input" Type="DB_ANY">
+          <Access Scope="GlobalVariable">
+            <Symbol>
+              <Component Name="DB702_JDT02RecepMensaje" />
+            </Symbol>
+          </Access>
+          <LineComment>
+            <Text> ¿Hay que borrarlo todo?</Text>
+          </LineComment>
+        </Parameter>
+      </CallInfo>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="399">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+  <StlStatement UId="400">
+    <StlToken Text="JU" />
+    <Access Scope="Label">
+      <Label Name="Final" />
+      <LineComment>
+        <Text> Finalizar</Text>
+      </LineComment>
+    </Access>
+  </StlStatement>
+  <StlStatement UId="403">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="4F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="50" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="51" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Pasos a sefuir:
+- Calcular los punteros Origen y destino
+- Transferir
+- Resetear las variables internas</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="52" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="53" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="54" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="55" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="56" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="57" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="58" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="59" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Transferencia del Mensaje Recibido por TCP/IP</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="5E" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StatementList xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StatementList/v5">
+  <StlStatement UId="404">
+    <LabelDeclaration>
+      <Label Name="Final" />
+    </LabelDeclaration>
+    <StlToken Text="NOP_0" />
+  </StlStatement>
+  <StlStatement UId="406">
+    <StlToken Text="EMPTY_LINE" />
+  </StlStatement>
+</StatementList></NetworkSource>
+          <ProgrammingLanguage>STL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="5F" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="60" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="61" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="62" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>- Se Acabo la Función</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="63" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="64" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="65" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="66" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="67" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="68" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="69" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>es-ES</Culture>
+                  <Text>Finalizar la funcion</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fr-FR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>it-IT</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ja-JP</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>zh-CN</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="6F" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="70" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="71" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="72" CompositionName="Items">
+            <AttributeList>
+              <Culture>es-ES</Culture>
+              <Text>"RecJdTMensaje" Recepción del Mensaje enviado por TCP/IP</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="73" CompositionName="Items">
+            <AttributeList>
+              <Culture>fr-FR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="74" CompositionName="Items">
+            <AttributeList>
+              <Culture>it-IT</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="75" CompositionName="Items">
+            <AttributeList>
+              <Culture>ja-JP</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="76" CompositionName="Items">
+            <AttributeList>
+              <Culture>zh-CN</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>
