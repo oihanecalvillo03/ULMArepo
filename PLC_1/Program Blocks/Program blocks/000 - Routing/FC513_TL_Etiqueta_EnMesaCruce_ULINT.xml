@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V20" />
   <DocumentInfo>
-    <Created>2025-12-01T14:57:43.8043943Z</Created>
+    <Created>2025-12-01T15:00:32.5500813Z</Created>
     <ExportSetting>None</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -46,27 +46,27 @@
   <Section Name="Input">
     <Member Name="Mesa" Datatype="UInt">
       <Comment>
-        <MultiLanguageText Lang="es-ES">Numero de Mesa CON OFFSET</MultiLanguageText>
+        <MultiLanguageText Lang="es-ES">Numero de Mesa</MultiLanguageText>
       </Comment>
     </Member>
     <Member Name="Mesa_S01" Datatype="UInt">
       <Comment>
-        <MultiLanguageText Lang="es-ES">Mesa de Salida por S01  CON OFFSET</MultiLanguageText>
+        <MultiLanguageText Lang="es-ES">Mesa de Salida por S01</MultiLanguageText>
       </Comment>
     </Member>
     <Member Name="Mesa_S02" Datatype="UInt">
       <Comment>
-        <MultiLanguageText Lang="es-ES">Mesa de Salida por S02  CON OFFSET</MultiLanguageText>
+        <MultiLanguageText Lang="es-ES">Mesa de Salida por S02</MultiLanguageText>
       </Comment>
     </Member>
     <Member Name="Mesa_S03" Datatype="UInt">
       <Comment>
-        <MultiLanguageText Lang="es-ES">Mesa de Salida por S03  CON OFFSET</MultiLanguageText>
+        <MultiLanguageText Lang="es-ES">Mesa de Salida por S03</MultiLanguageText>
       </Comment>
     </Member>
     <Member Name="Mesa_S04" Datatype="UInt">
       <Comment>
-        <MultiLanguageText Lang="es-ES">Mesa de Salida por S04  CON OFFSET</MultiLanguageText>
+        <MultiLanguageText Lang="es-ES">Mesa de Salida por S04</MultiLanguageText>
       </Comment>
     </Member>
     <Member Name="Etiqueta" Datatype="ULInt">
@@ -1288,809 +1288,838 @@
                         <Component Name="Mesa_S01" UId="318" />
                       </Symbol>
                     </Access>
+                    <Blank UId="319" />
+                    <Token Text="+" UId="320" />
+                    <Blank UId="321" />
+                    <Access Scope="GlobalConstant" UId="322">
+                      <Constant Name="CTE_OffsetMesa" UId="323" />
+                    </Access>
                   </Parameter>
-                  <Token Text=")" UId="320" />
+                  <Token Text=")" UId="327" />
                 </Instruction>
               </Access>
-              <Token Text=")" UId="321" />
+              <Token Text=")" UId="328" />
             </Parameter>
-            <Token Text="," UId="322" />
-            <Blank UId="323" />
-            <Parameter Name="L" UId="324">
-              <Blank UId="325" />
-              <Token Text=":=" UId="326" />
-              <Blank UId="327" />
-              <Access Scope="LiteralConstant" UId="328">
-                <Constant UId="329">
-                  <ConstantValue UId="331">1</ConstantValue>
+            <Token Text="," UId="329" />
+            <Blank UId="330" />
+            <Parameter Name="L" UId="331">
+              <Blank UId="332" />
+              <Token Text=":=" UId="333" />
+              <Blank UId="334" />
+              <Access Scope="LiteralConstant" UId="335">
+                <Constant UId="336">
+                  <ConstantValue UId="338">1</ConstantValue>
                 </Constant>
               </Access>
             </Parameter>
-            <Token Text="," UId="332" />
-            <Blank UId="333" />
-            <Parameter Name="P" UId="334">
-              <Blank UId="335" />
-              <Token Text=":=" UId="336" />
-              <Blank UId="337" />
-              <Access Scope="LiteralConstant" UId="338">
-                <Constant UId="339">
-                  <ConstantValue UId="341">1</ConstantValue>
+            <Token Text="," UId="339" />
+            <Blank UId="340" />
+            <Parameter Name="P" UId="341">
+              <Blank UId="342" />
+              <Token Text=":=" UId="343" />
+              <Blank UId="344" />
+              <Access Scope="LiteralConstant" UId="345">
+                <Constant UId="346">
+                  <ConstantValue UId="348">1</ConstantValue>
                 </Constant>
               </Access>
             </Parameter>
-            <Token Text=")" UId="343" />
+            <Token Text=")" UId="350" />
           </Instruction>
         </Access>
       </Parameter>
-      <Token Text=")" UId="345" />
+      <Token Text=")" UId="352" />
     </Instruction>
   </Access>
-  <Token Text=";" UId="346" />
-  <NewLine UId="347" />
-  <Blank Num="4" UId="348" />
-  <Access Scope="LiteralConstant" UId="349">
-    <Constant UId="350">
-      <ConstantValue UId="352">2</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=":" UId="353" />
+  <Token Text=";" UId="353" />
   <NewLine UId="354" />
-  <Blank Num="8" UId="355" />
-  <Access Scope="LocalVariable" UId="356">
-    <Symbol UId="357">
-      <Component Name="string_mesa" UId="358" />
+  <Blank Num="4" UId="355" />
+  <Access Scope="LiteralConstant" UId="356">
+    <Constant UId="357">
+      <ConstantValue UId="359">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=":" UId="360" />
+  <NewLine UId="361" />
+  <Blank Num="8" UId="362" />
+  <Access Scope="LocalVariable" UId="363">
+    <Symbol UId="364">
+      <Component Name="string_mesa" UId="365" />
     </Symbol>
   </Access>
-  <Blank UId="359" />
-  <Token Text=":=" UId="360" />
-  <Blank UId="361" />
-  <Access Scope="Call" UId="362">
-    <Instruction Name="CONCAT" UId="363">
-      <Token Text="(" UId="364" />
-      <Parameter Name="IN1" UId="365">
-        <Blank UId="366" />
-        <Token Text=":=" UId="367" />
-        <Blank UId="368" />
-        <Access Scope="LiteralConstant" UId="369">
-          <Constant UId="370">
-            <ConstantValue UId="372">'[MESA]'</ConstantValue>
+  <Blank UId="366" />
+  <Token Text=":=" UId="367" />
+  <Blank UId="368" />
+  <Access Scope="Call" UId="369">
+    <Instruction Name="CONCAT" UId="370">
+      <Token Text="(" UId="371" />
+      <Parameter Name="IN1" UId="372">
+        <Blank UId="373" />
+        <Token Text=":=" UId="374" />
+        <Blank UId="375" />
+        <Access Scope="LiteralConstant" UId="376">
+          <Constant UId="377">
+            <ConstantValue UId="379">'[MESA]'</ConstantValue>
           </Constant>
         </Access>
       </Parameter>
-      <Token Text="," UId="373" />
-      <Blank UId="374" />
-      <Parameter Name="IN2" UId="375">
-        <Blank UId="376" />
-        <Token Text=":=" UId="377" />
-        <Blank UId="378" />
-        <Access Scope="Call" UId="379">
-          <Instruction Name="DELETE" UId="380">
-            <Token Text="(" UId="381" />
-            <Parameter Name="IN" UId="382">
-              <Blank UId="383" />
-              <Token Text=":=" UId="384" />
-              <Blank UId="385" />
-              <Token Text="(" UId="386" />
-              <Access Scope="Call" UId="387">
-                <Instruction Name="UDINT_TO_STRING" UId="388">
-                  <Token Text="(" UId="389" />
-                  <Parameter Name="IN" UId="390">
-                    <Blank UId="391" />
-                    <Token Text=":=" UId="392" />
-                    <Blank UId="393" />
-                    <Access Scope="LocalVariable" UId="394">
-                      <Symbol UId="395">
-                        <Component Name="Mesa_S02" UId="396" />
+      <Token Text="," UId="380" />
+      <Blank UId="381" />
+      <Parameter Name="IN2" UId="382">
+        <Blank UId="383" />
+        <Token Text=":=" UId="384" />
+        <Blank UId="385" />
+        <Access Scope="Call" UId="386">
+          <Instruction Name="DELETE" UId="387">
+            <Token Text="(" UId="388" />
+            <Parameter Name="IN" UId="389">
+              <Blank UId="390" />
+              <Token Text=":=" UId="391" />
+              <Blank UId="392" />
+              <Token Text="(" UId="393" />
+              <Access Scope="Call" UId="394">
+                <Instruction Name="UDINT_TO_STRING" UId="395">
+                  <Token Text="(" UId="396" />
+                  <Parameter Name="IN" UId="397">
+                    <Blank UId="398" />
+                    <Token Text=":=" UId="399" />
+                    <Blank UId="400" />
+                    <Access Scope="LocalVariable" UId="401">
+                      <Symbol UId="402">
+                        <Component Name="Mesa_S02" UId="403" />
                       </Symbol>
                     </Access>
+                    <Blank UId="404" />
+                    <Token Text="+" UId="405" />
+                    <Blank UId="406" />
+                    <Access Scope="GlobalConstant" UId="407">
+                      <Constant Name="CTE_OffsetMesa" UId="408" />
+                    </Access>
                   </Parameter>
-                  <Token Text=")" UId="398" />
+                  <Token Text=")" UId="412" />
                 </Instruction>
               </Access>
-              <Token Text=")" UId="399" />
+              <Token Text=")" UId="413" />
             </Parameter>
-            <Token Text="," UId="400" />
-            <Blank UId="401" />
-            <Parameter Name="L" UId="402">
-              <Blank UId="403" />
-              <Token Text=":=" UId="404" />
-              <Blank UId="405" />
-              <Access Scope="LiteralConstant" UId="406">
-                <Constant UId="407">
-                  <ConstantValue UId="409">1</ConstantValue>
+            <Token Text="," UId="414" />
+            <Blank UId="415" />
+            <Parameter Name="L" UId="416">
+              <Blank UId="417" />
+              <Token Text=":=" UId="418" />
+              <Blank UId="419" />
+              <Access Scope="LiteralConstant" UId="420">
+                <Constant UId="421">
+                  <ConstantValue UId="423">1</ConstantValue>
                 </Constant>
               </Access>
             </Parameter>
-            <Token Text="," UId="410" />
-            <Blank UId="411" />
-            <Parameter Name="P" UId="412">
-              <Blank UId="413" />
-              <Token Text=":=" UId="414" />
-              <Blank UId="415" />
-              <Access Scope="LiteralConstant" UId="416">
-                <Constant UId="417">
-                  <ConstantValue UId="419">1</ConstantValue>
+            <Token Text="," UId="424" />
+            <Blank UId="425" />
+            <Parameter Name="P" UId="426">
+              <Blank UId="427" />
+              <Token Text=":=" UId="428" />
+              <Blank UId="429" />
+              <Access Scope="LiteralConstant" UId="430">
+                <Constant UId="431">
+                  <ConstantValue UId="433">1</ConstantValue>
                 </Constant>
               </Access>
             </Parameter>
-            <Token Text=")" UId="421" />
+            <Token Text=")" UId="435" />
           </Instruction>
         </Access>
       </Parameter>
-      <Token Text=")" UId="423" />
+      <Token Text=")" UId="437" />
     </Instruction>
   </Access>
-  <Token Text=";" UId="424" />
-  <NewLine UId="425" />
-  <Blank Num="4" UId="426" />
-  <Access Scope="LiteralConstant" UId="427">
-    <Constant UId="428">
-      <ConstantValue UId="430">3</ConstantValue>
+  <Token Text=";" UId="438" />
+  <NewLine UId="439" />
+  <Blank Num="4" UId="440" />
+  <Access Scope="LiteralConstant" UId="441">
+    <Constant UId="442">
+      <ConstantValue UId="444">3</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=":" UId="431" />
-  <NewLine UId="432" />
-  <Blank Num="8" UId="433" />
-  <Access Scope="LocalVariable" UId="434">
-    <Symbol UId="435">
-      <Component Name="string_mesa" UId="436" />
+  <Token Text=":" UId="445" />
+  <NewLine UId="446" />
+  <Blank Num="8" UId="447" />
+  <Access Scope="LocalVariable" UId="448">
+    <Symbol UId="449">
+      <Component Name="string_mesa" UId="450" />
     </Symbol>
   </Access>
-  <Blank UId="437" />
-  <Token Text=":=" UId="438" />
-  <Blank UId="439" />
-  <Access Scope="Call" UId="440">
-    <Instruction Name="CONCAT" UId="441">
-      <Token Text="(" UId="442" />
-      <Parameter Name="IN1" UId="443">
-        <Blank UId="444" />
-        <Token Text=":=" UId="445" />
-        <Blank UId="446" />
-        <Access Scope="LiteralConstant" UId="447">
-          <Constant UId="448">
-            <ConstantValue UId="450">'[MESA]'</ConstantValue>
+  <Blank UId="451" />
+  <Token Text=":=" UId="452" />
+  <Blank UId="453" />
+  <Access Scope="Call" UId="454">
+    <Instruction Name="CONCAT" UId="455">
+      <Token Text="(" UId="456" />
+      <Parameter Name="IN1" UId="457">
+        <Blank UId="458" />
+        <Token Text=":=" UId="459" />
+        <Blank UId="460" />
+        <Access Scope="LiteralConstant" UId="461">
+          <Constant UId="462">
+            <ConstantValue UId="464">'[MESA]'</ConstantValue>
           </Constant>
         </Access>
       </Parameter>
-      <Token Text="," UId="451" />
-      <Blank UId="452" />
-      <Parameter Name="IN2" UId="453">
-        <Blank UId="454" />
-        <Token Text=":=" UId="455" />
-        <Blank UId="456" />
-        <Access Scope="Call" UId="457">
-          <Instruction Name="DELETE" UId="458">
-            <Token Text="(" UId="459" />
-            <Parameter Name="IN" UId="460">
-              <Blank UId="461" />
-              <Token Text=":=" UId="462" />
-              <Blank UId="463" />
-              <Token Text="(" UId="464" />
-              <Access Scope="Call" UId="465">
-                <Instruction Name="UDINT_TO_STRING" UId="466">
-                  <Token Text="(" UId="467" />
-                  <Parameter Name="IN" UId="468">
-                    <Blank UId="469" />
-                    <Token Text=":=" UId="470" />
-                    <Blank UId="471" />
-                    <Access Scope="LocalVariable" UId="472">
-                      <Symbol UId="473">
-                        <Component Name="Mesa_S03" UId="474" />
+      <Token Text="," UId="465" />
+      <Blank UId="466" />
+      <Parameter Name="IN2" UId="467">
+        <Blank UId="468" />
+        <Token Text=":=" UId="469" />
+        <Blank UId="470" />
+        <Access Scope="Call" UId="471">
+          <Instruction Name="DELETE" UId="472">
+            <Token Text="(" UId="473" />
+            <Parameter Name="IN" UId="474">
+              <Blank UId="475" />
+              <Token Text=":=" UId="476" />
+              <Blank UId="477" />
+              <Token Text="(" UId="478" />
+              <Access Scope="Call" UId="479">
+                <Instruction Name="UDINT_TO_STRING" UId="480">
+                  <Token Text="(" UId="481" />
+                  <Parameter Name="IN" UId="482">
+                    <Blank UId="483" />
+                    <Token Text=":=" UId="484" />
+                    <Blank UId="485" />
+                    <Access Scope="LocalVariable" UId="486">
+                      <Symbol UId="487">
+                        <Component Name="Mesa_S03" UId="488" />
                       </Symbol>
                     </Access>
+                    <Blank UId="489" />
+                    <Token Text="+" UId="490" />
+                    <Blank UId="491" />
+                    <Access Scope="GlobalConstant" UId="492">
+                      <Constant Name="CTE_OffsetMesa" UId="493" />
+                    </Access>
                   </Parameter>
-                  <Token Text=")" UId="476" />
+                  <Token Text=")" UId="497" />
                 </Instruction>
               </Access>
-              <Token Text=")" UId="477" />
+              <Token Text=")" UId="498" />
             </Parameter>
-            <Token Text="," UId="478" />
-            <Blank UId="479" />
-            <Parameter Name="L" UId="480">
-              <Blank UId="481" />
-              <Token Text=":=" UId="482" />
-              <Blank UId="483" />
-              <Access Scope="LiteralConstant" UId="484">
-                <Constant UId="485">
-                  <ConstantValue UId="487">1</ConstantValue>
+            <Token Text="," UId="499" />
+            <Blank UId="500" />
+            <Parameter Name="L" UId="501">
+              <Blank UId="502" />
+              <Token Text=":=" UId="503" />
+              <Blank UId="504" />
+              <Access Scope="LiteralConstant" UId="505">
+                <Constant UId="506">
+                  <ConstantValue UId="508">1</ConstantValue>
                 </Constant>
               </Access>
             </Parameter>
-            <Token Text="," UId="488" />
-            <Blank UId="489" />
-            <Parameter Name="P" UId="490">
-              <Blank UId="491" />
-              <Token Text=":=" UId="492" />
-              <Blank UId="493" />
-              <Access Scope="LiteralConstant" UId="494">
-                <Constant UId="495">
-                  <ConstantValue UId="497">1</ConstantValue>
+            <Token Text="," UId="509" />
+            <Blank UId="510" />
+            <Parameter Name="P" UId="511">
+              <Blank UId="512" />
+              <Token Text=":=" UId="513" />
+              <Blank UId="514" />
+              <Access Scope="LiteralConstant" UId="515">
+                <Constant UId="516">
+                  <ConstantValue UId="518">1</ConstantValue>
                 </Constant>
               </Access>
             </Parameter>
-            <Token Text=")" UId="499" />
+            <Token Text=")" UId="520" />
           </Instruction>
         </Access>
       </Parameter>
-      <Token Text=")" UId="501" />
+      <Token Text=")" UId="522" />
     </Instruction>
   </Access>
-  <Token Text=";" UId="502" />
-  <NewLine UId="503" />
-  <Blank Num="4" UId="504" />
-  <Access Scope="LiteralConstant" UId="505">
-    <Constant UId="506">
-      <ConstantValue UId="508">4</ConstantValue>
+  <Token Text=";" UId="523" />
+  <NewLine UId="524" />
+  <Blank Num="4" UId="525" />
+  <Access Scope="LiteralConstant" UId="526">
+    <Constant UId="527">
+      <ConstantValue UId="529">4</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=":" UId="509" />
-  <NewLine UId="510" />
-  <Blank Num="8" UId="511" />
-  <Access Scope="LocalVariable" UId="512">
-    <Symbol UId="513">
-      <Component Name="string_mesa" UId="514" />
+  <Token Text=":" UId="530" />
+  <NewLine UId="531" />
+  <Blank Num="8" UId="532" />
+  <Access Scope="LocalVariable" UId="533">
+    <Symbol UId="534">
+      <Component Name="string_mesa" UId="535" />
     </Symbol>
   </Access>
-  <Blank UId="515" />
-  <Token Text=":=" UId="516" />
-  <Blank UId="517" />
-  <Access Scope="Call" UId="518">
-    <Instruction Name="CONCAT" UId="519">
-      <Token Text="(" UId="520" />
-      <Parameter Name="IN1" UId="521">
-        <Blank UId="522" />
-        <Token Text=":=" UId="523" />
-        <Blank UId="524" />
-        <Access Scope="LiteralConstant" UId="525">
-          <Constant UId="526">
-            <ConstantValue UId="528">'[MESA]'</ConstantValue>
+  <Blank UId="536" />
+  <Token Text=":=" UId="537" />
+  <Blank UId="538" />
+  <Access Scope="Call" UId="539">
+    <Instruction Name="CONCAT" UId="540">
+      <Token Text="(" UId="541" />
+      <Parameter Name="IN1" UId="542">
+        <Blank UId="543" />
+        <Token Text=":=" UId="544" />
+        <Blank UId="545" />
+        <Access Scope="LiteralConstant" UId="546">
+          <Constant UId="547">
+            <ConstantValue UId="549">'[MESA]'</ConstantValue>
           </Constant>
         </Access>
       </Parameter>
-      <Token Text="," UId="529" />
-      <Blank UId="530" />
-      <Parameter Name="IN2" UId="531">
-        <Blank UId="532" />
-        <Token Text=":=" UId="533" />
-        <Blank UId="534" />
-        <Access Scope="Call" UId="535">
-          <Instruction Name="DELETE" UId="536">
-            <Token Text="(" UId="537" />
-            <Parameter Name="IN" UId="538">
-              <Blank UId="539" />
-              <Token Text=":=" UId="540" />
-              <Blank UId="541" />
-              <Token Text="(" UId="542" />
-              <Access Scope="Call" UId="543">
-                <Instruction Name="UDINT_TO_STRING" UId="544">
-                  <Token Text="(" UId="545" />
-                  <Parameter Name="IN" UId="546">
-                    <Blank UId="547" />
-                    <Token Text=":=" UId="548" />
-                    <Blank UId="549" />
-                    <Access Scope="LocalVariable" UId="550">
-                      <Symbol UId="551">
-                        <Component Name="Mesa_S04" UId="552" />
-                      </Symbol>
-                    </Access>
-                  </Parameter>
-                  <Blank UId="553" />
-                  <Token Text=")" UId="555" />
-                </Instruction>
-              </Access>
-              <Token Text=")" UId="556" />
-            </Parameter>
-            <Token Text="," UId="557" />
-            <Blank UId="558" />
-            <Parameter Name="L" UId="559">
+      <Token Text="," UId="550" />
+      <Blank UId="551" />
+      <Parameter Name="IN2" UId="552">
+        <Blank UId="553" />
+        <Token Text=":=" UId="554" />
+        <Blank UId="555" />
+        <Access Scope="Call" UId="556">
+          <Instruction Name="DELETE" UId="557">
+            <Token Text="(" UId="558" />
+            <Parameter Name="IN" UId="559">
               <Blank UId="560" />
               <Token Text=":=" UId="561" />
               <Blank UId="562" />
-              <Access Scope="LiteralConstant" UId="563">
-                <Constant UId="564">
-                  <ConstantValue UId="566">1</ConstantValue>
+              <Token Text="(" UId="563" />
+              <Access Scope="Call" UId="564">
+                <Instruction Name="UDINT_TO_STRING" UId="565">
+                  <Token Text="(" UId="566" />
+                  <Parameter Name="IN" UId="567">
+                    <Blank UId="568" />
+                    <Token Text=":=" UId="569" />
+                    <Blank UId="570" />
+                    <Access Scope="LocalVariable" UId="571">
+                      <Symbol UId="572">
+                        <Component Name="Mesa_S04" UId="573" />
+                      </Symbol>
+                    </Access>
+                    <Blank UId="574" />
+                    <Token Text="+" UId="575" />
+                    <Blank UId="576" />
+                    <Access Scope="GlobalConstant" UId="577">
+                      <Constant Name="CTE_OffsetMesa" UId="578" />
+                    </Access>
+                  </Parameter>
+                  <Token Text=")" UId="582" />
+                </Instruction>
+              </Access>
+              <Token Text=")" UId="583" />
+            </Parameter>
+            <Token Text="," UId="584" />
+            <Blank UId="585" />
+            <Parameter Name="L" UId="586">
+              <Blank UId="587" />
+              <Token Text=":=" UId="588" />
+              <Blank UId="589" />
+              <Access Scope="LiteralConstant" UId="590">
+                <Constant UId="591">
+                  <ConstantValue UId="593">1</ConstantValue>
                 </Constant>
               </Access>
             </Parameter>
-            <Token Text="," UId="567" />
-            <Blank UId="568" />
-            <Parameter Name="P" UId="569">
-              <Blank UId="570" />
-              <Token Text=":=" UId="571" />
-              <Blank UId="572" />
-              <Access Scope="LiteralConstant" UId="573">
-                <Constant UId="574">
-                  <ConstantValue UId="576">1</ConstantValue>
+            <Token Text="," UId="594" />
+            <Blank UId="595" />
+            <Parameter Name="P" UId="596">
+              <Blank UId="597" />
+              <Token Text=":=" UId="598" />
+              <Blank UId="599" />
+              <Access Scope="LiteralConstant" UId="600">
+                <Constant UId="601">
+                  <ConstantValue UId="603">1</ConstantValue>
                 </Constant>
               </Access>
             </Parameter>
-            <Token Text=")" UId="578" />
+            <Token Text=")" UId="605" />
           </Instruction>
         </Access>
       </Parameter>
-      <Token Text=")" UId="580" />
+      <Token Text=")" UId="607" />
     </Instruction>
   </Access>
-  <Token Text=";" UId="581" />
-  <NewLine UId="582" />
-  <Blank Num="8" UId="583" />
-  <NewLine UId="584" />
-  <Blank Num="4" UId="585" />
-  <Token Text="ELSE" UId="586" />
-  <Blank Num="2" UId="587" />
-  <LineComment UId="588">
-    <Text UId="589"> Statement section ELSE</Text>
+  <Token Text=";" UId="608" />
+  <NewLine UId="609" />
+  <Blank Num="8" UId="610" />
+  <NewLine UId="611" />
+  <Blank Num="4" UId="612" />
+  <Token Text="ELSE" UId="613" />
+  <Blank Num="2" UId="614" />
+  <LineComment UId="615">
+    <Text UId="616"> Statement section ELSE</Text>
   </LineComment>
-  <NewLine UId="590" />
-  <Blank Num="8" UId="591" />
-  <Access Scope="LocalVariable" UId="592">
-    <Symbol UId="593">
-      <Component Name="string_mesa" UId="594" />
+  <NewLine UId="617" />
+  <Blank Num="8" UId="618" />
+  <Access Scope="LocalVariable" UId="619">
+    <Symbol UId="620">
+      <Component Name="string_mesa" UId="621" />
     </Symbol>
   </Access>
-  <Blank UId="595" />
-  <Token Text=":=" UId="596" />
-  <Blank UId="597" />
-  <Access Scope="Call" UId="598">
-    <Instruction Name="CONCAT" UId="599">
-      <Token Text="(" UId="600" />
-      <Parameter Name="IN1" UId="601">
-        <Blank UId="602" />
-        <Token Text=":=" UId="603" />
-        <Blank UId="604" />
-        <Access Scope="LiteralConstant" UId="605">
-          <Constant UId="606">
-            <ConstantValue UId="608">'[MESA]'</ConstantValue>
+  <Blank UId="622" />
+  <Token Text=":=" UId="623" />
+  <Blank UId="624" />
+  <Access Scope="Call" UId="625">
+    <Instruction Name="CONCAT" UId="626">
+      <Token Text="(" UId="627" />
+      <Parameter Name="IN1" UId="628">
+        <Blank UId="629" />
+        <Token Text=":=" UId="630" />
+        <Blank UId="631" />
+        <Access Scope="LiteralConstant" UId="632">
+          <Constant UId="633">
+            <ConstantValue UId="635">'[MESA]'</ConstantValue>
           </Constant>
         </Access>
       </Parameter>
-      <Token Text="," UId="609" />
-      <Blank UId="610" />
-      <Parameter Name="IN2" UId="611">
-        <Blank UId="612" />
-        <Token Text=":=" UId="613" />
-        <Blank UId="614" />
-        <Access Scope="Call" UId="615">
-          <Instruction Name="DELETE" UId="616">
-            <Token Text="(" UId="617" />
-            <Parameter Name="IN" UId="618">
-              <Blank UId="619" />
-              <Token Text=":=" UId="620" />
-              <Blank UId="621" />
-              <Token Text="(" UId="622" />
-              <Access Scope="Call" UId="623">
-                <Instruction Name="UDINT_TO_STRING" UId="624">
-                  <Token Text="(" UId="625" />
-                  <Parameter Name="IN" UId="626">
-                    <Blank UId="627" />
-                    <Token Text=":=" UId="628" />
-                    <Blank UId="629" />
-                    <Access Scope="LocalVariable" UId="630">
-                      <Symbol UId="631">
-                        <Component Name="Mesa" UId="632" />
+      <Token Text="," UId="636" />
+      <Blank UId="637" />
+      <Parameter Name="IN2" UId="638">
+        <Blank UId="639" />
+        <Token Text=":=" UId="640" />
+        <Blank UId="641" />
+        <Access Scope="Call" UId="642">
+          <Instruction Name="DELETE" UId="643">
+            <Token Text="(" UId="644" />
+            <Parameter Name="IN" UId="645">
+              <Blank UId="646" />
+              <Token Text=":=" UId="647" />
+              <Blank UId="648" />
+              <Token Text="(" UId="649" />
+              <Access Scope="Call" UId="650">
+                <Instruction Name="UDINT_TO_STRING" UId="651">
+                  <Token Text="(" UId="652" />
+                  <Parameter Name="IN" UId="653">
+                    <Blank UId="654" />
+                    <Token Text=":=" UId="655" />
+                    <Blank UId="656" />
+                    <Access Scope="LocalVariable" UId="657">
+                      <Symbol UId="658">
+                        <Component Name="Mesa" UId="659" />
                       </Symbol>
                     </Access>
+                    <Blank UId="660" />
+                    <Token Text="+" UId="661" />
+                    <Blank UId="662" />
+                    <Access Scope="GlobalConstant" UId="663">
+                      <Constant Name="CTE_OffsetMesa" UId="664" />
+                    </Access>
                   </Parameter>
-                  <Token Text=")" UId="634" />
+                  <Token Text=")" UId="668" />
                 </Instruction>
               </Access>
-              <Token Text=")" UId="635" />
+              <Token Text=")" UId="669" />
             </Parameter>
-            <Token Text="," UId="636" />
-            <Blank UId="637" />
-            <Parameter Name="L" UId="638">
-              <Blank UId="639" />
-              <Token Text=":=" UId="640" />
-              <Blank UId="641" />
-              <Access Scope="LiteralConstant" UId="642">
-                <Constant UId="643">
-                  <ConstantValue UId="645">1</ConstantValue>
+            <Token Text="," UId="670" />
+            <Blank UId="671" />
+            <Parameter Name="L" UId="672">
+              <Blank UId="673" />
+              <Token Text=":=" UId="674" />
+              <Blank UId="675" />
+              <Access Scope="LiteralConstant" UId="676">
+                <Constant UId="677">
+                  <ConstantValue UId="679">1</ConstantValue>
                 </Constant>
               </Access>
             </Parameter>
-            <Token Text="," UId="646" />
-            <Blank UId="647" />
-            <Parameter Name="P" UId="648">
-              <Blank UId="649" />
-              <Token Text=":=" UId="650" />
-              <Blank UId="651" />
-              <Access Scope="LiteralConstant" UId="652">
-                <Constant UId="653">
-                  <ConstantValue UId="655">1</ConstantValue>
-                </Constant>
-              </Access>
-            </Parameter>
-            <Token Text=")" UId="657" />
-          </Instruction>
-        </Access>
-      </Parameter>
-      <Token Text=")" UId="659" />
-    </Instruction>
-  </Access>
-  <Token Text=";" UId="660" />
-  <NewLine UId="661" />
-  <Blank Num="9" UId="662" />
-  <NewLine UId="663" />
-  <Token Text="END_CASE" UId="664" />
-  <Token Text=";" UId="665" />
-  <NewLine Num="2" UId="666" />
-  <Access Scope="LocalVariable" UId="667">
-    <Symbol UId="668">
-      <Component Name="codigo_string" UId="669" />
-    </Symbol>
-  </Access>
-  <Blank UId="670" />
-  <Token Text=":=" UId="671" />
-  <Blank UId="672" />
-  <Access Scope="Call" UId="673">
-    <Instruction Name="DELETE" UId="674">
-      <Token Text="(" UId="675" />
-      <Parameter Name="IN" UId="676">
-        <Blank UId="677" />
-        <Token Text=":=" UId="678" />
-        <Blank UId="679" />
-        <Token Text="(" UId="680" />
-        <Access Scope="Call" UId="681">
-          <Instruction Name="ULINT_TO_STRING" UId="682">
-            <Token Text="(" UId="683" />
-            <Parameter Name="IN" UId="684">
+            <Token Text="," UId="680" />
+            <Blank UId="681" />
+            <Parameter Name="P" UId="682">
+              <Blank UId="683" />
+              <Token Text=":=" UId="684" />
               <Blank UId="685" />
-              <Token Text=":=" UId="686" />
-              <Access Scope="LocalVariable" UId="687">
-                <Symbol UId="688">
-                  <Component Name="Etiqueta" UId="689" />
-                </Symbol>
+              <Access Scope="LiteralConstant" UId="686">
+                <Constant UId="687">
+                  <ConstantValue UId="689">1</ConstantValue>
+                </Constant>
               </Access>
             </Parameter>
             <Token Text=")" UId="691" />
           </Instruction>
         </Access>
-        <Token Text=")" UId="692" />
       </Parameter>
-      <Token Text="," UId="693" />
-      <Blank UId="694" />
-      <Parameter Name="L" UId="695">
-        <Blank UId="696" />
-        <Token Text=":=" UId="697" />
-        <Blank UId="698" />
-        <Access Scope="LiteralConstant" UId="699">
-          <Constant UId="700">
-            <ConstantValue UId="702">1</ConstantValue>
-          </Constant>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="703" />
-      <Blank UId="704" />
-      <Parameter Name="P" UId="705">
-        <Blank UId="706" />
-        <Token Text=":=" UId="707" />
-        <Blank UId="708" />
-        <Access Scope="LiteralConstant" UId="709">
-          <Constant UId="710">
-            <ConstantValue UId="712">1</ConstantValue>
-          </Constant>
-        </Access>
-      </Parameter>
-      <Token Text=")" UId="714" />
+      <Token Text=")" UId="693" />
     </Instruction>
   </Access>
-  <Token Text=";" UId="715" />
-  <NewLine Num="3" UId="716" />
-  <Token Text="IF" UId="717" />
-  <Blank UId="718" />
-  <Access Scope="LocalVariable" UId="719">
-    <Symbol UId="720">
-      <Component Name="MesaDeJDT02" UId="721" />
+  <Token Text=";" UId="694" />
+  <NewLine UId="695" />
+  <Blank Num="9" UId="696" />
+  <NewLine UId="697" />
+  <Token Text="END_CASE" UId="698" />
+  <Token Text=";" UId="699" />
+  <NewLine Num="2" UId="700" />
+  <Access Scope="LocalVariable" UId="701">
+    <Symbol UId="702">
+      <Component Name="codigo_string" UId="703" />
     </Symbol>
   </Access>
-  <Blank UId="722" />
-  <Token Text="=" UId="723" />
-  <Blank UId="724" />
-  <Access Scope="LiteralConstant" UId="725">
-    <Constant UId="726">
-      <ConstantValue UId="728">true</ConstantValue>
+  <Blank UId="704" />
+  <Token Text=":=" UId="705" />
+  <Blank UId="706" />
+  <Access Scope="Call" UId="707">
+    <Instruction Name="DELETE" UId="708">
+      <Token Text="(" UId="709" />
+      <Parameter Name="IN" UId="710">
+        <Blank UId="711" />
+        <Token Text=":=" UId="712" />
+        <Blank UId="713" />
+        <Token Text="(" UId="714" />
+        <Access Scope="Call" UId="715">
+          <Instruction Name="ULINT_TO_STRING" UId="716">
+            <Token Text="(" UId="717" />
+            <Parameter Name="IN" UId="718">
+              <Blank UId="719" />
+              <Token Text=":=" UId="720" />
+              <Access Scope="LocalVariable" UId="721">
+                <Symbol UId="722">
+                  <Component Name="Etiqueta" UId="723" />
+                </Symbol>
+              </Access>
+            </Parameter>
+            <Token Text=")" UId="725" />
+          </Instruction>
+        </Access>
+        <Token Text=")" UId="726" />
+      </Parameter>
+      <Token Text="," UId="727" />
+      <Blank UId="728" />
+      <Parameter Name="L" UId="729">
+        <Blank UId="730" />
+        <Token Text=":=" UId="731" />
+        <Blank UId="732" />
+        <Access Scope="LiteralConstant" UId="733">
+          <Constant UId="734">
+            <ConstantValue UId="736">1</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="737" />
+      <Blank UId="738" />
+      <Parameter Name="P" UId="739">
+        <Blank UId="740" />
+        <Token Text=":=" UId="741" />
+        <Blank UId="742" />
+        <Access Scope="LiteralConstant" UId="743">
+          <Constant UId="744">
+            <ConstantValue UId="746">1</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="748" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="749" />
+  <NewLine Num="3" UId="750" />
+  <Token Text="IF" UId="751" />
+  <Blank UId="752" />
+  <Access Scope="LocalVariable" UId="753">
+    <Symbol UId="754">
+      <Component Name="MesaDeJDT02" UId="755" />
+    </Symbol>
+  </Access>
+  <Blank UId="756" />
+  <Token Text="=" UId="757" />
+  <Blank UId="758" />
+  <Access Scope="LiteralConstant" UId="759">
+    <Constant UId="760">
+      <ConstantValue UId="762">true</ConstantValue>
     </Constant>
   </Access>
-  <Blank UId="729" />
-  <Token Text="THEN" UId="730" />
-  <NewLine UId="731" />
-  <Blank Num="4" UId="732" />
-  <NewLine UId="733" />
-  <Blank Num="4" UId="734" />
-  <Access Scope="GlobalVariable" UId="735">
-    <Symbol UId="736">
-      <Component Name="DB197_eventos_generados_routing_JDT2" UId="737">
-        <BooleanAttribute Name="HasQuotes" UId="738">true</BooleanAttribute>
+  <Blank UId="763" />
+  <Token Text="THEN" UId="764" />
+  <NewLine UId="765" />
+  <Blank Num="4" UId="766" />
+  <NewLine UId="767" />
+  <Blank Num="4" UId="768" />
+  <Access Scope="GlobalVariable" UId="769">
+    <Symbol UId="770">
+      <Component Name="DB197_eventos_generados_routing_JDT2" UId="771">
+        <BooleanAttribute Name="HasQuotes" UId="772">true</BooleanAttribute>
       </Component>
-      <Token Text="." UId="739" />
-      <Component Name="evento" UId="740">
-        <Token Text="[" UId="741" />
-        <Access Scope="LocalVariable" UId="742">
-          <Symbol UId="743">
-            <Component Name="Posicion" UId="744" />
+      <Token Text="." UId="773" />
+      <Component Name="evento" UId="774">
+        <Token Text="[" UId="775" />
+        <Access Scope="LocalVariable" UId="776">
+          <Symbol UId="777">
+            <Component Name="Posicion" UId="778" />
           </Symbol>
         </Access>
-        <Token Text="]" UId="745" />
+        <Token Text="]" UId="779" />
       </Component>
     </Symbol>
   </Access>
-  <Blank UId="746" />
-  <Token Text=":=" UId="747" />
-  <Blank UId="748" />
-  <Access Scope="Call" UId="749">
-    <Instruction Name="CONCAT" UId="750">
-      <Token Text="(" UId="751" />
-      <Parameter Name="IN1" UId="752">
-        <Blank UId="753" />
-        <Token Text=":=" UId="754" />
-        <Blank UId="755" />
-        <Access Scope="LiteralConstant" UId="756">
-          <Constant UId="757">
-            <ConstantValue UId="759">'{PRES'</ConstantValue>
+  <Blank UId="780" />
+  <Token Text=":=" UId="781" />
+  <Blank UId="782" />
+  <Access Scope="Call" UId="783">
+    <Instruction Name="CONCAT" UId="784">
+      <Token Text="(" UId="785" />
+      <Parameter Name="IN1" UId="786">
+        <Blank UId="787" />
+        <Token Text=":=" UId="788" />
+        <Blank UId="789" />
+        <Access Scope="LiteralConstant" UId="790">
+          <Constant UId="791">
+            <ConstantValue UId="793">'{PRES'</ConstantValue>
           </Constant>
         </Access>
       </Parameter>
-      <Token Text="," UId="760" />
-      <Blank UId="761" />
-      <Parameter Name="IN2" UId="762">
-        <Blank UId="763" />
-        <Token Text=":=" UId="764" />
-        <Blank UId="765" />
-        <Access Scope="LocalVariable" UId="766">
-          <Symbol UId="767">
-            <Component Name="string_mesa" UId="768" />
+      <Token Text="," UId="794" />
+      <Blank UId="795" />
+      <Parameter Name="IN2" UId="796">
+        <Blank UId="797" />
+        <Token Text=":=" UId="798" />
+        <Blank UId="799" />
+        <Access Scope="LocalVariable" UId="800">
+          <Symbol UId="801">
+            <Component Name="string_mesa" UId="802" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="769" />
-      <Blank UId="770" />
-      <Parameter Name="IN3" UId="771">
-        <Blank UId="772" />
-        <Token Text=":=" UId="773" />
-        <Blank UId="774" />
-        <Access Scope="LiteralConstant" UId="775">
-          <Constant UId="776">
-            <ConstantValue UId="778">'[SSCC]'</ConstantValue>
+      <Token Text="," UId="803" />
+      <Blank UId="804" />
+      <Parameter Name="IN3" UId="805">
+        <Blank UId="806" />
+        <Token Text=":=" UId="807" />
+        <Blank UId="808" />
+        <Access Scope="LiteralConstant" UId="809">
+          <Constant UId="810">
+            <ConstantValue UId="812">'[SSCC]'</ConstantValue>
           </Constant>
         </Access>
       </Parameter>
-      <Token Text="," UId="779" />
-      <Blank UId="780" />
-      <Parameter Name="IN4" UId="781">
-        <Blank UId="782" />
-        <Token Text=":=" UId="783" />
-        <Blank UId="784" />
-        <Access Scope="LocalVariable" UId="785">
-          <Symbol UId="786">
-            <Component Name="codigo_string" UId="787" />
+      <Token Text="," UId="813" />
+      <Blank UId="814" />
+      <Parameter Name="IN4" UId="815">
+        <Blank UId="816" />
+        <Token Text=":=" UId="817" />
+        <Blank UId="818" />
+        <Access Scope="LocalVariable" UId="819">
+          <Symbol UId="820">
+            <Component Name="codigo_string" UId="821" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="788" />
-      <Blank UId="789" />
-      <Parameter Name="IN5" UId="790">
-        <Blank UId="791" />
-        <Token Text=":=" UId="792" />
-        <Blank UId="793" />
-        <Access Scope="LocalVariable" UId="794">
-          <Symbol UId="795">
-            <Component Name="string_motivo" UId="796" />
+      <Token Text="," UId="822" />
+      <Blank UId="823" />
+      <Parameter Name="IN5" UId="824">
+        <Blank UId="825" />
+        <Token Text=":=" UId="826" />
+        <Blank UId="827" />
+        <Access Scope="LocalVariable" UId="828">
+          <Symbol UId="829">
+            <Component Name="string_motivo" UId="830" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="797" />
-      <Blank UId="798" />
-      <Parameter Name="IN6" UId="799">
-        <Blank UId="800" />
-        <Token Text=":=" UId="801" />
-        <Blank UId="802" />
-        <Access Scope="GlobalVariable" UId="803">
-          <Symbol UId="804">
-            <Component Name="DB921_DATOS_FECHA_HORA" UId="805">
-              <BooleanAttribute Name="HasQuotes" UId="806">true</BooleanAttribute>
+      <Token Text="," UId="831" />
+      <Blank UId="832" />
+      <Parameter Name="IN6" UId="833">
+        <Blank UId="834" />
+        <Token Text=":=" UId="835" />
+        <Blank UId="836" />
+        <Access Scope="GlobalVariable" UId="837">
+          <Symbol UId="838">
+            <Component Name="DB921_DATOS_FECHA_HORA" UId="839">
+              <BooleanAttribute Name="HasQuotes" UId="840">true</BooleanAttribute>
             </Component>
-            <Token Text="." UId="807" />
-            <Component Name="TIME_STAMP" UId="808" />
+            <Token Text="." UId="841" />
+            <Component Name="TIME_STAMP" UId="842" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="809" />
-      <Blank UId="810" />
-      <Parameter Name="IN7" UId="811">
-        <Token Text=":=" UId="812" />
-        <Access Scope="LiteralConstant" UId="813">
-          <Constant UId="814">
-            <ConstantValue UId="816">'}'</ConstantValue>
-          </Constant>
-        </Access>
-      </Parameter>
-      <Token Text=")" UId="818" />
-    </Instruction>
-  </Access>
-  <Token Text=";" UId="819" />
-  <NewLine UId="820" />
-  <Blank Num="4" UId="821" />
-  <NewLine UId="822" />
-  <Token Text="ELSE" UId="823" />
-  <NewLine UId="824" />
-  <Blank Num="4" UId="825" />
-  <Access Scope="GlobalVariable" UId="826">
-    <Symbol UId="827">
-      <Component Name="DB198_eventos_generados_routing_JDT1" UId="828">
-        <BooleanAttribute Name="HasQuotes" UId="829">true</BooleanAttribute>
-      </Component>
-      <Token Text="." UId="830" />
-      <Component Name="evento" UId="831">
-        <Token Text="[" UId="832" />
-        <Access Scope="LocalVariable" UId="833">
-          <Symbol UId="834">
-            <Component Name="Posicion" UId="835" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="836" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank UId="837" />
-  <Token Text=":=" UId="838" />
-  <Blank UId="839" />
-  <Access Scope="Call" UId="840">
-    <Instruction Name="CONCAT" UId="841">
-      <Token Text="(" UId="842" />
-      <Parameter Name="IN1" UId="843">
-        <Blank UId="844" />
-        <Token Text=":=" UId="845" />
-        <Blank UId="846" />
+      <Token Text="," UId="843" />
+      <Blank UId="844" />
+      <Parameter Name="IN7" UId="845">
+        <Token Text=":=" UId="846" />
         <Access Scope="LiteralConstant" UId="847">
           <Constant UId="848">
-            <ConstantValue UId="850">'{PRES'</ConstantValue>
+            <ConstantValue UId="850">'}'</ConstantValue>
           </Constant>
         </Access>
       </Parameter>
-      <Token Text="," UId="851" />
-      <Blank UId="852" />
-      <Parameter Name="IN2" UId="853">
-        <Blank UId="854" />
-        <Token Text=":=" UId="855" />
-        <Blank UId="856" />
-        <Access Scope="LocalVariable" UId="857">
-          <Symbol UId="858">
-            <Component Name="string_mesa" UId="859" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="860" />
-      <Blank UId="861" />
-      <Parameter Name="IN3" UId="862">
-        <Blank UId="863" />
-        <Token Text=":=" UId="864" />
-        <Blank UId="865" />
-        <Access Scope="LiteralConstant" UId="866">
-          <Constant UId="867">
-            <ConstantValue UId="869">'[SSCC]'</ConstantValue>
-          </Constant>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="870" />
-      <Blank UId="871" />
-      <Parameter Name="IN4" UId="872">
-        <Blank UId="873" />
-        <Token Text=":=" UId="874" />
-        <Blank UId="875" />
-        <Access Scope="LocalVariable" UId="876">
-          <Symbol UId="877">
-            <Component Name="codigo_string" UId="878" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="879" />
-      <Blank UId="880" />
-      <Parameter Name="IN5" UId="881">
-        <Blank UId="882" />
-        <Token Text=":=" UId="883" />
-        <Blank UId="884" />
-        <Access Scope="LocalVariable" UId="885">
-          <Symbol UId="886">
-            <Component Name="string_motivo" UId="887" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="888" />
-      <Blank UId="889" />
-      <Parameter Name="IN6" UId="890">
-        <Blank UId="891" />
-        <Token Text=":=" UId="892" />
-        <Blank UId="893" />
-        <Access Scope="GlobalVariable" UId="894">
-          <Symbol UId="895">
-            <Component Name="DB921_DATOS_FECHA_HORA" UId="896">
-              <BooleanAttribute Name="HasQuotes" UId="897">true</BooleanAttribute>
-            </Component>
-            <Token Text="." UId="898" />
-            <Component Name="TIME_STAMP" UId="899" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="900" />
-      <Blank UId="901" />
-      <Parameter Name="IN7" UId="902">
-        <Token Text=":=" UId="903" />
-        <Access Scope="LiteralConstant" UId="904">
-          <Constant UId="905">
-            <ConstantValue UId="907">'}'</ConstantValue>
-          </Constant>
-        </Access>
-      </Parameter>
-      <Token Text=")" UId="909" />
+      <Token Text=")" UId="852" />
     </Instruction>
   </Access>
-  <Token Text=";" UId="910" />
-  <NewLine UId="911" />
-  <Blank Num="4" UId="912" />
-  <NewLine UId="913" />
-  <Token Text="END_IF" UId="914" />
-  <Token Text=";" UId="915" />
-  <NewLine Num="2" UId="916" />
-  <Access Scope="GlobalVariable" UId="917">
-    <Symbol UId="918">
-      <Component Name="DB841_Recepcion" UId="919">
-        <BooleanAttribute Name="HasQuotes" UId="920">true</BooleanAttribute>
+  <Token Text=";" UId="853" />
+  <NewLine UId="854" />
+  <Blank Num="4" UId="855" />
+  <NewLine UId="856" />
+  <Token Text="ELSE" UId="857" />
+  <NewLine UId="858" />
+  <Blank Num="4" UId="859" />
+  <Access Scope="GlobalVariable" UId="860">
+    <Symbol UId="861">
+      <Component Name="DB198_eventos_generados_routing_JDT1" UId="862">
+        <BooleanAttribute Name="HasQuotes" UId="863">true</BooleanAttribute>
       </Component>
-      <Token Text="." UId="921" />
-      <Component Name="Mesa" UId="922">
-        <Token Text="[" UId="923" />
-        <Access Scope="LocalVariable" UId="924">
-          <Symbol UId="925">
-            <Component Name="Mesa" UId="926" />
+      <Token Text="." UId="864" />
+      <Component Name="evento" UId="865">
+        <Token Text="[" UId="866" />
+        <Access Scope="LocalVariable" UId="867">
+          <Symbol UId="868">
+            <Component Name="Posicion" UId="869" />
           </Symbol>
         </Access>
-        <Token Text="]" UId="927" />
+        <Token Text="]" UId="870" />
       </Component>
-      <Token Text="." UId="928" />
-      <Component Name="Protocolo" UId="929" />
-      <Token Text="." UId="930" />
-      <Component Name="EmiOK" UId="931" />
     </Symbol>
   </Access>
-  <Blank UId="932" />
-  <Token Text=":=" UId="933" />
-  <Blank UId="934" />
-  <Access Scope="LiteralConstant" UId="935">
-    <Constant UId="936">
-      <ConstantValue UId="938">TRUE</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="939" />
-  <NewLine UId="940" />
-  <Access Scope="GlobalVariable" UId="941">
-    <Symbol UId="942">
-      <Component Name="DB810_ColasMesas" UId="943">
-        <BooleanAttribute Name="HasQuotes" UId="944">true</BooleanAttribute>
-      </Component>
-      <Token Text="." UId="945" />
-      <Component Name="Colas" UId="946">
-        <Token Text="[" UId="947" />
-        <Access Scope="LocalVariable" UId="948">
-          <Symbol UId="949">
-            <Component Name="Mesa" UId="950" />
+  <Blank UId="871" />
+  <Token Text=":=" UId="872" />
+  <Blank UId="873" />
+  <Access Scope="Call" UId="874">
+    <Instruction Name="CONCAT" UId="875">
+      <Token Text="(" UId="876" />
+      <Parameter Name="IN1" UId="877">
+        <Blank UId="878" />
+        <Token Text=":=" UId="879" />
+        <Blank UId="880" />
+        <Access Scope="LiteralConstant" UId="881">
+          <Constant UId="882">
+            <ConstantValue UId="884">'{PRES'</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="885" />
+      <Blank UId="886" />
+      <Parameter Name="IN2" UId="887">
+        <Blank UId="888" />
+        <Token Text=":=" UId="889" />
+        <Blank UId="890" />
+        <Access Scope="LocalVariable" UId="891">
+          <Symbol UId="892">
+            <Component Name="string_mesa" UId="893" />
           </Symbol>
         </Access>
-        <Token Text="]" UId="951" />
+      </Parameter>
+      <Token Text="," UId="894" />
+      <Blank UId="895" />
+      <Parameter Name="IN3" UId="896">
+        <Blank UId="897" />
+        <Token Text=":=" UId="898" />
+        <Blank UId="899" />
+        <Access Scope="LiteralConstant" UId="900">
+          <Constant UId="901">
+            <ConstantValue UId="903">'[SSCC]'</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="904" />
+      <Blank UId="905" />
+      <Parameter Name="IN4" UId="906">
+        <Blank UId="907" />
+        <Token Text=":=" UId="908" />
+        <Blank UId="909" />
+        <Access Scope="LocalVariable" UId="910">
+          <Symbol UId="911">
+            <Component Name="codigo_string" UId="912" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="913" />
+      <Blank UId="914" />
+      <Parameter Name="IN5" UId="915">
+        <Blank UId="916" />
+        <Token Text=":=" UId="917" />
+        <Blank UId="918" />
+        <Access Scope="LocalVariable" UId="919">
+          <Symbol UId="920">
+            <Component Name="string_motivo" UId="921" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="922" />
+      <Blank UId="923" />
+      <Parameter Name="IN6" UId="924">
+        <Blank UId="925" />
+        <Token Text=":=" UId="926" />
+        <Blank UId="927" />
+        <Access Scope="GlobalVariable" UId="928">
+          <Symbol UId="929">
+            <Component Name="DB921_DATOS_FECHA_HORA" UId="930">
+              <BooleanAttribute Name="HasQuotes" UId="931">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="932" />
+            <Component Name="TIME_STAMP" UId="933" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="934" />
+      <Blank UId="935" />
+      <Parameter Name="IN7" UId="936">
+        <Token Text=":=" UId="937" />
+        <Access Scope="LiteralConstant" UId="938">
+          <Constant UId="939">
+            <ConstantValue UId="941">'}'</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="943" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="944" />
+  <NewLine UId="945" />
+  <Blank Num="4" UId="946" />
+  <NewLine UId="947" />
+  <Token Text="END_IF" UId="948" />
+  <Token Text=";" UId="949" />
+  <NewLine Num="2" UId="950" />
+  <Access Scope="GlobalVariable" UId="951">
+    <Symbol UId="952">
+      <Component Name="DB841_Recepcion" UId="953">
+        <BooleanAttribute Name="HasQuotes" UId="954">true</BooleanAttribute>
       </Component>
-      <Token Text="." UId="952" />
-      <Component Name="EstadoPresenciaMesa" UId="953" />
+      <Token Text="." UId="955" />
+      <Component Name="Mesa" UId="956">
+        <Token Text="[" UId="957" />
+        <Access Scope="LocalVariable" UId="958">
+          <Symbol UId="959">
+            <Component Name="Mesa" UId="960" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="961" />
+      </Component>
+      <Token Text="." UId="962" />
+      <Component Name="Protocolo" UId="963" />
+      <Token Text="." UId="964" />
+      <Component Name="EmiOK" UId="965" />
     </Symbol>
   </Access>
-  <Blank UId="954" />
-  <Token Text=":=" UId="955" />
-  <Blank UId="956" />
-  <Access Scope="LiteralConstant" UId="957">
-    <Constant UId="958">
-      <ConstantValue UId="960">1</ConstantValue>
+  <Blank UId="966" />
+  <Token Text=":=" UId="967" />
+  <Blank UId="968" />
+  <Access Scope="LiteralConstant" UId="969">
+    <Constant UId="970">
+      <ConstantValue UId="972">TRUE</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="961" />
-  <NewLine UId="962" />
+  <Token Text=";" UId="973" />
+  <NewLine UId="974" />
+  <Access Scope="GlobalVariable" UId="975">
+    <Symbol UId="976">
+      <Component Name="DB810_ColasMesas" UId="977">
+        <BooleanAttribute Name="HasQuotes" UId="978">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="979" />
+      <Component Name="Colas" UId="980">
+        <Token Text="[" UId="981" />
+        <Access Scope="LocalVariable" UId="982">
+          <Symbol UId="983">
+            <Component Name="Mesa" UId="984" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="985" />
+      </Component>
+      <Token Text="." UId="986" />
+      <Component Name="EstadoPresenciaMesa" UId="987" />
+    </Symbol>
+  </Access>
+  <Blank UId="988" />
+  <Token Text=":=" UId="989" />
+  <Blank UId="990" />
+  <Access Scope="LiteralConstant" UId="991">
+    <Constant UId="992">
+      <ConstantValue UId="994">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="995" />
+  <NewLine UId="996" />
 </StructuredText></NetworkSource>
           <ProgrammingLanguage>SCL</ProgrammingLanguage>
         </AttributeList>

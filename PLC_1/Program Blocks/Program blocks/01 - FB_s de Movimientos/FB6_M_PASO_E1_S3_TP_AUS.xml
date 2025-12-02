@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V20" />
   <DocumentInfo>
-    <Created>2025-12-01T14:56:55.034156Z</Created>
+    <Created>2025-12-01T14:59:44.8869003Z</Created>
     <ExportSetting>None</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -5530,23 +5530,29 @@
         <Component Name="EnTension" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="22">
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="OFF" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
       <Symbol>
         <Component Name="EnTension" />
       </Symbol>
     </Access>
-    <Access Scope="GlobalConstant" UId="23">
+    <Access Scope="GlobalConstant" UId="24">
       <Constant Name="V_TMP_EsperaEnTension" />
     </Access>
-    <Access Scope="GlobalConstant" UId="24">
+    <Access Scope="GlobalConstant" UId="25">
       <Constant Name="CTE_BaseUnidades_1ms" />
     </Access>
-    <Part Name="Contact" UId="25">
+    <Part Name="Contact" UId="26">
       <Negated Name="operand" />
     </Part>
-    <Call UId="26">
+    <Part Name="Contact" UId="27" />
+    <Call UId="28">
       <CallInfo Name="FB910_CNT_UHS" BlockType="FB">
-        <Instance Scope="LocalVariable" UId="27">
+        <Instance Scope="LocalVariable" UId="29">
           <Component Name="TMP_EnTension" />
         </Instance>
         <Parameter Name="IN" Section="Input" Type="Bool" />
@@ -5561,46 +5567,54 @@
     </Call>
   </Parts>
   <Wires>
-    <Wire UId="32">
-      <Powerrail />
-      <NameCon UId="26" Name="en" />
-      <NameCon UId="25" Name="in" />
-    </Wire>
-    <Wire UId="33">
-      <IdentCon UId="21" />
-      <NameCon UId="25" Name="operand" />
-    </Wire>
     <Wire UId="34">
-      <NameCon UId="25" Name="out" />
-      <NameCon UId="26" Name="R" />
+      <Powerrail />
+      <NameCon UId="28" Name="en" />
+      <NameCon UId="26" Name="in" />
     </Wire>
     <Wire UId="35">
-      <IdentCon UId="22" />
-      <NameCon UId="26" Name="IN" />
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="operand" />
     </Wire>
     <Wire UId="36">
-      <IdentCon UId="23" />
-      <NameCon UId="26" Name="PV" />
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="27" Name="in" />
     </Wire>
     <Wire UId="37">
-      <IdentCon UId="24" />
-      <NameCon UId="26" Name="BaseUnidades_ms" />
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="operand" />
     </Wire>
     <Wire UId="38">
-      <NameCon UId="26" Name="QU" />
-      <OpenCon UId="28" />
+      <NameCon UId="27" Name="out" />
+      <NameCon UId="28" Name="R" />
     </Wire>
     <Wire UId="39">
-      <NameCon UId="26" Name="QD" />
-      <OpenCon UId="29" />
+      <IdentCon UId="23" />
+      <NameCon UId="28" Name="IN" />
     </Wire>
     <Wire UId="40">
-      <NameCon UId="26" Name="CVU" />
-      <OpenCon UId="30" />
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="PV" />
     </Wire>
     <Wire UId="41">
-      <NameCon UId="26" Name="CVD" />
+      <IdentCon UId="25" />
+      <NameCon UId="28" Name="BaseUnidades_ms" />
+    </Wire>
+    <Wire UId="42">
+      <NameCon UId="28" Name="QU" />
+      <OpenCon UId="30" />
+    </Wire>
+    <Wire UId="43">
+      <NameCon UId="28" Name="QD" />
       <OpenCon UId="31" />
+    </Wire>
+    <Wire UId="44">
+      <NameCon UId="28" Name="CVU" />
+      <OpenCon UId="32" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="28" Name="CVD" />
+      <OpenCon UId="33" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
